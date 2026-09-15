@@ -5,7 +5,7 @@ it imply for the masses of the star clusters that form? These figures come from 
 gas-rich dwarf galaxies merging (4 Msun gas and star particles, 0.4 pc softening, magnetic fields, resolved supernovae),
 followed for 226 Myr through first passage, a second passage, coalescence and the settling of the remnant.
 
-## The idea in one paragraph
+## Summary
 
 PRFM says that in a galactic disc the midplane gas pressure adjusts to balance the weight of the gas column in the
 gravitational field, and that star formation supplies that pressure through feedback: the weight sets the pressure, the
@@ -33,7 +33,7 @@ through the disc at 25 to 30 km/s, which is not a layer in any orientation and d
 
 ![equilibrium](figs/story_1_equilibrium.png)
 
-## Pressure supplied by feedback
+## Feedback pressure
 The second half of PRFM: is the pressure supplied by star formation? Using the feedback yields of Ostriker & Kim (2022) at
 the local star formation rate, feedback accounts for 50 to 95 % of the pressure before coalescence but almost none of it
 in the quiet intervals after. The gas is still in vertical balance then, so something else is supplying the pressure: the
@@ -41,7 +41,7 @@ large-scale flow of the merger. The regulation half of PRFM therefore holds only
 
 ![feedback share](figs/story_2_feedback.png)
 
-## Shear-driven turbulence
+## Shear closure
 What supplies the pressure between bursts. For patches with no star formation in the last 10 Myr, the turbulent pressure
 follows the shear-work term (gas surface density times scale height times the squared patch-scale shear rate) with one
 coefficient of 0.02 in every phase and no offset. Feedback-only closures miss these patches by up to two orders of
@@ -87,7 +87,7 @@ star formation efficiency of the clouds.
 
 ![MF per phase](figs/story_5_mf.png)
 
-## One dominant cluster per burst
+## Largest cluster per burst
 For every 0.5 kpc patch that formed more than 500 Msun of stars in the last 10 Myr and hosts a bound cluster, the mass of
 its most massive cluster against the total mass of young stars in the patch. The median runs along half the young mass up
 to about 1e5 Msun: each burst makes one dominant cluster that captures about half of the stars formed, with a handful of
@@ -98,7 +98,7 @@ clusters.
 
 ![reservoir](figs/story_6_reservoir.png)
 
-## The weight sets the ceiling
+## Largest cluster and weight
 The most massive bound cluster formed in each 25 Myr interval against W, the weight of the gas layer (within 0.5 kpc of
 the midplane) of the heaviest star-forming patches in that interval (90th percentile over patches). Labels give the start of each interval in
 Myr. The line is not a fit: it is half of the PRFM star formation rate at that weight, times the patch area and a 10 Myr
@@ -109,23 +109,36 @@ cluster mass function, and the duty cycle of star formation decides whether it i
 
 ![ceiling](figs/story_7_ceiling.png)
 
----
-## Not yet converted
-
-Line-of-sight test: the pre-merger disc is an equilibrium layer only along its angular-momentum axis; after coalescence no
-orientation makes the debris a layer.
+## Line of sight
+The equilibrium test repeated with the column taken along other directions: the disc's angular-momentum axis, and normals
+tilted by 30, 60 and 90 degrees from it. Before coalescence only the disc normal gives a ratio near one, so the disc is a
+layer and the chosen normal is the right one. After coalescence every direction gives 0.2 to 0.5: the deficit does not
+depend on viewing angle, so the streaming debris is not a layer in any orientation.
 
 ![line of sight](figs/prfm_time_los.png)
 
-Convergence of the low-mass end of the cluster mass function with the minimum group size, linking length and bound flag.
+## Low-mass end of the cluster mass function
+Local power-law slope of the cluster mass function in three mass bins, per phase, for all friends-of-friends groups
+(filled) and for bound groups only (open). Above 300 Msun the two agree and the slopes are stable against the minimum group
+size and linking length. In the 100 to 300 Msun bin after coalescence the bound-only slope collapses, because only a third
+of those small groups are bound: that end of the function is set by the bound flag, not by the physics, and is not used.
 
 ![low-mass convergence](figs/lowmass_convergence.png)
 
-Burst mass at fixed weight (lognormal, 0.4 dex wide), the duty cycle per phase, and the running index per bin.
+## Duty cycle
+Probability that a 0.5 kpc patch formed more than 500 Msun of stars in the last 10 Myr, as a function of its weight W
+(gas layer within 0.5 kpc of the midplane), per phase. Points are measured fractions, lines logistic fits. The weight at
+which half the patches are active rises twenty-fold through the merger. The same threshold expressed in midplane density
+moves by less than a factor of three, so the physical threshold is in density: after coalescence the higher turbulent and
+magnetic support means the same weight produces a lower midplane density.
 
-![burst distribution](figs/burst_dist.png)
+![duty cycle](figs/duty_cycle.png)
 
-Mock built from the real patch weights, a density-threshold duty cycle and the lognormal kernel, against the observed
-burst-mass distribution: the slope is reproduced in every phase, the top is not.
+## Burst-mass distribution
+Distribution of the 10 Myr burst mass of the patches between the two passages, against a model with no free shape: each
+patch bursts with the probability from the duty cycle above, and its burst mass is drawn from a lognormal of 0.5 dex width
+around a mean that rises with the weight. The model reproduces the distribution and its curvature (the same holds in the
+other phases). The slope of the burst-mass distribution, and through it of the cluster mass function, is the width of this
+lognormal, which the cloud figures above trace to the scatter in cloud star formation efficiency.
 
-![burst kernel mock](figs/burst_kernel.png)
+![burst kernel](figs/burst_kernel.png)
