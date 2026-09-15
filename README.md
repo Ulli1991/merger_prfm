@@ -185,6 +185,57 @@ scatter 1.5 to 2 dex, and it drives the predicted efficiency to zero in the remn
 calibrated ingredient. Where it comes from is Part C.
 
 ---
+## B, functional form of the model for the cluster mass function
+
+Inputs per 0.5 kpc patch: layer weight $\mathcal{W}$, midplane density $\rho_{\rm mid}$, scale height $H$, effective
+dispersion $\sigma_{\rm eff} = (P/\rho_{\rm mid})^{1/2}$ with $P = \mathcal{W}$. Inputs per cold complex: mass $M$,
+half-mass radius $r_h$, Alfvén Mach number $\mathcal{M}_A$.
+
+**(1) Complex population.** Measured, invariant through the merger:
+$$n(M)\,{\rm d}M \propto M^{-1.6}\,{\rm d}M \quad (M > 300\ {\rm M}_\odot),$$
+with the top rising from $10^5$ to $10^7$ Msun through the merger.
+
+**(2) Virial parameter of a complex from the layer.**
+$$\alpha_{\rm tot}(M, r_h, \sigma_{\rm eff}) = \frac{5}{3}\,\frac{\sigma_{\rm eff}^2\,(r_h/H)\,r_h}{G\,M}\,\left(1 + \mathcal{M}_A^{-2}\right).$$
+Measured over predicted: median 0.9, 0.4 dex scatter, rank correlation 0.8.
+
+**(3) Efficiency of a complex.** A step in $\alpha_{\rm tot}$ with lognormal scatter:
+$$\epsilon(\alpha_{\rm tot}) = \epsilon_u + \frac{\epsilon_b - \epsilon_u}{1 + (\alpha_{\rm tot}/\alpha_c)^m},\qquad
+\log\epsilon \sim \mathcal{N}\big(\log\epsilon(\alpha_{\rm tot}),\ s\big).$$
+
+| parameter | dense clumps (n > 100) | complexes (n > 10) |
+|---|---|---|
+| $\epsilon_b$ (bound) | 0.050 | 0.022 |
+| $\epsilon_u$ (unbound) | 0.0012 | 0.0017 |
+| $\alpha_c$ | 4.0 | 5.9 |
+| $m$ | 4.7 | 3.1 |
+| $s$ (dex) | 0.69 | 0.71 |
+
+**(4) Stars to clusters.** The dominant cluster of a complex takes $f_c = 0.5$ of its stars; secondary clusters steepen the
+mass function by about 0.2.
+
+**(5) Cluster mass function.** The complex mass function convolved with the efficiency distribution:
+$$n_{\rm cl}(M_{\rm cl}) = \int {\rm d}M\ n(M)\ \frac{1}{f_c M}\ p_\epsilon\!\left(\frac{M_{\rm cl}}{f_c M}\ \Big|\ \alpha_{\rm tot}(M,\sigma_{\rm eff})\right),$$
+with $p_\epsilon$ the lognormal of (3) centred on the step. Evaluated on the measured complexes of each phase (200 draws):
+
+| phase | $\sigma_{\rm eff}$ [km/s] | bound fraction | slope pred. | slope meas. | top pred. | top meas. |
+|---|---|---|---|---|---|---|
+| before 1st passage | 8.7 | 0.35 | 2.03 ± 0.09 | 1.84 | 1.0e4 | 7.4e3 |
+| between passages | 9.4 | 0.11 | 1.94 ± 0.07 | 1.77 | 1.4e4 | 2.0e4 |
+| coalescence | 18.3 | 0.05 | 1.83 ± 0.08 | 1.77 | 1.5e5 | 1.0e5 |
+| remnant | 19.3 | 0.03 | 1.70 ± 0.06 | 1.55 | 2.8e5 | 1.5e5 |
+
+The slope is 0.15 to 0.2 too steep in every phase; the flattening (0.33 vs 0.29) and the rise of the top (30 vs 20) are
+reproduced. With the mass dependence of boundedness removed (bound flags shuffled) the slopes are 2.21, 2.26, 1.98, 1.83.
+
+**(6) Largest cluster per interval.** Two equivalent statements: $M_{\max} \simeq 0.1\,M_{\star}(25\,{\rm Myr})$, the
+largest burst of the interval; and, while star formation is on, $M_{\max} \simeq f_c\,\eta\,\Sigma_{\rm SFR}^{\rm PRFM}(\mathcal{W}_{90})\,A\,\tau$
+with $\eta = 0.4$, $A = 0.25$ kpc$^2$, $\tau = 10$ Myr, slope 0.94 and 0.09 dex scatter over seven intervals.
+
+**(7) Patch-level duty cycle** (used for the burst-mass mock of Part B above):
+$P({\rm burst}\,|\,\rho_{\rm mid}) = [1 + \exp(-k(\log\rho_{\rm mid} - \log\rho_{50}))]^{-1}$, $k = 5.1$,
+$\log\rho_{50} = -1.65$ (Msun pc$^{-3}$); burst mass $\log M_{\rm burst} \sim \mathcal{N}(a + b\log\mathcal{W},\ 0.4$–$0.5)$.
+
 ## B, the chain from the layer to the clusters: measured relations, with conjectured physics
 
 This section stays inside Part B. The relations in it are measured. The physical reasoning attached to them, a turbulent
