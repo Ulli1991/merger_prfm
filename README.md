@@ -87,13 +87,19 @@ star formation efficiency of the clouds.
 
 ![MF per phase](figs/story_5_mf.png)
 
----
-## Not yet converted
-
-Largest bound cluster against the young stellar mass of the same patch: one dominant cluster takes about half of each
-burst.
+## One dominant cluster per burst
+For every 0.5 kpc patch that formed more than 500 Msun of stars in the last 10 Myr and hosts a bound cluster, the mass of
+its most massive cluster against the total mass of young stars in the patch. The median runs along half the young mass up
+to about 1e5 Msun: each burst makes one dominant cluster that captures about half of the stars formed, with a handful of
+smaller companions. This is the link between the star formation rate of a patch and the top of the cluster mass function,
+and it is why the weight of the gas layer, which sets the size of the largest burst, also sets the mass of the largest
+cluster. The most massive bursts, in the remnant nucleus, fall below the line because their stars are spread over several
+clusters.
 
 ![reservoir](figs/story_6_reservoir.png)
+
+---
+## Not yet converted
 
 Largest bound cluster formed per 25 Myr against the weight of the star-forming patches. Over a factor of 30 in weight the
 largest cluster scales almost linearly with 0.1 dex scatter; the one quiescent interval sits 100 times below. The weight
