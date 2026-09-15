@@ -24,12 +24,22 @@ Turbulent pressure of patches without star formation in the last 10 Myr against 
 
 ![shear closure](figs/story_3_shear.png)
 
----
-## Not yet converted
-
-Magnetic field growth and magnetic-to-kinetic pressure ratio.
+## Magnetic field
+Field strength in the gas layer, mass-weighted mean and median patch. Seeded at 10 nG, it saturates near 1 microgauss by 50 Myr, jumps at coalescence and reaches 10 to 20 microgauss in the remnant, where the magnetic pressure is at or above equipartition with thermal plus turbulent.
 
 ![dynamo](figs/story_4_dynamo.png)
+
+## Clouds
+Mass function of cold clouds (T < 1000 K, n > 10 cm^-3, friends-of-friends at 3 pc) per phase: the slope of 1.6 does not change through the merger; only the top grows.
+
+![cloud mass function](figs/clouds_mf.png)
+
+Fraction of a cloud's mass turned into stars within 10 Myr against the cloud's mean density, for clouds that form stars. Lines are medians per density bin. The efficiency rises with density and drops 15x from the disc phase to the remnant; its 0.7 to 0.8 dex scatter is what sets the width of the burst-mass distribution.
+
+![cloud efficiency](figs/clouds_eff.png)
+
+---
+## Not yet converted
 
 Cluster mass function per merger phase.
 
