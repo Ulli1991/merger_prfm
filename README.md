@@ -71,11 +71,14 @@ masses and more.
 
 ![cloud mass function](figs/clouds_mf.png)
 
-What does change is how efficiently the complexes turn gas into stars. The fraction of a complex's mass converted within 10 Myr
-rises with the cloud's mean density and drops fifteen-fold from the disc phase to the remnant, where the clouds are more
-turbulent and less bound. Its scatter of 0.7 to 0.8 dex is what produces the 0.4 dex spread of burst masses at fixed
-environment, and through it the slope of the cluster mass function. The physics of the slope lives here, at the cloud
-scale, not in the disc-scale weight distribution.
+What does change is how efficiently the clumps turn gas into stars. Following each dense clump through the snapshots by its
+particle IDs, the figure shows the fraction of its peak mass that it ever turned into stars, against its virial parameter
+just before star formation began. More strongly bound clumps convert more, by a factor of 40 over the observed range, and
+the efficiency drops fifty-fold from the disc phase to the remnant, where the clumps are more turbulent. But at the same
+virial parameter the phases are offset by more than an order of magnitude, so the kinetic virial parameter is not the whole
+story, and at fixed state the efficiency still scatters by 0.7 dex. That scatter is what produces the 0.4 dex spread of
+burst masses and the slope of the cluster mass function. This is the one link in the chain that is measured rather than
+explained.
 
 ![cloud efficiency](figs/clouds_eff.png)
 
