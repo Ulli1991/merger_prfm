@@ -216,3 +216,18 @@ merger as in the disc. Star formation responds to the effective dispersion, pres
 clumps inherit it through the cascade and are unbound in proportion to its square. Feedback regulation holds that dispersion
 near 9 km/s and 90 % of the clumps are bound; when the merger flow and the field carry the pressure it is near 20 km/s at
 equal or larger weight, only 12 % of the clumps are bound, and the efficiency drop follows.
+
+## What C predicts, and what happened when tested
+
+1. **Star formation per unit dense gas equals the bound fraction times 5 %**, with the bound fraction set by the layer's
+   effective dispersion. Per 25 Myr interval the measured conversion of dense gas to stars over the bound fraction is
+   0.08 to 0.17 in the four disc-phase intervals, and the model predicts the quiescent interval exactly (0.0026 predicted,
+   0.0026 measured). It fails for the two pericentre bursts, by a factor of 3 at 110 Myr and 70 at 185 Myr: there the
+   unbound clumps convert ten times the floor and the nuclear complex collapses faster than its pre-onset virial state
+   implies. C is quasi-static; the bursts are dynamical.
+2. **The cluster mass function should flatten because low-mass clumps become unbound first.** Falsified. The bound fraction
+   is independent of clump mass within each phase, so C does not explain the change of the cluster mass function shape.
+   That stays an empirical result of Part B.
+3. **Transferable:** the dense-gas efficiency is a step in the total virial parameter, flat near 5 % below the virial
+   threshold and near 0.1 % well above it. Cloud samples in ordinary discs sit below the threshold and should show no
+   dependence on the virial parameter; environments whose turbulence is driven externally should show the cliff.
