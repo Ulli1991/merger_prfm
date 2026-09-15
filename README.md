@@ -2,7 +2,7 @@
 
 Figures from the PRFM (pressure-regulated, feedback-modulated; Ostriker & Kim 2022) test of the dwarf-galaxy merger
 simulation and its link to the star cluster mass function. Code: `/raven/u/uli/dwarf_merger` (prfm/paper_figs.py).
-Figures are converted to paper style one by one and replaced in place; the ones below the line are still the analysis versions.
+Figures are converted to paper style one by one and replaced in place; the ones below the line still have the analysis-style labels.
 
 ## Merger phases
 Separation of the two nuclei; the four phases used throughout.
@@ -34,8 +34,6 @@ Cluster mass function per merger phase.
 
 ![MF per phase](figs/story_5_mf.png)
 
-![MF phases](figs/mf_phases.png)
-
 Largest bound cluster vs young stellar mass of the patch.
 
 ![reservoir](figs/story_6_reservoir.png)
@@ -44,21 +42,9 @@ Largest bound cluster per 25 Myr vs the weight of the star-forming patches.
 
 ![ceiling](figs/story_7_ceiling.png)
 
-![ceiling detail](figs/ceiling.png)
-
-![cluster link](figs/cluster_link.png)
-
-Exact layer-weight verdict per phase.
-
-![layer verdict](figs/layer_verdict_z05.png)
-
 Line-of-sight dependence of P/W.
 
 ![line of sight](figs/prfm_time_los.png)
-
-Pressure sources and dynamo.
-
-![sources dynamo](figs/sources_dynamo.png)
 
 Low-mass end convergence of the cluster MF.
 
