@@ -99,7 +99,7 @@ clusters.
 ![reservoir](figs/story_6_reservoir.png)
 
 ## Largest cluster and weight
-The most massive bound cluster formed in each 25 Myr interval against W, the weight of the gas layer (within 0.5 kpc of
+The most massive bound cluster formed in each 25 Myr interval against $\mathcal{W}$, the weight of the gas layer (within 0.5 kpc of
 the midplane) of the heaviest star-forming patches in that interval (90th percentile over patches). Labels give the start of each interval in
 Myr. The line is not a fit: it is half of the PRFM star formation rate at that weight, times the patch area and a 10 Myr
 burst, i.e. the size of the largest burst a patch of that weight can produce, halved by the capture fraction of the
@@ -126,7 +126,7 @@ of those small groups are bound: that end of the function is set by the bound fl
 ![low-mass convergence](figs/lowmass_convergence.png)
 
 ## Duty cycle
-Probability that a 0.5 kpc patch formed more than 500 Msun of stars in the last 10 Myr, as a function of its weight W
+Probability that a 0.5 kpc patch formed more than 500 Msun of stars in the last 10 Myr, as a function of its weight $\mathcal{W}$
 (gas layer within 0.5 kpc of the midplane), per phase. Points are measured fractions, lines logistic fits. The weight at
 which half the patches are active rises twenty-fold through the merger. The same threshold expressed in midplane density
 moves by less than a factor of three, so the physical threshold is in density: after coalescence the higher turbulent and
