@@ -31,13 +31,18 @@ through the disc at 25 to 30 km/s, which is not a layer in any orientation and d
 
 ![equilibrium](figs/story_1_equilibrium.png)
 
-## Feedback pressure
-The second half of PRFM: is the pressure supplied by star formation? Using the feedback yields of Ostriker & Kim (2022) at
-the local star formation rate, feedback accounts for 50 to 95 % of the pressure before coalescence but almost none of it
-in the quiet intervals after. The gas is still in vertical balance then, so something else is supplying the pressure: the
-large-scale flow of the merger. The regulation half of PRFM therefore holds only while star formation is on.
+## Pressure per unit star formation
+What is plotted: the measured total midplane pressure of the gas layer divided by the measured star formation rate
+surface density of the same patches (stars younger than 10 Myr), summed over the clean patches of each snapshot, in
+km/s. This is the pressure the layer holds per unit of star formation. The dashed line is the feedback yield of Ostriker &
+Kim (2022) evaluated at the same pressure: the pressure per unit star formation that supernovae, winds and radiation
+supply in their simulations. Where the two agree, star formation supplies the pressure. Before coalescence the measured
+curve sits on the yield to within a factor of 2. After coalescence it sits 10 to 100 times above it in the quiet intervals,
+reaching 100 at 160 to 185 Myr: the layer holds far more pressure than its star formation can supply, so that pressure comes
+from elsewhere (the merger flow and the field, next figures), and it drops back to the yield only during the two nuclear
+bursts.
 
-![feedback share](figs/story_2_feedback.png)
+![pressure per unit star formation](figs/story_2_feedback.png)
 
 ## Magnetic field
 The field is seeded at 10 nG and amplified by the turbulence: it e-folds every 10 Myr, saturates near 1 microgauss by
