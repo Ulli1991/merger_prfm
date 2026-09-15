@@ -100,7 +100,7 @@ clusters.
 
 ## The weight sets the ceiling
 The most massive bound cluster formed in each 25 Myr interval against W, the weight of the gas layer (within 0.5 kpc of
-the midplane) of the star-forming patches in that interval, median over patches. Labels give the start of each interval in
+the midplane) of the heaviest star-forming patches in that interval (90th percentile over patches). Labels give the start of each interval in
 Myr. The line is not a fit: it is half of the PRFM star formation rate at that weight, times the patch area and a 10 Myr
 burst, i.e. the size of the largest burst a patch of that weight can produce, halved by the capture fraction of the
 previous figure. Seven active intervals spanning a factor of 30 in weight follow it with 0.1 dex scatter. The one quiescent
