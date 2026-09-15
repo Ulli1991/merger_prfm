@@ -1,21 +1,16 @@
 # merger_prfm
 
 Does pressure-regulated, feedback-modulated star formation (PRFM; Ostriker & Kim 2022) survive a galaxy merger, and what does
-it imply for the masses of the star clusters that form? These figures come from one high-resolution simulation of two
-gas-rich dwarf galaxies merging (4 Msun gas and star particles, 0.4 pc softening, magnetic fields, resolved supernovae),
-followed for 226 Myr through first passage, a second passage, coalescence and the settling of the remnant.
+it imply for the masses of the star clusters that form? One high-resolution simulation of two gas-rich dwarf galaxies merging
+(4 Msun gas and star particles, 0.4 pc softening, magnetic fields, resolved supernovae), followed for 226 Myr through first
+passage, a second passage, coalescence and the settling of the remnant.
 
-## Summary
+This page keeps two things apart. **Part A** is what the simulation shows: measurements, stated without a model behind them.
+**Part B** is the analytic model built to explain Part A, with each ingredient tested against one measurement and the
+outcome stated, including where it fails.
 
-PRFM says that in a galactic disc the midplane gas pressure adjusts to balance the weight of the gas column in the
-gravitational field, and that star formation supplies that pressure through feedback: the weight sets the pressure, the
-pressure sets the star formation rate. We test both halves in 0.5 kpc patches of the merger, then follow the consequences
-downward in scale. The star formation rate of a patch is really a sequence of bursts; each burst is the collapse of a single
-cold cloud; about half of each burst ends up in one star cluster. So the weight of the gas layer fixes how big the largest
-star-forming event can be, and with it the top of the cluster mass function, while the slope of the mass function is set by
-how efficiently clouds convert gas to stars, a quantity that the merger changes by an order of magnitude.
-
-The figures are arranged along that chain: merger phases, equilibrium, pressure sources, clouds, clusters.
+---
+# Part A. What the simulation shows
 
 ## Merger phases
 Separation of the two nuclei with time. We split the run into four phases used in every other figure: before first passage,
@@ -40,14 +35,6 @@ in the quiet intervals after. The gas is still in vertical balance then, so some
 large-scale flow of the merger. The regulation half of PRFM therefore holds only while star formation is on.
 
 ![feedback share](figs/story_2_feedback.png)
-
-## Shear closure
-What supplies the pressure between bursts. For patches with no star formation in the last 10 Myr, the turbulent pressure
-follows the shear-work term (gas surface density times scale height times the squared patch-scale shear rate) with one
-coefficient of 0.02 in every phase and no offset. Feedback-only closures miss these patches by up to two orders of
-magnitude. This is the missing term in the PRFM energy balance for a merger.
-
-![shear closure](figs/story_3_shear.png)
 
 ## Magnetic field
 The field is seeded at 10 nG and amplified by the turbulence: it e-folds every 10 Myr, saturates near 1 microgauss by
@@ -103,17 +90,6 @@ clusters.
 
 ![reservoir](figs/story_6_reservoir.png)
 
-## Largest cluster and weight
-The most massive bound cluster formed in each 25 Myr interval against $\mathcal{W}$, the weight of the gas layer (within 0.5 kpc of
-the midplane) of the heaviest star-forming patches in that interval (90th percentile over patches). Labels give the start of each
-interval in Myr. The line is not a fit: it is half of the PRFM star formation rate at that weight, times the patch area and a 10 Myr
-burst, i.e. the size of the largest burst a patch of that weight can produce, halved by the capture fraction of the previous figure.
-Seven active intervals spanning a factor of 30 in weight follow it (slope 0.94 against the median weight, 0.09 dex scatter). The one
-quiescent interval, 160 to 185 Myr, has the highest weight of all and sits 100 times below. The weight sets the cluster mass while
-star formation is on; whether it is on is a separate question, answered below.
-
-![ceiling](figs/story_7_ceiling.png)
-
 ## Every cluster against its patch
 All 580 bound young clusters against the weight, total pressure and star formation rate of the 0.5 kpc patch they formed in. The
 dashed line in each panel is half the burst that PRFM allows at that weight or pressure, or half the stars actually formed in the
@@ -138,7 +114,35 @@ of those small groups are bound: that end of the function is set by the bound fl
 
 ![low-mass convergence](figs/lowmass_convergence.png)
 
-## Duty cycle
+
+---
+# Part B. The analytic model and its tests
+
+The model is PRFM with two additions for a merger: a flow-driving term in the turbulent pressure budget and the measured
+magnetic field as a third source of support. Below it, a midplane-density threshold decides which patches form stars, a
+fragmentation mass function supplies the clouds, and a clump-scale efficiency law converts clouds to stars. Each piece is
+tested against one measurement of Part A.
+
+## Pressure budget: the flow term
+What supplies the pressure between bursts. For patches with no star formation in the last 10 Myr, the turbulent pressure
+follows the shear-work term (gas surface density times scale height times the squared patch-scale shear rate) with one
+coefficient of 0.02 in every phase and no offset. Feedback-only closures miss these patches by up to two orders of
+magnitude. This is the missing term in the PRFM energy balance for a merger.
+
+![shear closure](figs/story_3_shear.png)
+
+## Rate when on: the PRFM burst as the ceiling of cluster masses
+The most massive bound cluster formed in each 25 Myr interval against $\mathcal{W}$, the weight of the gas layer (within 0.5 kpc of
+the midplane) of the heaviest star-forming patches in that interval (90th percentile over patches). Labels give the start of each
+interval in Myr. The line is not a fit: it is half of the PRFM star formation rate at that weight, times the patch area and a 10 Myr
+burst, i.e. the size of the largest burst a patch of that weight can produce, halved by the capture fraction of the previous figure.
+Seven active intervals spanning a factor of 30 in weight follow it (slope 0.94 against the median weight, 0.09 dex scatter). The one
+quiescent interval, 160 to 185 Myr, has the highest weight of all and sits 100 times below. The weight sets the cluster mass while
+star formation is on; whether it is on is a separate question, answered below.
+
+![ceiling](figs/story_7_ceiling.png)
+
+## Switch: the density threshold
 Probability that a 0.5 kpc patch formed more than 500 Msun of stars in the last 10 Myr, as a function of its weight $\mathcal{W}$
 (gas layer within 0.5 kpc of the midplane), per phase. Points are measured fractions, lines logistic fits. The weight at
 which half the patches are active rises twenty-fold through the merger. The same threshold expressed in midplane density
@@ -147,7 +151,7 @@ magnetic support means the same weight produces a lower midplane density.
 
 ![duty cycle](figs/duty_cycle.png)
 
-## Burst-mass distribution
+## Burst sizes: threshold times lognormal
 Distribution of the 10 Myr burst mass of the patches between the two passages, against a model with no free shape: each
 patch bursts with the probability from the duty cycle above, and its burst mass is drawn from a lognormal of 0.5 dex width
 around a mean that rises with the weight. The model reproduces the distribution and its curvature (the same holds in the
@@ -155,3 +159,8 @@ other phases). The slope of the burst-mass distribution, and through it of the c
 lognormal, which the cloud figures above trace to the scatter in cloud star formation efficiency.
 
 ![burst kernel](figs/burst_kernel.png)
+
+## Efficiency law
+The remaining open ingredient. The clump efficiency follows the kinetic virial parameter but keeps a phase-dependent
+normalisation of about 0.8 dex. The test in progress evaluates a magnetically corrected virial parameter and the Federrath &
+Klessen (2012) multi-freefall efficiency on the measured pre-onset clump states, including the field. Outcome to be added.
