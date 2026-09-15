@@ -182,52 +182,123 @@ scatter 1.5 to 2 dex, and it drives the predicted efficiency to zero in the remn
 calibrated ingredient. Where it comes from is Part C.
 
 ---
-# Part C. Towards an analytic model (candidate, partly verified)
+# Part C. The derivation, step by step
 
-Part C is what can be written as equations with no exponent fitted on this run, then tested against Part A. It is kept apart
-from B, which is the empirical link. Status of each step:
+Everything below is written so it can be checked. Each step states the physics, the equation, what is assumed, and the
+number it was tested against. "Measured" means taken from the simulation; "derived" means it follows from the previous
+step with no constant fitted here.
 
-1. **Layer dispersion.** Feedback-regulated: the Ostriker & Kim yield. Flow-driven: mixing-length balance of shear injection
-   against dissipation, sigma_eff = (2 epsilon_S)^{1/2} H S. This is the shear closure of Part B with its one constant, so it
-   enters C as an input, not a prediction.
-2. **Cascade to the clump.** Burgers scaling, sigma(l) = sigma_eff (l/H)^{1/2}. Verified: the clump dispersion before onset is
-   predicted to a median ratio of 0.95 with 0.2 dex scatter and no phase dependence, no free parameter.
-3. **Clump virial parameter.** alpha = (5/3) sigma(R)^2 R / (G M) with the measured clump mass. Verified: measured over
-   predicted has a median of 0.9, 0.4 dex scatter, rank correlation 0.8, and phase medians between 0.8 and 1.1. Derived.
-4. **Efficiency as a boundedness threshold.** The efficiency against the total virial parameter (kinetic plus magnetic,
-   alpha times one plus the inverse squared Alfvén Mach number) is a step, not a power law: flat at 5 % for alpha_tot below
-   4, a steep drop between 4 and 16, and a floor at 0.1 % above. The transition is the virial criterion itself, kinetic plus
-   magnetic energy against gravity, so its location is first principles; the two levels, 5 % for bound clumps and 0.1 % for
-   unbound ones, are measured. With the virial parameter taken not from the clump but predicted from the layer through steps
-   2 and 3, the model reproduces the per-phase efficiency to within 0.1 dex in three phases and 0.26 dex in the first, where
-   the field is not yet saturated. The clump-to-clump scatter of 0.7 dex remains.
+## C1. Pressure and effective dispersion of the layer
 
-So C is analytic from the layer's effective dispersion down to whether a clump is bound, and the efficiency follows as a
-threshold with two measured levels. What it explains in Part A: the tenfold rise of the clump virial parameter through the
-merger, and the fifty-fold efficiency drop as 80 % of the clumps cross the boundedness threshold; what it does not: the two
-levels themselves and the intrinsic scatter.
+Vertical equilibrium gives the midplane pressure from the weight of the gas layer, $P = \mathcal{W}$ (Part A: holds to
+5 % outside coalescence). The midplane density $\rho_{\rm mid}$ is measured. Define the effective dispersion
+
+$$\sigma_{\rm eff}^2 \equiv P/\rho_{\rm mid}.$$
+
+This is the total support per unit mass, thermal plus turbulent plus magnetic. Its value is not predicted by equilibrium:
+equilibrium fixes $P$, and $\rho_{\rm mid}$ adjusts. What fixes $\sigma_{\rm eff}$ is the energy budget:
+
+- feedback-regulated: the turbulent driving is set by the star formation rate through the yield, and the Ostriker & Kim
+  calibration gives $\sigma_{\rm eff} \simeq 9$ km/s at these pressures (measured here: 8.7 and 9.5 km/s in the two disc
+  phases);
+- flow-driven: turbulent energy injected by the large-scale shear at rate $\Sigma\,\sigma\,H\,S^2$ (mixing length $H$,
+  shear rate $S$) balances dissipation $\Sigma\,\sigma^3/H$, so $\sigma = \sqrt{2\epsilon_S}\,H S$. This is the shear
+  closure of Part B with its one calibrated coefficient $\epsilon_S = 0.02$; measured $\sigma_{\rm eff}$ = 18 to 21 km/s
+  after coalescence.
+
+The magnetic field is measured, not modelled: it saturates near equipartition with the turbulence it is driven by.
+
+## C2. Cascade from the layer to the clump
+
+Assumption: below the driving scale $H$ the turbulence is a supersonic (Burgers) cascade,
+
+$$\sigma(\ell) = \sigma_{\rm eff}\,(\ell/H)^{1/2}.$$
+
+Test: for every dense clump, at the snapshot before it forms stars, the predicted $\sigma(r_h)$ against its measured 3D
+velocity dispersion. Ratio measured/predicted: median 0.95, scatter 0.20 dex, per-phase medians 0.90, 0.94, 1.02, 1.03.
+No constant. (A steeper exponent of 0.6 overshoots by 1.37.)
+
+## C3. Virial parameter of the clump
+
+With the clump's measured mass $M$ and half-mass radius $r_h$, and $\sigma_{\rm 1d}^2 = \sigma(r_h)^2/3$,
+
+$$\alpha_{\rm vir} = \frac{5\,\sigma_{\rm 1d}^2\, r_h}{G M} = \frac{5}{3}\,\frac{\sigma_{\rm eff}^2\,(r_h/H)\, r_h}{G M}.$$
+
+Magnetic support adds $E_B/E_{\rm kin} = v_A^2/\sigma^2$, so the total is
+
+$$\alpha_{\rm tot} = \alpha_{\rm vir}\,(1 + \mathcal{M}_A^{-2}),\qquad \mathcal{M}_A = \sigma/v_A.$$
+
+Test: predicted against measured $\alpha_{\rm vir}$ (the measured one uses the clump's own dispersion): median ratio 0.90,
+scatter 0.40 dex, rank correlation 0.80, per-phase medians 0.81, 0.88, 1.03, 1.07. Derived. Note what this does and does
+not use: the clump mass and radius are measured, so the mass-size relation of the clumps is an input; replacing it by a
+uniform sphere at the threshold density is wrong by factors of 2 to 12 and phase dependent. The Alfvén Mach number is
+measured per clump; it is 2.2 in the first disc phase and 1.0 to 1.2 afterwards.
+
+## C4. Bound or not: the efficiency
+
+The virial theorem says a clump with $2E_{\rm kin} + E_B < |E_{\rm grav}|$ collapses. In the units above that is
+$\alpha_{\rm tot} \lesssim 2$ with $R$ the full radius, or $\approx 4$ with $R = r_h$. The efficiency measured against
+$\alpha_{\rm tot}$ is a step at exactly that place:
+
+$$\epsilon = \epsilon_b \ \ (\alpha_{\rm tot} < \alpha_c), \qquad \epsilon = \epsilon_u \ \ (\alpha_{\rm tot} \gg \alpha_c),$$
+
+with the fit $\alpha_c = 4.0$, $\epsilon_b = 0.050$, $\epsilon_u = 0.0012$, a transition steepness of 4.7, and 0.69 dex
+of clump-to-clump scatter around it. The location $\alpha_c$ is the virial criterion. The two levels are measured; the
+bound one is consistent with about 1 % per free-fall time over the six free-fall times a clump lives, the standard number,
+but is not derived here. With $\alpha_{\rm tot}$ taken not from the clump but predicted from the layer through C2 and C3,
+the same fit gives $\alpha_c = 3.5$, $\epsilon_b = 0.054$, $\epsilon_u = 0.0012$, and per-phase offsets of +0.26, −0.02,
+−0.02, −0.10 dex. The first disc phase sits above the plateau, where the field is not yet saturated.
+
+## C5. Star formation of the layer
+
+The star formation of a phase is the bound fraction times the bound efficiency, plus the floor:
+
+$$\frac{M_\star}{M_{\rm dense}} = f_b\,\epsilon_b + (1 - f_b)\,\epsilon_u,\qquad f_b = f(\alpha_{\rm tot} < \alpha_c \mid \sigma_{\rm eff}).$$
+
+Test per 25 Myr interval over all dense clumps: $f_b$ = 0.85, 0.52, 0.48, 0.37, 0.14, 0.25, 0.06, 0.015; measured
+conversion over $f_b$ = 0.11, 0.17, 0.13, 0.08 in the disc phases, and the quiescent interval is predicted exactly
+(0.0026 vs 0.0026). The two pericentre bursts are under-predicted by 3 and 70: there the compression is faster than the
+clump's pre-onset state implies. C is quasi-static and does not contain the orbit.
+
+This is also the statement about PRFM: the pressure is at the weight throughout, but the star formation rate at a given
+weight is $f_b(\sigma_{\rm eff})\,\epsilon_b$ times the dense gas, and $f_b$ falls from 0.9 to 0.03 when $\sigma_{\rm eff}$
+goes from 9 to 20 km/s at the same or larger weight.
+
+## C6. From clumps to the cluster mass function
+
+Measured inputs: a burst is one cold complex with one to three dense clumps (Part A), and half of a burst's stars end
+in one cluster (Part A). So the cluster mass function is the distribution of $0.5\,\epsilon\,M$ over complexes, with
+$\epsilon$ drawn from the bound or unbound distribution according to C4.
+
+Construction: every complex of a phase, bound if $\alpha_{\rm tot} < \alpha_c$, gets an efficiency drawn from the measured
+lifetime-efficiency distribution of bound (median 0.022, 0.7 dex) or unbound (0.0017, 0.85 dex) complexes; cluster mass
+$0.5\,\epsilon\,M$; slope above 300 Msun and largest cluster, 200 draws.
+
+| phase | predicted slope | measured slope | predicted top | measured top |
+|---|---|---|---|---|
+| before 1st passage | 2.03 ± 0.09 | 1.84 | 1.0e4 | 7.4e3 |
+| between passages | 1.94 ± 0.07 | 1.77 | 1.4e4 | 2.0e4 |
+| coalescence | 1.83 ± 0.08 | 1.77 | 1.5e5 | 1.0e5 |
+| remnant | 1.70 ± 0.06 | 1.55 | 2.8e5 | 1.5e5 |
+
+The flattening through the merger (0.33 predicted, 0.29 measured) and the rise of the top (factor 30 predicted, 20
+measured) are reproduced. The absolute slope is 0.15 to 0.2 too steep in every phase; this is the tail of the lognormal
+efficiency distribution above the 300 Msun cut, and it is a genuine shortfall of the construction. Two things make the
+flattening happen in the model: in the merger phases the most massive complexes are more often bound than the small
+ones (15 % above 30 000 Msun against 3 % below, in the remnant), and the mixing of bound and unbound efficiencies. Shuffling
+the bound flag among the complexes of a phase, i.e. removing the mass dependence, gives 2.21, 2.26, 1.98, 1.83 and loses
+most of the flattening. That mass dependence of boundedness is measured ($\alpha_{\rm tot} \propto M^{-0.26}$ in the
+remnant), not derived: a uniform-density scaling would give $M^{-2/3}$ and is wrong.
+
+## What is derived, what is measured, what is fitted
+
+- Derived: C2 (cascade, one assumed exponent, verified), C3 (virial parameter), the location of the threshold in C4, C5.
+- Measured inputs: $\rho_{\rm mid}$, $H$, the clump masses and radii and their mass-size relation, the Alfvén Mach number,
+  the two efficiency levels and their scatter, the capture fraction 0.5, the mass dependence of boundedness.
+- Fitted on this run: $\epsilon_S = 0.02$ in C1 (flow-driven case only).
+- Not covered: the timing of the pericentre bursts, the absolute slope offset of 0.15 to 0.2 in C6, the clump-to-clump
+  scatter.
 
 ![clump virial parameter](figs/partC_alpha.png)
 
 ![clump efficiency](figs/partC_eff.png)
-
-The physical content, stated without claiming more than the verified steps: PRFM fixes the pressure at the weight, in the
-merger as in the disc. Star formation responds to the effective dispersion, pressure over midplane density, because the
-clumps inherit it through the cascade and are unbound in proportion to its square. Feedback regulation holds that dispersion
-near 9 km/s and 90 % of the clumps are bound; when the merger flow and the field carry the pressure it is near 20 km/s at
-equal or larger weight, only 12 % of the clumps are bound, and the efficiency drop follows.
-
-## What C predicts, and what happened when tested
-
-1. **Star formation per unit dense gas equals the bound fraction times 5 %**, with the bound fraction set by the layer's
-   effective dispersion. Per 25 Myr interval the measured conversion of dense gas to stars over the bound fraction is
-   0.08 to 0.17 in the four disc-phase intervals, and the model predicts the quiescent interval exactly (0.0026 predicted,
-   0.0026 measured). It fails for the two pericentre bursts, by a factor of 3 at 110 Myr and 70 at 185 Myr: there the
-   unbound clumps convert ten times the floor and the nuclear complex collapses faster than its pre-onset virial state
-   implies. C is quasi-static; the bursts are dynamical.
-2. **The cluster mass function should flatten because low-mass clumps become unbound first.** Falsified. The bound fraction
-   is independent of clump mass within each phase, so C does not explain the change of the cluster mass function shape.
-   That stays an empirical result of Part B.
-3. **Transferable:** the dense-gas efficiency is a step in the total virial parameter, flat near 5 % below the virial
-   threshold and near 0.1 % well above it. Cloud samples in ordinary discs sit below the threshold and should show no
-   dependence on the virial parameter; environments whose turbulence is driven externally should show the cliff.
