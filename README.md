@@ -182,39 +182,34 @@ scatter 1.5 to 2 dex, and it drives the predicted efficiency to zero in the remn
 calibrated ingredient. Where it comes from is Part C.
 
 ---
-# Part C. The physical link
+# Part C. Towards an analytic model (candidate, partly verified)
 
-Part C is what follows from physics without a constant fitted on this run, tested against the measurements of Part A. It is
-one chain of three steps, and the first two hold with no phase dependence.
+Part C is what can be written as equations with no exponent fitted on this run, then tested against Part A. It is kept apart
+from B, which is the empirical link. Status of each step:
 
-**1. The clumps inherit the layer's turbulence.** Following each dense clump to the snapshot before it forms stars, its
-velocity dispersion is set by the effective dispersion of the 0.5 kpc patch around it, the square root of midplane pressure
-over midplane density, scaled down to the clump size: the clump dispersion goes as the patch dispersion to the power 0.9
-times the size ratio to the power 0.6, with 0.19 dex scatter and phase residuals within 0.02 dex. This is a turbulent cascade
-from the patch scale to the clump scale, and it does not care whether the patch turbulence is driven by feedback or by the
-merger flow.
+1. **Layer dispersion.** Feedback-regulated: the Ostriker & Kim yield. Flow-driven: mixing-length balance of shear injection
+   against dissipation, sigma_eff = (2 epsilon_S)^{1/2} H S. This is the shear closure of Part B with its one constant, so it
+   enters C as an input, not a prediction.
+2. **Cascade to the clump.** Burgers scaling, sigma(l) = sigma_eff (l/H)^{1/2}. Verified: the clump dispersion before onset is
+   predicted to a median ratio of 0.95 with 0.2 dex scatter and no phase dependence, no free parameter.
+3. **Clump virial parameter.** alpha = (5/3) sigma(R)^2 R / (G M) with the measured clump mass. Verified: measured over
+   predicted has a median of 0.9, 0.4 dex scatter, rank correlation 0.8, and phase medians between 0.8 and 1.1. Derived.
+4. **Efficiency as the bound fraction.** For a clump with density falling as r^-2, the virial parameter scales with radius,
+   so only the inner fraction 1/alpha is bound: epsilon = epsilon_0 / alpha, exponent minus one derived. Measured exponent
+   minus 0.8 to minus 0.9; epsilon_0 = 0.03; but epsilon_0 drifts by a factor of 4 to 8 from the first disc phase to the
+   remnant, and the clump-to-clump scatter is 0.75 dex. Right form, one constant, normalisation not derived.
 
-**2. Therefore the clump boundedness is set by the layer's effective dispersion.** The clumps sit at the star-formation
-density, so their virial parameter goes as the square of their inherited dispersion, i.e. as the patch pressure over the
-midplane density. All four phases lie on one line with a slope of 1.07 and phase offsets of 0.2 dex. Vertical equilibrium is
-irrelevant to it: the virial parameter does not correlate with pressure over weight at all.
+So C is analytic from the layer's effective dispersion down to the clump virial parameter, and analytic in form but not in
+normalisation for the efficiency. What it explains in Part A: the tenfold rise of the clump virial parameter through the
+merger and, through it, the bulk of the fifty-fold efficiency drop; what it does not: a residual factor of 4 to 8 between
+phases and the intrinsic scatter.
 
 ![clump virial parameter](figs/partC_alpha.png)
 
-**3. And the efficiency follows.** The fraction of a clump turned into stars falls as the layer's effective dispersion to the
-power minus 1.7, with the magnetic share of the pressure adding a weaker factor; the phase offsets shrink to 0.2 to 0.3 dex and
-the remaining 0.7 dex is clump-to-clump scatter that no patch or clump quantity predicts. This third step is measured, not
-derived: the exponent of efficiency against virial parameter (about minus 0.8) is not given by an existing theory that we
-tested.
-
 ![clump efficiency](figs/partC_eff.png)
 
-**What this says about PRFM in a merger.** PRFM fixes the midplane pressure at the weight, and it does so in the merger too.
-But star formation does not respond to the pressure; it responds to the effective dispersion, pressure over midplane density.
-Under feedback regulation the yield fixes that dispersion near 9 km/s, clumps are marginally bound and convert 3 to 8 % of
-their mass. When the merger flow and the saturated field supply the pressure instead, the dispersion is 19 to 21 km/s at
-equal or larger weight, the clump virial parameter rises tenfold, and the efficiency drops to a tenth of a percent. The entire
-effect of the merger on star formation is a factor of two in the effective dispersion, squared into the virial parameter and
-then into the efficiency. The quiescent interval is the point where that dispersion is highest for its weight. On the cluster
-side this is why the cluster mass function flattens and its top grows while the cloud population does not change: the same
-factor of two, acting through the efficiency of every clump.
+The physical content, stated without claiming more than the verified steps: PRFM fixes the pressure at the weight, in the
+merger as in the disc. Star formation responds to the effective dispersion, pressure over midplane density, because the
+clumps inherit it through the cascade and are unbound in proportion to its square. Feedback regulation holds that dispersion
+near 9 km/s; when the merger flow and the field carry the pressure it is near 20 km/s at equal or larger weight, the clumps
+are ten times less bound, and most of the efficiency drop follows.
