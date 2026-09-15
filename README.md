@@ -84,7 +84,7 @@ explained.
 
 ## Cluster mass function
 Bound star clusters younger than 10 Myr, per phase, with the maximum-likelihood power-law index above 300 Msun. The slope
-flattens from 1.9 before the merger to 1.55 in the remnant, and the most massive cluster grows from 1e4 to over 1e5 Msun.
+flattens from 1.85 before the merger to 1.55 in the remnant, and the most massive cluster grows from 1e4 to over 1e5 Msun.
 Both trends are robust to the minimum group size, the linking length and the bound flag. Below 300 Msun in the coalescence
 and remnant phases the counts drop because only a third of the small groups are bound, so the function is quoted from
 300 Msun up. Since the cloud mass function does not change (above), the flattening and the growing top come from the
@@ -105,14 +105,22 @@ clusters.
 
 ## Largest cluster and weight
 The most massive bound cluster formed in each 25 Myr interval against $\mathcal{W}$, the weight of the gas layer (within 0.5 kpc of
-the midplane) of the heaviest star-forming patches in that interval (90th percentile over patches). Labels give the start of each interval in
-Myr. The line is not a fit: it is half of the PRFM star formation rate at that weight, times the patch area and a 10 Myr
-burst, i.e. the size of the largest burst a patch of that weight can produce, halved by the capture fraction of the
-previous figure. Seven active intervals spanning a factor of 30 in weight follow it with 0.1 dex scatter. The one quiescent
-interval, 160 to 185 Myr, has the highest weight of all and sits 100 times below: the weight sets the ceiling of the
-cluster mass function, and the duty cycle of star formation decides whether it is reached.
+the midplane) of the heaviest star-forming patches in that interval (90th percentile over patches). Labels give the start of each
+interval in Myr. The line is not a fit: it is half of the PRFM star formation rate at that weight, times the patch area and a 10 Myr
+burst, i.e. the size of the largest burst a patch of that weight can produce, halved by the capture fraction of the previous figure.
+Seven active intervals spanning a factor of 30 in weight follow it (slope 0.94 against the median weight, 0.09 dex scatter). The one
+quiescent interval, 160 to 185 Myr, has the highest weight of all and sits 100 times below. The weight sets the cluster mass while
+star formation is on; whether it is on is a separate question, answered below.
 
 ![ceiling](figs/story_7_ceiling.png)
+
+## Every cluster against its patch
+All 580 bound young clusters against the weight, total pressure and star formation rate of the 0.5 kpc patch they formed in. The
+dashed line in each panel is half the burst that PRFM allows at that weight or pressure, or half the stars actually formed in the
+patch. Individual cluster masses fill two decades below the line and correlate only weakly with the patch state; the line is an
+upper envelope that 9 % of clusters exceed. The weight bounds the cluster mass, it does not set it cluster by cluster.
+
+![cluster environment](figs/cluster_env.png)
 
 ## Line of sight
 The equilibrium test repeated with the column taken along other directions: the disc's angular-momentum axis, and normals
