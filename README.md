@@ -194,15 +194,18 @@ from B, which is the empirical link. Status of each step:
    predicted to a median ratio of 0.95 with 0.2 dex scatter and no phase dependence, no free parameter.
 3. **Clump virial parameter.** alpha = (5/3) sigma(R)^2 R / (G M) with the measured clump mass. Verified: measured over
    predicted has a median of 0.9, 0.4 dex scatter, rank correlation 0.8, and phase medians between 0.8 and 1.1. Derived.
-4. **Efficiency as the bound fraction.** For a clump with density falling as r^-2, the virial parameter scales with radius,
-   so only the inner fraction 1/alpha is bound: epsilon = epsilon_0 / alpha, exponent minus one derived. Measured exponent
-   minus 0.8 to minus 0.9; epsilon_0 = 0.03; but epsilon_0 drifts by a factor of 4 to 8 from the first disc phase to the
-   remnant, and the clump-to-clump scatter is 0.75 dex. Right form, one constant, normalisation not derived.
+4. **Efficiency as a boundedness threshold.** The efficiency against the total virial parameter (kinetic plus magnetic,
+   alpha times one plus the inverse squared Alfvén Mach number) is a step, not a power law: flat at 5 % for alpha_tot below
+   4, a steep drop between 4 and 16, and a floor at 0.1 % above. The transition is the virial criterion itself, kinetic plus
+   magnetic energy against gravity, so its location is first principles; the two levels, 5 % for bound clumps and 0.1 % for
+   unbound ones, are measured. With the virial parameter taken not from the clump but predicted from the layer through steps
+   2 and 3, the model reproduces the per-phase efficiency to within 0.1 dex in three phases and 0.26 dex in the first, where
+   the field is not yet saturated. The clump-to-clump scatter of 0.7 dex remains.
 
-So C is analytic from the layer's effective dispersion down to the clump virial parameter, and analytic in form but not in
-normalisation for the efficiency. What it explains in Part A: the tenfold rise of the clump virial parameter through the
-merger and, through it, the bulk of the fifty-fold efficiency drop; what it does not: a residual factor of 4 to 8 between
-phases and the intrinsic scatter.
+So C is analytic from the layer's effective dispersion down to whether a clump is bound, and the efficiency follows as a
+threshold with two measured levels. What it explains in Part A: the tenfold rise of the clump virial parameter through the
+merger, and the fifty-fold efficiency drop as 80 % of the clumps cross the boundedness threshold; what it does not: the two
+levels themselves and the intrinsic scatter.
 
 ![clump virial parameter](figs/partC_alpha.png)
 
@@ -211,5 +214,5 @@ phases and the intrinsic scatter.
 The physical content, stated without claiming more than the verified steps: PRFM fixes the pressure at the weight, in the
 merger as in the disc. Star formation responds to the effective dispersion, pressure over midplane density, because the
 clumps inherit it through the cascade and are unbound in proportion to its square. Feedback regulation holds that dispersion
-near 9 km/s; when the merger flow and the field carry the pressure it is near 20 km/s at equal or larger weight, the clumps
-are ten times less bound, and most of the efficiency drop follows.
+near 9 km/s and 90 % of the clumps are bound; when the merger flow and the field carry the pressure it is near 20 km/s at
+equal or larger weight, only 12 % of the clumps are bound, and the efficiency drop follows.
