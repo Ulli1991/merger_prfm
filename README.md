@@ -98,14 +98,19 @@ clusters.
 
 ![reservoir](figs/story_6_reservoir.png)
 
----
-## Not yet converted
-
-Largest bound cluster formed per 25 Myr against the weight of the star-forming patches. Over a factor of 30 in weight the
-largest cluster scales almost linearly with 0.1 dex scatter; the one quiescent interval sits 100 times below. The weight
-sets the ceiling; the duty cycle decides whether it is reached.
+## The weight sets the ceiling
+The most massive bound cluster formed in each 25 Myr interval against W, the weight of the gas layer (within 0.5 kpc of
+the midplane) of the star-forming patches in that interval, median over patches. Labels give the start of each interval in
+Myr. The line is not a fit: it is half of the PRFM star formation rate at that weight, times the patch area and a 10 Myr
+burst, i.e. the size of the largest burst a patch of that weight can produce, halved by the capture fraction of the
+previous figure. Seven active intervals spanning a factor of 30 in weight follow it with 0.1 dex scatter. The one quiescent
+interval, 160 to 185 Myr, has the highest weight of all and sits 100 times below: the weight sets the ceiling of the
+cluster mass function, and the duty cycle of star formation decides whether it is reached.
 
 ![ceiling](figs/story_7_ceiling.png)
+
+---
+## Not yet converted
 
 Line-of-sight test: the pre-merger disc is an equilibrium layer only along its angular-momentum axis; after coalescence no
 orientation makes the debris a layer.
