@@ -19,12 +19,13 @@ Fraction of the total midplane pressure accounted for by the feedback yields of 
 
 ![feedback share](figs/story_2_feedback.png)
 
----
-## Not yet converted
-
-Shear closure for quiescent patches, epsilon_S = 0.02.
+## Shear-driven turbulence
+Turbulent pressure of patches without star formation in the last 10 Myr against the shear-work term (gas surface density times scale height times squared shear rate); one coefficient of 0.02 fits all phases.
 
 ![shear closure](figs/story_3_shear.png)
+
+---
+## Not yet converted
 
 Magnetic field growth and magnetic-to-kinetic pressure ratio.
 
