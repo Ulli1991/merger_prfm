@@ -6,8 +6,8 @@ it imply for the masses of the star clusters that form? One high-resolution simu
 passage, a second passage, coalescence and the settling of the remnant.
 
 This page keeps two things apart. **Part A** is what the simulation shows: measurements, stated without a model behind them.
-**Part B** is the analytic model built to explain Part A, with each ingredient tested against one measurement and the
-outcome stated, including where it fails.
+**Part B** is a semi-empirical model built to explain Part A: PRFM plus ingredients that are either published theory or
+constants calibrated on this run, each tested against one measurement, with the outcome stated including where it fails.
 
 ---
 # Part A. What the simulation shows
@@ -116,12 +116,25 @@ of those small groups are bound: that end of the function is set by the bound fl
 
 
 ---
-# Part B. The analytic model and its tests
+# Part B. A semi-empirical model and its tests
 
-The model is PRFM with two additions for a merger: a flow-driving term in the turbulent pressure budget and the measured
-magnetic field as a third source of support. Below it, a midplane-density threshold decides which patches form stars, a
-fragmentation mass function supplies the clouds, and a clump-scale efficiency law converts clouds to stars. Each piece is
-tested against one measurement of Part A.
+This is not a theory. It is PRFM extended with ingredients that are either taken from published work or calibrated on this
+simulation, and the table says which is which. A closed theory would derive the calibrated numbers; until it does, the
+model is a description with a small number of measured constants, and its value is in showing which measured constant
+carries which effect.
+
+| ingredient | what it does | source | calibrated on this run |
+|---|---|---|---|
+| vertical equilibrium, PRFM rate | pressure balances weight; star formation rate at a given weight | Ostriker & Kim 2022 | nothing (their fits used as published) |
+| flow-driving term | turbulent pressure of patches without star formation | shear-work closure, form assumed | one coefficient, epsilon_S = 0.02 |
+| magnetic support | third pressure component | measured field | nothing modelled: the field is taken from the simulation |
+| density threshold | which patches form stars | logistic form assumed | threshold and width (2 numbers) |
+| burst size | how much a patch forms when on | PRFM rate, lognormal scatter assumed | normalisation 0.4 and width 0.4 to 0.5 dex per phase |
+| cloud mass function | population of star-forming complexes | gravitational fragmentation, slope 1.6 | measured; not derived here |
+| clump efficiency | fraction of a clump turned into stars | Federrath & Klessen 2012 form under test | open: virial-parameter trend measured, phase offset unexplained |
+| capture fraction | share of a burst in one cluster | measured 0.5 | measured; not derived |
+
+Each ingredient is tested against one measurement of Part A.
 
 ## Pressure budget: the flow term
 What supplies the pressure between bursts. For patches with no star formation in the last 10 Myr, the turbulent pressure
