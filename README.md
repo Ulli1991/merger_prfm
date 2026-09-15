@@ -77,13 +77,18 @@ scale, not in the disc-scale weight distribution.
 
 ![cloud efficiency](figs/clouds_eff.png)
 
----
-## Not yet converted
-
-Cluster mass function per merger phase. The slope above 300 Msun declines from 1.9 to 1.6 through the merger and the
-largest cluster grows from 1e4 to 1.6e5 Msun.
+## Cluster mass function
+Bound star clusters younger than 10 Myr, per phase, with the maximum-likelihood power-law index above 300 Msun. The slope
+flattens from 1.9 before the merger to 1.55 in the remnant, and the most massive cluster grows from 1e4 to over 1e5 Msun.
+Both trends are robust to the minimum group size, the linking length and the bound flag. Below 300 Msun in the coalescence
+and remnant phases the counts drop because only a third of the small groups are bound, so the function is quoted from
+300 Msun up. Since the cloud mass function does not change (above), the flattening and the growing top come from the
+star formation efficiency of the clouds.
 
 ![MF per phase](figs/story_5_mf.png)
+
+---
+## Not yet converted
 
 Largest bound cluster against the young stellar mass of the same patch: one dominant cluster takes about half of each
 burst.
