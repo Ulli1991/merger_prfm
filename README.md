@@ -7,7 +7,10 @@ passage, a second passage, coalescence and the settling of the remnant.
 
 This page keeps two things apart. **Part A** is what the simulation shows: measurements, stated without a model behind them.
 **Part B** is a semi-empirical model built to explain Part A: PRFM plus ingredients that are either published theory or
-constants calibrated on this run, each tested against one measurement, with the outcome stated including where it fails.
+constants calibrated on this run, each tested against one measurement, with the outcome stated including where it fails;
+it ends with a physical interpretation of the chain, still built on measured inputs. **Part C** is reserved for a closed
+calculation from the layer state to the cluster mass function, which does not exist yet; it states what it would have to
+contain.
 
 ---
 # Part A. What the simulation shows
@@ -182,13 +185,14 @@ scatter 1.5 to 2 dex, and it drives the predicted efficiency to zero in the remn
 calibrated ingredient. Where it comes from is Part C.
 
 ---
-# Part C. The derivation, step by step
+## B, physical interpretation: the chain from the layer to the clusters
 
-Everything below is written so it can be checked. Each step states the physics, the equation, what is assumed, and the
+This section stays inside Part B. It is built on measured inputs at both ends and is therefore an interpretation of the
+empirical model, not a theory. Everything below is written so it can be checked. Each step states the physics, the equation, what is assumed, and the
 number it was tested against. "Measured" means taken from the simulation; "derived" means it follows from the previous
 step with no constant fitted here.
 
-## C1. Pressure and effective dispersion of the layer
+### B-i. Pressure and effective dispersion of the layer
 
 Vertical equilibrium gives the midplane pressure from the weight of the gas layer, $P = \mathcal{W}$ (Part A: holds to
 5 % outside coalescence). The midplane density $\rho_{\rm mid}$ is measured. Define the effective dispersion
@@ -208,7 +212,7 @@ equilibrium fixes $P$, and $\rho_{\rm mid}$ adjusts. What fixes $\sigma_{\rm eff
 
 The magnetic field is measured, not modelled: it saturates near equipartition with the turbulence it is driven by.
 
-## C2. Cascade from the layer to the clump
+### B-ii. Cascade from the layer to the clump
 
 Assumption: below the driving scale $H$ the turbulence is a supersonic (Burgers) cascade,
 
@@ -218,7 +222,7 @@ Test: for every dense clump, at the snapshot before it forms stars, the predicte
 velocity dispersion. Ratio measured/predicted: median 0.95, scatter 0.20 dex, per-phase medians 0.90, 0.94, 1.02, 1.03.
 No constant. (A steeper exponent of 0.6 overshoots by 1.37.)
 
-## C3. Virial parameter of the clump
+### B-iii. Virial parameter of the clump
 
 With the clump's measured mass $M$ and half-mass radius $r_h$, and $\sigma_{\rm 1d}^2 = \sigma(r_h)^2/3$,
 
@@ -234,7 +238,7 @@ not use: the clump mass and radius are measured, so the mass-size relation of th
 uniform sphere at the threshold density is wrong by factors of 2 to 12 and phase dependent. The Alfvén Mach number is
 measured per clump; it is 2.2 in the first disc phase and 1.0 to 1.2 afterwards.
 
-## C4. Bound or not: the efficiency
+### B-iv. Bound or not: the efficiency
 
 The virial theorem says a clump with $2E_{\rm kin} + E_B < |E_{\rm grav}|$ collapses. In the units above that is
 $\alpha_{\rm tot} \lesssim 2$ with $R$ the full radius, or $\approx 4$ with $R = r_h$. The efficiency measured against
@@ -245,11 +249,11 @@ $$\epsilon = \epsilon_b \ \ (\alpha_{\rm tot} < \alpha_c), \qquad \epsilon = \ep
 with the fit $\alpha_c = 4.0$, $\epsilon_b = 0.050$, $\epsilon_u = 0.0012$, a transition steepness of 4.7, and 0.69 dex
 of clump-to-clump scatter around it. The location $\alpha_c$ is the virial criterion. The two levels are measured; the
 bound one is consistent with about 1 % per free-fall time over the six free-fall times a clump lives, the standard number,
-but is not derived here. With $\alpha_{\rm tot}$ taken not from the clump but predicted from the layer through C2 and C3,
+but is not derived here. With $\alpha_{\rm tot}$ taken not from the clump but predicted from the layer through B-ii and B-iii,
 the same fit gives $\alpha_c = 3.5$, $\epsilon_b = 0.054$, $\epsilon_u = 0.0012$, and per-phase offsets of +0.26, −0.02,
 −0.02, −0.10 dex. The first disc phase sits above the plateau, where the field is not yet saturated.
 
-## C5. Star formation of the layer
+### B-v. Star formation of the layer
 
 The star formation of a phase is the bound fraction times the bound efficiency, plus the floor:
 
@@ -258,17 +262,17 @@ $$\frac{M_\star}{M_{\rm dense}} = f_b\,\epsilon_b + (1 - f_b)\,\epsilon_u,\qquad
 Test per 25 Myr interval over all dense clumps: $f_b$ = 0.85, 0.52, 0.48, 0.37, 0.14, 0.25, 0.06, 0.015; measured
 conversion over $f_b$ = 0.11, 0.17, 0.13, 0.08 in the disc phases, and the quiescent interval is predicted exactly
 (0.0026 vs 0.0026). The two pericentre bursts are under-predicted by 3 and 70: there the compression is faster than the
-clump's pre-onset state implies. C is quasi-static and does not contain the orbit.
+clump's pre-onset state implies. The chain is quasi-static and does not contain the orbit.
 
 This is also the statement about PRFM: the pressure is at the weight throughout, but the star formation rate at a given
 weight is $f_b(\sigma_{\rm eff})\,\epsilon_b$ times the dense gas, and $f_b$ falls from 0.9 to 0.03 when $\sigma_{\rm eff}$
 goes from 9 to 20 km/s at the same or larger weight.
 
-## C6. From clumps to the cluster mass function
+### B-vi. From clumps to the cluster mass function
 
 Measured inputs: a burst is one cold complex with one to three dense clumps (Part A), and half of a burst's stars end
 in one cluster (Part A). So the cluster mass function is the distribution of $0.5\,\epsilon\,M$ over complexes, with
-$\epsilon$ drawn from the bound or unbound distribution according to C4.
+$\epsilon$ drawn from the bound or unbound distribution according to B-iv.
 
 Construction: every complex of a phase, bound if $\alpha_{\rm tot} < \alpha_c$, gets an efficiency drawn from the measured
 lifetime-efficiency distribution of bound (median 0.022, 0.7 dex) or unbound (0.0017, 0.85 dex) complexes; cluster mass
@@ -290,15 +294,37 @@ the bound flag among the complexes of a phase, i.e. removing the mass dependence
 most of the flattening. That mass dependence of boundedness is measured ($\alpha_{\rm tot} \propto M^{-0.26}$ in the
 remnant), not derived: a uniform-density scaling would give $M^{-2/3}$ and is wrong.
 
-## What is derived, what is measured, what is fitted
+### What is derived, what is measured, what is fitted
 
-- Derived: C2 (cascade, one assumed exponent, verified), C3 (virial parameter), the location of the threshold in C4, C5.
+- Derived: B-ii (cascade, one assumed exponent, verified), B-iii (virial parameter), the location of the threshold in B-iv, B-v.
 - Measured inputs: $\rho_{\rm mid}$, $H$, the clump masses and radii and their mass-size relation, the Alfvén Mach number,
   the two efficiency levels and their scatter, the capture fraction 0.5, the mass dependence of boundedness.
 - Fitted on this run: $\epsilon_S = 0.02$ in C1 (flow-driven case only).
-- Not covered: the timing of the pericentre bursts, the absolute slope offset of 0.15 to 0.2 in C6, the clump-to-clump
+- Not covered: the timing of the pericentre bursts, the absolute slope offset of 0.15 to 0.2 in B-vi, the clump-to-clump
   scatter.
 
 ![clump virial parameter](figs/partC_alpha.png)
 
 ![clump efficiency](figs/partC_eff.png)
+
+---
+# Part C. The closed calculation (not done)
+
+Part C is reserved for a calculation that takes as input only the state of the layer, its weight and what drives its
+turbulence, and returns the cluster mass function, with the simulation used solely to test the result. Nothing in Part B
+qualifies: every chain there reads the clump population, the efficiency levels, their scatter and the capture fraction from
+the run. For C to exist it has to contain, with no quantity taken from the simulation:
+
+1. the effective dispersion of the layer from the energy budget of the driving, feedback yield or shear injection, without
+   a coefficient fitted here;
+2. the population of dense clumps, mass function and mass-size relation, from fragmentation of the turbulent layer at that
+   dispersion; this is also what decides whether massive clumps stay bound when the dispersion rises;
+3. the fraction of each clump that turns into stars from a collapse calculation, including why bound clumps convert a few
+   percent and unbound ones a tenth of that;
+4. how the stars of a collapsing complex divide into clusters, in place of the measured capture fraction.
+
+The measurements of Part A and the chain of Part B say what such a calculation must reproduce: an invariant clump mass
+function of slope 1.6, a clump velocity dispersion inherited from the layer as a square-root cascade, a boundedness
+threshold at the virial criterion, a bound efficiency near 5 %, a hundredfold suppression of star formation when the layer
+dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.85 to 1.55 with its top rising
+twentyfold.
