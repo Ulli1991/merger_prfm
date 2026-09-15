@@ -185,10 +185,12 @@ scatter 1.5 to 2 dex, and it drives the predicted efficiency to zero in the remn
 calibrated ingredient. Where it comes from is Part C.
 
 ---
-## B, physical interpretation: the chain from the layer to the clusters
+## B, the chain from the layer to the clusters: measured relations, with conjectured physics
 
-This section stays inside Part B. It is built on measured inputs at both ends and is therefore an interpretation of the
-empirical model, not a theory. Everything below is written so it can be checked. Each step states the physics, the equation, what is assumed, and the
+This section stays inside Part B. The relations in it are measured. The physical reasoning attached to them, a turbulent
+cascade from the patch to the clump, a virial criterion for the efficiency step, a mixing-length balance for the
+flow-driven dispersion, is conjecture that fits the numbers and has not been established independently; it should be
+read as a labelling of the correlations, not as an explanation of them. Everything below is written so it can be checked. Each step states the physics, the equation, what is assumed, and the
 number it was tested against. "Measured" means taken from the simulation; "derived" means it follows from the previous
 step with no constant fitted here.
 
@@ -264,7 +266,7 @@ conversion over $f_b$ = 0.11, 0.17, 0.13, 0.08 in the disc phases, and the quies
 (0.0026 vs 0.0026). The two pericentre bursts are under-predicted by 3 and 70: there the compression is faster than the
 clump's pre-onset state implies. The chain is quasi-static and does not contain the orbit.
 
-This is also the statement about PRFM: the pressure is at the weight throughout, but the star formation rate at a given
+Stated as a measurement about PRFM: the pressure is at the weight throughout, but the star formation rate at a given
 weight is $f_b(\sigma_{\rm eff})\,\epsilon_b$ times the dense gas, and $f_b$ falls from 0.9 to 0.03 when $\sigma_{\rm eff}$
 goes from 9 to 20 km/s at the same or larger weight.
 
