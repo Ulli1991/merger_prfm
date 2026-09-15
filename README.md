@@ -174,6 +174,47 @@ lognormal, which the cloud figures above trace to the scatter in cloud star form
 ![burst kernel](figs/burst_kernel.png)
 
 ## Efficiency law
-The remaining open ingredient. The clump efficiency follows the kinetic virial parameter but keeps a phase-dependent
-normalisation of about 0.8 dex. The test in progress evaluates a magnetically corrected virial parameter and the Federrath &
-Klessen (2012) multi-freefall efficiency on the measured pre-onset clump states, including the field. Outcome to be added.
+Outcome of the test. Adding magnetic support to the clump virial parameter (kinetic times one plus the inverse squared Alfvén
+Mach number) halves the phase offset of the efficiency at fixed virial parameter, from 0.7 to 0.5 dex, and does not reduce the
+0.7 dex clump-to-clump scatter. The Federrath & Klessen (2012) multi-freefall efficiency evaluated on the measured clump states
+(density-PDF width, virial parameter, Mach number, plasma beta) does not describe the data: rank correlation 0.2 to 0.5,
+scatter 1.5 to 2 dex, and it drives the predicted efficiency to zero in the remnant. So within Part B the efficiency stays a
+calibrated ingredient. Where it comes from is Part C.
+
+---
+# Part C. The physical link
+
+Part C is what follows from physics without a constant fitted on this run, tested against the measurements of Part A. It is
+one chain of three steps, and the first two hold with no phase dependence.
+
+**1. The clumps inherit the layer's turbulence.** Following each dense clump to the snapshot before it forms stars, its
+velocity dispersion is set by the effective dispersion of the 0.5 kpc patch around it, the square root of midplane pressure
+over midplane density, scaled down to the clump size: the clump dispersion goes as the patch dispersion to the power 0.9
+times the size ratio to the power 0.6, with 0.19 dex scatter and phase residuals within 0.02 dex. This is a turbulent cascade
+from the patch scale to the clump scale, and it does not care whether the patch turbulence is driven by feedback or by the
+merger flow.
+
+**2. Therefore the clump boundedness is set by the layer's effective dispersion.** The clumps sit at the star-formation
+density, so their virial parameter goes as the square of their inherited dispersion, i.e. as the patch pressure over the
+midplane density. All four phases lie on one line with a slope of 1.07 and phase offsets of 0.2 dex. Vertical equilibrium is
+irrelevant to it: the virial parameter does not correlate with pressure over weight at all.
+
+![clump virial parameter](figs/partC_alpha.png)
+
+**3. And the efficiency follows.** The fraction of a clump turned into stars falls as the layer's effective dispersion to the
+power minus 1.7, with the magnetic share of the pressure adding a weaker factor; the phase offsets shrink to 0.2 to 0.3 dex and
+the remaining 0.7 dex is clump-to-clump scatter that no patch or clump quantity predicts. This third step is measured, not
+derived: the exponent of efficiency against virial parameter (about minus 0.8) is not given by an existing theory that we
+tested.
+
+![clump efficiency](figs/partC_eff.png)
+
+**What this says about PRFM in a merger.** PRFM fixes the midplane pressure at the weight, and it does so in the merger too.
+But star formation does not respond to the pressure; it responds to the effective dispersion, pressure over midplane density.
+Under feedback regulation the yield fixes that dispersion near 9 km/s, clumps are marginally bound and convert 3 to 8 % of
+their mass. When the merger flow and the saturated field supply the pressure instead, the dispersion is 19 to 21 km/s at
+equal or larger weight, the clump virial parameter rises tenfold, and the efficiency drops to a tenth of a percent. The entire
+effect of the merger on star formation is a factor of two in the effective dispersion, squared into the virial parameter and
+then into the efficiency. The quiescent interval is the point where that dispersion is highest for its weight. On the cluster
+side this is why the cluster mass function flattens and its top grows while the cloud population does not change: the same
+factor of two, acting through the efficiency of every clump.
