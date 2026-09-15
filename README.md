@@ -58,18 +58,20 @@ vertical support, not modelled.
 ![dynamo](figs/story_4_dynamo.png)
 
 ## Clouds
-Stars keep the identity of the gas particle they formed from, so every young star can be traced to the cold cloud it came
-from. Nearly all stars formed within 10 Myr of a snapshot come from gas already sitting in a cold cloud above 10 cm^-3,
-and in 85 to 95 % of star-forming events a single cloud supplies essentially all the stars. A burst is the collapse of one
-cloud.
+Stars keep the identity of the gas particle they formed from, so every young star can be traced to the cold gas it came
+from. Nearly all stars formed within 10 Myr of a snapshot come from gas already sitting in a cold cloud above 10 cm^-3.
+Those clouds are 30 to 50 pc complexes of 1e4 to 1e5 Msun, at a mean density near 10 cm^-3, the low-density giant molecular
+clouds of a dwarf galaxy. In 85 to 95 % of star-forming events a single complex supplies essentially all the stars, and
+inside it the stars come from one to three dense clumps above 100 cm^-3 (a few thousand Msun, radii of 4 to 8 pc). A burst
+is the collapse of one such complex; the largest bursts, and the remnant nucleus, draw on many clumps.
 
-The mass function of those clouds (T < 1000 K, n > 10 cm^-3, friends-of-friends at 3 pc) has a slope of 1.6 and does not
+The mass function of the complexes (T < 1000 K, n > 10 cm^-3, friends-of-friends at 3 pc) has a slope of 1.6 and does not
 change through the merger. Only the most massive end grows, as the remnant assembles cold complexes of a million solar
 masses and more.
 
 ![cloud mass function](figs/clouds_mf.png)
 
-What does change is how efficiently clouds turn gas into stars. The fraction of a cloud's mass converted within 10 Myr
+What does change is how efficiently the complexes turn gas into stars. The fraction of a complex's mass converted within 10 Myr
 rises with the cloud's mean density and drops fifteen-fold from the disc phase to the remnant, where the clouds are more
 turbulent and less bound. Its scatter of 0.7 to 0.8 dex is what produces the 0.4 dex spread of burst masses at fixed
 environment, and through it the slope of the cluster mass function. The physics of the slope lives here, at the cloud
