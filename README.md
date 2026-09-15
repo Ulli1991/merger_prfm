@@ -2,7 +2,7 @@
 
 Figures from the PRFM (pressure-regulated, feedback-modulated; Ostriker & Kim 2022) test of the dwarf-galaxy merger
 simulation and its link to the star cluster mass function. Code: `/raven/u/uli/dwarf_merger` (prfm/paper_figs.py).
-Figures are added here as they are converted to paper style.
+Figures are converted to paper style one by one and replaced in place; the ones below the line are still the analysis versions.
 
 ## Merger phases
 Separation of the two nuclei; the four phases used throughout.
@@ -18,3 +18,56 @@ Total midplane pressure over the weight of the gas, for the full column and for 
 Fraction of the total midplane pressure accounted for by the feedback yields of Ostriker & Kim (2022) at the local star formation rate; the rest is supplied by the flow.
 
 ![feedback share](figs/story_2_feedback.png)
+
+---
+## Not yet converted
+
+Shear closure for quiescent patches, epsilon_S = 0.02.
+
+![shear closure](figs/story_3_shear.png)
+
+Magnetic field growth and magnetic-to-kinetic pressure ratio.
+
+![dynamo](figs/story_4_dynamo.png)
+
+Cluster mass function per merger phase.
+
+![MF per phase](figs/story_5_mf.png)
+
+![MF phases](figs/mf_phases.png)
+
+Largest bound cluster vs young stellar mass of the patch.
+
+![reservoir](figs/story_6_reservoir.png)
+
+Largest bound cluster per 25 Myr vs the weight of the star-forming patches.
+
+![ceiling](figs/story_7_ceiling.png)
+
+![ceiling detail](figs/ceiling.png)
+
+![cluster link](figs/cluster_link.png)
+
+Exact layer-weight verdict per phase.
+
+![layer verdict](figs/layer_verdict_z05.png)
+
+Line-of-sight dependence of P/W.
+
+![line of sight](figs/prfm_time_los.png)
+
+Pressure sources and dynamo.
+
+![sources dynamo](figs/sources_dynamo.png)
+
+Low-mass end convergence of the cluster MF.
+
+![low-mass convergence](figs/lowmass_convergence.png)
+
+Burst-mass distribution at fixed weight, duty cycle, index per bin.
+
+![burst distribution](figs/burst_dist.png)
+
+Mock (real weights x density-threshold duty cycle x lognormal kernel) vs observed burst-mass distribution.
+
+![burst kernel mock](figs/burst_kernel.png)
