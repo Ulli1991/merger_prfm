@@ -39,8 +39,9 @@ Kim (2022) evaluated at the same pressure: the pressure per unit star formation 
 supply in their simulations. Where the two agree, star formation supplies the pressure. Before coalescence the measured
 curve sits on the yield to within a factor of 2. After coalescence it sits 10 to 100 times above it in the quiet intervals,
 reaching 100 at 160 to 185 Myr: the layer holds far more pressure than its star formation can supply, so that pressure comes
-from elsewhere (the merger flow and the field, next figures), and it drops back to the yield only during the two nuclear
-bursts.
+from elsewhere, and it drops back to the yield only during the two nuclear bursts. "Elsewhere" is defined in the next two
+figures: the ordered large-scale motions of the merger (tidal streaming, infall, rotation, measured as the velocity
+gradient across each 0.5 kpc patch) doing work on the turbulence, and the magnetic field.
 
 ![pressure per unit star formation](figs/story_2_feedback.png)
 
@@ -144,11 +145,15 @@ carries which effect.
 
 Each ingredient is tested against one measurement of Part A.
 
-## Pressure budget: the flow term
-What supplies the pressure between bursts. For patches with no star formation in the last 10 Myr, the turbulent pressure
-follows the shear-work term (gas surface density times scale height times the squared patch-scale shear rate) with one
-coefficient of 0.02 in every phase and no offset. Feedback-only closures miss these patches by up to two orders of
-magnitude. This is the missing term in the PRFM energy balance for a merger.
+## Pressure budget: the shear term
+What "supplied by the flow" means. Each 0.5 kpc patch has, besides its turbulence, an ordered velocity field: the
+differential motion across the patch from the merger's tidal streaming, infall and rotation. Its size is the shear rate S,
+the norm of the velocity-gradient tensor of a linear fit to the gas velocities in the patch, in km/s per kpc. Ordered
+motion with a gradient does work on the gas at the rate of a viscous stress, Sigma sigma H S^2, and that work feeds the
+turbulence. The plot tests this on the patches that have had no star formation in the last 10 Myr, so feedback cannot be
+the source: their turbulent pressure, after removing the linear bulk flow, is plotted against Sigma H S^2. One coefficient,
+0.02, describes all four phases with no offset. Feedback-based yields miss these patches by up to two orders of magnitude.
+This is what the previous figure's excess pressure is: the turbulence the merger's own velocity field keeps stirring.
 
 ![shear closure](figs/story_3_shear.png)
 
