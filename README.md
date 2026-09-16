@@ -9,6 +9,31 @@ Three parts, kept apart. **A**: what the simulation shows, figures with what is 
 semi-empirical model, one set of equations with constants calibrated on the run, and the tests it passes and fails.
 **C**: the closed calculation from the layer state to the cluster mass function, which does not exist yet.
 
+## Status of the PRFM comparison
+
+Reference: the Ostriker & Kim (2022) calibration. The run's own undisturbed disc lasts only from 25 to 40 Myr, since the
+first 25 Myr are the isothermal initial state relaxing and the discs are tidally disturbed from the first passage on.
+
+| | before 1st passage | 1st to 2nd | 2nd to 3rd | 3rd to coalescence |
+|---|---|---|---|---|
+| P over W, layer 1 kpc deep | 1.05 | 0.94 | 0.73 | 0.96 |
+| pressure per unit SFR over the yield, 10 Myr SFR | 1.9 | 1.7 | 37 | 2.5 |
+| same, 40 Myr SFR as in OK22 | 0.6 | 1.6 | 2.5 | 9.4 |
+| SFR at fixed weight vs OK22, 0.5 kpc columns (dex) | -0.5 | -0.6 | -1.8 | -2.2 |
+| same, 0.25 kpc columns (dex) | -0.2 | -0.5 | -1.6 | -2.1 |
+
+Durations. Pressure over weight leaves 0.7 to 1.4 for 24 % of the run (97 to 141 Myr and short episodes at the later
+pericentres) and never leaves 0.5 to 2. The pressure per unit star formation exceeds 3 times the yield for 34 % of the run
+with the 40 Myr rate (107 to 125 and 158 to 207 Myr) and 10 times for 20 %; its time-median over the whole run is 1.9.
+
+Reading. Vertical balance survives the merger, with one interval of moderate shortfall around the second passage during
+which the gas is not a layer in any orientation. The supply of that pressure by star formation does not survive: after the
+second passage the layer holds 10 to 100 times more pressure per unit star formation than feedback yields, and that pressure
+is turbulent and magnetic, sustained by the shear of the merger flow at a fixed coefficient of 0.02. The star formation rate
+at fixed weight falls below the OK22 relation by 0.5 dex in the discs and 2 dex after the second passage, at every column
+size. The balance test itself is meaningful only for columns at least 1 kpc deep and within about 30 degrees of the disc
+normal; the yield and rate comparisons depend on neither.
+
 ---
 # Part A. What the simulation shows
 
