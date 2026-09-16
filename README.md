@@ -2,8 +2,8 @@
 
 Does pressure-regulated, feedback-modulated star formation (PRFM; Ostriker & Kim 2022) survive a galaxy merger, and what
 does it imply for the masses of the star clusters that form? One simulation of two gas-rich dwarf galaxies merging
-(4 Msun gas and star particles, 0.4 pc softening, magnetic fields, resolved supernovae), 226 Myr through first passage,
-second passage, coalescence and the remnant.
+(4 Msun gas and star particles, 0.4 pc softening, magnetic fields, resolved supernovae), 226 Myr through three pericentre
+passages to the final coalescence.
 
 Three parts, kept apart. **A**: what the simulation shows, figures with what is plotted and the numbers. **B**: a
 semi-empirical model, one set of equations with constants calibrated on the run, and the tests it passes and fails.
@@ -14,8 +14,10 @@ semi-empirical model, one set of equations with constants calibrated on the run,
 
 ## Merger phases
 
-Separation of the two nuclei with time. We split the run into four phases used in every other figure: before first passage,
-between passages, coalescence (the first time the nuclei come within 0.5 kpc, solid line) and the remnant.
+Separation of the two nuclei with time. Pericentres at 40, 110, 169 and 217 Myr (dotted lines; the last, the final
+coalescence, solid). The four phases used in every other figure are the intervals between them: before the first passage
+(10 to 40 Myr), first to second passage (40 to 110), second to third passage (110 to 169), and third passage to coalescence
+(169 to 226). The run ends 9 Myr after the nuclei merge, so there is no remnant phase.
 
 ![separation](figs/story_0_sep.png)
 
@@ -23,9 +25,9 @@ between passages, coalescence (the first time the nuclei come within 0.5 kpc, so
 
 The first half of PRFM: does the midplane pressure balance the weight? The ratio of total midplane pressure (thermal plus
 turbulent plus magnetic stress) to weight is shown for two definitions of the weight. Using the full 3 kpc column, the
-ratio drops to 0.3 after coalescence and the model looks broken. Restricting the weight to the gas within 0.5 kpc of the
-midplane, where the star formation happens, the ratio stays at one to within 5 % in the disc phase and the remnant, and
-falls only 20 to 35 % short during coalescence. The apparent failure is the dark-matter weight of tidal debris streaming
+ratio drops to 0.3 after the second passage and the model looks broken. Restricting the weight to the gas within 0.5 kpc of
+the midplane, where the star formation happens, the ratio stays near one before the second passage and after the third, and
+falls 20 to 35 % short between the second and third. The apparent failure is the dark-matter weight of tidal debris streaming
 through the disc at 25 to 30 km/s, which is not a layer in any orientation and does not form stars.
 
 ![equilibrium](figs/story_1_equilibrium.png)
@@ -36,8 +38,8 @@ What is plotted: the measured total midplane pressure of the gas layer divided b
 surface density of the same patches (stars younger than 10 Myr), summed over the clean patches of each snapshot, in
 km/s. This is the pressure the layer holds per unit of star formation. The dashed line is the feedback yield of Ostriker &
 Kim (2022) evaluated at the same pressure: the pressure per unit star formation that supernovae, winds and radiation
-supply in their simulations. Where the two agree, star formation supplies the pressure. Before coalescence the measured
-curve sits on the yield to within a factor of 2. After coalescence it sits 10 to 100 times above it in the quiet intervals,
+supply in their simulations. Where the two agree, star formation supplies the pressure. Before the second passage the measured
+curve sits on the yield to within a factor of 2. After it, it sits 10 to 100 times above it in the quiet intervals,
 reaching 100 at 160 to 185 Myr: the layer holds far more pressure than its star formation can supply, so that pressure comes
 from elsewhere, and it drops back to the yield only during the two nuclear bursts. "Elsewhere" is defined in the next two
 figures: the ordered large-scale motions of the merger (tidal streaming, infall, rotation, measured as the velocity
@@ -48,7 +50,7 @@ gradient across each 0.5 kpc patch) doing work on the turbulence, and the magnet
 ## Magnetic field
 
 The field is seeded at 10 nG and amplified by the turbulence: it e-folds every 10 Myr, saturates near 1 microgauss by
-50 Myr, jumps by a factor of five at coalescence and grows to 10 to 20 microgauss in the remnant, where the magnetic
+50 Myr, jumps by a factor of five at the second passage and grows to 10 to 20 microgauss after the third, where the magnetic
 pressure reaches equipartition with thermal plus turbulent pressure. It is treated as a measured contribution to the
 vertical support, not modelled.
 
@@ -61,10 +63,10 @@ from. Nearly all stars formed within 10 Myr of a snapshot come from gas already 
 Those clouds are 30 to 50 pc complexes of 1e4 to 1e5 Msun, at a mean density near 10 cm^-3, the low-density giant molecular
 clouds of a dwarf galaxy. In 85 to 95 % of star-forming events a single complex supplies essentially all the stars, and
 inside it the stars come from one to three dense clumps above 100 cm^-3 (a few thousand Msun, radii of 4 to 8 pc). A burst
-is the collapse of one such complex; the largest bursts, and the remnant nucleus, draw on many clumps.
+is the collapse of one such complex; the largest bursts, in the merging nuclei, draw on many clumps.
 
 The mass function of the complexes (T < 1000 K, n > 10 cm^-3, friends-of-friends at 3 pc) has a slope of 1.6 and does not
-change through the merger. Only the most massive end grows, as the remnant assembles cold complexes of a million solar
+change through the merger. Only the most massive end grows, as the merging nuclei assemble cold complexes of a million solar
 masses and more.
 
 ![cloud mass function](figs/clouds_mf.png)
@@ -72,7 +74,7 @@ masses and more.
 What does change is how efficiently the clumps turn gas into stars. Following each dense clump through the snapshots by its
 particle IDs, the figure shows the fraction of its peak mass that it ever turned into stars, against its virial parameter
 just before star formation began. More strongly bound clumps convert more, by a factor of 40 over the observed range, and
-the efficiency drops fifty-fold from the disc phase to the remnant, where the clumps are more turbulent. But at the same
+the efficiency drops sixty-fold from before the first passage to after the third, where the clumps are more turbulent. But at the same
 virial parameter the phases are offset by more than an order of magnitude, so the kinetic virial parameter is not the whole
 story, and at fixed state the efficiency still scatters by 0.7 dex. That scatter is what produces the 0.4 dex spread of
 burst masses and the slope of the cluster mass function. This is the one link in the chain that is measured rather than
@@ -83,9 +85,9 @@ explained.
 ## Cluster mass function
 
 Bound star clusters younger than 10 Myr, per phase, with the maximum-likelihood power-law index above 300 Msun. The slope
-flattens from 1.85 before the merger to 1.55 in the remnant, and the most massive cluster grows from 1e4 to over 1e5 Msun.
-Both trends are robust to the minimum group size, the linking length and the bound flag. Below 300 Msun in the coalescence
-and remnant phases the counts drop because only a third of the small groups are bound, so the function is quoted from
+flattens from 1.94 before the first passage to 1.52 after the third, and the most massive cluster grows from 7e3 to 1e5 Msun.
+Both trends are robust to the minimum group size, the linking length and the bound flag. Below 300 Msun after the second
+passage the counts drop because only a third of the small groups are bound, so the function is quoted from
 300 Msun up. Since the cloud mass function does not change (above), the flattening and the growing top come from the
 star formation efficiency of the clouds.
 
@@ -98,7 +100,7 @@ its most massive cluster against the total mass of young stars in the patch. The
 to about 1e5 Msun: each burst makes one dominant cluster that captures about half of the stars formed, with a handful of
 smaller companions. This is the link between the star formation rate of a patch and the top of the cluster mass function,
 and it is why the weight of the gas layer, which sets the size of the largest burst, also sets the mass of the largest
-cluster. The most massive bursts, in the remnant nucleus, fall below the line because their stars are spread over several
+cluster. The most massive bursts, in the merging nuclei, fall below the line because their stars are spread over several
 clusters.
 
 ![reservoir](figs/story_6_reservoir.png)
@@ -115,8 +117,8 @@ upper envelope that 9 % of clusters exceed. The weight bounds the cluster mass, 
 ## Line of sight
 
 The equilibrium test repeated with the column taken along other directions: the disc's angular-momentum axis, and normals
-tilted by 30, 60 and 90 degrees from it. Before coalescence only the disc normal gives a ratio near one, so the disc is a
-layer and the chosen normal is the right one. After coalescence every direction gives 0.2 to 0.5: the deficit does not
+tilted by 30, 60 and 90 degrees from it. Before the second passage only the disc normal gives a ratio near one, so the disc is a
+layer and the chosen normal is the right one. After it every direction gives 0.2 to 0.5: the deficit does not
 depend on viewing angle, so the streaming debris is not a layer in any orientation.
 
 ![line of sight](figs/prfm_time_los.png)
@@ -125,7 +127,7 @@ depend on viewing angle, so the streaming debris is not a layer in any orientati
 
 Local power-law slope of the cluster mass function in three mass bins, per phase, for all friends-of-friends groups
 (filled) and for bound groups only (open). Above 300 Msun the two agree and the slopes are stable against the minimum group
-size and linking length. In the 100 to 300 Msun bin after coalescence the bound-only slope collapses, because only a third
+size and linking length. In the 100 to 300 Msun bin after the second passage the bound-only slope collapses, because only a third
 of those small groups are bound: that end of the function is set by the bound flag, not by the physics, and is not used.
 
 ![low-mass convergence](figs/lowmass_convergence.png)
@@ -172,12 +174,12 @@ with $p_\epsilon$ the lognormal of (3) centred on the step. Evaluated on the mea
 
 | phase | $\sigma_{\rm eff}$ [km/s] | bound fraction | slope pred. | slope meas. | top pred. | top meas. |
 |---|---|---|---|---|---|---|
-| before 1st passage | 8.7 | 0.35 | 2.03 ± 0.09 | 1.84 | 1.0e4 | 7.4e3 |
-| between passages | 9.4 | 0.11 | 1.94 ± 0.07 | 1.77 | 1.4e4 | 2.0e4 |
-| coalescence | 18.3 | 0.05 | 1.83 ± 0.08 | 1.77 | 1.5e5 | 1.0e5 |
-| remnant | 19.3 | 0.03 | 1.70 ± 0.06 | 1.55 | 2.8e5 | 1.5e5 |
+| before 1st passage | 8.7 | 0.42 | 2.06 ± 0.11 | 1.94 | 7.4e3 | 6.7e3 |
+| 1st to 2nd passage | 9.4 | 0.11 | 1.93 ± 0.06 | 1.77 | 1.9e4 | 2.0e4 |
+| 2nd to 3rd passage | 18.3 | 0.05 | 1.85 ± 0.07 | 1.74 | 1.3e5 | 2.8e4 |
+| 3rd passage to coalescence | 19.3 | 0.02 | 1.61 ± 0.07 | 1.52 | 2.8e5 | 1.0e5 |
 
-The slope is 0.15 to 0.2 too steep in every phase; the flattening (0.33 vs 0.29) and the rise of the top (30 vs 20) are
+The slope is 0.1 to 0.2 too steep in every phase; the flattening (0.45 vs 0.42) and the rise of the top (38 vs 15) are
 reproduced. With the mass dependence of boundedness removed (bound flags shuffled) the slopes are 2.21, 2.26, 1.98, 1.83.
 
 **(6) Largest cluster per interval.** Two equivalent statements: $M_{\max} \simeq 0.1\,M_{\star}(25\,{\rm Myr})$, the
@@ -218,7 +220,7 @@ star formation is on; whether it is on is a separate question, answered below.
 Probability that a 0.5 kpc patch formed more than 500 Msun of stars in the last 10 Myr, as a function of its weight $\mathcal{W}$
 (gas layer within 0.5 kpc of the midplane), per phase. Points are measured fractions, lines logistic fits. The weight at
 which half the patches are active rises twenty-fold through the merger. The same threshold expressed in midplane density
-moves by less than a factor of three, so the physical threshold is in density: after coalescence the higher turbulent and
+moves by less than a factor of three, so the physical threshold is in density: after the second passage the higher turbulent and
 magnetic support means the same weight produces a lower midplane density.
 
 ![duty cycle](figs/duty_cycle.png)
@@ -248,12 +250,12 @@ black line is the median over all phases.
 ![clump efficiency](figs/partC_eff.png)
 
 ## What the model gets and does not get
-- Vertical balance, the pressure per unit star formation in the disc phases, the shear term for the quiet patches: yes.
+- Vertical balance, the pressure per unit star formation before the second passage, the shear term for the quiet patches: yes.
 - Which patches form stars: to a factor of 2 from the density threshold.
-- The amount of star formation per interval from the bound fraction: to a factor of 2 in the disc phases and exactly in the
+- The amount of star formation per interval from the bound fraction: to a factor of 2 before the second passage and exactly in the
   quiescent interval; wrong by 3 and 70 in the two pericentre bursts, which are compression events the model does not
   contain.
-- The cluster mass function: the flattening (0.33 predicted, 0.29 measured) and the rise of the top (30 vs 20); the
+- The cluster mass function: the flattening (0.45 predicted, 0.42 measured) and the rise of the top (38 vs 15); the
   absolute slope is 0.15 to 0.2 too steep in every phase.
 - The largest cluster per interval: linear in the weight of the active patches over seven intervals, 0.09 dex; the
   quiescent interval 100 times below.
@@ -278,8 +280,8 @@ the run. For C to exist it has to contain, with no quantity taken from the simul
 The measurements of Part A and the chain of Part B say what such a calculation must reproduce: an invariant clump mass
 function of slope 1.6, a clump velocity dispersion inherited from the layer as a square-root cascade, a boundedness
 threshold at the virial criterion, a bound efficiency near 5 %, a hundredfold suppression of star formation when the layer
-dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.85 to 1.55 with its top rising
-twentyfold.
+dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.94 to 1.52 with its top rising
+fifteenfold.
 
 ---
 # Part C. The closed calculation (not done)
@@ -301,5 +303,5 @@ the run. For C to exist it has to contain, with no quantity taken from the simul
 The measurements of Part A and the chain of Part B say what such a calculation must reproduce: an invariant clump mass
 function of slope 1.6, a clump velocity dispersion inherited from the layer as a square-root cascade, a boundedness
 threshold at the virial criterion, a bound efficiency near 5 %, a hundredfold suppression of star formation when the layer
-dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.85 to 1.55 with its top rising
-twentyfold.
+dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.94 to 1.52 with its top rising
+fifteenfold.
