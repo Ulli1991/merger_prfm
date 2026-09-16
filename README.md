@@ -16,8 +16,12 @@ semi-empirical model, one set of equations with constants calibrated on the run,
 
 Separation of the two nuclei with time. Pericentres at 40, 110, 169 and 217 Myr (dotted lines; the last, the final
 coalescence, solid). The four phases used in every other figure are the intervals between them: before the first passage
-(10 to 40 Myr), first to second passage (40 to 110), second to third passage (110 to 169), and third passage to coalescence
-(169 to 226). The run ends 9 Myr after the nuclei merge, so there is no remnant phase.
+(25 to 40 Myr), first to second passage (40 to 110), second to third passage (110 to 169), and third passage to coalescence
+(169 to 226). The first 25 Myr are excluded: the initial conditions are isothermal, and until about 25 Myr the layer is held
+up by that initial thermal pressure rather than by feedback (two thirds thermal, turbulent dispersion below 3 km/s, no
+field); by 25 Myr feedback-driven turbulence has taken over. The run ends 9 Myr after the nuclei merge, so there is no
+remnant phase. Only the 25 to 40 Myr interval is an undisturbed disc; from the first passage on the discs are tidally
+disturbed even while they remain separate.
 
 ![separation](figs/story_0_sep.png)
 
