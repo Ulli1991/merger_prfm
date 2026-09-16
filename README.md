@@ -89,7 +89,7 @@ explained.
 ## Cluster mass function
 
 Bound star clusters younger than 10 Myr, per phase, with the maximum-likelihood power-law index above 300 Msun. The slope
-flattens from 1.94 before the first passage to 1.52 after the third, and the most massive cluster grows from 7e3 to 1e5 Msun.
+flattens from 1.92 before the first passage to 1.52 after the third, and the most massive cluster grows from 7e3 to 1e5 Msun.
 Both trends are robust to the minimum group size, the linking length and the bound flag. Below 300 Msun after the second
 passage the counts drop because only a third of the small groups are bound, so the function is quoted from
 300 Msun up. Since the cloud mass function does not change (above), the flattening and the growing top come from the
@@ -178,12 +178,12 @@ with $p_\epsilon$ the lognormal of (3) centred on the step. Evaluated on the mea
 
 | phase | $\sigma_{\rm eff}$ [km/s] | bound fraction | slope pred. | slope meas. | top pred. | top meas. |
 |---|---|---|---|---|---|---|
-| before 1st passage | 8.7 | 0.42 | 2.06 ± 0.11 | 1.94 | 7.4e3 | 6.7e3 |
+| before 1st passage | 8.7 | 0.37 | 2.02 ± 0.13 | 1.92 | 6.9e3 | 6.7e3 |
 | 1st to 2nd passage | 9.4 | 0.11 | 1.93 ± 0.06 | 1.77 | 1.9e4 | 2.0e4 |
 | 2nd to 3rd passage | 18.3 | 0.05 | 1.85 ± 0.07 | 1.74 | 1.3e5 | 2.8e4 |
 | 3rd passage to coalescence | 19.3 | 0.02 | 1.61 ± 0.07 | 1.52 | 2.8e5 | 1.0e5 |
 
-The slope is 0.1 to 0.2 too steep in every phase; the flattening (0.45 vs 0.42) and the rise of the top (38 vs 15) are
+The slope is 0.1 to 0.2 too steep in every phase; the flattening (0.40 vs 0.40) and the rise of the top (45 vs 15) are
 reproduced. With the mass dependence of boundedness removed (bound flags shuffled) the slopes are 2.21, 2.26, 1.98, 1.83.
 
 **(6) Largest cluster per interval.** Two equivalent statements: $M_{\max} \simeq 0.1\,M_{\star}(25\,{\rm Myr})$, the
@@ -259,7 +259,7 @@ black line is the median over all phases.
 - The amount of star formation per interval from the bound fraction: to a factor of 2 before the second passage and exactly in the
   quiescent interval; wrong by 3 and 70 in the two pericentre bursts, which are compression events the model does not
   contain.
-- The cluster mass function: the flattening (0.45 predicted, 0.42 measured) and the rise of the top (38 vs 15); the
+- The cluster mass function: the flattening (0.40 predicted, 0.40 measured) and the rise of the top (45 vs 15); the
   absolute slope is 0.15 to 0.2 too steep in every phase.
 - The largest cluster per interval: linear in the weight of the active patches over seven intervals, 0.09 dex; the
   quiescent interval 100 times below.
@@ -284,7 +284,7 @@ the run. For C to exist it has to contain, with no quantity taken from the simul
 The measurements of Part A and the chain of Part B say what such a calculation must reproduce: an invariant clump mass
 function of slope 1.6, a clump velocity dispersion inherited from the layer as a square-root cascade, a boundedness
 threshold at the virial criterion, a bound efficiency near 5 %, a hundredfold suppression of star formation when the layer
-dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.94 to 1.52 with its top rising
+dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.92 to 1.52 with its top rising
 fifteenfold.
 
 ---
@@ -307,5 +307,5 @@ the run. For C to exist it has to contain, with no quantity taken from the simul
 The measurements of Part A and the chain of Part B say what such a calculation must reproduce: an invariant clump mass
 function of slope 1.6, a clump velocity dispersion inherited from the layer as a square-root cascade, a boundedness
 threshold at the virial criterion, a bound efficiency near 5 %, a hundredfold suppression of star formation when the layer
-dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.94 to 1.52 with its top rising
+dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.92 to 1.52 with its top rising
 fifteenfold.
