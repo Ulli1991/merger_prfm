@@ -119,13 +119,26 @@ upper envelope that 9 % of clusters exceed. The weight bounds the cluster mass, 
 ![cluster environment](figs/cluster_env.png)
 
 ## Line of sight
+The equilibrium test with the column taken along other directions: the disc's angular-momentum axis, and normals tilted by
+30, 60 and 90 degrees from it, all with the layer cut (0.5 kpc either side of the local midplane along that direction).
+Before the second passage only the disc normal sits at one; a 30 degree tilt already gives 0.4 to 0.7, and the layer cut
+only halves the deficit of a wrong orientation. Between the second and third passage every direction gives 0.6 to 1.2: no
+direction is special because the gas is not a layer. After the third passage every direction gives 0.9 to 1.3: the settled
+gas is thick enough to look the same from any side. The yield ratios are orientation-independent throughout.
 
-The equilibrium test repeated with the column taken along other directions: the disc's angular-momentum axis, and normals
-tilted by 30, 60 and 90 degrees from it. Before the second passage only the disc normal gives a ratio near one, so the disc is a
-layer and the chosen normal is the right one. After it every direction gives 0.2 to 0.5: the deficit does not
-depend on viewing angle, so the streaming debris is not a layer in any orientation.
+![line of sight](figs/los_layer.png)
 
-![line of sight](figs/prfm_time_los.png)
+## Column size
+Pressure over weight as a function of the column depth, for footprints of 0.5, 0.25 and 0.125 kpc (marker shape), one line
+per phase, medians over the snapshots of each phase. The ratio depends on the depth and not on the footprint: shrinking
+the footprint from 0.5 to 0.125 kpc at fixed depth changes nothing, while a depth below about twice the scale height (0.4
+kpc, shaded) truncates the weight integral and drives the ratio to 1.5 at 0.5 kpc depth and 2.7 at 0.25 kpc. Columns must
+be at least 1 kpc deep to test vertical balance; cubes smaller than the disc thickness cannot. The footprint matters for
+the star formation rate instead: over the star-forming columns the rate at a given weight sits 0.6 dex below Ostriker & Kim
+at 0.5 kpc and on their relation at 0.25 kpc, because star formation is concentrated and a smaller footprint isolates it.
+The summed pressure per unit star formation does not depend on the footprint.
+
+![column depth](figs/scale_depth.png)
 
 ## Low-mass end of the cluster mass function
 
