@@ -281,6 +281,35 @@ the 50 Myr plateau between 140 and 195 Myr untouched.
 
 ![yield with lag](figs/yield_lag.png)
 
+**Where the excess comes from, in 10 Myr bins.** The ratio of the pressure per unit star formation to the OK22 yield
+with the 10 Myr and the 40 Myr rate, the supernova rate of the clean columns per unit 10 Myr star formation rate
+(normalised to its median between 40 and 100 Myr), and the turbulent and Maxwell shares of $P_{\rm tot}$:
+
+| bin [Myr] | ratio, 10 Myr rate | ratio, 40 Myr rate | SN rate per unit SFR | turbulent share | Maxwell share |
+|---|---|---|---|---|---|
+| 110 to 120 | 41 | 18 | 1.3 | 0.85 | 0.07 |
+| 120 to 130 | 2.7 | 6.1 | 0.2 | 0.74 | 0.14 |
+| 130 to 140 | 0.7 | 1.7 | 0.5 | 0.66 | 0.18 |
+| 140 to 150 | 46 | 1.5 | 35 | 0.61 | 0.23 |
+| 150 to 160 | 135 | 2.6 | 53 | 0.65 | 0.22 |
+| 160 to 170 | 166 | 6.6 | 11 | 0.71 | 0.19 |
+| 170 to 180 | 200 | 201 | 0.9 | 0.67 | 0.23 |
+| 180 to 190 | 114 | 176 | 0.5 | 0.74 | 0.17 |
+| 190 to 200 | 9 | 30 | 0.1 | 0.62 | 0.29 |
+| 200 to 210 | 1.0 | 3.1 | 0.2 | 0.53 | 0.37 |
+
+Two intervals of different kind make up the excess. From 140 to 170 Myr the 10 Myr ratio is 50 to 170 but the 40 Myr
+ratio is 1.5 to 7, and the supernova rate per unit current star formation is 10 to 50 times its disc value: the
+pressure is supplied by the supernovae of the 125 to 135 Myr burst, which arrive up to 40 Myr after the stars formed.
+This is feedback with the delay OK22 average over by using the 40 Myr rate, not a failure of the yield relation. From
+170 to 195 Myr both ratios are 100 to 200 and the supernova rate is at or below its disc value: no feedback supplies the
+pressure. The weight has jumped by 3 at the third passage, $P_{\rm tot}/\mathcal W$ is 0.85 to 1, and the support is
+turbulent (0.7) and magnetic (0.2). This interval, 25 Myr, is the genuine departure: the layer is in vertical balance
+with a pressure that no star formation produced and that the star formation does not respond to for 25 Myr, the time
+the clumps need to fall below the efficiency step (fraction below $\alpha_c$: 0.06 in this phase). What drives that
+turbulence is not measured here beyond the shear-term description of Part B; the attribution to the compression of the
+passage is interpretation.
+
 ## Magnetic field
 x: time. y: $B_c = (8\pi k_{\rm B} P_{{\rm mag},c})^{1/2}$ per layer column, in $\mu{\rm G}$. Dark:
 $\sum_c \Sigma_{{\rm gas},c} B_c / \sum_c \Sigma_{{\rm gas},c}$ over the clean columns; light: the median of $B_c$.
