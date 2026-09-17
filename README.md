@@ -32,7 +32,13 @@ with the 40 Myr rate (107 to 125 and 158 to 207 Myr) and 10 times for 20 %; its 
 Reading. Vertical balance survives the merger, with one interval of moderate shortfall around the second passage during
 which the gas is not a layer in any orientation. The supply of that pressure by star formation does not survive: after the
 second passage the layer holds 10 to 100 times more pressure per unit star formation than feedback yields, and that pressure
-is turbulent and magnetic, sustained by the shear of the merger flow at a fixed coefficient of 0.02. The star formation rate
+is turbulent and magnetic, sustained by the shear of the merger flow at a fixed coefficient of 0.02. The excess is not a
+pressure problem: the pressure stays within a factor of 2 of the weight while the star formation rate collapses by 2.5 dex
+between bursts, so the ratio runs away on its denominator. Split by column (figure "Pressure per unit star formation, by
+column type"), the excess sits entirely in columns holding one galaxy's gas, where star formation has stopped; the
+columns where the two galaxies' gas mixes host the bursts and sit within a factor of 2 of the yield, and at the peak of the
+125 to 135 Myr burst they hold only 0.2 to 0.5 of it, i.e. less pressure per unit star formation than the TIGRESS
+calibration. The star formation rate
 at fixed weight falls below the OK22 relation by 0.5 dex in the discs and 2 dex after the second passage, at every column
 size. The balance test itself is meaningful only for columns at least 1 kpc deep and within about 30 degrees of the disc
 normal; the yield and rate comparisons depend on neither.
@@ -233,6 +239,21 @@ $\Upsilon_{\rm tot}(\bar P)$ at $\bar P = \sum_c \Sigma_{{\rm gas,2p},c}P_{{\rm 
 in the quiet intervals after, back to the yield during the two nuclear bursts.
 
 ![pressure per unit star formation](figs/story_2_feedback.png)
+
+## Pressure per unit star formation, by column type
+The same quantity divided by the OK22 yield, computed separately for two sets of clean layer columns in each snapshot:
+*single-galaxy* columns, in which the intruder fraction (mass fraction of gas belonging to the other galaxy by particle
+ID) is below 0.2 or above 0.8, and *mixed* columns with an intruder fraction between 0.2 and 0.8. x: time. y, per set:
+
+$$y = \frac{\sum_c P_{{\rm tot},c}}{\sum_c \Sigma_{{\rm SFR,10},c}}\ \Big/\ \big[4.81\times10^{3}\ \Upsilon_{\rm tot}(\bar P)\big],$$
+
+with $\bar P$ the $\Sigma_{\rm gas,2p}$-weighted mean pressure of that set; the line at 1 is the OK22 yield. A set with no
+star formation in a snapshot is not plotted. Result: the single-galaxy columns are at 1 to 3 times the yield before the
+second passage and 10 to 300 times after it, rising without bound once their star formation stops (after 205 Myr almost
+no star forms outside the mixed gas). The mixed columns are at 30 to 100 at the second passage, fall to 0.2 to 0.5 through
+the 125 to 135 Myr burst, return to 100 to 300 in the quiet interval, and sit at 1 from 195 Myr to the end.
+
+![pressure per unit star formation by column type](figs/yield_split.png)
 
 ## Magnetic field
 x: time. y: $B_c = (8\pi k_{\rm B} P_{{\rm mag},c})^{1/2}$ per layer column, in $\mu{\rm G}$. Dark:
