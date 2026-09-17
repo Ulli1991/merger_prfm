@@ -5,9 +5,12 @@ does it imply for the masses of the star clusters that form? One simulation of t
 (4 Msun gas and star particles, 0.4 pc softening, magnetic fields, resolved supernovae), 226 Myr through three pericentre
 passages to the final coalescence.
 
-Three parts, kept apart. **A**: what the simulation shows, figures with what is plotted and the numbers. **B**: a
-semi-empirical model, one set of equations with constants calibrated on the run, and the tests it passes and fails.
-**C**: the closed calculation from the layer state to the cluster mass function, which does not exist yet.
+Three parts, kept apart. **A**: what the simulation shows, figures with what is plotted and the numbers. **B**: the
+story from star formation to star-cluster formation as the run tells it, written as relations with constants fitted
+to the run. It is not a model: nothing in it predicts a cluster mass from the layer state without reading the answer
+from the simulation somewhere along the chain. What it offers is mathematical insight into which steps are simple and
+which are not. **C**: the theory one would want, a closed calculation from the layer state to the cluster mass function.
+It does not exist; Part C states what it would have to contain.
 
 ## Status of the PRFM comparison
 
@@ -322,9 +325,13 @@ after the second passage the bound-only index collapses because only a third of 
 ![low-mass convergence](figs/lowmass_convergence.png)
 
 ---
-# Part B. The model
+# Part B. From star formation to star clusters: relations, not a model
 
-## Functional form
+What follows is not a derivation. Each numbered relation is a fitted description of one step measured in Part A, and
+the constants come from the run. Put together they show how far the path from the layer to a cluster mass can be written
+down at present and where it cannot; the tests at the end of this part say which steps hold and which fail.
+
+## The relations
 
 
 Inputs per 0.5 kpc patch: layer weight $\mathcal{W}$, midplane density $\rho_{\rm mid}$, scale height $H$, effective
@@ -439,11 +446,11 @@ $m = 4.7$; residual scatter 0.69 dex.
 
 ![clump efficiency](figs/partC_eff.png)
 
-## What the model gets and does not get
+## What the relations get and do not get
 - Vertical balance, the pressure per unit star formation before the second passage, the shear term for the quiet patches: yes.
 - Which patches form stars: to a factor of 2 from the density threshold.
 - The amount of star formation per interval from the bound fraction: to a factor of 2 before the second passage and exactly in the
-  quiescent interval; wrong by 3 and 70 in the two pericentre bursts, which are compression events the model does not
+  quiescent interval; wrong by 3 and 70 in the two pericentre bursts, which are compression events the relations do not
   contain.
 - The cluster mass function: the flattening (0.40 predicted, 0.40 measured) and the rise of the top (45 vs 15); the
   absolute slope is 0.15 to 0.2 too steep in every phase.
@@ -475,8 +482,7 @@ fifteenfold.
 
 ---
 ---
-# Part C. The closed calculation (not done)
-
+# Part C. The theory one would want (does not exist)
 
 Part C is reserved for a calculation that takes as input only the state of the layer, its weight and what drives its
 turbulence, and returns the cluster mass function, with the simulation used solely to test the result. Nothing in Part B
