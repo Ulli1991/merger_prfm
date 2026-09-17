@@ -75,7 +75,8 @@ $$P_{\rm tot} = P_{\rm th} + P_{\rm turb} + \Pi_{\rm mag}, \qquad
 
 **All of $P_{\rm th}$, $P_{\rm turb}$, $\Pi_{\rm mag}$, $P_{\rm tot}$, $\rho_{\rm mid}$ and $\mathcal W$ are computed
 from the two-phase gas only ($T < 2\times10^4$ K); hot gas is excluded.** This is the quantity Ostriker & Kim (2022) write
-as $P_{\rm tot,2p}$ and calibrate their yields and star-formation relations against; we drop the subscript. Every figure
+as $P_{\rm tot,2p}$ and calibrate their yields and star-formation relations against. The figure axes carry the subscript
+2p on every pressure, weight and density; the text drops it. Every figure
 that shows a pressure, a weight or a midplane density uses these two-phase quantities, including the pressure per unit
 star formation rate, the vertical-equilibrium ratio, the pressure shares and the time evolution. The only quantity that
 includes the hot gas is $P_{\rm mag}$, summed over all slab particles.
