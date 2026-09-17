@@ -1,14 +1,3 @@
-# merger_prfm
-
-Does pressure-regulated, feedback-modulated star formation (PRFM; Ostriker & Kim 2022) survive a galaxy merger, and what
-does it imply for the masses of the star clusters that form? One simulation of two gas-rich dwarf galaxies merging
-(4 Msun gas and star particles, 0.4 pc softening, magnetic fields, resolved supernovae), 226 Myr through three pericentre
-passages to the final coalescence.
-
-Three parts, kept apart. **A**: what the simulation shows, figures with what is plotted and the numbers. **B**: a
-semi-empirical model, one set of equations with constants calibrated on the run, and the tests it passes and fails.
-**C**: the closed calculation from the layer state to the cluster mass function, which does not exist yet.
-
 ## Status of the PRFM comparison
 
 Reference: the Ostriker & Kim (2022) calibration. The run's own undisturbed disc lasts only from 25 to 40 Myr, since the
@@ -35,147 +24,151 @@ size. The balance test itself is meaningful only for columns at least 1 kpc deep
 normal; the yield and rate comparisons depend on neither.
 
 ---
+---
 # Part A. What the simulation shows
 
-## Merger phases
+## Definitions used by every figure
 
-Separation of the two nuclei with time. Pericentres at 40, 110, 169 and 217 Myr (dotted lines; the last, the final
-coalescence, solid). The four phases used in every other figure are the intervals between them: before the first passage
-(25 to 40 Myr), first to second passage (40 to 110), second to third passage (110 to 169), and third passage to coalescence
-(169 to 226). The first 25 Myr are excluded: the initial conditions are isothermal, and until about 25 Myr the layer is held
-up by that initial thermal pressure rather than by feedback (two thirds thermal, turbulent dispersion below 3 km/s, no
-field); by 25 Myr feedback-driven turbulence has taken over. The run ends 9 Myr after the nuclei merge, so there is no
-remnant phase. Only the 25 to 40 Myr interval is an undisturbed disc; from the first passage on the discs are tidally
-disturbed even while they remain separate.
+*Columns.* For each galaxy a 12 by 12 grid of columns of 0.5 kpc side is laid in the plane perpendicular to the gas
+angular-momentum vector measured within 2 kpc of the galaxy centre; the centre is the median position of that galaxy's
+initial stellar disc particles (membership by particle ID). One grid, centred between the two centres with the angular
+momentum within 3 kpc, replaces the two whenever the centres are closer than 0.5 kpc. A *full column* spans 1.5 kpc above
+and below the grid plane; a *layer column* spans 0.5 kpc above and below the midplane of that column, the mass-weighted
+mean height of its gas in the full-column run. Only columns with gas surface density above 1 Msun/pc² are used, and before
+the second passage only columns in which less than 10 % of the gas belongs to the other galaxy by particle ID.
+
+*Gas quantities per column.* Sigma_gas = gas mass in the column / area. H = mass-weighted rms height of the gas about the
+midplane. The *slab* is the layer of half-thickness max(25 pc, 0.25 H) about the midplane. "2p" means gas below 20 000 K.
+P_th = sum over slab particles of m (gamma-1) u divided by the slab volume; P_turb = sum of m (v_n - v̄_n)² over the slab
+divided by its volume, v_n the velocity component along the column normal relative to the galaxy's mean velocity and v̄_n
+the mass-weighted mean over the slab (2p gas); P_mag = volume-weighted B²/8pi over the slab. P_tot = P_th + P_turb + P_mag.
+All pressures are P/k_B in K cm⁻³. rho_mid = 2p gas mass in the slab / slab volume.
+
+*Weight.* W = one half of [ sum over 2p gas above the midplane of m (-g_n) + sum over 2p gas below of m g_n ] / area, with
+g_n the gravitational acceleration along the normal at each particle from a particle-mesh solve of all gas, stars and dark
+matter (512³ cells over ±4 kpc nested in 512³ over ±32 kpc; median error 8 % against direct summation). In K cm⁻³.
+
+*Star formation rate.* Sigma_SFR,10 = mass of stars younger than 10 Myr inside the column / area / 10 Myr, using only
+stars formed during the run (the initial stellar particles are excluded); Sigma_SFR,40 the same over 40 Myr. Both in
+Msun yr⁻¹ kpc⁻².
+
+*Ostriker & Kim (2022) relations used.* Yield Upsilon_tot(P) = 10^(-0.212 log P + 3.86) km/s (their eq. 26c);
+Sigma_SFR(W) = 10^(1.17 log W - 7.32) (eq. 28b); Sigma_SFR(P) = 10^(1.18 log P - 7.43) (eq. 28a). A yield in km/s is
+converted to a pressure per unit star formation rate with 1 km/s = 4.81 × 10³ K cm⁻³ per Msun yr⁻¹ kpc⁻².
+
+*Time-series statistic.* Where a figure shows one value per snapshot from many columns, it is the Sigma_gas-weighted median
+over the columns: the value at which half of the total gas surface density lies above and half below.
+
+*Phases.* 25 to 40 Myr (before the first passage), 40 to 110, 110 to 169, 169 to 226 Myr, split at the pericentres 40,
+110, 169 Myr; the final coalescence is at 217 Myr. The first 25 Myr are excluded (isothermal initial state relaxing).
+
+## Merger phases
+x: time since the start of the run. y: distance between the two galaxy centres defined above. Dotted lines mark the
+pericentres at 40, 110 and 169 Myr; the solid line the final coalescence at 217 Myr.
 
 ![separation](figs/story_0_sep.png)
 
 ## Vertical equilibrium
-
-The first half of PRFM: does the midplane pressure balance the weight? The ratio of total midplane pressure (thermal plus
-turbulent plus magnetic stress) to weight is shown for two definitions of the weight. Using the full 3 kpc column, the
-ratio drops to 0.3 after the second passage and the model looks broken. Restricting the weight to the gas within 0.5 kpc of
-the midplane, where the star formation happens, the ratio stays near one before the second passage and after the third, and
-falls 20 to 35 % short between the second and third. The apparent failure is the dark-matter weight of tidal debris streaming
-through the disc at 25 to 30 km/s, which is not a layer in any orientation and does not form stars.
+x: time. y: P_tot / W per snapshot, the Sigma_gas-weighted median over the columns, for the full column (light) and the
+layer column (dark), both with P_tot and W from the 2p gas as defined above. Result: with the layer weight the ratio is
+1.05, 0.94, 0.73, 0.96 in the four phases and never leaves 0.5 to 2; with the full column it drops to 0.4 between the
+second and third passage because the column then includes the dark-matter weight of gas streaming outside the layer.
 
 ![equilibrium](figs/story_1_equilibrium.png)
 
 ## Pressure per unit star formation
-
-What is plotted: the measured total midplane pressure of the gas layer divided by the measured star formation rate
-surface density of the same patches (stars younger than 10 Myr), summed over the clean patches of each snapshot, in
-km/s. This is the pressure the layer holds per unit of star formation. The dashed line is the feedback yield of Ostriker &
-Kim (2022) evaluated at the same pressure: the pressure per unit star formation that supernovae, winds and radiation
-supply in their simulations. Where the two agree, star formation supplies the pressure. Before the second passage the measured
-curve sits on the yield to within a factor of 2. After it, it sits 10 to 100 times above it in the quiet intervals,
-reaching 100 at 160 to 185 Myr: the layer holds far more pressure than its star formation can supply, so that pressure comes
-from elsewhere, and it drops back to the yield only during the two nuclear bursts. "Elsewhere" is defined in the next two
-figures: the ordered large-scale motions of the merger (tidal streaming, infall, rotation, measured as the velocity
-gradient across each 0.5 kpc patch) doing work on the turbulence, and the magnetic field.
+x: time. y: the sum of the layer P_tot over the columns of a snapshot divided by the sum of Sigma_SFR,10 over the same
+columns, converted to km/s with the factor above. Dashed: Upsilon_tot(P) evaluated at the Sigma_gas,2p-weighted mean layer
+pressure of the snapshot. Result: within a factor of 2 of the yield before the second passage, 10 to 100 times above it
+in the quiet intervals after, back to the yield during the two nuclear bursts.
 
 ![pressure per unit star formation](figs/story_2_feedback.png)
 
 ## Magnetic field
-
-The field is seeded at 10 nG and amplified by the turbulence: it e-folds every 10 Myr, saturates near 1 microgauss by
-50 Myr, jumps by a factor of five at the second passage and grows to 10 to 20 microgauss after the third, where the magnetic
-pressure reaches equipartition with thermal plus turbulent pressure. It is treated as a measured contribution to the
-vertical support, not modelled.
+x: time. y: B = sqrt(8 pi P_mag) from the slab magnetic pressure of each column, in microgauss; dark line the
+Sigma_gas-weighted mean over the columns, light line the median column. Result: 10 nG seed, e-folding 10 Myr, 1 to 2
+microgauss from 50 Myr, a jump by 5 at the second passage, 10 to 20 microgauss after the third.
 
 ![dynamo](figs/story_4_dynamo.png)
 
 ## Clouds
+*Clouds* are friends-of-friends groups, linking length 3 pc, at least 25 particles (100 Msun), of gas colder than 1000 K
+and denser than 10 cm⁻³, identified on every tenth snapshot over the whole box. *Clumps* are the same with a 100 cm⁻³
+threshold and 1.5 pc linking. Stars carry the ID of the gas particle they formed from, so the stars formed from any cloud
+are counted exactly. Per cloud: mass, half-mass radius r_h, mass-weighted 3D velocity dispersion sigma_3d about the mean,
+mean and maximum density, virial parameter alpha_vir = 5 (sigma_3d²/3) r_h / (G M), rms Alfvén speed v_A of its members.
 
-Stars keep the identity of the gas particle they formed from, so every young star can be traced to the cold gas it came
-from. Nearly all stars formed within 10 Myr of a snapshot come from gas already sitting in a cold cloud above 10 cm^-3.
-Those clouds are 30 to 50 pc complexes of 1e4 to 1e5 Msun, at a mean density near 10 cm^-3, the low-density giant molecular
-clouds of a dwarf galaxy. In 85 to 95 % of star-forming events a single complex supplies essentially all the stars, and
-inside it the stars come from one to three dense clumps above 100 cm^-3 (a few thousand Msun, radii of 4 to 8 pc). A burst
-is the collapse of one such complex; the largest bursts, in the merging nuclei, draw on many clumps.
-
-The mass function of the complexes (T < 1000 K, n > 10 cm^-3, friends-of-friends at 3 pc) has a slope of 1.6 and does not
-change through the merger. Only the most massive end grows, as the merging nuclei assemble cold complexes of a million solar
-masses and more.
+Cloud mass function. x: cloud mass. y: number of clouds per unit mass divided by the total number of clouds in the phase;
+Poisson errors. Dashed: M^-1.6 for reference. Result: the same in all four phases (index 1.57 to 1.60 above 300 Msun);
+only the maximum mass grows, from 3 × 10⁵ to 10⁷ Msun.
 
 ![cloud mass function](figs/clouds_mf.png)
 
-What does change is how efficiently the clumps turn gas into stars. Following each dense clump through the snapshots by its
-particle IDs, the figure shows the fraction of its peak mass that it ever turned into stars, against its virial parameter
-just before star formation began. More strongly bound clumps convert more, by a factor of 40 over the observed range, and
-the efficiency drops sixty-fold from before the first passage to after the third, where the clumps are more turbulent. But at the same
-virial parameter the phases are offset by more than an order of magnitude, so the kinetic virial parameter is not the whole
-story, and at fixed state the efficiency still scatters by 0.7 dex. That scatter is what produces the 0.4 dex spread of
-burst masses and the slope of the cluster mass function. This is the one link in the chain that is measured rather than
-explained.
+Efficiency. Clumps are followed from snapshot to snapshot by particle-ID overlap (a clump is linked to its successor if
+each is the other's largest overlap). x: alpha_vir of the clump at the last snapshot before its first star forms. y:
+epsilon_int = all stars ever formed from the lineage's members (summed over the chain plus 10 Myr after its last
+snapshot) divided by the largest mass the lineage reached. Points: lineages with peak mass above 300 Msun that start after
+5 Myr and end before 221 Myr; lines: medians per alpha bin per phase, phase assigned by the onset time. Result: 5 % for
+bound clumps, falling to 0.1 % above alpha of about 10; the fraction of clumps below the threshold drops from 0.9 before
+the first passage to 0.06 after the third.
 
 ![cloud efficiency](figs/clouds_eff.png)
 
 ## Cluster mass function
-
-Bound star clusters younger than 10 Myr, per phase, with the maximum-likelihood power-law index above 300 Msun. The slope
-flattens from 1.92 before the first passage to 1.52 after the third, and the most massive cluster grows from 7e3 to 1e5 Msun.
-Both trends are robust to the minimum group size, the linking length and the bound flag. Below 300 Msun after the second
-passage the counts drop because only a third of the small groups are bound, so the function is quoted from
-300 Msun up. Since the cloud mass function does not change (above), the flattening and the growing top come from the
-star formation efficiency of the clouds.
+*Clusters* are friends-of-friends groups, linking length 5 pc, at least 25 particles, of stars younger than 10 Myr,
+kept if energy-bound (kinetic plus Plummer-softened pairwise potential energy below zero, softening 1 pc) and not the
+nucleus (fewer than 40 000 particles and r_h below 20 pc), in the clean columns, on every tenth snapshot so that no
+cluster is counted twice. x: cluster mass. y: number per unit log mass per phase, Poisson errors. Lines: maximum-likelihood
+power law above 300 Msun, alpha = 1 + N / sum ln(M/300). Result: alpha = 1.92, 1.77, 1.74, 1.52; the most massive cluster
+6.7 × 10³, 2.0 × 10⁴, 2.8 × 10⁴, 1.0 × 10⁵ Msun. Below 300 Msun after the second passage only a third of the small groups
+are bound, so the function is quoted from 300 Msun up.
 
 ![MF per phase](figs/story_5_mf.png)
 
 ## Largest cluster per burst
-
-For every 0.5 kpc patch that formed more than 500 Msun of stars in the last 10 Myr and hosts a bound cluster, the mass of
-its most massive cluster against the total mass of young stars in the patch. The median runs along half the young mass up
-to about 1e5 Msun: each burst makes one dominant cluster that captures about half of the stars formed, with a handful of
-smaller companions. This is the link between the star formation rate of a patch and the top of the cluster mass function,
-and it is why the weight of the gas layer, which sets the size of the largest burst, also sets the mass of the largest
-cluster. The most massive bursts, in the merging nuclei, fall below the line because their stars are spread over several
-clusters.
+x: M_young, the mass of stars younger than 10 Myr in a full column. y: M_max, the mass of the most massive bound
+cluster whose centre lies in that column. Clean columns with M_young above 500 Msun and at least one bound cluster, every
+tenth snapshot. Line: median M_max per M_young bin; red: M_max = 0.5 M_young; dotted: equality. Result: the median follows
+half the young mass up to 10⁵ Msun; the nuclear bursts above that split their stars over several clusters.
 
 ![reservoir](figs/story_6_reservoir.png)
 
 ## Every cluster against its patch
-
-All 580 bound young clusters against the weight, total pressure and star formation rate of the 0.5 kpc patch they formed in. The
-dashed line in each panel is half the burst that PRFM allows at that weight or pressure, or half the stars actually formed in the
-patch. Individual cluster masses fill two decades below the line and correlate only weakly with the patch state; the line is an
-upper envelope that 9 % of clusters exceed. The weight bounds the cluster mass, it does not set it cluster by cluster.
+Each bound cluster of the clean sample against the state of the column it sits in (the column of the frame in which its
+intruder fraction is lowest). Left x: layer W of that column. Middle x: layer P_tot. Right x: Sigma_SFR,10. y: cluster
+mass. Dashed: 0.5 Sigma_SFR(W) A tau, 0.5 Sigma_SFR(P) A tau and 0.5 Sigma_SFR A tau with A = 0.25 kpc² and tau = 10 Myr,
+the mass of half the stars a column forms in 10 Myr at the OK22 rate for its weight, for its pressure, and at its own rate.
+Result: cluster masses fill two decades below the lines; 9 % lie above the weight line.
 
 ![cluster environment](figs/cluster_env.png)
 
 ## Line of sight
-The equilibrium test with the column taken along other directions: the disc's angular-momentum axis, and normals tilted by
-30, 60 and 90 degrees from it, all with the layer cut (0.5 kpc either side of the local midplane along that direction).
-Before the second passage only the disc normal sits at one; a 30 degree tilt already gives 0.4 to 0.7, and the layer cut
-only halves the deficit of a wrong orientation. Between the second and third passage every direction gives 0.6 to 1.2: no
-direction is special because the gas is not a layer. After the third passage every direction gives 0.9 to 1.3: the settled
-gas is thick enough to look the same from any side. The yield ratios are orientation-independent throughout.
+As the vertical-equilibrium figure, but the column normal is rotated: the disc normal itself, and the normal tilted by
+30, 60 and 90 degrees about the first in-plane axis toward the second. Each orientation has its own full-column run and
+its own layer cut about its own midplane. Every fourth snapshot; the two galaxy grids are merged with column-number
+weights. y: Sigma_gas-weighted median of layer P_tot / W. Result: before the second passage only the disc normal gives one,
+30 degrees gives 0.4 to 0.7; between the second and third passage all orientations give 0.6 to 1.2; after the third all
+give 0.9 to 1.3.
 
 ![line of sight](figs/los_layer.png)
 
 ## Column size
-Pressure over weight as a function of the column depth, for footprints of 0.5, 0.25 and 0.125 kpc (marker shape), one line
-per phase, medians over the snapshots of each phase. The ratio depends on the depth and not on the footprint: shrinking
-the footprint from 0.5 to 0.125 kpc at fixed depth changes nothing, while a depth below about twice the scale height (0.4
-kpc, shaded) truncates the weight integral and drives the ratio to 1.5 at 0.5 kpc depth and 2.7 at 0.25 kpc. Columns must
-be at least 1 kpc deep to test vertical balance; cubes smaller than the disc thickness cannot. The footprint matters for
-the star formation rate instead: over the star-forming columns the rate at a given weight sits 0.6 dex below Ostriker & Kim
-at 0.5 kpc and on their relation at 0.25 kpc, because star formation is concentrated and a smaller footprint isolates it.
-The summed pressure per unit star formation does not depend on the footprint.
+x: column depth, the full height of the column: 3 kpc (full column) or 1, 0.5, 0.25 kpc (0.5, 0.25, 0.125 kpc above and
+below the midplane of the 0.5 kpc reference column the point falls in). Marker: footprint, columns of 0.5, 0.25 and 0.125
+kpc side on 12 by 12, 24 by 24 and 48 by 48 grids. y: for each configuration and phase, the median over the phase's
+snapshots (every fourth snapshot) of the per-snapshot Sigma_gas-weighted median of P_tot / W, both from the 2p gas. Shaded:
+twice the scale height. Result: the ratio depends on depth only; footprint 0.5 to 0.125 kpc at fixed depth changes nothing,
+while depths below 0.5 kpc give 1.5 and 2.7.
 
 ![column depth](figs/scale_depth.png)
 
 ## Low-mass end of the cluster mass function
-
-Local power-law slope of the cluster mass function in three mass bins, per phase, for all friends-of-friends groups
-(filled) and for bound groups only (open). Above 300 Msun the two agree and the slopes are stable against the minimum group
-size and linking length. In the 100 to 300 Msun bin after the second passage the bound-only slope collapses, because only a third
-of those small groups are bound: that end of the function is set by the bound flag, not by the physics, and is not used.
+x: cluster mass bin. y: maximum-likelihood index of a power law restricted to that bin (likelihood maximised on a grid of
+alpha; error from its curvature), for all friends-of-friends groups of the 10-particle catalogue (filled) and for the bound
+ones only (open), per phase, every tenth snapshot. Result: above 300 Msun bound and all agree within the errors; in the
+100 to 300 Msun bin after the second passage the bound-only index collapses because only a third of those groups are bound.
 
 ![low-mass convergence](figs/lowmass_convergence.png)
-
-
----
 
 ---
 # Part B. The model
@@ -233,61 +226,52 @@ $P({\rm burst}\,|\,\rho_{\rm mid}) = [1 + \exp(-k(\log\rho_{\rm mid} - \log\rho_
 $\log\rho_{50} = -1.65$ (Msun pc$^{-3}$); burst mass $\log M_{\rm burst} \sim \mathcal{N}(a + b\log\mathcal{W},\ 0.4$–$0.5)$.
 
 ## Shear term
-
-What "supplied by the flow" means. Each 0.5 kpc patch has, besides its turbulence, an ordered velocity field: the
-differential motion across the patch from the merger's tidal streaming, infall and rotation. Its size is the shear rate S,
-the norm of the velocity-gradient tensor of a linear fit to the gas velocities in the patch, in km/s per kpc. Ordered
-motion with a gradient does work on the gas at the rate of a viscous stress, Sigma sigma H S^2, and that work feeds the
-turbulence. The plot tests this on the patches that have had no star formation in the last 10 Myr, so feedback cannot be
-the source: their turbulent pressure, after removing the linear bulk flow, is plotted against Sigma H S^2. One coefficient,
-0.02, describes all four phases with no offset. Feedback-based yields miss these patches by up to two orders of magnitude.
-This is what the previous figure's excess pressure is: the turbulence the merger's own velocity field keeps stirring.
+Columns of the 18 snapshots with the turbulence decomposition, with Sigma_SFR,10 = 0. x: Sigma H S² in K cm⁻³, with
+Sigma the column's gas surface density, H its rms height, and S the shear rate: the norm of the traceless symmetric part
+of the velocity-gradient tensor of a linear fit of the gas velocities in the column, in km/s per kpc. y: P_turb of the
+slab multiplied by (sigma_res/sigma_tot)², i.e. with the part of the velocity variance carried by the fitted linear flow
+removed. Line: P_turb = 0.02 Sigma H S². Result: one coefficient in every phase, no offset.
 
 ![shear closure](figs/story_3_shear.png)
 
 ## Largest cluster and weight
-
-The most massive bound cluster formed in each 25 Myr interval against $\mathcal{W}$, the weight of the gas layer (within 0.5 kpc of
-the midplane) of the heaviest star-forming patches in that interval (90th percentile over patches). Labels give the start of each
-interval in Myr. The line is not a fit: it is half of the PRFM star formation rate at that weight, times the patch area and a 10 Myr
-burst, i.e. the size of the largest burst a patch of that weight can produce, halved by the capture fraction of the previous figure.
-Seven active intervals spanning a factor of 30 in weight follow it (slope 0.94 against the median weight, 0.09 dex scatter). The one
-quiescent interval, 160 to 185 Myr, has the highest weight of all and sits 100 times below. The weight sets the cluster mass while
-star formation is on; whether it is on is a separate question, answered below.
+25 Myr intervals. x: the 90th percentile, over the star-forming columns of the interval (M_young above 500 Msun), of the
+layer W. y: the most massive bound cluster formed in the interval, over all its snapshots. Labels: interval start in Myr.
+Line: 0.5 Sigma_SFR(W) A tau with the OK22 relation, A = 0.25 kpc², tau = 10 Myr; nothing fitted. Open circle: the interval
+in which fewer than 5 % of the columns burst. Result: seven active intervals follow the line, slope 0.94 against the median
+weight with 0.09 dex scatter; the quiescent interval lies 100 times below.
 
 ![ceiling](figs/story_7_ceiling.png)
 
 ## Duty cycle
-
-Probability that a 0.5 kpc patch formed more than 500 Msun of stars in the last 10 Myr, as a function of its weight $\mathcal{W}$
-(gas layer within 0.5 kpc of the midplane), per phase. Points are measured fractions, lines logistic fits. The weight at
-which half the patches are active rises twenty-fold through the merger. The same threshold expressed in midplane density
-moves by less than a factor of three, so the physical threshold is in density: after the second passage the higher turbulent and
-magnetic support means the same weight produces a lower midplane density.
+x: layer W of a clean column. y: fraction of columns with M_young above 500 Msun, in bins of 0.5 dex in W (points), and
+the maximum-likelihood logistic P = [1 + exp(-k (log W - log W_50))]⁻¹ per phase (lines). Result: log W_50 = 3.75, 3.86,
+4.73, 4.95; the same fit against the midplane density moves by less than 0.5 dex between phases.
 
 ![duty cycle](figs/duty_cycle.png)
 
 ## Burst-mass distribution
-
-Distribution of the 10 Myr burst mass of the patches between the two passages, against a model with no free shape: each
-patch bursts with the probability from the duty cycle above, and its burst mass is drawn from a lognormal of 0.5 dex width
-around a mean that rises with the weight. The model reproduces the distribution and its curvature (the same holds in the
-other phases). The slope of the burst-mass distribution, and through it of the cluster mass function, is the width of this
-lognormal, which the cloud figures above trace to the scatter in cloud star formation efficiency.
+Phase 40 to 110 Myr. Black: number per unit mass of the bursting columns (M_young above 500 Msun), all snapshots,
+Poisson errors. Blue: 25 realisations of the null model: every clean column of the phase bursts with the probability of the
+logistic above; a bursting column gets M = 10^(a + b log W + s N(0,1)) with b from a least-squares fit of log M_young on
+log W over the phase's bursts and a, s from a lognormal likelihood truncated at 500 Msun; masses below 500 are dropped and
+the rest binned as the data. All ingredients are fitted to the same bursts, so the comparison tests only whether the
+histogram contains structure beyond them. Result: it does not.
 
 ![burst kernel](figs/burst_kernel.png)
 
 ## Clump virial parameter and efficiency
-The virial parameter of each dense clump at the snapshot before it forms stars, against the effective dispersion of its
-patch, sigma_eff = (P/rho_mid)^{1/2}. Points are clumps, lines medians per phase, the dashed line alpha proportional to
-sigma_eff squared. All four phases follow one relation with 0.2 dex phase offsets. This is equation (2) of the functional
-form with the measured clump mass and radius.
+Left figure. x: sigma_eff = (P_tot / rho_mid)^(1/2) of the full column containing the clump at its pre-onset snapshot,
+in km/s (P and rho from the 2p gas as defined above). y: alpha_vir of the clump at that snapshot. Points: lineages as in
+the efficiency figure; lines: medians per sigma_eff bin per phase; dashed: alpha proportional to sigma_eff². Result: one
+relation for all phases with 0.2 dex offsets.
 
 ![clump virial parameter](figs/partC_alpha.png)
 
-The lifetime-integrated efficiency of each clump against its total virial parameter, kinetic plus magnetic, before onset,
-with the fitted step of equation (3): 5 % below alpha_tot = 4, 0.1 % above 16, 0.7 dex scatter. Colours are phases; the
-black line is the median over all phases.
+Right figure. x: alpha_vir,tot = alpha_vir (1 + v_A²/sigma_3d²) of the clump at its pre-onset snapshot, v_A the rms
+Alfvén speed of its members (B / sqrt(4 pi rho) per particle). y: epsilon_int as defined under Clouds. Black: median over
+all phases per bin. Dashed: the two-level fit epsilon = epsilon_u + (epsilon_b - epsilon_u) / [1 + (alpha/alpha_c)^m] by
+least absolute deviation in log: epsilon_b = 0.050, epsilon_u = 0.0012, alpha_c = 4.0, m = 4.7; 0.69 dex scatter about it.
 
 ![clump efficiency](figs/partC_eff.png)
 
@@ -325,6 +309,7 @@ threshold at the virial criterion, a bound efficiency near 5 %, a hundredfold su
 dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.92 to 1.52 with its top rising
 fifteenfold.
 
+---
 ---
 # Part C. The closed calculation (not done)
 
