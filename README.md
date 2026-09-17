@@ -48,7 +48,7 @@ gas angular-momentum vector measured within 2 kpc of the galaxy centre; the cent
 initial stellar disc particles (membership by particle ID). One grid, centred between the two centres with the angular
 momentum within 3 kpc, replaces the two whenever the centres are closer than 0.5 kpc. A *full column* spans
 $|z| < 1.5$ kpc about the grid plane; a *layer column* spans $|z - z_{\rm mid}| < 0.5$ kpc about the midplane of that
-column measured in the full-column run. Only columns with $\Sigma_{\rm gas} > 1\ {\rm M_\odot\thinspace pc^{-2}}$ are used, and
+column measured in the full-column run. Only columns with $\Sigma_{\rm gas} > 1\ {\rm M_\odot\ pc^{-2}}$ are used, and
 before the second passage only columns in which less than 10 % of the gas belongs to the other galaxy by particle ID.
 
 **Gas quantities per column.** Sums run over the gas particles $i$ inside the column (footprint $A = L^2$), with mass
@@ -59,19 +59,19 @@ $$\Sigma_{\rm gas} = \frac{1}{A}\sum_i m_i, \qquad
 z_{\rm mid} = \frac{\sum_i m_i z_i}{\sum_i m_i}, \qquad
 H = \left[\frac{\sum_i m_i (z_i - z_{\rm mid})^2}{\sum_i m_i}\right]^{1/2}$$
 
-The *slab* is $|z_i - z_{\rm mid}| < h_s$ with $h_s = \max(25\ {\rm pc},\ 0.25\thinspace H)$ and volume $V_s = 2 h_s A$.
+The *slab* is $|z_i - z_{\rm mid}| < h_s$ with $h_s = \max(25\ {\rm pc},\ 0.25\ H)$ and volume $V_s = 2 h_s A$.
 With $v_{n,i} = (\mathbf v_i - \mathbf v_{\rm gal})\cdot\hat n$, $\mathbf v_{\rm gal}$ the mean velocity of the galaxy's
 stellar particles within 1.5 kpc of its centre, and $\bar v_n$ the mass-weighted mean of $v_{n,i}$ over the 2p slab
 particles:
 
 $$P_{\rm th} = \frac{1}{V_s}\sum_{i\in{\rm slab,2p}} m_i(\gamma-1)u_i,\qquad \gamma = 5/3$$
 
-$$P_{\rm turb} = \frac{1}{V_s}\sum_{i\in{\rm slab,2p}} m_i\thinspace (v_{n,i}-\bar v_n)^2$$
+$$P_{\rm turb} = \frac{1}{V_s}\sum_{i\in{\rm slab,2p}} m_i\ (v_{n,i}-\bar v_n)^2$$
 
-$$\Pi_{\rm mag} = \frac{1}{V_s}\sum_{i\in{\rm slab,2p}} \frac{m_i}{\rho_i}\thinspace \frac{B_i^2 - 2B_{n,i}^2}{8\pi},
+$$\Pi_{\rm mag} = \frac{1}{V_s}\sum_{i\in{\rm slab,2p}} \frac{m_i}{\rho_i}\ \frac{B_i^2 - 2B_{n,i}^2}{8\pi},
 \qquad B_{n,i} = \mathbf B_i\cdot\hat n$$
 
-$$P_{\rm mag} = \frac{1}{V_s}\sum_{i\in{\rm slab}} \frac{m_i}{\rho_i}\thinspace \frac{B_i^2}{8\pi}$$
+$$P_{\rm mag} = \frac{1}{V_s}\sum_{i\in{\rm slab}} \frac{m_i}{\rho_i}\ \frac{B_i^2}{8\pi}$$
 
 $$P_{\rm tot} = P_{\rm th} + P_{\rm turb} + \Pi_{\rm mag}, \qquad
 \rho_{\rm mid} = \frac{1}{V_s}\sum_{i\in{\rm slab,2p}} m_i$$
@@ -85,15 +85,15 @@ star formation rate, the vertical-equilibrium ratio, the pressure shares and the
 includes the hot gas is $P_{\rm mag}$, summed over all slab particles.
 $\Pi_{\rm mag}$ is the vertical Maxwell stress, the magnetic term that supports the layer against its weight (it can be
 negative); $P_{\rm mag}$ is the magnetic pressure and is used only for the field strength and the equipartition
-comparison. All pressures are quoted as $P/k_{\rm B}$ in $\rm K\thinspace cm^{-3}$; code units ${\rm M_\odot\thinspace (km/s)^2\thinspace kpc^{-3}}$
-convert with the factor $4.90\times10^{-6}$, and the magnetic terms are computed in $\rm erg\thinspace cm^{-3}$ and divided by
+comparison. All pressures are quoted as $P/k_{\rm B}$ in $\rm K\ cm^{-3}$; code units ${\rm M_\odot\ (km/s)^2\ kpc^{-3}}$
+convert with the factor $4.90\times10^{-6}$, and the magnetic terms are computed in $\rm erg\ cm^{-3}$ and divided by
 $k_{\rm B}$.
 
 **Weight.** With $g_{n,i} = \mathbf g_i\cdot\hat n$ the gravitational acceleration along the normal at particle $i$,
 
-$$\mathcal W = \frac{1}{2A}\left[\sum_{z_i > z_{\rm mid},\thinspace 2p} m_i\thinspace (-g_{n,i}) \thickspace +\thickspace  \sum_{z_i < z_{\rm mid},\thinspace 2p} m_i\thinspace g_{n,i}\right],$$
+$$\mathcal W = \frac{1}{2A}\left[\sum_{z_i > z_{\rm mid},\ 2p} m_i\ (-g_{n,i}) \ +\  \sum_{z_i < z_{\rm mid},\ 2p} m_i\ g_{n,i}\right],$$
 
-the mean of the weight of the gas above the midplane and of that below, each the integral of $\rho\thinspace g_n$ through its half
+the mean of the weight of the gas above the midplane and of that below, each the integral of $\rho\ g_n$ through its half
 of the column. $\mathbf g_i$ comes from a particle-mesh solve of all gas, stars and dark matter on a $512^3$ grid over
 $\pm4$ kpc nested in a $512^3$ grid over $\pm32$ kpc (median error 8 % against direct summation on 64 test particles per
 snapshot).
@@ -101,20 +101,20 @@ snapshot).
 **Star formation rate.** Over the stars in the column that formed during the run (the initial stellar particles are
 excluded),
 
-$$\Sigma_{\rm SFR,10} = \frac{1}{A\thinspace (10\ {\rm Myr})}\sum_{{\rm age}<10\thinspace {\rm Myr}} m_\star, \qquad
-\Sigma_{\rm SFR,40} = \frac{1}{A\thinspace (40\ {\rm Myr})}\sum_{{\rm age}<40\thinspace {\rm Myr}} m_\star,$$
+$$\Sigma_{\rm SFR,10} = \frac{1}{A\ (10\ {\rm Myr})}\sum_{{\rm age}<10\ {\rm Myr}} m_\star, \qquad
+\Sigma_{\rm SFR,40} = \frac{1}{A\ (40\ {\rm Myr})}\sum_{{\rm age}<40\ {\rm Myr}} m_\star,$$
 
-in ${\rm M_\odot\thinspace yr^{-1}\thinspace kpc^{-2}}$; $M_{\rm young} = \sum_{{\rm age}<10\thinspace {\rm Myr}} m_\star$ is the same sum without
+in ${\rm M_\odot\ yr^{-1}\ kpc^{-2}}$; $M_{\rm young} = \sum_{{\rm age}<10\ {\rm Myr}} m_\star$ is the same sum without
 the division.
 
 **Ostriker & Kim (2022) relations used.**
 
-$$\Upsilon_{\rm tot}(P) = 10^{-0.212\log_{10}P + 3.86}\ {\rm km\thinspace s^{-1}}\ \ ({\rm eq.\ 26c}),\qquad
+$$\Upsilon_{\rm tot}(P) = 10^{-0.212\log_{10}P + 3.86}\ {\rm km\ s^{-1}}\ \ ({\rm eq.\ 26c}),\qquad
 \Sigma_{\rm SFR}(\mathcal W) = 10^{1.17\log_{10}\mathcal W - 7.32}\ \ ({\rm eq.\ 28b}),\qquad
 \Sigma_{\rm SFR}(P) = 10^{1.18\log_{10}P - 7.43}\ \ ({\rm eq.\ 28a}),$$
 
-with $P$, $\mathcal W$ in $\rm K\thinspace cm^{-3}$ and $\Sigma_{\rm SFR}$ in ${\rm M_\odot\thinspace yr^{-1}\thinspace kpc^{-2}}$. A pressure per unit
-star formation rate in $\rm K\thinspace cm^{-3}$ per ${\rm M_\odot\thinspace yr^{-1}\thinspace kpc^{-2}}$ is converted to $\rm km\thinspace s^{-1}$ by dividing by
+with $P$, $\mathcal W$ in $\rm K\ cm^{-3}$ and $\Sigma_{\rm SFR}$ in ${\rm M_\odot\ yr^{-1}\ kpc^{-2}}$. A pressure per unit
+star formation rate in $\rm K\ cm^{-3}$ per ${\rm M_\odot\ yr^{-1}\ kpc^{-2}}$ is converted to $\rm km\ s^{-1}$ by dividing by
 $4.81\times10^3$.
 
 **Group finding.** Friends-of-friends: two particles are linked if their separation is below the linking length $l$; a
@@ -129,7 +129,7 @@ $$M = \sum_i m_i,\qquad \mathbf x_{\rm com} = \frac{\sum_i m_i \mathbf x_i}{M},\
 
 **Boundedness of clusters.**
 
-$$E_{\rm kin} = \tfrac12\sum_i m_i\thinspace |\mathbf v_i - \mathbf v_{\rm com}|^2,\qquad
+$$E_{\rm kin} = \tfrac12\sum_i m_i\ |\mathbf v_i - \mathbf v_{\rm com}|^2,\qquad
 E_{\rm pot} = -G\sum_{i < j}\frac{m_i m_j}{\sqrt{r_{ij}^2+\epsilon^2}},\qquad \epsilon = 1\ {\rm pc},$$
 
 summed over the group's own members only (no external potential, no tidal term); a cluster is *bound* if
@@ -149,14 +149,14 @@ phase.
 
 **Time-series statistic.** Where a figure shows one value per snapshot from many columns, it is the
 $\Sigma_{\rm gas}$-weighted median over the columns: the value $r$ for which
-$\sum_{c:\thinspace r_c\le r}\Sigma_{{\rm gas},c} = \tfrac12\sum_c \Sigma_{{\rm gas},c}$.
+$\sum_{c:\ r_c\le r}\Sigma_{{\rm gas},c} = \tfrac12\sum_c \Sigma_{{\rm gas},c}$.
 
 **Phases.** 25 to 40 Myr (before the first passage), 40 to 110, 110 to 169, 169 to 226 Myr, split at the pericentres 40,
 110, 169 Myr; the final coalescence is at 217 Myr. The first 25 Myr are excluded (isothermal initial state relaxing).
 
 ## Merger phases
 x: time since the start of the run. y: $d(t) = |\mathbf c_A - \mathbf c_B|$, with $\mathbf c_X$ the median position of the initial
-stellar disc particles of galaxy X (galaxy A: particle IDs $\le 26\thinspace 000\thinspace 000$). Dotted lines: pericentres at 40, 110, 169 Myr; solid: final
+stellar disc particles of galaxy X (galaxy A: particle IDs $\le 26\ 000\ 000$). Dotted lines: pericentres at 40, 110, 169 Myr; solid: final
 coalescence at 217 Myr.
 
 ![separation](figs/story_0_sep.png)
@@ -173,7 +173,7 @@ columns of $P_{\rm tot} = P_{\rm th} + P_{\rm turb} + \Pi_{\rm mag}$ as defined 
 ![midplane pressure](figs/midplane_pressure.png)
 
 **Midplane density.** x: time. y, per snapshot and grid: the $\Sigma_{\rm gas}$-weighted median over the clean layer
-columns of $n_{\rm H,mid} = X_{\rm H}\thinspace \rho_{\rm mid}/m_{\rm p}$ with $\rho_{\rm mid}$ the slab density of the 2p gas
+columns of $n_{\rm H,mid} = X_{\rm H}\ \rho_{\rm mid}/m_{\rm p}$ with $\rho_{\rm mid}$ the slab density of the 2p gas
 defined above and $X_{\rm H} = 0.76$.
 
 ![midplane density](figs/midplane_density.png)
@@ -200,7 +200,7 @@ then includes the dark-matter weight of gas streaming outside the layer.
 ## Pressure per unit star formation
 x: time. y, per snapshot, with $c$ running over the clean layer columns of that snapshot:
 
-$$y = \frac{\sum_c P_{{\rm tot},c}}{\sum_c \Sigma_{{\rm SFR,10},c}}\thickspace \Big/\thickspace 4.81\times10^{3}\quad[{\rm km\thinspace s^{-1}}],$$
+$$y = \frac{\sum_c P_{{\rm tot},c}}{\sum_c \Sigma_{{\rm SFR,10},c}}\ \Big/\ 4.81\times10^{3}\quad[{\rm km\ s^{-1}}],$$
 
 the pressure the layer holds per unit star formation rate, the quantity Ostriker & Kim call the yield; $P_{\rm tot}$ is the
 two-phase ($T < 2\times10^4$ K) pressure defined above, hot gas excluded. Dashed:
@@ -238,10 +238,10 @@ Stars carry the ID of the gas particle they formed from, so the stars formed fro
 Per cloud, with $M$, $\mathbf x_{\rm com}$, $\mathbf v_{\rm com}$, $r_h$ as defined above,
 
 $$\sigma_{\rm 3d}^2 = \frac{\sum_i m_i|\mathbf v_i-\mathbf v_{\rm com}|^2}{M},\qquad
-\alpha_{\rm vir} = \frac{5\thinspace (\sigma_{\rm 3d}^2/3)\thinspace r_h}{G\thinspace M},\qquad
+\alpha_{\rm vir} = \frac{5\ (\sigma_{\rm 3d}^2/3)\ r_h}{G\ M},\qquad
 v_A^2 = \frac{1}{N}\sum_i \frac{B_i^2}{4\pi\rho_i}.$$
 
-Cloud mass function. x: $M$. y: $N_k/(N_{\rm phase}\thinspace \Delta M_k)$, the number of clouds in mass bin $k$ divided by the bin
+Cloud mass function. x: $M$. y: $N_k/(N_{\rm phase}\ \Delta M_k)$, the number of clouds in mass bin $k$ divided by the bin
 width and by the total number of clouds in the phase; error $\sqrt{N_k}/(N_{\rm phase}\Delta M_k)$. Dashed: M^-1.6. Result: identical in all four phases
 (maximum-likelihood index above 300 Msun 1.57 to 1.60); only the largest cloud grows, 3 × 10⁵ to 10⁷ Msun.
 
@@ -287,14 +287,14 @@ clusters.
 ## Every cluster against its patch
 Each bound cluster of the clean sample against the column it lies in (of the two grids, the one in which that column's
 intruder fraction is lower). Left x: layer W_c. Middle x: layer P_tot,c. Right x: Sigma_SFR,10,c. y: cluster mass.
-Dashed lines: $0.5\thinspace \Sigma_{\rm SFR}(\mathcal W)\thinspace A\thinspace \tau$, $0.5\thinspace \Sigma_{\rm SFR}(P)\thinspace A\thinspace \tau$ and
-$0.5\thinspace \Sigma_{\rm SFR,10}\thinspace A\thinspace \tau$ with the OK22 relations above, $A = 0.25$ $\rm kpc^2$ and $\tau = 10^7$ yr: half the stars a column forms in 10 Myr at the OK22 rate for its weight, for its
+Dashed lines: $0.5\ \Sigma_{\rm SFR}(\mathcal W)\ A\ \tau$, $0.5\ \Sigma_{\rm SFR}(P)\ A\ \tau$ and
+$0.5\ \Sigma_{\rm SFR,10}\ A\ \tau$ with the OK22 relations above, $A = 0.25$ $\rm kpc^2$ and $\tau = 10^7$ yr: half the stars a column forms in 10 Myr at the OK22 rate for its weight, for its
 pressure, and at its own rate. Result: cluster masses fill two decades below the lines; 9 % lie above the weight line.
 
 ![cluster environment](figs/cluster_env.png)
 
 ## Line of sight
-As the vertical-equilibrium figure with the column normal replaced by $\hat n_\theta = \cos\theta\thinspace \hat n + \sin\theta\thinspace \hat e_2$,
+As the vertical-equilibrium figure with the column normal replaced by $\hat n_\theta = \cos\theta\ \hat n + \sin\theta\ \hat e_2$,
 $\theta = 0, 30, 60, 90$ degrees, $\hat e_2$ the second in-plane axis of the grid. Each θ has its own full-column run and its own layer cut about the
 midplane found along n̂_θ. y: the Sigma_gas-weighted median of layer P_tot / W over the columns, computed per grid and
 combined over the two grids with weights equal to their column counts. Every fourth snapshot. Result: before the second
@@ -315,7 +315,7 @@ depth only; L from 0.5 to 0.125 kpc at fixed depth changes nothing, depths of 0.
 ## Low-mass end of the cluster mass function
 x: cluster mass bin $[M_1, M_2)$. y: the $\alpha$ maximising
 
-$$\mathcal L(\alpha) = -\alpha\sum_i \ln M_i - N\ln\frac{M_1^{\thinspace 1-\alpha} - M_2^{\thinspace 1-\alpha}}{\alpha-1}$$
+$$\mathcal L(\alpha) = -\alpha\sum_i \ln M_i - N\ln\frac{M_1^{\ 1-\alpha} - M_2^{\ 1-\alpha}}{\alpha-1}$$
 
 over the $N$ groups with $M_i$ in the bin, on a grid $\alpha = 0.2\ldots4$; error from the curvature of $\mathcal L$ at the
 maximum. Filled: all friends-of-friends groups of the 10-particle catalogue (5 pc linking); open: bound ones only; per
@@ -339,11 +339,11 @@ dispersion $\sigma_{\rm eff} = (P/\rho_{\rm mid})^{1/2}$ with $P = \mathcal{W}$.
 half-mass radius $r_h$, Alfvén Mach number $\mathcal{M}_A$.
 
 **(1) Complex population.** Measured, invariant through the merger:
-$$n(M)\thinspace {\rm d}M \propto M^{-1.6}\thinspace {\rm d}M \quad (M > 300\ {\rm M}_\odot),$$
+$$n(M)\ {\rm d}M \propto M^{-1.6}\ {\rm d}M \quad (M > 300\ {\rm M}_\odot),$$
 with the top rising from $10^5$ to $10^7$ Msun through the merger.
 
 **(2) Virial parameter of a complex from the layer.**
-$$\alpha_{\rm tot}(M, r_h, \sigma_{\rm eff}) = \frac{5}{3}\thinspace \frac{\sigma_{\rm eff}^2\thinspace (r_h/H)\thinspace r_h}{G\thinspace M}\thinspace \left(1 + \mathcal{M}_A^{-2}\right).$$
+$$\alpha_{\rm tot}(M, r_h, \sigma_{\rm eff}) = \frac{5}{3}\ \frac{\sigma_{\rm eff}^2\ (r_h/H)\ r_h}{G\ M}\ \left(1 + \mathcal{M}_A^{-2}\right).$$
 Measured over predicted: median 0.9, 0.4 dex scatter, rank correlation 0.8.
 
 **(3) Efficiency of a complex.** A step in $\alpha_{\rm tot}$ with lognormal scatter:
@@ -363,7 +363,7 @@ $$\epsilon(\alpha_{\rm tot}) = \epsilon_u + \frac{\epsilon_b - \epsilon_u}{1 + (
 mass function by about 0.2.
 
 **(5) Cluster mass function.** The complex mass function convolved with the efficiency distribution:
-$$n_{\rm cl}(M_{\rm cl}) = \int {\rm d}M\ n(M)\ \frac{1}{f_c M}\ p_\epsilon\negthinspace \left(\frac{M_{\rm cl}}{f_c M}\ \Big|\ \alpha_{\rm tot}(M,\sigma_{\rm eff})\right),$$
+$$n_{\rm cl}(M_{\rm cl}) = \int {\rm d}M\ n(M)\ \frac{1}{f_c M}\ p_\epsilon\left(\frac{M_{\rm cl}}{f_c M}\ \Big|\ \alpha_{\rm tot}(M,\sigma_{\rm eff})\right),$$
 with $p_\epsilon$ the lognormal of (3) centred on the step. Evaluated on the measured complexes of each phase (200 draws):
 
 | phase | $\sigma_{\rm eff}$ [km/s] | bound fraction | slope pred. | slope meas. | top pred. | top meas. |
@@ -376,30 +376,30 @@ with $p_\epsilon$ the lognormal of (3) centred on the step. Evaluated on the mea
 The slope is 0.1 to 0.2 too steep in every phase; the flattening (0.40 vs 0.40) and the rise of the top (45 vs 15) are
 reproduced. With the mass dependence of boundedness removed (bound flags shuffled) the slopes are 2.21, 2.26, 1.98, 1.83.
 
-**(6) Largest cluster per interval.** Two equivalent statements: $M_{\max} \simeq 0.1\thinspace M_{\star}(25\thinspace {\rm Myr})$, the
-largest burst of the interval; and, while star formation is on, $M_{\max} \simeq f_c\thinspace \eta\thinspace \Sigma_{\rm SFR}^{\rm PRFM}(\mathcal{W}_{90})\thinspace A\thinspace \tau$
+**(6) Largest cluster per interval.** Two equivalent statements: $M_{\max} \simeq 0.1\ M_{\star}(25\ {\rm Myr})$, the
+largest burst of the interval; and, while star formation is on, $M_{\max} \simeq f_c\ \eta\ \Sigma_{\rm SFR}^{\rm PRFM}(\mathcal{W}_{90})\ A\ \tau$
 with $\eta = 0.4$, $A = 0.25$ $\rm kpc^2$, $\tau = 10$ Myr, slope 0.94 and 0.09 dex scatter over seven intervals.
 
 **(7) Patch-level duty cycle** (used for the burst-mass mock of Part B above):
-$P({\rm burst}\thinspace |\thinspace \rho_{\rm mid}) = [1 + \exp(-k(\log\rho_{\rm mid} - \log\rho_{50}))]^{-1}$, $k = 5.1$,
-$\log\rho_{50} = -1.65$ ($\rm M_\odot\thinspace pc^{-3}$); burst mass $\log M_{\rm burst} \sim \mathcal{N}(a + b\log\mathcal{W},\ 0.4\text{–}0.5)$.
+$P({\rm burst}\ |\ \rho_{\rm mid}) = [1 + \exp(-k(\log\rho_{\rm mid} - \log\rho_{50}))]^{-1}$, $k = 5.1$,
+$\log\rho_{50} = -1.65$ ($\rm M_\odot\ pc^{-3}$); burst mass $\log M_{\rm burst} \sim \mathcal{N}(a + b\log\mathcal{W},\ 0.4\text{–}0.5)$.
 
 ## Shear term
-Columns of the 18 snapshots with the turbulence decomposition, restricted to Sigma_SFR,10 = 0. A linear velocity field $\mathbf v(\mathbf x) = \mathbf v_0 + \mathsf G\thinspace (\mathbf x - \mathbf x_0)$ is fitted by least
+Columns of the 18 snapshots with the turbulence decomposition, restricted to Sigma_SFR,10 = 0. A linear velocity field $\mathbf v(\mathbf x) = \mathbf v_0 + \mathsf G\ (\mathbf x - \mathbf x_0)$ is fitted by least
 squares to the gas of the column;
 
-$$S = \left\Vert \tfrac12(\mathsf G + \mathsf G^{\rm T}) - \tfrac13\thinspace {\rm tr}(\mathsf G)\thinspace \mathsf I\right\Vert_F$$
+$$S = \left\Vert \tfrac12(\mathsf G + \mathsf G^{\rm T}) - \tfrac13\ {\rm tr}(\mathsf G)\ \mathsf I\right\Vert_F$$
 
-is the shear rate in $\rm km\thinspace s^{-1}\thinspace kpc^{-1}$; $\sigma_{\rm tot}^2$ is the variance of $v_n$ over the column's gas and
+is the shear rate in $\rm km\ s^{-1}\ kpc^{-1}$; $\sigma_{\rm tot}^2$ is the variance of $v_n$ over the column's gas and
 $\sigma_{\rm res}^2$ the variance of $v_n$ after subtracting the fitted field. x: $\Sigma_{\rm gas} H S^2$ converted to
-$\rm K\thinspace cm^{-3}$. y: $P_{\rm turb}\thinspace (\sigma_{\rm res}/\sigma_{\rm tot})^2$. Line: $y = 0.02\thinspace x$. Result: one coefficient in every phase, no offset.
+$\rm K\ cm^{-3}$. y: $P_{\rm turb}\ (\sigma_{\rm res}/\sigma_{\rm tot})^2$. Line: $y = 0.02\ x$. Result: one coefficient in every phase, no offset.
 
 ![shear closure](figs/story_3_shear.png)
 
 ## Largest cluster and weight
 25 Myr intervals. x: the 90th percentile of $\lbrace \mathcal W_c : M_{{\rm young},c} > 500\ {\rm M_\odot}\rbrace$ over the columns and snapshots of
 the interval, $\mathcal W_c$ the layer weight. y: the largest bound-cluster mass in the interval. Labels: interval start
-in Myr. Line: $0.5\thinspace \Sigma_{\rm SFR}(\mathcal W)\thinspace A\thinspace \tau$ with the OK22 relation, $A = 0.25$ $\rm kpc^2$, $\tau = 10^7$ yr,
+in Myr. Line: $0.5\ \Sigma_{\rm SFR}(\mathcal W)\ A\ \tau$ with the OK22 relation, $A = 0.25$ $\rm kpc^2$, $\tau = 10^7$ yr,
 nothing fitted. Open circle: the interval in which fewer
 than 5 % of the clean columns have M_young > 500. Result: seven active intervals follow the line, slope 0.94 against the
 median weight with 0.09 dex scatter; the quiescent interval lies 100 times below.
@@ -410,7 +410,7 @@ median weight with 0.09 dex scatter; the quiescent interval lies 100 times below
 x: layer $\mathcal W_c$ of a clean column. y: points, per 0.5 dex bin: the fraction of columns in the bin with
 $M_{{\rm young},c} > 500$ $\rm M_\odot$; lines:
 
-$$P(\mathcal W) = \left[1 + \exp\negthinspace \big(-k\thinspace (\log_{10}\mathcal W - \log_{10}\mathcal W_{50})\big)\right]^{-1}$$
+$$P(\mathcal W) = \left[1 + \exp\big(-k\ (\log_{10}\mathcal W - \log_{10}\mathcal W_{50})\big)\right]^{-1}$$
 
 with $k$ and $\mathcal W_{50}$ by maximum likelihood over the columns of the phase.
 Result: log W_50 = 3.75, 3.86, 4.73, 4.95; the same fit against rho_mid moves by less than 0.5 dex between phases.
@@ -420,7 +420,7 @@ Result: log W_50 = 3.75, 3.86, 4.73, 4.95; the same fit against rho_mid moves by
 ## Burst-mass distribution
 Phase 40 to 110 Myr. Black: N_k / ΔM_k over the bursting columns (M_young > 500 Msun) of the phase, all snapshots,
 error √N_k / ΔM_k. Blue: 25 realisations of the null model: every clean column of the phase bursts with probability $P(\mathcal W_c)$
-from the logistic above; a bursting column gets $M = 10^{\thinspace a + b\log_{10}\mathcal W_c + s\thinspace \xi}$, $\xi\sim N(0,1)$, with
+from the logistic above; a bursting column gets $M = 10^{\ a + b\log_{10}\mathcal W_c + s\ \xi}$, $\xi\sim N(0,1)$, with
 $b$ from a least-squares fit of $\log M_{\rm young}$ on $\log\mathcal W$ over the phase's bursts and $(a, s)$ from a lognormal
 likelihood truncated at 500 $\rm M_\odot$; masses below
 500 are dropped and the rest binned as the data. All ingredients are fitted to the same bursts, so the comparison tests only
@@ -430,13 +430,13 @@ whether the histogram contains structure beyond them. Result: it does not.
 
 ## Clump virial parameter and efficiency
 Left. x: $\sigma_{\rm eff} = (P_{{\rm tot},c}/\rho_{{\rm mid},c})^{1/2}$ of the full column $c$ containing the clump at its
-pre-onset snapshot, in $\rm km\thinspace s^{-1}$. y: alpha_vir of the clump at that
+pre-onset snapshot, in $\rm km\ s^{-1}$. y: alpha_vir of the clump at that
 snapshot (definition under Clouds). Points: the lineages of the efficiency figure; lines: medians per sigma_eff bin per
 phase; dashed: alpha ∝ sigma_eff². Result: one relation for all phases with 0.2 dex offsets.
 
 ![clump virial parameter](figs/partC_alpha.png)
 
-Right. x: $\alpha_{\rm vir,tot} = \alpha_{\rm vir}\thinspace (1 + v_A^2/\sigma_{\rm 3d}^2)$ of the clump at its pre-onset snapshot.
+Right. x: $\alpha_{\rm vir,tot} = \alpha_{\rm vir}\ (1 + v_A^2/\sigma_{\rm 3d}^2)$ of the clump at its pre-onset snapshot.
 y: $\epsilon_{\rm int}$. Black: median over all phases per bin. Dashed:
 
 $$\epsilon(\alpha) = \epsilon_u + \frac{\epsilon_b - \epsilon_u}{1 + (\alpha/\alpha_c)^m},$$
