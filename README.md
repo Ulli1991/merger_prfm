@@ -310,9 +310,22 @@ where and when the star formation criterion of the code fires (density above 100
 $\epsilon_{\rm ff} = 0.5$ per free-fall time) and inherit the clustering of the gas at that scale. Whether such a group is a
 bound cluster, how compact it is and whether it survives are set by that criterion and by the softened stellar dynamics,
 here and in every galaxy-scale simulation of this kind, and are not reported as results. The fraction of star formation
-in bound groups is 0.8 to 0.9 in every phase at this definition and is not used. What the groups do record is the
-stellar mass that each star-forming clump produced, and the figures below are read as that: the distribution of the
+in bound groups is shown below for completeness and is not used as a result. What the groups do record is the
+stellar mass that each star-forming clump produced, and the figures after it are read as that: the distribution of the
 masses of the star-forming events, and their largest value.
+
+**Bound fraction of the stars formed.** x: time, every tenth snapshot. y: the mass in bound groups (energy criterion
+above, 5 pc linking, whole box) above 300 (solid) or 1000 (dashed) $\rm M_\odot$ whose members fall in the age window,
+divided by the mass of all stars formed in that window: windows 0 to 10 Myr (blue) and 20 to 50 Myr (orange). Snapshots
+in which less than 2000 $\rm M_\odot$ formed in the window are skipped. Result: 0.6 to 0.9 whenever star formation is on,
+in the discs as in the bursts, at either floor; it falls only when the window contains little star formation, so that
+the few groups are below the floor, and for the 20 to 50 Myr window after 190 Myr, whose stars sit in the 20 pc merged
+nucleus that its own stars do not bind. Lahén et al. (2020, 2025) and Hislop et al. (2021) find 10 to 60 % with the same
+kind of run and criterion-dependent values; the level here follows from stars forming at $\epsilon_{\rm ff} = 0.5$ in
+self-gravitating gas above 100 $\rm cm^{-3}$ with 0.4 pc softening, which makes every event a compact bound knot, and is
+a property of that rule.
+
+![bound fraction](figs/bound_fraction.png)
 
 ## Mass function of the young stellar groups
 *Groups*: the friends-of-friends groups of stars younger than 10 Myr defined above (l = 5 pc, N ≥ 25), on every tenth
