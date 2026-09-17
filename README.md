@@ -520,10 +520,10 @@ $n_{\rm H} > 100$ clumps of the catalogue at that snapshot,
 
 $${\rm SFR}_{\rm chain}(t) = \frac{1}{\tau}\sum_{\rm clumps}\epsilon(\alpha_{{\rm tot},i})\ M_i ,$$
 
-with $\epsilon$ the step of link 5 (dense-clump constants), $\alpha_{{\rm tot},i} = \alpha_{{\rm vir},i}(1 +
-v_{A,i}^2/\sigma_{{\rm 3d},i}^2)$ from the clump's own catalogue entry, and $\tau$ one constant, the run-median of
+with $\epsilon$ the step of link 5 (dense-clump constants), 
+$\alpha_{{\rm tot},i} = \alpha_{{\rm vir},i}(1 + v_{A,i}^2/\sigma_{{\rm 3d},i}^2)$ from the clump's own catalogue entry, and $\tau$ one constant, the run-median of
 $\sum\epsilon M/{\rm SFR}$ over $t > 25$ Myr, which comes out at 6.3 Myr, about the median clump lifetime. x: time. y:
-the star formation rate of the run in 2 Myr bins from the stellar formation times (black) and ${\rm SFR}_{\rm chain}$
+the star formation rate of the run in 2 Myr bins from the stellar formation times (black) and $\rm SFR_{chain}$
 (orange). Result: the two track each other over 2.5 dex with rank correlation 0.82 (0.86 with the measured rate 4 Myr
 later) and 0.43 dex scatter; the phase medians of measured over chain are 1.8, 1.5, 0.5, 0.9. The chain reproduces the
 collapse of star formation after the second-passage burst, when the clump mass is unchanged but the fraction of clump
