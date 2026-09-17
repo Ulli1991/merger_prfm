@@ -267,7 +267,9 @@ formation between the second and third passage stays at 30 to 60 times the yield
 weight for 50 Myr after the burst while the cold gas is present and not forming stars. The gas is not depleted: the
 depletion time of the two-phase gas, $\Sigma_{\rm gas,2p}/\Sigma_{\rm SFR,10}$ over the clean columns, is 6 to 10 Gyr in
 the discs, 48 Gyr between the second and third passage, and 2.3 Gyr after the third. The excess is gas held at the
-weight with the clumps above the efficiency step (Part B, links 4 and 5), not a lag.
+weight with the clumps above the efficiency step, not a lag: the star formation rate predicted from the clump
+population through the efficiency step follows the measured one through the burst and its collapse (Part B, "The chain
+against the star formation rate").
 
 ![pressure to star formation lag](figs/sfr_lag.png)
 
@@ -512,6 +514,26 @@ the ratio of free-fall to dynamical time has not been tried on the same clumps. 
 not explained. The integrated efficiency of 5 % is ten times below the $\epsilon_{\rm ff} = 0.5$ per free-fall time of
 the star formation rule, so this level is set by feedback, not by the rule.
 
+## The chain against the star formation rate
+Links 3 to 5 together give the star formation rate from the clump population alone. Per snapshot, over the
+$n_{\rm H} > 100$ clumps of the catalogue at that snapshot,
+
+$${\rm SFR}_{\rm chain}(t) = \frac{1}{\tau}\sum_{\rm clumps}\epsilon(\alpha_{{\rm tot},i})\ M_i ,$$
+
+with $\epsilon$ the step of link 5 (dense-clump constants), $\alpha_{{\rm tot},i} = \alpha_{{\rm vir},i}(1 +
+v_{A,i}^2/\sigma_{{\rm 3d},i}^2)$ from the clump's own catalogue entry, and $\tau$ one constant, the run-median of
+$\sum\epsilon M/{\rm SFR}$ over $t > 25$ Myr, which comes out at 6.3 Myr, about the median clump lifetime. x: time. y:
+the star formation rate of the run in 2 Myr bins from the stellar formation times (black) and ${\rm SFR}_{\rm chain}$
+(orange). Result: the two track each other over 2.5 dex with rank correlation 0.82 (0.86 with the measured rate 4 Myr
+later) and 0.43 dex scatter; the phase medians of measured over chain are 1.8, 1.5, 0.5, 0.9. The chain reproduces the
+collapse of star formation after the second-passage burst, when the clump mass is unchanged but the fraction of clump
+mass below the step falls from 0.5 to 0.3, and it leads the bursts by a few Myr because the clumps are in place before
+they form stars. It over-predicts the quiet interval by 2, which is the residual not accounted for. This is the
+accounting for the yield excess of Part A: the pressure stays at the weight, the clumps stay in place, and the star
+formation rate follows their $\alpha_{\rm tot}$, not the pressure.
+
+![chain star formation rate](figs/chain_sfr.png)
+
 ## Link 6. Clump to the stellar mass of the event
 The mass side only. With the dominant group of a clump taking $f_c = 0.5$ of its stars (measured in the largest-group
 figure of Part A), the mass function of the events is the clump mass function convolved with the efficiency
@@ -588,6 +610,9 @@ relative to the shear of the flow, not a derivation of it.
 ## What the chain gets and does not get
 - Links 1, 4 and 5 hold as measured relations through the whole merger: the pressure is the weight, the clump
   dispersions are the layer cascade at the clump size, and the efficiency is a step in $\alpha_{\rm tot}$.
+- Links 3 to 5 together give the star formation rate of the run from the clump population, over 2.5 dex with 0.4 dex
+  scatter and one timescale, including its collapse after the bursts; this is what the failure of the yield relation
+  reduces to.
 - Link 6 reproduces the shape of the event mass function (flattening, rising top) from the clump population and the
   step, not its normalisation.
 - Links 2 and 3 are untested and unpredicted respectively; the timing of the bursts is described, not explained.
