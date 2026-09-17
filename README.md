@@ -330,8 +330,8 @@ a property of that rule.
 **Bound fraction against the environment.** The same quantity for the 0 to 10 Myr window (filled: groups above 300
 $\rm M_\odot$; open: above 1000), one point per tenth snapshot from 25 Myr on, against the state of the clean columns of
 that snapshot: $\Sigma_{\rm SFR,10}$ averaged over the columns that formed stars in the last 10 Myr (an observer's
-star-forming area), and the $\Sigma_{\rm gas}$-weighted medians of the layer $P_{\rm tot}$, of $\sigma_{\rm eff} =
-(P_{\rm tot}/\rho_{\rm mid})^{1/2}$ and of the layer $\mathcal W$. Dashed with band: the observed relation of Goddard et
+star-forming area), and the $\Sigma_{\rm gas}$-weighted medians of the layer $P_{\rm tot}$, of
+$\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$ and of the layer $\mathcal W$. Dashed with band: the observed relation of Goddard et
 al. (2010), $\Gamma = 0.29\ \Sigma_{\rm SFR}^{0.24}$, the plane in which Kruijssen (2012) tests his model. Result: the
 bound fraction rises with $\Sigma_{\rm SFR}$ from 0.3 to 1 over three decades, the same direction as the observed
 relation but 3 to 5 times above it; it shows no dependence on pressure, dispersion or weight beyond what those share
