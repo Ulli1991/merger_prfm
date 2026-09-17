@@ -48,20 +48,36 @@ and below the grid plane; a *layer column* spans 0.5 kpc above and below the mid
 mean height of its gas in the full-column run. Only columns with gas surface density above 1 Msun/pc² are used, and before
 the second passage only columns in which less than 10 % of the gas belongs to the other galaxy by particle ID.
 
-*Gas quantities per column.* Sigma_gas = gas mass in the column / area. H = mass-weighted rms height of the gas about the
-midplane. The *slab* is the layer of half-thickness max(25 pc, 0.25 H) about the midplane. "2p" means gas below 20 000 K.
-P_th = sum over slab particles of m (gamma-1) u divided by the slab volume; P_turb = sum of m (v_n - v̄_n)² over the slab
-divided by its volume, v_n the velocity component along the column normal relative to the galaxy's mean velocity and v̄_n
-the mass-weighted mean over the slab (2p gas); P_mag = volume-weighted B²/8pi over the slab. P_tot = P_th + P_turb + P_mag.
-All pressures are P/k_B in K cm⁻³. rho_mid = 2p gas mass in the slab / slab volume.
+*Gas quantities per column.* Sums run over the gas particles i inside the column (footprint A = (0.5 kpc)², depth as
+stated), with mass m_i, position z_i along the column normal n̂, velocity v_i, density rho_i, specific internal energy u_i,
+temperature T_i, magnetic field B_i.
 
-*Weight.* W = one half of [ sum over 2p gas above the midplane of m (-g_n) + sum over 2p gas below of m g_n ] / area, with
-g_n the gravitational acceleration along the normal at each particle from a particle-mesh solve of all gas, stars and dark
-matter (512³ cells over ±4 kpc nested in 512³ over ±32 kpc; median error 8 % against direct summation). In K cm⁻³.
+- Sigma_gas = (1/A) Σ_i m_i
+- z_mid = Σ_i m_i z_i / Σ_i m_i ;  H = [ Σ_i m_i (z_i − z_mid)² / Σ_i m_i ]^(1/2)
+- slab: |z_i − z_mid| < h_s with h_s = max(25 pc, 0.25 H);  V_slab = 2 h_s A
+- "2p": particles with T_i < 2 × 10⁴ K
+- v_n,i = (v_i − v_gal) · n̂ with v_gal the mean velocity of the galaxy's stellar particles within 1.5 kpc of its centre;
+  v̄_n = Σ_{slab,2p} m_i v_n,i / Σ_{slab,2p} m_i
+- P_th = (1/V_slab) Σ_{slab,2p} m_i (γ − 1) u_i ,  γ = 5/3
+- P_turb = (1/V_slab) Σ_{slab,2p} m_i (v_n,i − v̄_n)²
+- P_mag = (1/V_slab) Σ_{slab} (m_i / rho_i) B_i² / 8π   (all slab gas, volume weighted)
+- P_tot = P_th + P_turb + P_mag
+- rho_mid = (1/V_slab) Σ_{slab,2p} m_i
 
-*Star formation rate.* Sigma_SFR,10 = mass of stars younger than 10 Myr inside the column / area / 10 Myr, using only
-stars formed during the run (the initial stellar particles are excluded); Sigma_SFR,40 the same over 40 Myr. Both in
-Msun yr⁻¹ kpc⁻².
+Code units Msun (km/s)² kpc⁻³ are converted to K cm⁻³ (P/k_B) with the factor 4.90 × 10⁻⁶; P_mag is computed in erg cm⁻³
+and divided by k_B directly.
+
+*Weight.* With g_n,i = g_i · n̂ the gravitational acceleration along the normal at particle i,
+
+- W = (1/2A) [ Σ_{z_i > z_mid, 2p} m_i (−g_n,i) + Σ_{z_i < z_mid, 2p} m_i g_n,i ]
+
+i.e. the mean of the weight of the gas above the midplane and of that below, each the integral of rho g_n through its half
+of the column. g_i is from a particle-mesh solve of all gas, stars and dark matter on a 512³ grid over ±4 kpc nested in a
+512³ grid over ±32 kpc (median error 8 % against direct summation on 64 test particles per snapshot). W in K cm⁻³ with
+the same factor.
+
+*Star formation rate.* Sigma_SFR,10 = (1/A) Σ_{stars in column, formed in the run, age < 10 Myr} m_* / (10 Myr), and
+Sigma_SFR,40 the same with 40 Myr; in Msun yr⁻¹ kpc⁻². A column's M_young is the same sum without dividing by A and time.
 
 *Ostriker & Kim (2022) relations used.* Yield Upsilon_tot(P) = 10^(-0.212 log P + 3.86) km/s (their eq. 26c);
 Sigma_SFR(W) = 10^(1.17 log W - 7.32) (eq. 28b); Sigma_SFR(P) = 10^(1.18 log P - 7.43) (eq. 28a). A yield in km/s is
