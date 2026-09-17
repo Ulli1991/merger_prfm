@@ -40,7 +40,10 @@ second passage the layer holds 10 to 100 times more pressure per unit star forma
 is turbulent and magnetic, sustained by the shear of the merger flow at a fixed coefficient of 0.02. The excess is not a
 pressure problem: the pressure stays within a factor of 2 of the weight while the star formation rate collapses by 2.5 dex
 between bursts, so the ratio runs away on its denominator. At the peak of the 125 to 135 Myr burst the layer holds only 0.2 to 0.5 of the yield,
-i.e. less pressure per unit star formation than the TIGRESS calibration. The star formation rate
+i.e. less pressure per unit star formation than the TIGRESS calibration. Star formation lags the pressure by 8 to 12
+Myr at the passages, which times the bursts but does not account for the excess: shifting the star formation rate by
+the lag leaves the phase median at 30 to 60, since the pressure stays at the weight for 50 Myr while the cold gas,
+present at a depletion time of 48 Gyr, does not form stars. The star formation rate
 at fixed weight falls below the OK22 relation by 0.5 dex in the discs and 2 dex after the second passage, at every column
 size. The balance test itself is meaningful only for columns at least 1 kpc deep and within about 30 degrees of the disc
 normal; the yield and rate comparisons depend on neither.
@@ -249,6 +252,24 @@ $\Upsilon_{\rm tot}(\bar P)$ at $\bar P = \sum_c \Sigma_{{\rm gas,2p},c}P_{{\rm 
 in the quiet intervals after, back to the yield during the two nuclear bursts.
 
 ![pressure per unit star formation](figs/story_2_feedback.png)
+
+## Delay between pressure and star formation
+Test of whether the yield excess is a causal delay: the pressure responds to the weight at once, star formation only
+after the gas has collapsed. Series per snapshot: $\log P_{\rm tot}$ and $\log\mathcal W$, the $\Sigma_{\rm gas}$-weighted
+medians over the clean layer columns; $\log{\rm SFR}$, the star formation rate of the whole run in 2 Myr bins from the
+formation times of all stars (frame-free). x: lag $\ell$. y: the correlation coefficient of $\log P_{\rm tot}(t)$ with
+$\log{\rm SFR}(t+\ell)$ over the snapshots with $t > 25$ Myr, and the same per phase and for $\mathcal W$; positive lag
+means star formation later than the pressure. Result: star formation lags the pressure by 8 Myr between the first and
+second passage, 12 Myr between the second and third (correlation 0.89 at the lag against 0.39 at zero lag), and 2 Myr
+after the third; 12 Myr over the whole run. The delay is real and sets the timing of the bursts, but it does not remove
+the yield excess: with the star formation rate shifted by 10 to 20 Myr the phase-median pressure per unit star
+formation between the second and third passage stays at 30 to 60 times the yield, because the pressure remains at the
+weight for 50 Myr after the burst while the cold gas is present and not forming stars. The gas is not depleted: the
+depletion time of the two-phase gas, $\Sigma_{\rm gas,2p}/\Sigma_{\rm SFR,10}$ over the clean columns, is 6 to 10 Gyr in
+the discs, 48 Gyr between the second and third passage, and 2.3 Gyr after the third. The excess is gas held at the
+weight with the clumps above the efficiency step (Part B, links 4 and 5), not a lag.
+
+![pressure to star formation lag](figs/sfr_lag.png)
 
 ## Magnetic field
 x: time. y: $B_c = (8\pi k_{\rm B} P_{{\rm mag},c})^{1/2}$ per layer column, in $\mu{\rm G}$. Dark:
