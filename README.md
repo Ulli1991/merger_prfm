@@ -90,16 +90,18 @@ over the columns: the value at which half of the total gas surface density lies 
 110, 169 Myr; the final coalescence is at 217 Myr. The first 25 Myr are excluded (isothermal initial state relaxing).
 
 ## Merger phases
-x: time since the start of the run. y: distance between the two galaxy centres defined above. Dotted lines mark the
-pericentres at 40, 110 and 169 Myr; the solid line the final coalescence at 217 Myr.
+x: time since the start of the run. y: d(t) = |c_A − c_B|, with c_X the median position of the initial stellar disc
+particles of galaxy X (galaxy A: particle IDs ≤ 26 000 000). Dotted lines: pericentres at 40, 110, 169 Myr; solid: final
+coalescence at 217 Myr.
 
 ![separation](figs/story_0_sep.png)
 
 ## Vertical equilibrium
-x: time. y: P_tot / W per snapshot, the Sigma_gas-weighted median over the columns, for the full column (light) and the
-layer column (dark), both with P_tot and W from the 2p gas as defined above. Result: with the layer weight the ratio is
-1.05, 0.94, 0.73, 0.96 in the four phases and never leaves 0.5 to 2; with the full column it drops to 0.4 between the
-second and third passage because the column then includes the dark-matter weight of gas streaming outside the layer.
+x: time. y, per snapshot: the Sigma_gas-weighted median over the clean columns c of r_c = P_tot,c / W_c, i.e. the value
+r for which Σ_{c: r_c ≤ r} Sigma_gas,c = ½ Σ_c Sigma_gas,c. Light: full columns (|z| < 1.5 kpc about the grid plane); dark:
+layer columns (|z − z_mid| < 0.5 kpc), with P_tot and W as defined above in both cases. Result: layer 1.05, 0.94, 0.73, 0.96
+in the four phases, never outside 0.5 to 2; the full column drops to 0.4 between the second and third passage because it
+then includes the dark-matter weight of gas streaming outside the layer.
 
 ![equilibrium](figs/story_1_equilibrium.png)
 
@@ -117,88 +119,91 @@ in the quiet intervals after, back to the yield during the two nuclear bursts.
 ![pressure per unit star formation](figs/story_2_feedback.png)
 
 ## Magnetic field
-x: time. y: B = sqrt(8 pi P_mag) from the slab magnetic pressure of each column, in microgauss; dark line the
-Sigma_gas-weighted mean over the columns, light line the median column. Result: 10 nG seed, e-folding 10 Myr, 1 to 2
-microgauss from 50 Myr, a jump by 5 at the second passage, 10 to 20 microgauss after the third.
+x: time. y: B_c = (8π k_B P_mag,c)^(1/2) per layer column, in microgauss, with P_mag,c the slab magnetic pressure defined
+above. Dark: Σ_c Sigma_gas,c B_c / Σ_c Sigma_gas,c over the clean columns; light: the median of B_c over the columns.
+Result: 10 nG seed, e-folding time 10 Myr, 1 to 2 microgauss from 50 Myr, a factor 5 jump at the second passage, 10 to 20
+microgauss after the third.
 
 ![dynamo](figs/story_4_dynamo.png)
 
 ## Clouds
-*Clouds* are friends-of-friends groups, linking length 3 pc, at least 25 particles (100 Msun), of gas colder than 1000 K
-and denser than 10 cm⁻³, identified on every tenth snapshot over the whole box. *Clumps* are the same with a 100 cm⁻³
-threshold and 1.5 pc linking. Stars carry the ID of the gas particle they formed from, so the stars formed from any cloud
-are counted exactly. Per cloud: mass, half-mass radius r_h, mass-weighted 3D velocity dispersion sigma_3d about the mean,
-mean and maximum density, virial parameter alpha_vir = 5 (sigma_3d²/3) r_h / (G M), rms Alfvén speed v_A of its members.
+*Clouds* are friends-of-friends groups (linking length 3 pc, at least 25 particles = 100 Msun) of gas with T < 1000 K and
+n_H > 10 cm⁻³, on every tenth snapshot, over the whole box. *Clumps* are the same with n_H > 100 cm⁻³ and 1.5 pc linking.
+Stars carry the ID of the gas particle they formed from, so the stars formed from a cloud's members are counted exactly.
+Per cloud, with sums over its members: M = Σ m_i; centre x_c = Σ m_i x_i / M; r_h = radius about x_c containing M/2;
+v̄ = Σ m_i v_i / M; sigma_3d² = Σ m_i |v_i − v̄|² / M; alpha_vir = 5 (sigma_3d²/3) r_h / (G M); v_A² = (1/N) Σ B_i² / (4π rho_i).
 
-Cloud mass function. x: cloud mass. y: number of clouds per unit mass divided by the total number of clouds in the phase;
-Poisson errors. Dashed: M^-1.6 for reference. Result: the same in all four phases (index 1.57 to 1.60 above 300 Msun);
-only the maximum mass grows, from 3 × 10⁵ to 10⁷ Msun.
+Cloud mass function. x: M. y: N_k / (N_phase ΔM_k), the number of clouds in mass bin k divided by the bin width and by the
+total number of clouds in the phase; error √N_k / (N_phase ΔM_k). Dashed: M^-1.6. Result: identical in all four phases
+(maximum-likelihood index above 300 Msun 1.57 to 1.60); only the largest cloud grows, 3 × 10⁵ to 10⁷ Msun.
 
 ![cloud mass function](figs/clouds_mf.png)
 
-Efficiency. Clumps are followed from snapshot to snapshot by particle-ID overlap (a clump is linked to its successor if
-each is the other's largest overlap). x: alpha_vir of the clump at the last snapshot before its first star forms. y:
-epsilon_int = all stars ever formed from the lineage's members (summed over the chain plus 10 Myr after its last
-snapshot) divided by the largest mass the lineage reached. Points: lineages with peak mass above 300 Msun that start after
-5 Myr and end before 221 Myr; lines: medians per alpha bin per phase, phase assigned by the onset time. Result: 5 % for
-bound clumps, falling to 0.1 % above alpha of about 10; the fraction of clumps below the threshold drops from 0.9 before
-the first passage to 0.06 after the third.
+Efficiency. Clumps are linked from snapshot k to k+1 when each is the other's largest member overlap; a chain of such links
+is a lineage. For a lineage with clumps at snapshots k = k_0 … k_1: M_*(k) = mass of stars formed between snapshots k and
+k+1 whose parent gas particle was a member at k; M_*,10(k_1) = the same over the 10 Myr after k_1;
+epsilon_int = [ Σ_{k<k_1} M_*(k) + M_*,10(k_1) ] / max_k M(k). The pre-onset snapshot is the last k before M_*(k) > 0
+(or k_0 if stars form at once). x: alpha_vir at the pre-onset snapshot. y: epsilon_int. Points: lineages with
+max_k M(k) ≥ 300 Msun, k_0 after 5 Myr, k_1 before 221 Myr; lines: medians per alpha bin per phase, phase by onset time.
+Result: about 5 % for alpha below 2 to 4, 0.1 % above 10; the fraction of clumps below the threshold falls from 0.9 to 0.06
+across the run.
 
 ![cloud efficiency](figs/clouds_eff.png)
 
 ## Cluster mass function
-*Clusters* are friends-of-friends groups, linking length 5 pc, at least 25 particles, of stars younger than 10 Myr,
-kept if energy-bound (kinetic plus Plummer-softened pairwise potential energy below zero, softening 1 pc) and not the
-nucleus (fewer than 40 000 particles and r_h below 20 pc), in the clean columns, on every tenth snapshot so that no
-cluster is counted twice. x: cluster mass. y: number per unit log mass per phase, Poisson errors. Lines: maximum-likelihood
-power law above 300 Msun, alpha = 1 + N / sum ln(M/300). Result: alpha = 1.92, 1.77, 1.74, 1.52; the most massive cluster
-6.7 × 10³, 2.0 × 10⁴, 2.8 × 10⁴, 1.0 × 10⁵ Msun. Below 300 Msun after the second passage only a third of the small groups
-are bound, so the function is quoted from 300 Msun up.
+*Clusters*: friends-of-friends groups (linking 5 pc, at least 25 particles) of stars younger than 10 Myr on every tenth
+snapshot, kept if E_kin + E_pot < 0 with E_kin = ½ Σ m_i |v_i − v̄|² and E_pot the pairwise Plummer-softened potential
+energy (softening 1 pc), and not the nucleus (fewer than 40 000 particles and r_h < 20 pc), lying in a clean column.
+x: cluster mass. y: N_k / Δlog M_k per phase, error √N_k / Δlog M_k. Lines: alpha = 1 + N / Σ_{M_i ≥ 300} ln(M_i / 300)
+over the clusters above 300 Msun, drawn over the fitted range. Result: alpha = 1.92, 1.77, 1.74, 1.52; largest cluster
+6.7 × 10³, 2.0 × 10⁴, 2.8 × 10⁴, 1.0 × 10⁵ Msun. Below 300 Msun after the second passage only a third of the groups are
+bound, so the function is quoted from 300 Msun up.
 
 ![MF per phase](figs/story_5_mf.png)
 
 ## Largest cluster per burst
-x: M_young, the mass of stars younger than 10 Myr in a full column. y: M_max, the mass of the most massive bound
-cluster whose centre lies in that column. Clean columns with M_young above 500 Msun and at least one bound cluster, every
-tenth snapshot. Line: median M_max per M_young bin; red: M_max = 0.5 M_young; dotted: equality. Result: the median follows
-half the young mass up to 10⁵ Msun; the nuclear bursts above that split their stars over several clusters.
+x: M_young,c = Σ_{stars in full column c, formed in the run, age < 10 Myr} m_*. y: M_max,c = max over the bound clusters
+whose centre lies in column c of the cluster mass. Clean columns with M_young > 500 Msun and at least one bound cluster,
+every tenth snapshot. Line: median of M_max per M_young bin; red: M_max = 0.5 M_young; dotted: M_max = M_young. Result:
+the median follows half the young mass up to 10⁵ Msun; the nuclear bursts above that split their stars over several
+clusters.
 
 ![reservoir](figs/story_6_reservoir.png)
 
 ## Every cluster against its patch
-Each bound cluster of the clean sample against the state of the column it sits in (the column of the frame in which its
-intruder fraction is lowest). Left x: layer W of that column. Middle x: layer P_tot. Right x: Sigma_SFR,10. y: cluster
-mass. Dashed: 0.5 Sigma_SFR(W) A tau, 0.5 Sigma_SFR(P) A tau and 0.5 Sigma_SFR A tau with A = 0.25 kpc² and tau = 10 Myr,
-the mass of half the stars a column forms in 10 Myr at the OK22 rate for its weight, for its pressure, and at its own rate.
-Result: cluster masses fill two decades below the lines; 9 % lie above the weight line.
+Each bound cluster of the clean sample against the column it lies in (of the two grids, the one in which that column's
+intruder fraction is lower). Left x: layer W_c. Middle x: layer P_tot,c. Right x: Sigma_SFR,10,c. y: cluster mass.
+Dashed lines: 0.5 · 10^(1.17 log W − 7.32) · A · τ, 0.5 · 10^(1.18 log P − 7.43) · A · τ, and 0.5 · Sigma_SFR · A · τ,
+with A = 0.25 kpc² and τ = 10⁷ yr: half the stars a column forms in 10 Myr at the OK22 rate for its weight, for its
+pressure, and at its own rate. Result: cluster masses fill two decades below the lines; 9 % lie above the weight line.
 
 ![cluster environment](figs/cluster_env.png)
 
 ## Line of sight
-As the vertical-equilibrium figure, but the column normal is rotated: the disc normal itself, and the normal tilted by
-30, 60 and 90 degrees about the first in-plane axis toward the second. Each orientation has its own full-column run and
-its own layer cut about its own midplane. Every fourth snapshot; the two galaxy grids are merged with column-number
-weights. y: Sigma_gas-weighted median of layer P_tot / W. Result: before the second passage only the disc normal gives one,
-30 degrees gives 0.4 to 0.7; between the second and third passage all orientations give 0.6 to 1.2; after the third all
-give 0.9 to 1.3.
+As the vertical-equilibrium figure with the column normal replaced by n̂_θ = cos θ n̂ + sin θ ê₂, θ = 0, 30, 60, 90
+degrees, ê₂ the second in-plane axis of the grid. Each θ has its own full-column run and its own layer cut about the
+midplane found along n̂_θ. y: the Sigma_gas-weighted median of layer P_tot / W over the columns, computed per grid and
+combined over the two grids with weights equal to their column counts. Every fourth snapshot. Result: before the second
+passage θ = 0 gives one and θ = 30 gives 0.4 to 0.7; between the second and third passage all θ give 0.6 to 1.2; after the
+third all θ give 0.9 to 1.3.
 
 ![line of sight](figs/los_layer.png)
 
 ## Column size
-x: column depth, the full height of the column: 3 kpc (full column) or 1, 0.5, 0.25 kpc (0.5, 0.25, 0.125 kpc above and
-below the midplane of the 0.5 kpc reference column the point falls in). Marker: footprint, columns of 0.5, 0.25 and 0.125
-kpc side on 12 by 12, 24 by 24 and 48 by 48 grids. y: for each configuration and phase, the median over the phase's
-snapshots (every fourth snapshot) of the per-snapshot Sigma_gas-weighted median of P_tot / W, both from the 2p gas. Shaded:
-twice the scale height. Result: the ratio depends on depth only; footprint 0.5 to 0.125 kpc at fixed depth changes nothing,
-while depths below 0.5 kpc give 1.5 and 2.7.
+x: column depth 2 z_col: 3 kpc (full column, about the grid plane) or 1, 0.5, 0.25 kpc (z_col = 0.5, 0.25, 0.125 kpc about
+the midplane of the 0.5 kpc reference column the point falls in). Marker: footprint side L = 0.5, 0.25, 0.125 kpc (grids of
+12², 24², 48² columns over ±3 kpc), A = L². y: for each configuration, the median over the snapshots of the phase (every
+fourth snapshot) of r(t), the per-snapshot Sigma_gas-weighted median of P_tot / W. Shaded: 2H. Result: r depends on the
+depth only; L from 0.5 to 0.125 kpc at fixed depth changes nothing, depths of 0.5 and 0.25 kpc give 1.5 and 2.7.
 
 ![column depth](figs/scale_depth.png)
 
 ## Low-mass end of the cluster mass function
-x: cluster mass bin. y: maximum-likelihood index of a power law restricted to that bin (likelihood maximised on a grid of
-alpha; error from its curvature), for all friends-of-friends groups of the 10-particle catalogue (filled) and for the bound
-ones only (open), per phase, every tenth snapshot. Result: above 300 Msun bound and all agree within the errors; in the
-100 to 300 Msun bin after the second passage the bound-only index collapses because only a third of those groups are bound.
+x: cluster mass bin [M_1, M_2). y: alpha maximising L(alpha) = −alpha Σ_i ln M_i − N ln[ (M_1^(1−alpha) − M_2^(1−alpha)) /
+(alpha − 1) ] over the N groups with M_i in the bin, on a grid alpha = 0.2 … 4; error from the curvature of L at the
+maximum. Filled: all friends-of-friends groups of the 10-particle catalogue (5 pc linking); open: bound ones only; per
+phase, every tenth snapshot. Result: above 300 Msun bound and all agree within the errors; in the 100 to 300 Msun bin
+after the second passage the bound-only index collapses because only a third of those groups are bound.
 
 ![low-mass convergence](figs/lowmass_convergence.png)
 
@@ -258,52 +263,52 @@ $P({\rm burst}\,|\,\rho_{\rm mid}) = [1 + \exp(-k(\log\rho_{\rm mid} - \log\rho_
 $\log\rho_{50} = -1.65$ (Msun pc$^{-3}$); burst mass $\log M_{\rm burst} \sim \mathcal{N}(a + b\log\mathcal{W},\ 0.4$–$0.5)$.
 
 ## Shear term
-Columns of the 18 snapshots with the turbulence decomposition, with Sigma_SFR,10 = 0. x: Sigma H S² in K cm⁻³, with
-Sigma the column's gas surface density, H its rms height, and S the shear rate: the norm of the traceless symmetric part
-of the velocity-gradient tensor of a linear fit of the gas velocities in the column, in km/s per kpc. y: P_turb of the
-slab multiplied by (sigma_res/sigma_tot)², i.e. with the part of the velocity variance carried by the fitted linear flow
-removed. Line: P_turb = 0.02 Sigma H S². Result: one coefficient in every phase, no offset.
+Columns of the 18 snapshots with the turbulence decomposition, restricted to Sigma_SFR,10 = 0. A linear velocity field
+v(x) = v_0 + G · (x − x_0) is fitted by least squares to the gas of the column; S = || ½ (G + Gᵀ) − ⅓ tr(G) I ||_F is the
+shear rate in km/s per kpc; sigma_tot² = variance of v_n over the column's gas and sigma_res² the variance of v_n after
+subtracting the fitted field. x: Sigma_gas H S² × 4.90 × 10⁻⁶ with Sigma_gas in Msun kpc⁻² and H in kpc, i.e. in K cm⁻³.
+y: P_turb (sigma_res / sigma_tot)². Line: y = 0.02 x. Result: one coefficient in every phase, no offset.
 
 ![shear closure](figs/story_3_shear.png)
 
 ## Largest cluster and weight
-25 Myr intervals. x: the 90th percentile, over the star-forming columns of the interval (M_young above 500 Msun), of the
-layer W. y: the most massive bound cluster formed in the interval, over all its snapshots. Labels: interval start in Myr.
-Line: 0.5 Sigma_SFR(W) A tau with the OK22 relation, A = 0.25 kpc², tau = 10 Myr; nothing fitted. Open circle: the interval
-in which fewer than 5 % of the columns burst. Result: seven active intervals follow the line, slope 0.94 against the median
-weight with 0.09 dex scatter; the quiescent interval lies 100 times below.
+25 Myr intervals. x: the 90th percentile of { W_c : M_young,c > 500 Msun } over the columns and snapshots of the interval,
+W_c the layer weight. y: max of the bound-cluster masses over the interval. Labels: interval start in Myr. Line:
+0.5 · 10^(1.17 log W − 7.32) · A · τ, A = 0.25 kpc², τ = 10⁷ yr, nothing fitted. Open circle: the interval in which fewer
+than 5 % of the clean columns have M_young > 500. Result: seven active intervals follow the line, slope 0.94 against the
+median weight with 0.09 dex scatter; the quiescent interval lies 100 times below.
 
 ![ceiling](figs/story_7_ceiling.png)
 
 ## Duty cycle
-x: layer W of a clean column. y: fraction of columns with M_young above 500 Msun, in bins of 0.5 dex in W (points), and
-the maximum-likelihood logistic P = [1 + exp(-k (log W - log W_50))]⁻¹ per phase (lines). Result: log W_50 = 3.75, 3.86,
-4.73, 4.95; the same fit against the midplane density moves by less than 0.5 dex between phases.
+x: layer W_c of a clean column. y: points, per 0.5 dex bin in W: N(M_young,c > 500 Msun and W_c in bin) / N(W_c in bin);
+lines: P(W) = [1 + exp(−k (log W − log W_50))]⁻¹ with k and W_50 by maximum likelihood over the columns of the phase.
+Result: log W_50 = 3.75, 3.86, 4.73, 4.95; the same fit against rho_mid moves by less than 0.5 dex between phases.
 
 ![duty cycle](figs/duty_cycle.png)
 
 ## Burst-mass distribution
-Phase 40 to 110 Myr. Black: number per unit mass of the bursting columns (M_young above 500 Msun), all snapshots,
-Poisson errors. Blue: 25 realisations of the null model: every clean column of the phase bursts with the probability of the
-logistic above; a bursting column gets M = 10^(a + b log W + s N(0,1)) with b from a least-squares fit of log M_young on
-log W over the phase's bursts and a, s from a lognormal likelihood truncated at 500 Msun; masses below 500 are dropped and
-the rest binned as the data. All ingredients are fitted to the same bursts, so the comparison tests only whether the
-histogram contains structure beyond them. Result: it does not.
+Phase 40 to 110 Myr. Black: N_k / ΔM_k over the bursting columns (M_young > 500 Msun) of the phase, all snapshots,
+error √N_k / ΔM_k. Blue: 25 realisations of the null model: every clean column of the phase bursts with probability P(W_c)
+from the logistic above; a bursting column gets M = 10^(a + b log W_c + s ξ), ξ ~ N(0,1), with b from a least-squares fit
+of log M_young on log W over the phase's bursts and (a, s) from a lognormal likelihood truncated at 500 Msun; masses below
+500 are dropped and the rest binned as the data. All ingredients are fitted to the same bursts, so the comparison tests only
+whether the histogram contains structure beyond them. Result: it does not.
 
 ![burst kernel](figs/burst_kernel.png)
 
 ## Clump virial parameter and efficiency
-Left figure. x: sigma_eff = (P_tot / rho_mid)^(1/2) of the full column containing the clump at its pre-onset snapshot,
-in km/s (P and rho from the 2p gas as defined above). y: alpha_vir of the clump at that snapshot. Points: lineages as in
-the efficiency figure; lines: medians per sigma_eff bin per phase; dashed: alpha proportional to sigma_eff². Result: one
-relation for all phases with 0.2 dex offsets.
+Left. x: sigma_eff = (P_tot,c / rho_mid,c)^(1/2) of the full column c containing the clump at its pre-onset snapshot, with
+P_tot in Msun (km/s)² kpc⁻³ and rho_mid in Msun kpc⁻³ so that sigma_eff is in km/s. y: alpha_vir of the clump at that
+snapshot (definition under Clouds). Points: the lineages of the efficiency figure; lines: medians per sigma_eff bin per
+phase; dashed: alpha ∝ sigma_eff². Result: one relation for all phases with 0.2 dex offsets.
 
 ![clump virial parameter](figs/partC_alpha.png)
 
-Right figure. x: alpha_vir,tot = alpha_vir (1 + v_A²/sigma_3d²) of the clump at its pre-onset snapshot, v_A the rms
-Alfvén speed of its members (B / sqrt(4 pi rho) per particle). y: epsilon_int as defined under Clouds. Black: median over
-all phases per bin. Dashed: the two-level fit epsilon = epsilon_u + (epsilon_b - epsilon_u) / [1 + (alpha/alpha_c)^m] by
-least absolute deviation in log: epsilon_b = 0.050, epsilon_u = 0.0012, alpha_c = 4.0, m = 4.7; 0.69 dex scatter about it.
+Right. x: alpha_vir,tot = alpha_vir (1 + v_A² / sigma_3d²) of the clump at its pre-onset snapshot, v_A² = (1/N) Σ B_i² /
+(4π rho_i) over its members. y: epsilon_int. Black: median over all phases per bin. Dashed: epsilon = epsilon_u +
+(epsilon_b − epsilon_u) / [1 + (alpha/alpha_c)^m] fitted by least absolute deviation in log epsilon: epsilon_b = 0.050,
+epsilon_u = 0.0012, alpha_c = 4.0, m = 4.7; residual scatter 0.69 dex.
 
 ![clump efficiency](figs/partC_eff.png)
 
