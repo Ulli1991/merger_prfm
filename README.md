@@ -1,3 +1,14 @@
+# merger_prfm
+
+Does pressure-regulated, feedback-modulated star formation (PRFM; Ostriker & Kim 2022) survive a galaxy merger, and what
+does it imply for the masses of the star clusters that form? One simulation of two gas-rich dwarf galaxies merging
+(4 Msun gas and star particles, 0.4 pc softening, magnetic fields, resolved supernovae), 226 Myr through three pericentre
+passages to the final coalescence.
+
+Three parts, kept apart. **A**: what the simulation shows, figures with what is plotted and the numbers. **B**: a
+semi-empirical model, one set of equations with constants calibrated on the run, and the tests it passes and fails.
+**C**: the closed calculation from the layer state to the cluster mass function, which does not exist yet.
+
 ## Status of the PRFM comparison
 
 Reference: the Ostriker & Kim (2022) calibration. The run's own undisturbed disc lasts only from 25 to 40 Myr, since the
