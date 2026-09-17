@@ -274,7 +274,7 @@ against the star formation rate").
 ![pressure to star formation lag](figs/sfr_lag.png)
 
 The same yield figure with the lag applied: x: time. y: $\sum_c P_{{\rm tot},c}(t) / \sum_c \Sigma_{{\rm SFR,10},c}(t+\ell)$
-over the clean layer columns, in km s$^{-1}$, for $\ell = 0$ (light) and $\ell = 12$ Myr (dark), against the OK22 yield at
+over the clean layer columns, in $\rm km\ s^{-1}$, for $\ell = 0$ (light) and $\ell = 12$ Myr (dark), against the OK22 yield at
 $\bar P(t)$. Result: the lag moves the edges of the excursions earlier by 12 Myr and removes the spike at the second
 passage (phase medians of the ratio to the yield 1.0, 2.3, 65, 2.0 against 1.9, 1.7, 43, 2.8 without lag), and leaves
 the 50 Myr plateau between 140 and 195 Myr untouched.
