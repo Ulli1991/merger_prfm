@@ -104,9 +104,14 @@ second and third passage because the column then includes the dark-matter weight
 ![equilibrium](figs/story_1_equilibrium.png)
 
 ## Pressure per unit star formation
-x: time. y: the sum of the layer P_tot over the columns of a snapshot divided by the sum of Sigma_SFR,10 over the same
-columns, converted to km/s with the factor above. Dashed: Upsilon_tot(P) evaluated at the Sigma_gas,2p-weighted mean layer
-pressure of the snapshot. Result: within a factor of 2 of the yield before the second passage, 10 to 100 times above it
+x: time. y, per snapshot, with c running over the clean layer columns of that snapshot:
+
+- y = [ Σ_c P_tot,c ] / [ Σ_c Sigma_SFR,10,c ] / (4.81 × 10³)   in km/s,
+
+where P_tot,c is the layer P_tot of column c (K cm⁻³) and Sigma_SFR,10,c = (1/A) Σ_{stars in c, formed in the run,
+age < 10 Myr} m_* / (10 Myr) in Msun yr⁻¹ kpc⁻²; the divisor turns K cm⁻³ per Msun yr⁻¹ kpc⁻² into km/s. This is the
+pressure the layer holds per unit star formation rate, the quantity Ostriker & Kim call the yield. Dashed: their
+Upsilon_tot(P̄) = 10^(−0.212 log P̄ + 3.86) km/s at P̄ = Σ_c Sigma_gas,2p,c P_tot,c / Σ_c Sigma_gas,2p,c. Result: within a factor of 2 of the yield before the second passage, 10 to 100 times above it
 in the quiet intervals after, back to the yield during the two nuclear bursts.
 
 ![pressure per unit star formation](figs/story_2_feedback.png)
