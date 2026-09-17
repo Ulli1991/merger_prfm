@@ -23,15 +23,16 @@ first 25 Myr are the isothermal initial state relaxing and the discs are tidally
 
 | | before 1st passage | 1st to 2nd | 2nd to 3rd | 3rd to coalescence |
 |---|---|---|---|---|
-| P over W, layer 1 kpc deep | 1.05 | 0.94 | 0.73 | 0.96 |
-| pressure per unit SFR over the yield, 10 Myr SFR | 1.9 | 1.7 | 37 | 2.5 |
-| same, 40 Myr SFR as in OK22 | 0.6 | 1.6 | 2.5 | 9.4 |
+| P over W, layer 1 kpc deep | 1.03 | 0.94 | 0.71 | 0.85 |
+| pressure per unit SFR over the yield, 10 Myr SFR | 1.9 | 1.7 | 43 | 2.8 |
+| same, 40 Myr SFR as in OK22 | 0.6 | 1.6 | 2.6 | 10.5 |
 | SFR at fixed weight vs OK22, 0.5 kpc columns (dex) | -0.5 | -0.6 | -1.8 | -2.2 |
 | same, 0.25 kpc columns (dex) | -0.2 | -0.5 | -1.6 | -2.1 |
 
 Durations. Pressure over weight leaves 0.7 to 1.4 for 24 % of the run (97 to 141 Myr and short episodes at the later
-pericentres) and never leaves 0.5 to 2. The pressure per unit star formation exceeds 3 times the yield for 34 % of the run
-with the 40 Myr rate (107 to 125 and 158 to 207 Myr) and 10 times for 20 %; its time-median over the whole run is 1.9.
+pericentres) and never leaves 0.5 to 2. The pressure per unit star formation exceeds 3 times the yield for 36 % of the run
+with the 40 Myr rate (107 to 125 and 157 to 207 Myr) and 10 times for 23 % (108 to 120 and 166 to 198 Myr); its
+time-median over the whole run is 2.1.
 
 Reading. Vertical balance survives the merger, with one interval of moderate shortfall around the second passage during
 which the gas is not a layer in any orientation. The supply of that pressure by star formation does not survive: after the
@@ -176,15 +177,18 @@ this catalogue excluded groups above 40 000 members or $r_h > 20$ pc untested; t
 after the second passage and are bound, see the cluster formation efficiency below.) Clouds and clumps are not
 energy-tested; their boundedness enters only through $\alpha_{\rm vir}$ as defined under Clouds.
 
-**Robustness of the cluster catalogue.** The cluster mass function was recomputed with linking lengths of 3, 5 and 8 pc,
-with minimum group sizes of 10, 25 and 50 particles, with and without the intruder cut, and for all groups against bound
-groups only. The maximum-likelihood index above 300 $\rm M_\odot$ changes by at most 0.05 with the linking length (per phase
-1.91/1.92/1.90, 1.82/1.82/1.79, 1.79/1.77/1.76, 1.58/1.61/1.61 for 3/5/8 pc), by 0.04 with the intruder cut, and by 0.06
-between all and bound groups. The minimum group size sets only the completeness limit: the 10- and 25-particle catalogues
-contain the same groups above 100 $\rm M_\odot$, and the 50-particle catalogue is incomplete below 200 $\rm M_\odot$. The bound
-fraction of groups between 100 and 300 $\rm M_\odot$ falls from 0.7 before the second passage to 0.35 after the third, which is
-why the mass function is quoted from 300 $\rm M_\odot$ up; above 1000 $\rm M_\odot$ more than 73 % of groups are bound in every
-phase.
+**Robustness of the group catalogue.** The mass function of the young stellar groups was recomputed with linking
+lengths of 3, 5 and 8 pc, with minimum group sizes of 10, 25 and 50 particles, and for all groups against bound groups
+only (every tenth snapshot, whole box). The maximum-likelihood index above 300 $\rm M_\odot$ changes by at most 0.05 with
+the linking length (per phase 1.99/1.99/1.97, 1.83/1.82/1.80, 1.72/1.70/1.67, 1.54/1.56/1.54 for 3/5/8 pc) and by at most
+0.09 between all and bound groups (bound only: 1.95, 1.78, 1.68, 1.47). The minimum group size sets only the completeness
+limit: the 10- and 25-particle catalogues contain the same groups above 100 $\rm M_\odot$, and the 50-particle catalogue
+is incomplete below 200 $\rm M_\odot$. The bound fraction of groups between 100 and 300 $\rm M_\odot$ falls from 0.75 before
+the first passage to 0.30 after the third, which is why the mass function is quoted from 300 $\rm M_\odot$ up; above
+1000 $\rm M_\odot$ at least 75 % of the groups are bound in every phase. The Subfind-style unbinding leaves 95 %, 95 %,
+91 % and 66 % of the group mass self-bound in the four phases (the last value is the 20 pc structure at the merged
+nucleus after 205 Myr, which its own stars do not bind); the bound groups above 300 $\rm M_\odot$ have median half-mass
+radii of 0.23 to 0.33 pc in every phase, at the 0.4 pc softening of the run.
 
 **Time-series statistic.** Where a figure shows one value per snapshot from many columns, it is the
 $\Sigma_{\rm gas}$-weighted median over the columns: the value $r$ for which
@@ -261,10 +265,10 @@ dashed: $\sum_c P_{{\rm mag},c}/\sum_c P_{{\rm tot},c}$, the magnetic pressure $
 The dashed line is not part of the sum and can exceed one: $P_{\rm tot}$ contains the field only through the vertical
 Maxwell stress $\Pi_{\rm mag} = (B^2 - 2B_n^2)/8\pi$, as in Ostriker & Kim (2022), which is at most $B^2/8\pi$ (one third
 of it for an isotropic field), so the magnetic pressure can be larger than all of the vertical support together.
-Result: the Maxwell stress is below 5 % of the support before the second passage, 20 % between the second and third, and
-25 to 45 % from the third passage to coalescence; the magnetic pressure itself equals the total support at the second
-passage and exceeds it after the third, i.e. the field is at or above equipartition even though only part of it supports
-the layer vertically.
+Result: the Maxwell stress is below 10 % of the support before the second passage, 10 to 25 % between the second and
+third, and 20 to 45 % from the third passage to coalescence; the magnetic pressure itself is 0.3 to 0.5 of the total
+support between the second and third passage, 0.8 after the third, and exceeds it from 200 Myr on, i.e. the field
+reaches equipartition with the whole vertical support even though only part of it supports the layer.
 
 ![pressure shares](figs/pressure_shares.png)
 
@@ -298,35 +302,50 @@ across the run.
 
 ![cloud efficiency](figs/clouds_eff.png)
 
-## Cluster mass function
-*Clusters*: the friends-of-friends groups of stars younger than 10 Myr defined above (l = 5 pc, N ≥ 25), on every tenth
-snapshot, kept if bound by the energy criterion above, not the nucleus, and lying in a clean column.
-x: cluster mass. y: $N_k/\Delta\log M_k$ per phase, error $\sqrt{N_k}/\Delta\log M_k$. Lines: the maximum-likelihood
+## Young stellar groups: what this run can and cannot say
+The stars formed in the run are grouped with the friends-of-friends and energy criteria above. Every bound group, from
+100 $\rm M_\odot$ to $4\times10^5$ $\rm M_\odot$, has a half-mass radius of 0.2 to 0.4 pc, which is the 0.4 pc softening, and
+an age spread of 0.6 to 0.8 Myr; the clumps that produce them form stars for about 1 Myr. The stars therefore appear
+where and when the star formation criterion of the code fires (density above 100 $\rm cm^{-3}$, self-gravitating,
+$\epsilon_{\rm ff} = 0.5$ per free-fall time) and inherit the clustering of the gas at that scale. Whether such a group is a
+bound cluster, how compact it is and whether it survives are set by that criterion and by the softened stellar dynamics,
+here and in every galaxy-scale simulation of this kind, and are not reported as results. The fraction of star formation
+in bound groups is 0.8 to 0.9 in every phase at this definition and is not used. What the groups do record is the
+stellar mass that each star-forming clump produced, and the figures below are read as that: the distribution of the
+masses of the star-forming events, and their largest value.
+
+## Mass function of the young stellar groups
+*Groups*: the friends-of-friends groups of stars younger than 10 Myr defined above (l = 5 pc, N ≥ 25), on every tenth
+snapshot, kept if bound by the energy criterion above and lying in a clean column.
+x: group mass. y: $N_k/\Delta\log M_k$ per phase, error $\sqrt{N_k}/\Delta\log M_k$. Lines: the maximum-likelihood
 power law $dN/dM\propto M^{-\alpha}$ above 300 $\rm M_\odot$,
 
 $$\alpha = 1 + \frac{N}{\sum_{M_i\ge300}\ln(M_i/300)},$$
 
-drawn over the fitted range. Result: alpha = 1.92, 1.77, 1.74, 1.52; largest cluster
-6.7 × 10³, 2.0 × 10⁴, 2.8 × 10⁴, 1.0 × 10⁵ Msun. Below 300 Msun after the second passage only a third of the groups are
-bound, so the function is quoted from 300 Msun up.
+drawn over the fitted range. Result: alpha = 1.92, 1.77, 1.68, 1.47; largest group 6.7 × 10³, 2.0 × 10⁴, 4.1 × 10⁵,
+8.5 × 10⁵ Msun (the second-passage burst puts two thirds of its stars into one group of 4 × 10⁵ Msun and 1 pc half-mass
+radius). Below 300 Msun after the second passage only a third of the groups are bound, so the function is quoted from
+300 Msun up. Lahén et al. (2020) find the same slope (−1.67 above 300 Msun) and the same rise of the top with the burst in
+their dwarf merger with a different code, so both are robust to the star formation prescription.
 
 ![MF per phase](figs/story_5_mf.png)
 
-## Largest cluster per burst
+## Largest group per burst
 x: $M_{{\rm young},c}$ of a full column $c$ (definition above). y: $M_{\max,c}$, the mass of the most massive bound
-cluster whose centre lies in column $c$. Clean columns with M_young > 500 Msun and at least one bound cluster,
+group whose centre lies in column $c$. Clean columns with M_young > 500 Msun and at least one bound group,
 every tenth snapshot. Line: median of M_max per M_young bin; red: M_max = 0.5 M_young; dotted: M_max = M_young. Result:
-the median follows half the young mass up to 10⁵ Msun; the nuclear bursts above that split their stars over several
-clusters.
+the median follows half the young mass up to 3 × 10⁴ Msun; the columns of the pericentre bursts above 10⁵ Msun lie
+between 0.5 and 1, i.e. most of a burst's stars are in its largest group.
 
 ![reservoir](figs/story_6_reservoir.png)
 
-## Every cluster against its patch
-Each bound cluster of the clean sample against the column it lies in (of the two grids, the one in which that column's
-intruder fraction is lower). Left x: layer W_c. Middle x: layer P_tot,c. Right x: Sigma_SFR,10,c. y: cluster mass.
+## Every group against its column
+Each bound group of the clean sample against the column it lies in (before the second passage the grid of its own galaxy,
+after it the single merged grid). Left x: layer W_c. Middle x: layer P_tot,c. Right x: Sigma_SFR,10,c. y: group mass.
 Dashed lines: $0.5\ \Sigma_{\rm SFR}(\mathcal W)\ A\ \tau$, $0.5\ \Sigma_{\rm SFR}(P)\ A\ \tau$ and
 $0.5\ \Sigma_{\rm SFR,10}\ A\ \tau$ with the OK22 relations above, $A = 0.25$ $\rm kpc^2$ and $\tau = 10^7$ yr: half the stars a column forms in 10 Myr at the OK22 rate for its weight, for its
-pressure, and at its own rate. Result: cluster masses fill two decades below the lines; 9 % lie above the weight line.
+pressure, and at its own rate. Result: group masses fill two decades below the lines at every weight and pressure; only
+the groups of the two pericentre bursts reach them.
 
 ![cluster environment](figs/cluster_env.png)
 
@@ -349,8 +368,8 @@ depth only; L from 0.5 to 0.125 kpc at fixed depth changes nothing, depths of 0.
 
 ![column depth](figs/scale_depth.png)
 
-## Low-mass end of the cluster mass function
-x: cluster mass bin $[M_1, M_2)$. y: the $\alpha$ maximising
+## Low-mass end of the group mass function
+x: group mass bin $[M_1, M_2)$. y: the $\alpha$ maximising
 
 $$\mathcal L(\alpha) = -\alpha\sum_i \ln M_i - N\ln\frac{M_1^{\ 1-\alpha} - M_2^{\ 1-\alpha}}{\alpha-1}$$
 
@@ -362,180 +381,194 @@ after the second passage the bound-only index collapses because only a third of 
 ![low-mass convergence](figs/lowmass_convergence.png)
 
 ---
-# Part B. From star formation to star clusters: relations, not a model
+# Part B. The chain from the weight of the layer to the stellar mass of a clump
 
-What follows is not a derivation. Each numbered relation is a fitted description of one step measured in Part A, and
-the constants come from the run. Put together they show how far the path from the layer to a cluster mass can be written
-down at present and where it cannot; the tests at the end of this part say which steps hold and which fail.
+This part orders the measurements of Part A as a chain of six links, from the weight of the layer to the stars a clump
+produces. For each link: the quantity carried, the relation in the form it would take in a theory, the figure that tests
+it, and the verdict. Every constant is fitted to the run; this is the mathematical form of what Part A measures, not a
+derivation. Part C lists what a derivation would have to supply.
 
-## The relations
+Inputs per 0.5 kpc column: layer weight $\mathcal W$, midplane pressure $P_{\rm tot}$ and density $\rho_{\rm mid}$, scale
+height $H$, effective dispersion $\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$. Inputs per cold clump: mass $M$,
+half-mass radius $r_h$, dispersion $\sigma_{\rm 3d}$, Alfvén speed $v_A$.
 
+## Link 1. Weight to pressure
+$P_{\rm tot} = \mathcal W$ (vertical balance), $\sigma_{\rm eff}^2 = P_{\rm tot}/\rho_{\rm mid}$.
+Figures: vertical equilibrium, column size, line of sight (Part A). Verdict: **holds**. Layer $P_{\rm tot}/\mathcal W$ is
+1.03, 0.94, 0.71, 0.85 in the four phases, never outside 0.5 to 2, for columns at least 1 kpc deep within 30 degrees of
+the disc normal. The supply side does not hold: the pressure per unit star formation leaves the OK22 yield by 10 to 100
+after the second passage because star formation collapses while the pressure stays at the weight (status table).
 
-Inputs per 0.5 kpc patch: layer weight $\mathcal{W}$, midplane density $\rho_{\rm mid}$, scale height $H$, effective
-dispersion $\sigma_{\rm eff} = (P/\rho_{\rm mid})^{1/2}$ with $P = \mathcal{W}$. Inputs per cold complex: mass $M$,
-half-mass radius $r_h$, Alfvén Mach number $\mathcal{M}_A$.
+## Link 2. Turbulence to the density structure
+$\sigma_s^2 = \ln\big(1 + b^2\mathcal M^2\ \beta/(\beta+1)\big)$ for the lognormal density PDF, with
+$\mathcal M = \sigma_{\rm eff}/c_s$ and $\beta$ the plasma beta; the mass fraction above a density follows from it.
+Figure: none yet. Verdict: **not tested**. The pressure shares give $\beta$ per column, and the density PDF per column is
+one pass over the snapshots; the merger provides the test through the drop of $\beta$ at the second passage.
 
-**(1) Complex population.** Measured, invariant through the merger:
-$$n(M)\ {\rm d}M \propto M^{-1.6}\ {\rm d}M \quad (M > 300\ {\rm M}_\odot),$$
-with the top rising from $10^5$ to $10^7$ Msun through the merger.
+## Link 3. Density structure to the clump population
+$n(M)\ {\rm d}M \propto M^{-1.6}\ {\rm d}M$ above 300 $\rm M_\odot$, with the top set by the largest unstable scale of the
+layer, $M_{\rm top} \propto \sigma_{\rm eff}^4/(G^2\Sigma_{\rm gas})$ in an excursion-set picture.
+Figure: cloud mass function (Part A). Verdict: **measured, not predicted**. The slope is the same in all four phases
+(measured) and the top rises a hundredfold through the merger; whether the top follows $\sigma_{\rm eff}^4/(G^2\Sigma)$
+phase by phase has not been checked.
 
-**(2) Virial parameter of a complex from the layer.**
-$$\alpha_{\rm tot}(M, r_h, \sigma_{\rm eff}) = \frac{5}{3}\ \frac{\sigma_{\rm eff}^2\ (r_h/H)\ r_h}{G\ M}\ \left(1 + \mathcal{M}_A^{-2}\right).$$
-Measured over predicted: median 0.9, 0.4 dex scatter, rank correlation 0.8.
+## Link 4. Clump to its virial parameter, through the cascade of the layer
+If a clump's dispersion is what the layer cascade gives at its size, $\sigma(r) = \sigma_{\rm eff}\ (r/H)^p$, then
 
-**(3) Efficiency of a complex.** A step in $\alpha_{\rm tot}$ with lognormal scatter:
+$$\sigma_{\rm 3d} = \sigma_{\rm eff}\ (r_h/H)^p,\qquad
+\alpha_{\rm tot} = \frac{5\ \sigma_{\rm eff}^2\ (r_h/H)^{2p}\ r_h}{3\ G\ M}\ \left(1 + \frac{v_A^2}{\sigma_{\rm 3d}^2}\right),$$
+
+with no constant once $p$ is measured. Figure: below. x: $\sigma_{\rm eff}\ (r_h/H)^{1/2}$ of the full column containing
+the clump at its pre-onset snapshot (definitions under Clouds); y: $\sigma_{\rm 3d}$ of the clump at that snapshot; one
+point per star-forming lineage of the $n_{\rm H} > 100$ catalogue; dashed: equality. Verdict: **holds**, with $p = 0.65$
+rather than 0.5. Over 1216 clumps and 2 dex in dispersion, 
+$\log\sigma_{\rm 3d} = 0.34 + 0.89\log\sigma_{\rm eff} + 0.65\log(r_h/H)$
+ with 0.20 dex scatter; at fixed $r_h/H$ the slope on $\sigma_{\rm eff}$ is 0.82 to 0.98, at fixed
+$\sigma_{\rm eff}$ the exponent is 0.61 to 0.68, so neither variable carries the other. The median of
+$\sigma_{\rm 3d}/[\sigma_{\rm eff}(r_h/H)^{1/2}]$ is 0.90, 0.93, 0.81, 1.08 in the four phases: the clumps formed in the
+pericentre compressions sit on the same line as those of the quiet discs. This is the link the merger was expected to
+break and does not.
+
+![cascade](figs/link4_cascade.png)
+
+The same content in the older form, $\alpha_{\rm vir}$ of the clump against $\sigma_{\rm eff}$ of its column (left),
+one relation for all phases with 0.2 dex offsets:
+
+![clump virial parameter](figs/partC_alpha.png)
+
+## Link 5. Virial parameter to efficiency
+A step with lognormal scatter,
 
 $$\epsilon(\alpha_{\rm tot}) = \epsilon_u + \frac{\epsilon_b - \epsilon_u}{1 + (\alpha_{\rm tot}/\alpha_c)^m},\qquad
-\log\epsilon \sim \mathcal{N}\big(\log\epsilon(\alpha_{\rm tot}),\ s\big).$$
+\log\epsilon \sim \mathcal N\big(\log\epsilon(\alpha_{\rm tot}),\ s\big),$$
 
-| parameter | dense clumps (n > 100) | complexes (n > 10) |
+fitted by least absolute deviation in $\log\epsilon$ to the lineages (x:
+$\alpha_{\rm tot} = \alpha_{\rm vir}(1 + v_A^2/\sigma_{\rm 3d}^2)$ at the pre-onset snapshot; y: $\epsilon_{\rm int}$; black: median per bin):
+
+| parameter | dense clumps ($n_{\rm H} > 100$) | complexes ($n_{\rm H} > 10$) |
 |---|---|---|
-| $\epsilon_b$ (bound) | 0.050 | 0.022 |
-| $\epsilon_u$ (unbound) | 0.0012 | 0.0017 |
+| $\epsilon_b$ (bound) | 0.050 | 0.028 |
+| $\epsilon_u$ (unbound) | 0.0012 | 0.0004 |
 | $\alpha_c$ | 4.0 | 5.9 |
 | $m$ | 4.7 | 3.1 |
 | $s$ (dex) | 0.69 | 0.71 |
 
-**(4) Stars to clusters.** The dominant cluster of a complex takes $f_c = 0.5$ of its stars; secondary clusters steepen the
-mass function by about 0.2.
+![clump efficiency](figs/partC_eff.png)
 
-**(5) Cluster mass function.** The complex mass function convolved with the efficiency distribution:
-$$n_{\rm cl}(M_{\rm cl}) = \int {\rm d}M\ n(M)\ \frac{1}{f_c M}\ p_\epsilon\left(\frac{M_{\rm cl}}{f_c M}\ \Big|\ \alpha_{\rm tot}(M,\sigma_{\rm eff})\right),$$
-with $p_\epsilon$ the lognormal of (3) centred on the step. Evaluated on the measured complexes of each phase (200 draws):
+Verdict: **fitted; the physical form is not tested**. The fraction of clumps below $\alpha_c$ is 0.91, 0.69, 0.37, 0.06
+in the four phases and the median efficiency falls from 0.08 to 0.0014 accordingly, which the step reproduces (model
+medians 0.050, 0.047, 0.0037, 0.0012). A one-constant form of the kind $\epsilon \propto \exp(-a\ \alpha^{1/2})$ from
+the ratio of free-fall to dynamical time has not been tried on the same clumps. The 0.7 dex clump-to-clump scatter is
+not explained. The integrated efficiency of 5 % is ten times below the $\epsilon_{\rm ff} = 0.5$ per free-fall time of
+the star formation rule, so this level is set by feedback, not by the rule.
 
-| phase | $\sigma_{\rm eff}$ [km/s] | bound fraction | slope pred. | slope meas. | top pred. | top meas. |
-|---|---|---|---|---|---|---|
-| before 1st passage | 8.7 | 0.37 | 2.02 ± 0.13 | 1.92 | 6.9e3 | 6.7e3 |
-| 1st to 2nd passage | 9.4 | 0.11 | 1.93 ± 0.06 | 1.77 | 1.9e4 | 2.0e4 |
-| 2nd to 3rd passage | 18.3 | 0.05 | 1.85 ± 0.07 | 1.74 | 1.3e5 | 2.8e4 |
-| 3rd passage to coalescence | 19.3 | 0.02 | 1.61 ± 0.07 | 1.52 | 2.8e5 | 1.0e5 |
+## Link 6. Clump to the stellar mass of the event
+The mass side only. With the dominant group of a clump taking $f_c = 0.5$ of its stars (measured in the largest-group
+figure of Part A), the mass function of the events is the clump mass function convolved with the efficiency
+distribution of link 5:
 
-The slope is 0.1 to 0.2 too steep in every phase; the flattening (0.40 vs 0.40) and the rise of the top (45 vs 15) are
-reproduced. With the mass dependence of boundedness removed (bound flags shuffled) the slopes are 2.21, 2.26, 1.98, 1.83.
+$$n_{\rm ev}(M_{\rm ev}) = \int {\rm d}M\ n(M)\ \frac{1}{f_c M}\ p_\epsilon\left(\frac{M_{\rm ev}}{f_c M}\ \Big|\ \alpha_{\rm tot}(M)\right).$$
 
-**(6) Largest cluster per interval.** Two equivalent statements: $M_{\max} \simeq 0.1\ M_{\star}(25\ {\rm Myr})$, the
-largest burst of the interval; and, while star formation is on, $M_{\max} \simeq f_c\ \eta\ \Sigma_{\rm SFR}^{\rm PRFM}(\mathcal{W}_{90})\ A\ \tau$
-with $\eta = 0.4$, $A = 0.25$ $\rm kpc^2$, $\tau = 10$ Myr, slope 0.94 and 0.09 dex scatter over seven intervals.
+Evaluated on the measured clumps of each phase with their own $\alpha_{\rm tot}$ (200 draws), against the measured
+groups:
 
-**(7) Patch-level duty cycle** (used for the burst-mass mock of Part B above):
-$P({\rm burst}\ |\ \rho_{\rm mid}) = [1 + \exp(-k(\log\rho_{\rm mid} - \log\rho_{50}))]^{-1}$, $k = 5.1$,
-$\log\rho_{50} = -1.65$ ($\rm M_\odot\ pc^{-3}$); burst mass $\log M_{\rm burst} \sim \mathcal{N}(a + b\log\mathcal{W},\ 0.4\text{–}0.5)$.
+| phase | fraction of clumps below $\alpha_c$ | slope pred. | slope meas. | top pred. | top meas. |
+|---|---|---|---|---|---|
+| before 1st passage | 0.63 | 2.32 ± 0.22 | 1.92 | 4.3e3 | 6.7e3 |
+| 1st to 2nd passage | 0.32 | 2.18 ± 0.09 | 1.77 | 9.4e3 | 2.0e4 |
+| 2nd to 3rd passage | 0.13 | 1.90 ± 0.10 | 1.68 | 1.4e5 | 4.1e5 |
+| 3rd passage to coalescence | 0.01 | 1.64 ± 0.06 | 1.47 | 3.0e5 | 8.5e5 |
 
-## Shear term
-Columns of the 18 snapshots with the turbulence decomposition, restricted to Sigma_SFR,10 = 0. A linear velocity field $\mathbf v(\mathbf x) = \mathbf v_0 + \mathsf G\ (\mathbf x - \mathbf x_0)$ is fitted by least
-squares to the gas of the column;
+Verdict: **the shape is reproduced, the normalisation is not**. The flattening of the slope through the merger (0.68
+predicted, 0.45 measured) and the rise of the top (70 predicted, 130 measured) both come out of the efficiency step
+acting on a fixed clump population; the slope is 0.2 to 0.4 too steep in every phase and the top 2 to 3 times too low.
+Whether the stars of an event form a bound cluster, its size, and its survival are set by the star formation criterion
+and the softened dynamics (see the group section of Part A) and are not part of the chain.
+
+## When the chain runs
+The links above say how much a clump converts; they do not say when a column has clumps. Three measured descriptions of
+the timing, all fitted to the same data they describe:
+
+**Duty cycle.** x: layer $\mathcal W_c$ of a clean column. y: points, per 0.5 dex bin: the fraction of columns in the bin
+with $M_{{\rm young},c} > 500$ $\rm M_\odot$; lines:
+
+$$P(\mathcal W) = \left[1 + \exp\big(-k\ (\log_{10}\mathcal W - \log_{10}\mathcal W_{50})\big)\right]^{-1}$$
+
+with $k$ and $\mathcal W_{50}$ by maximum likelihood over the columns of the phase. Result: the threshold moves by 1.2 dex
+in $\mathcal W$ between the disc and the merger phases; the same fit against $\rho_{\rm mid}$ moves by less than 0.5 dex
+(global fit $k = 6.0$, $\log\rho_{50} = -1.72$ in $\rm M_\odot\ pc^{-3}$), so the density, not the weight, decides
+which columns form stars.
+
+![duty cycle](figs/duty_cycle.png)
+
+**Largest group and weight.** 25 Myr intervals. x: the 90th percentile of 
+$\lbrace \mathcal W_c : M_{{\rm young},c} > 500\ {\rm M_\odot}\rbrace$ over the columns and snapshots of the interval; y: the largest bound-group mass in the interval.
+Labels: interval start in Myr. Line: $0.5\ \Sigma_{\rm SFR}(\mathcal W)\ A\ \tau$ with the OK22 relation, $A = 0.25$
+$\rm kpc^2$, $\tau = 10^7$ yr, nothing fitted. Open circle: the interval in which fewer than 5 % of the clean columns have
+$M_{\rm young} > 500$. Result: the largest group rises with the weight of the active columns with 0.41 dex scatter
+(log-log slope 1.4 over the seven active intervals); the two pericentre bursts lie 10 times above the PRFM line, the
+quiescent interval 100 times below. This relation is not one to build on.
+
+![ceiling](figs/story_7_ceiling.png)
+
+**Burst-mass distribution.** Phase 40 to 110 Myr. Black: $N_k/\Delta M_k$ over the bursting columns ($M_{\rm young} > 500$
+$\rm M_\odot$) of the phase, all snapshots, error $\sqrt{N_k}/\Delta M_k$. Blue: 25 realisations of a null model:
+every clean column of the phase bursts with probability $P(\mathcal W_c)$ from the logistic above; a bursting column gets
+$M = 10^{\ a + b\log_{10}\mathcal W_c + s\ \xi}$, $\xi\sim N(0,1)$, with $b$ from a least-squares fit of $\log M_{\rm young}$
+on $\log\mathcal W$ over the phase's bursts and $(a, s)$ from a lognormal likelihood truncated at 500 $\rm M_\odot$; masses
+below 500 are dropped and the rest binned as the data. All ingredients are fitted to the same bursts, so the comparison
+tests only whether the histogram contains structure beyond them. Result: it does not.
+
+![burst kernel](figs/burst_kernel.png)
+
+**Shear term.** Columns of the 18 snapshots with the turbulence decomposition (run on the two-frame grids), restricted
+to $\Sigma_{\rm SFR,10} = 0$. A linear velocity field 
+$\mathbf v(\mathbf x) = \mathbf v_0 + \mathsf G\ (\mathbf x - \mathbf x_0)$ is fitted by least squares to the gas of the column;
 
 $$S = \left\Vert \tfrac12(\mathsf G + \mathsf G^{\rm T}) - \tfrac13\ {\rm tr}(\mathsf G)\ \mathsf I\right\Vert_F$$
 
 is the shear rate in $\rm km\ s^{-1}\ kpc^{-1}$; $\sigma_{\rm tot}^2$ is the variance of $v_n$ over the column's gas and
 $\sigma_{\rm res}^2$ the variance of $v_n$ after subtracting the fitted field. x: $\Sigma_{\rm gas} H S^2$ converted to
-$\rm K\ cm^{-3}$. y: $P_{\rm turb}\ (\sigma_{\rm res}/\sigma_{\rm tot})^2$. Line: $y = 0.02\ x$. Result: one coefficient in every phase, no offset.
+$\rm K\ cm^{-3}$. y: $P_{\rm turb}\ (\sigma_{\rm res}/\sigma_{\rm tot})^2$. Line: $y = 0.02\ x$. Result: one
+coefficient in every phase, no offset. This is a description of where the turbulent pressure of the quiet columns sits
+relative to the shear of the flow, not a derivation of it.
 
 ![shear closure](figs/story_3_shear.png)
 
-## Largest cluster and weight
-25 Myr intervals. x: the 90th percentile of $\lbrace \mathcal W_c : M_{{\rm young},c} > 500\ {\rm M_\odot}\rbrace$ over the columns and snapshots of
-the interval, $\mathcal W_c$ the layer weight. y: the largest bound-cluster mass in the interval. Labels: interval start
-in Myr. Line: $0.5\ \Sigma_{\rm SFR}(\mathcal W)\ A\ \tau$ with the OK22 relation, $A = 0.25$ $\rm kpc^2$, $\tau = 10^7$ yr,
-nothing fitted. Open circle: the interval in which fewer
-than 5 % of the clean columns have M_young > 500. Result: seven active intervals follow the line, slope 0.94 against the
-median weight with 0.09 dex scatter; the quiescent interval lies 100 times below.
+## What the chain gets and does not get
+- Links 1, 4 and 5 hold as measured relations through the whole merger: the pressure is the weight, the clump
+  dispersions are the layer cascade at the clump size, and the efficiency is a step in $\alpha_{\rm tot}$.
+- Link 6 reproduces the shape of the event mass function (flattening, rising top) from the clump population and the
+  step, not its normalisation.
+- Links 2 and 3 are untested and unpredicted respectively; the timing of the bursts is described, not explained.
+- Not in the chain: the two efficiency levels themselves, the 0.7 dex clump-to-clump scatter, why the bound fraction of
+  clumps falls from 0.9 to 0.06 through the merger, and anything about bound clusters.
 
-![ceiling](figs/story_7_ceiling.png)
-
-## Duty cycle
-x: layer $\mathcal W_c$ of a clean column. y: points, per 0.5 dex bin: the fraction of columns in the bin with
-$M_{{\rm young},c} > 500$ $\rm M_\odot$; lines:
-
-$$P(\mathcal W) = \left[1 + \exp\big(-k\ (\log_{10}\mathcal W - \log_{10}\mathcal W_{50})\big)\right]^{-1}$$
-
-with $k$ and $\mathcal W_{50}$ by maximum likelihood over the columns of the phase.
-Result: log W_50 = 3.75, 3.86, 4.73, 4.95; the same fit against rho_mid moves by less than 0.5 dex between phases.
-
-![duty cycle](figs/duty_cycle.png)
-
-## Burst-mass distribution
-Phase 40 to 110 Myr. Black: N_k / ΔM_k over the bursting columns (M_young > 500 Msun) of the phase, all snapshots,
-error √N_k / ΔM_k. Blue: 25 realisations of the null model: every clean column of the phase bursts with probability $P(\mathcal W_c)$
-from the logistic above; a bursting column gets $M = 10^{\ a + b\log_{10}\mathcal W_c + s\ \xi}$, $\xi\sim N(0,1)$, with
-$b$ from a least-squares fit of $\log M_{\rm young}$ on $\log\mathcal W$ over the phase's bursts and $(a, s)$ from a lognormal
-likelihood truncated at 500 $\rm M_\odot$; masses below
-500 are dropped and the rest binned as the data. All ingredients are fitted to the same bursts, so the comparison tests only
-whether the histogram contains structure beyond them. Result: it does not.
-
-![burst kernel](figs/burst_kernel.png)
-
-## Clump virial parameter and efficiency
-Left. x: $\sigma_{\rm eff} = (P_{{\rm tot},c}/\rho_{{\rm mid},c})^{1/2}$ of the full column $c$ containing the clump at its
-pre-onset snapshot, in $\rm km\ s^{-1}$. y: alpha_vir of the clump at that
-snapshot (definition under Clouds). Points: the lineages of the efficiency figure; lines: medians per sigma_eff bin per
-phase; dashed: alpha ∝ sigma_eff². Result: one relation for all phases with 0.2 dex offsets.
-
-![clump virial parameter](figs/partC_alpha.png)
-
-Right. x: $\alpha_{\rm vir,tot} = \alpha_{\rm vir}\ (1 + v_A^2/\sigma_{\rm 3d}^2)$ of the clump at its pre-onset snapshot.
-y: $\epsilon_{\rm int}$. Black: median over all phases per bin. Dashed:
-
-$$\epsilon(\alpha) = \epsilon_u + \frac{\epsilon_b - \epsilon_u}{1 + (\alpha/\alpha_c)^m},$$
-
-fitted by least absolute deviation in $\log\epsilon$: $\epsilon_b = 0.050$, $\epsilon_u = 0.0012$, $\alpha_c = 4.0$,
-$m = 4.7$; residual scatter 0.69 dex.
-
-![clump efficiency](figs/partC_eff.png)
-
-## What the relations get and do not get
-- Vertical balance, the pressure per unit star formation before the second passage, the shear term for the quiet patches: yes.
-- Which patches form stars: to a factor of 2 from the density threshold.
-- The amount of star formation per interval from the bound fraction: to a factor of 2 before the second passage and exactly in the
-  quiescent interval; wrong by 3 and 70 in the two pericentre bursts, which are compression events the relations do not
-  contain.
-- The cluster mass function: the flattening (0.40 predicted, 0.40 measured) and the rise of the top (45 vs 15); the
-  absolute slope is 0.15 to 0.2 too steep in every phase.
-- The largest cluster per interval: linear in the weight of the active patches over seven intervals, 0.09 dex; the
-  quiescent interval 100 times below.
-- Not reproduced or not modelled: the timing of the bursts, the two efficiency levels, the 0.7 dex clump-to-clump scatter,
-  the mass dependence of boundedness that drives the flattening (measured, used as input).
-
-
-
-Part C is reserved for a calculation that takes as input only the state of the layer, its weight and what drives its
-turbulence, and returns the cluster mass function, with the simulation used solely to test the result. Nothing in Part B
-qualifies: every chain there reads the clump population, the efficiency levels, their scatter and the capture fraction from
-the run. For C to exist it has to contain, with no quantity taken from the simulation:
-
-1. the effective dispersion of the layer from the energy budget of the driving, feedback yield or shear injection, without
-   a coefficient fitted here;
-2. the population of dense clumps, mass function and mass-size relation, from fragmentation of the turbulent layer at that
-   dispersion; this is also what decides whether massive clumps stay bound when the dispersion rises;
-3. the fraction of each clump that turns into stars from a collapse calculation, including why bound clumps convert a few
-   percent and unbound ones a tenth of that;
-4. how the stars of a collapsing complex divide into clusters, in place of the measured capture fraction.
-
-The measurements of Part A and the chain of Part B say what such a calculation must reproduce: an invariant clump mass
-function of slope 1.6, a clump velocity dispersion inherited from the layer as a square-root cascade, a boundedness
-threshold at the virial criterion, a bound efficiency near 5 %, a hundredfold suppression of star formation when the layer
-dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.92 to 1.52 with its top rising
-fifteenfold.
-
----
 ---
 # Part C. The theory one would want (does not exist)
 
-Part C is reserved for a calculation that takes as input only the state of the layer, its weight and what drives its
-turbulence, and returns the cluster mass function, with the simulation used solely to test the result. Nothing in Part B
-qualifies: every chain there reads the clump population, the efficiency levels, their scatter and the capture fraction from
-the run. For C to exist it has to contain, with no quantity taken from the simulation:
+A calculation that takes only the state of the layer, its weight, density, sound speed, field and what drives its
+turbulence, and returns the mass function of the star-forming events, with the run used only to test it. In the terms
+of Part B it has to supply, with no quantity read from the simulation:
 
-1. the effective dispersion of the layer from the energy budget of the driving, feedback yield or shear injection, without
-   a coefficient fitted here;
-2. the population of dense clumps, mass function and mass-size relation, from fragmentation of the turbulent layer at that
-   dispersion; this is also what decides whether massive clumps stay bound when the dispersion rises;
-3. the fraction of each clump that turns into stars from a collapse calculation, including why bound clumps convert a few
-   percent and unbound ones a tenth of that;
-4. how the stars of a collapsing complex divide into clusters, in place of the measured capture fraction.
+1. **Link 2:** the density PDF of the layer from $\mathcal M$ and $\beta$, and its test against the measured PDF per
+   column, including the drop of $\beta$ at the second passage.
+2. **Link 3:** the clump mass function and its top from the fragmentation of the layer at the measured
+   $\sigma_{\rm eff}$, $H$ and $\Sigma_{\rm gas}$ (excursion-set or equivalent), tested phase by phase against the
+   measured slope 1.6 and the hundredfold rise of the top.
+3. **Link 4:** the exponent $p = 0.65$ of the cascade from the driving of the layer turbulence, in place of the measured
+   value.
+4. **Link 5:** the two efficiency levels and the threshold $\alpha_c \approx 4$ from a collapse calculation with
+   feedback, in place of the fitted step.
+5. **Link 6, the part this run cannot supply at all:** whether the stars of an event stay bound, and at what size. That
+   is decided below 0.1 pc while the stars decouple from the gas, needs individual stars forming from resolved
+   collapse and collisional dynamics during formation, and is set by the star formation criterion in every galaxy-scale
+   simulation of this type, ours and others'. The run hands over the inputs such a calculation needs per clump: $M$,
+   $r_h$, $\sigma_{\rm 3d}$, $B$, $\alpha_{\rm tot}$, and $\sigma_{\rm eff}$, $H$ of its column.
 
-The measurements of Part A and the chain of Part B say what such a calculation must reproduce: an invariant clump mass
-function of slope 1.6, a clump velocity dispersion inherited from the layer as a square-root cascade, a boundedness
-threshold at the virial criterion, a bound efficiency near 5 %, a hundredfold suppression of star formation when the layer
-dispersion doubles at fixed weight, and a cluster mass function that flattens from 1.92 to 1.52 with its top rising
-fifteenfold.
+What the run says such a calculation must reproduce: vertical balance through three pericentre passages with the yield
+failing for the reason given; a magnetic share of the support rising from below 10 % to 20 to 45 %; an invariant clump
+mass function of slope 1.6 with its top rising a hundredfold; clump dispersions $\sigma_{\rm eff}(r_h/H)^{0.65}$ with
+0.2 dex scatter in every phase; a bound efficiency near 5 % and an unbound one near 0.1 % with the step at
+$\alpha_{\rm tot} \approx 4$; and an event mass function that flattens from 1.92 to 1.47 while its top rises from
+$7\times10^3$ to $8.5\times10^5$ $\rm M_\odot$.
