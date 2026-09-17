@@ -52,8 +52,12 @@ normal; the yield and rate comparisons depend on neither.
 
 **Columns.** For each galaxy a $12\times12$ grid of columns of side $L = 0.5$ kpc is laid in the plane perpendicular to the
 gas angular-momentum vector measured within 2 kpc of the galaxy centre; the centre is the median position of that galaxy's
-initial stellar disc particles (membership by particle ID). One grid, centred between the two centres with the angular
-momentum within 3 kpc, replaces the two whenever the centres are closer than 0.5 kpc. A *full column* spans
+initial stellar disc particles (membership by particle ID). From the second passage on (106 Myr, when the centres first
+come within 0.5 kpc and the gas of the two galaxies mixes) the two grids are replaced by one grid centred midway between
+the two stellar centres, with the normal from the gas angular momentum within 3 kpc of that point and the rest frame from
+the mean velocity of all stars within 3 kpc; nothing is labelled by galaxy after that time. (Before this change two
+overlapping grids were kept until the centres were within 0.5 kpc, which counted the same gas twice after the second
+passage; the vertical-equilibrium and yield figures show that earlier result as a dotted line for comparison.) A *full column* spans
 $|z| < 1.5$ kpc about the grid plane; a *layer column* spans $|z - z_{\rm mid}| < 0.5$ kpc about the midplane of that
 column measured in the full-column run. Only columns with $\Sigma_{\rm gas} > 1\ {\rm M_\odot\ pc^{-2}}$ are used, and
 before the second passage only columns in which less than 10 % of the gas belongs to the other galaxy by particle ID.
@@ -197,10 +201,8 @@ coalescence at 217 Myr.
 ![separation](figs/story_0_sep.png)
 
 ## Time evolution of the layer
-In the next three figures each galaxy is shown separately as long as the patch grids of both exist (centres more than
-0.5 kpc apart; the intruder cut applies before the second passage only) and the single merged grid otherwise; gaps are
-snapshots where that grid does not exist. After the second passage the two grids cover largely the same gas, which is why
-the two curves then track each other.
+In the next three figures each galaxy is shown separately before the second passage (its own grid, intruder cut
+applied) and the single merged grid from 106 Myr on.
 
 **Midplane pressure.** x: time. y, per snapshot and grid: the $\Sigma_{\rm gas}$-weighted median over the clean layer
 columns of $P_{\rm tot} = P_{\rm th} + P_{\rm turb} + \Pi_{\rm mag}$ as defined above.
