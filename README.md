@@ -98,6 +98,16 @@ is bound if E_kin + E_pot < 0. Groups with more than 40 000 members are not ener
 r_h > 20 pc, are flagged as the nucleus and excluded. Clouds and clumps are not energy-tested; their boundedness enters
 only through alpha_vir as defined under Clouds.
 
+*Robustness of the cluster catalogue.* The cluster mass function was recomputed with linking lengths of 3, 5 and 8 pc, with
+minimum group sizes of 10, 25 and 50 particles, with and without the intruder cut, and for all groups against bound groups
+only. The maximum-likelihood index above 300 Msun changes by at most 0.05 with the linking length (per phase 1.91/1.92/1.90,
+1.82/1.82/1.79, 1.79/1.77/1.76, 1.58/1.61/1.61 for 3/5/8 pc), by 0.04 with the intruder cut, and by 0.06 between all and
+bound groups. The minimum group size sets only the completeness limit: the 10- and 25-particle catalogues contain the same
+groups above 100 Msun, and the 50-particle catalogue is incomplete below 200 Msun. The bound fraction of groups between 100
+and 300 Msun falls from 0.7 before the second passage to 0.35 after the third, which is why the mass function is quoted from
+300 Msun up; above 1000 Msun more than 73 % of groups are bound in every phase. The low-mass figure below shows the local
+indices per bin for all and bound groups.
+
 *Time-series statistic.* Where a figure shows one value per snapshot from many columns, it is the Sigma_gas-weighted median
 over the columns: the value at which half of the total gas surface density lies above and half below.
 
