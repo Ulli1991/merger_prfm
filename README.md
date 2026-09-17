@@ -85,6 +85,19 @@ Sigma_SFR,40 the same with 40 Myr; in Msun yr⁻¹ kpc⁻². A column's M_young 
 Sigma_SFR(W) = 10^(1.17 log W - 7.32) (eq. 28b); Sigma_SFR(P) = 10^(1.18 log P - 7.43) (eq. 28a). A yield in km/s is
 converted to a pressure per unit star formation rate with 1 km/s = 4.81 × 10³ K cm⁻³ per Msun yr⁻¹ kpc⁻².
 
+*Group finding.* Friends-of-friends: two particles are linked if their separation is below the linking length l; a group
+is a connected component of the link graph; groups with fewer than N_min = 25 particles are discarded (every gas and star
+particle has 4 Msun, so N_min = 100 Msun). Clusters: stars younger than 10 Myr, l = 5 pc. Clouds: gas with T < 1000 K and
+n_H > 10 cm⁻³, l = 3 pc. Clumps: gas with n_H > 100 cm⁻³, l = 1.5 pc. Group finding is repeated independently on each
+snapshot used; nothing is tracked between snapshots except the clump lineages described under Clouds. Per group, with
+sums over members: M = Σ m_i, x_com = Σ m_i x_i / M, v_com = Σ m_i v_i / M, r_h the radius about x_com enclosing M/2.
+
+*Boundedness of clusters.* E_kin = ½ Σ_i m_i |v_i − v_com|²; E_pot = −G Σ_{i<j} m_i m_j / (r_ij² + ε²)^(1/2) with
+ε = 1 pc, summed over all member pairs (the group's own gravity only; no external potential and no tidal term). A cluster
+is bound if E_kin + E_pot < 0. Groups with more than 40 000 members are not energy-tested and, together with any group of
+r_h > 20 pc, are flagged as the nucleus and excluded. Clouds and clumps are not energy-tested; their boundedness enters
+only through alpha_vir as defined under Clouds.
+
 *Time-series statistic.* Where a figure shows one value per snapshot from many columns, it is the Sigma_gas-weighted median
 over the columns: the value at which half of the total gas surface density lies above and half below.
 
@@ -140,8 +153,8 @@ the layer vertically.
 ![pressure shares](figs/pressure_shares.png)
 
 ## Clouds
-*Clouds* are friends-of-friends groups (linking length 3 pc, at least 25 particles = 100 Msun) of gas with T < 1000 K and
-n_H > 10 cm⁻³, on every tenth snapshot, over the whole box. *Clumps* are the same with n_H > 100 cm⁻³ and 1.5 pc linking.
+*Clouds* and *clumps* are the friends-of-friends groups of cold gas defined above (l = 3 pc at n_H > 10 cm⁻³, l = 1.5 pc
+at n_H > 100 cm⁻³, N ≥ 25), on every tenth snapshot, over the whole box.
 Stars carry the ID of the gas particle they formed from, so the stars formed from a cloud's members are counted exactly.
 Per cloud, with sums over its members: M = Σ m_i; centre x_c = Σ m_i x_i / M; r_h = radius about x_c containing M/2;
 v̄ = Σ m_i v_i / M; sigma_3d² = Σ m_i |v_i − v̄|² / M; alpha_vir = 5 (sigma_3d²/3) r_h / (G M); v_A² = (1/N) Σ B_i² / (4π rho_i).
@@ -164,9 +177,8 @@ across the run.
 ![cloud efficiency](figs/clouds_eff.png)
 
 ## Cluster mass function
-*Clusters*: friends-of-friends groups (linking 5 pc, at least 25 particles) of stars younger than 10 Myr on every tenth
-snapshot, kept if E_kin + E_pot < 0 with E_kin = ½ Σ m_i |v_i − v̄|² and E_pot the pairwise Plummer-softened potential
-energy (softening 1 pc), and not the nucleus (fewer than 40 000 particles and r_h < 20 pc), lying in a clean column.
+*Clusters*: the friends-of-friends groups of stars younger than 10 Myr defined above (l = 5 pc, N ≥ 25), on every tenth
+snapshot, kept if bound by the energy criterion above, not the nucleus, and lying in a clean column.
 x: cluster mass. y: N_k / Δlog M_k per phase, error √N_k / Δlog M_k. Lines: alpha = 1 + N / Σ_{M_i ≥ 300} ln(M_i / 300)
 over the clusters above 300 Msun, drawn over the fitted range. Result: alpha = 1.92, 1.77, 1.74, 1.52; largest cluster
 6.7 × 10³, 2.0 × 10⁴, 2.8 × 10⁴, 1.0 × 10⁵ Msun. Below 300 Msun after the second passage only a third of the groups are
