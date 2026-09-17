@@ -73,6 +73,12 @@ $$P_{\rm mag} = \frac{1}{V_s}\sum_{i\in{\rm slab}} \frac{m_i}{\rho_i}\,\frac{B_i
 $$P_{\rm tot} = P_{\rm th} + P_{\rm turb} + \Pi_{\rm mag}, \qquad
 \rho_{\rm mid} = \frac{1}{V_s}\sum_{i\in{\rm slab,2p}} m_i$$
 
+**All of $P_{\rm th}$, $P_{\rm turb}$, $\Pi_{\rm mag}$, $P_{\rm tot}$, $\rho_{\rm mid}$ and $\mathcal W$ are computed
+from the two-phase gas only ($T < 2\times10^4$ K); hot gas is excluded.** This is the quantity Ostriker & Kim (2022) write
+as $P_{\rm tot,2p}$ and calibrate their yields and star-formation relations against; we drop the subscript. Every figure
+that shows a pressure, a weight or a midplane density uses these two-phase quantities, including the pressure per unit
+star formation rate, the vertical-equilibrium ratio, the pressure shares and the time evolution. The only quantity that
+includes the hot gas is $P_{\rm mag}$, summed over all slab particles.
 $\Pi_{\rm mag}$ is the vertical Maxwell stress, the magnetic term that supports the layer against its weight (it can be
 negative); $P_{\rm mag}$ is the magnetic pressure and is used only for the field strength and the equipartition
 comparison. All pressures are quoted as $P/k_{\rm B}$ in K cm$^{-3}$; code units ${\rm M_\odot\,(km/s)^2\,kpc^{-3}}$
@@ -192,7 +198,8 @@ x: time. y, per snapshot, with $c$ running over the clean layer columns of that 
 
 $$y = \frac{\sum_c P_{{\rm tot},c}}{\sum_c \Sigma_{{\rm SFR,10},c}}\;\Big/\;4.81\times10^{3}\quad[{\rm km\,s^{-1}}],$$
 
-the pressure the layer holds per unit star formation rate, the quantity Ostriker & Kim call the yield. Dashed:
+the pressure the layer holds per unit star formation rate, the quantity Ostriker & Kim call the yield; $P_{\rm tot}$ is the
+two-phase ($T < 2\times10^4$ K) pressure defined above, hot gas excluded. Dashed:
 $\Upsilon_{\rm tot}(\bar P)$ at $\bar P = \sum_c \Sigma_{{\rm gas,2p},c}P_{{\rm tot},c}/\sum_c \Sigma_{{\rm gas,2p},c}$. Result: within a factor of 2 of the yield before the second passage, 10 to 100 times above it
 in the quiet intervals after, back to the yield during the two nuclear bursts.
 
