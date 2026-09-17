@@ -151,6 +151,34 @@ coalescence at 217 Myr.
 
 ![separation](figs/story_0_sep.png)
 
+## Time evolution of the layer
+In the next three figures each galaxy is shown separately as long as the patch grids of both exist (centres more than
+0.5 kpc apart; the intruder cut applies before the second passage only) and the single merged grid otherwise; gaps are
+snapshots where that grid does not exist. After the second passage the two grids cover largely the same gas, which is why
+the two curves then track each other.
+
+**Midplane pressure.** x: time. y, per snapshot and grid: the $\Sigma_{\rm gas}$-weighted median over the clean layer
+columns of $P_{\rm tot} = P_{\rm th} + P_{\rm turb} + \Pi_{\rm mag}$ as defined above.
+
+![midplane pressure](figs/midplane_pressure.png)
+
+**Midplane density.** x: time. y, per snapshot and grid: the $\Sigma_{\rm gas}$-weighted median over the clean layer
+columns of $n_{\rm H,mid} = X_{\rm H}\,\rho_{\rm mid}/m_{\rm p}$ with $\rho_{\rm mid}$ the slab density of the 2p gas
+defined above and $X_{\rm H} = 0.76$.
+
+![midplane density](figs/midplane_density.png)
+
+**Star formation rate surface density.** x: time. y, per snapshot and grid: the mean of $\Sigma_{\rm SFR,10}$ over the
+clean full columns, i.e. the mass of stars younger than 10 Myr in those columns divided by 10 Myr and by their total area.
+
+![sfr surface density](figs/sfr_surface_density.png)
+
+**Star formation rate of the whole run.** x: time. y: ${\rm SFR}(t;\Delta t) = \frac{1}{\Delta t}\sum m_\star$ over all
+stars in the last snapshot with formation time in $(t-\Delta t,\ t]$, for $\Delta t$ = 10, 20, 30, 40 Myr (present
+particle masses, 3.98 M$_\odot$; each curve starts at $t = \Delta t$).
+
+![sfr history](figs/sfr_history.png)
+
 ## Vertical equilibrium
 x: time. y, per snapshot: the $\Sigma_{\rm gas}$-weighted median over the clean columns $c$ of $r_c = P_{{\rm tot},c}/\mathcal W_c$. Light: full columns (|z| < 1.5 kpc about the grid plane); dark:
 layer columns (|z − z_mid| < 0.5 kpc), with P_tot and W as defined above in both cases. Result: layer 1.05, 0.94, 0.73, 0.96
@@ -181,7 +209,10 @@ microgauss after the third.
 ## Pressure shares
 x: time. y, per snapshot with $c$ over the clean layer columns: $\sum_c P_{{\rm th},c}/\sum_c P_{{\rm tot},c}$,
 $\sum_c P_{{\rm turb},c}/\sum_c P_{{\rm tot},c}$ and $\sum_c \Pi_{{\rm mag},c}/\sum_c P_{{\rm tot},c}$, which sum to one;
-dashed: $\sum_c P_{{\rm mag},c}/\sum_c P_{{\rm tot},c}$, the magnetic pressure relative to the total support, not part of the sum.
+dashed: $\sum_c P_{{\rm mag},c}/\sum_c P_{{\rm tot},c}$, the magnetic pressure $B^2/8\pi$ relative to the total support.
+The dashed line is not part of the sum and can exceed one: $P_{\rm tot}$ contains the field only through the vertical
+Maxwell stress $\Pi_{\rm mag} = (B^2 - 2B_n^2)/8\pi$, as in Ostriker & Kim (2022), which is at most $B^2/8\pi$ (one third
+of it for an isotropic field), so the magnetic pressure can be larger than all of the vertical support together.
 Result: the Maxwell stress is below 5 % of the support before the second passage, 20 % between the second and third, and
 25 to 45 % from the third passage to coalescence; the magnetic pressure itself equals the total support at the second
 passage and exceeds it after the third, i.e. the field is at or above equipartition even though only part of it supports
