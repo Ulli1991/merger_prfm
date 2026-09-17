@@ -107,10 +107,13 @@ snapshot, evaluated at the position of every gas particle with a two-level parti
    $\epsilon = 1.5$ cells (188 pc coarse, 23 pc fine).
 3. Acceleration: $\mathbf g = -\nabla\Phi$ by centred finite differences on each grid, interpolated trilinearly to the
    particle position.
-4. Combination: $\mathbf g_i = \mathbf g^{\rm c}_{\rm all} + \big(\mathbf g^{\rm f}_{\rm gas+stars} - \mathbf g^{\rm c}_{\rm gas+stars,\ inner}\big)$,
-   i.e. the coarse field of everything, corrected inside the fine box by the difference between the fine-grid field and
-   the coarse-grid field of the same particles (those inside the fine box). Every column lies inside the fine box, so the
-   gas and stellar field entering $\mathcal W$ is resolved at 15.6 pc; the dark-matter field is resolved at 125 pc.
+4. Combination: the coarse field of everything, corrected inside the fine box by the difference between the fine-grid
+   field and the coarse-grid field of the same particles (gas and stars inside the fine box):
+
+$$\mathbf g_i = \mathbf g^{\rm c}_{\rm all} + \big(\mathbf g^{\rm f}_{\rm gas+stars} - \mathbf g^{\rm c}_{\rm gas+stars,\ inner}\big).$$
+
+Every column lies inside the fine box, so the gas and stellar field entering $\mathcal W$ is resolved at 15.6 pc; the
+dark-matter field is resolved at 125 pc.
 
 Check: on every snapshot the acceleration of 64 random gas particles inside $\pm2.5$ kpc is compared with a direct sum
 over all particles of the snapshot with 20 pc Plummer softening. The median relative error $|\mathbf g_{\rm PM} - \mathbf g_{\rm direct}|/|\mathbf g_{\rm direct}|$
