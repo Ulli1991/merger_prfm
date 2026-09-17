@@ -332,12 +332,14 @@ $\rm M_\odot$; open: above 1000), one point per tenth snapshot from 25 Myr on, a
 that snapshot: $\Sigma_{\rm SFR,10}$ averaged over the columns that formed stars in the last 10 Myr (an observer's
 star-forming area), and the $\Sigma_{\rm gas}$-weighted medians of the layer $P_{\rm tot}$, of
 $\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$ and of the layer $\mathcal W$. Dashed with band: the observed relation of Goddard et
-al. (2010), $\Gamma = 0.29\ \Sigma_{\rm SFR}^{0.24}$, the plane in which Kruijssen (2012) tests his model. Result: the
-bound fraction rises with $\Sigma_{\rm SFR}$ from 0.3 to 1 over three decades, the same direction as the observed
-relation but 3 to 5 times above it; it shows no dependence on pressure, dispersion or weight beyond what those share
-with $\Sigma_{\rm SFR}$ through the bursts. The rise at low $\Sigma_{\rm SFR}$ is largely the mass floor: a snapshot
-that forms few stars forms few groups above 300 $\rm M_\odot$. Read with the caveat above, this says that in a run of
-this kind the bound fraction is high wherever stars form and is not regulated by the layer.
+al. (2010), $\Gamma = 0.29\ \Sigma_{\rm SFR}^{0.24}$, the plane in which Kruijssen (2012) tests his model. Result: no
+correlation with the state of the layer. Spearman rank coefficients over the 21 snapshots: $-0.12$ against
+$P_{\rm tot}$, $-0.20$ against $\mathcal W$, $-0.15$ against $\Sigma_{\rm gas}$ (all consistent with zero), $-0.50$
+against $\sigma_{\rm eff}$. The one apparent trend, $+0.66$ against $\Sigma_{\rm SFR}$, is the mass floor: it is $+0.70$
+against the stellar mass formed in the window, and among the 14 snapshots that formed more than $2\times10^4$
+$\rm M_\odot$ it drops to $+0.36$ ($p = 0.2$), with pressure, dispersion and weight at $+0.15$, $+0.11$, $-0.09$. The
+points lie 3 to 5 times above the observed relation at every $\Sigma_{\rm SFR}$. Read with the caveat above: in a run
+of this kind the bound fraction is high wherever stars form and is not regulated by the layer.
 
 ![bound fraction against environment](figs/gamma_env.png)
 
