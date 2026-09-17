@@ -60,12 +60,14 @@ temperature T_i, magnetic field B_i.
   v̄_n = Σ_{slab,2p} m_i v_n,i / Σ_{slab,2p} m_i
 - P_th = (1/V_slab) Σ_{slab,2p} m_i (γ − 1) u_i ,  γ = 5/3
 - P_turb = (1/V_slab) Σ_{slab,2p} m_i (v_n,i − v̄_n)²
-- P_mag = (1/V_slab) Σ_{slab} (m_i / rho_i) B_i² / 8π   (all slab gas, volume weighted)
-- P_tot = P_th + P_turb + P_mag
+- Π_mag = (1/V_slab) Σ_{slab,2p} (m_i / rho_i) (B_i² − 2 B_n,i²) / 8π, the vertical Maxwell stress (B_n the component along
+  the normal; volume weighted; can be negative), which is the magnetic term that supports the layer against its weight
+- P_mag = (1/V_slab) Σ_{slab} (m_i / rho_i) B_i² / 8π, the magnetic pressure (all slab gas), used only for the field strength
+- P_tot = P_th + P_turb + Π_mag
 - rho_mid = (1/V_slab) Σ_{slab,2p} m_i
 
-Code units Msun (km/s)² kpc⁻³ are converted to K cm⁻³ (P/k_B) with the factor 4.90 × 10⁻⁶; P_mag is computed in erg cm⁻³
-and divided by k_B directly.
+Code units Msun (km/s)² kpc⁻³ are converted to K cm⁻³ (P/k_B) with the factor 4.90 × 10⁻⁶; Π_mag and P_mag are computed
+in erg cm⁻³ and divided by k_B directly.
 
 *Weight.* With g_n,i = g_i · n̂ the gravitational acceleration along the normal at particle i,
 
@@ -125,6 +127,17 @@ Result: 10 nG seed, e-folding time 10 Myr, 1 to 2 microgauss from 50 Myr, a fact
 microgauss after the third.
 
 ![dynamo](figs/story_4_dynamo.png)
+
+## Pressure shares
+x: time. y, per snapshot with c over the clean layer columns: Σ_c P_th,c / Σ_c P_tot,c (thermal), Σ_c P_turb,c / Σ_c P_tot,c
+(turbulent), Σ_c Π_mag,c / Σ_c P_tot,c (Maxwell stress), with P_tot = P_th + P_turb + Π_mag so the three sum to one;
+dashed: Σ_c P_mag,c / Σ_c P_tot,c, the magnetic pressure B²/8π relative to the total support, which is not part of the sum.
+Result: the Maxwell stress is below 5 % of the support before the second passage, 20 % between the second and third, and
+25 to 45 % from the third passage to coalescence; the magnetic pressure itself equals the total support at the second
+passage and exceeds it after the third, i.e. the field is at or above equipartition even though only part of it supports
+the layer vertically.
+
+![pressure shares](figs/pressure_shares.png)
 
 ## Clouds
 *Clouds* are friends-of-friends groups (linking length 3 pc, at least 25 particles = 100 Msun) of gas with T < 1000 K and
