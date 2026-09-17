@@ -310,6 +310,16 @@ the clumps need to fall below the efficiency step (fraction below $\alpha_c$: 0.
 turbulence is not measured here beyond the shear-term description of Part B; the attribution to the compression of the
 passage is interpretation.
 
+The same as a figure. Top: x: time; y: the ratio of $\sum_c P_{{\rm tot},c}/\sum_c\Sigma_{{\rm SFR},c}$ over the clean layer
+columns to $4.81\times10^3\ \Upsilon_{\rm tot}(\bar P)$, with the 10 Myr rate (light) and the 40 Myr rate (dark). Bottom:
+the supernova rate of the same columns (supernovae of the last 10 Myr from the stellar catalogue, per column) divided
+by their 10 Myr star formation rate, normalised to its median between 40 and 100 Myr. Result: from 140 to 170 Myr the
+10 Myr ratio is high, the 40 Myr ratio is 1.5 to 7, and the supernova rate per unit star formation is 10 to 70 times
+its disc value: delayed feedback. From 170 to 195 Myr both ratios are 100 to 200 and the supernova rate is at its disc
+value: pressure without feedback. The 40 Myr curve before 40 Myr includes the isothermal initial state and is not used.
+
+![yield sources](figs/yield_sources.png)
+
 ## Magnetic field
 x: time. y: $B_c = (8\pi k_{\rm B} P_{{\rm mag},c})^{1/2}$ per layer column, in $\mu{\rm G}$. Dark:
 $\sum_c \Sigma_{{\rm gas},c} B_c / \sum_c \Sigma_{{\rm gas},c}$ over the clean columns; light: the median of $B_c$.
