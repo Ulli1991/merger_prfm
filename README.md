@@ -428,6 +428,20 @@ the 50 Myr plateau between 140 and 195 Myr untouched.
 
 ![yield with lag](figs/yield_lag.png)
 
+**The pressure is paid back later.** A shift of the 10 Myr rate does not work because a 10 Myr window is too narrow to
+hold the burst. The right test pairs the pressure at $t$ with the star formation that follows it: x: the forward offset
+$\Delta$; y: the phase median of $\big[\sum_c P_{{\rm tot},c}(t)/\sum_c\Sigma_{{\rm SFR,40},c}(t+\Delta)\big] /
+[4.81\times10^3\,\Upsilon_{\rm tot}(\bar P(t))]$, so that $\Delta = 40$ compares the pressure with the stars formed in
+the 40 Myr after it. Result: the trough falls from 172 at $\Delta = 0$ to 5.0 at 20 Myr and 2.2 at 30 Myr, where it sits
+on the disc value; the interval after the second passage falls from 13 to 3 at 20 Myr; the discs are flat at 1.6 to 2.6
+for any offset, as they must be in a steady state; and the burst and its decay, which are already matched at
+$\Delta = 0$, are spoiled by shifting. So the pressure of the trough is not unrelated to star formation: it is the
+pressure that makes the next burst, and the yield relation holds across the whole merger once star formation is allowed
+to lag it. No single offset works everywhere, because the lag is 20 Myr at the second passage and 30 at the third, set
+by how long the compressed gas takes to become bound again rather than by a universal constant.
+
+![yield with a forward window](figs/yield_forward.png)
+
 ## 7. Is it one component, or one region?
 Neither. All three pressure terms are too high for the star formation rate, the star-forming columns alone give the same answer, and the supply is the flow, not feedback.
 
