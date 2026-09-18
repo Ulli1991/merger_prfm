@@ -35,9 +35,14 @@ with the 40 Myr rate (107 to 125 and 157 to 207 Myr) and 10 times for 23 % (108 
 time-median over the whole run is 2.1.
 
 Reading. Vertical balance survives the merger, with one interval of moderate shortfall around the second passage during
-which the gas is not a layer in any orientation. The supply of that pressure by star formation does not survive: after the
-second passage the layer holds 10 to 100 times more pressure per unit star formation than feedback yields, and that pressure
-is turbulent and magnetic, sustained by the shear of the merger flow at a fixed coefficient of 0.02. The excess is not a
+which the gas is not a layer in any orientation. With the 40 Myr star formation rate that OK22 use, the yield relation
+holds to within a factor of 3 for three of the four phases and for all but 25 Myr of the run: the apparent 10 to 100
+excess with the 10 Myr rate between the second and third passage is the supernovae of the burst arriving up to 40 Myr
+after its stars formed. The genuine failure is the 25 Myr after the third passage, 170 to 195 Myr, where the ratio is
+100 to 200 with either rate and the supernova rate is at its disc value: the weight has jumped by 3, the pressure
+follows it at once, turbulent and magnetic, and no star formation is behind it. A longer window would lower that ratio
+only by averaging in the earlier burst, whose supernovae have finished, so it would hide the interval rather than
+explain it. The excess is not a
 pressure problem: the pressure stays within a factor of 2 of the weight while the star formation rate collapses by 2.5 dex
 between bursts, so the ratio runs away on its denominator. At the peak of the 125 to 135 Myr burst the layer holds only 0.2 to 0.5 of the yield,
 i.e. less pressure per unit star formation than the TIGRESS calibration. Star formation lags the pressure by 8 to 12
