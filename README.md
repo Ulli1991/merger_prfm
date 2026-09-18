@@ -388,6 +388,25 @@ $P_{\rm tot}$ is right to within a factor 1.7.
 
 ![yield components](figs/yield_components.png)
 
+**It is not an area effect.** A natural reading of the collapse in $\Sigma_{\rm SFR}$ is that star formation switches
+off over most of the galaxy while the surviving patches keep forming stars normally, so that the pressure averaged over
+a largely quenched area is compared with a rate that only a few columns produce. The columns say otherwise. Splitting
+the clean layer columns of each snapshot into those with $\Sigma_{\rm SFR,40} > 0$ and the rest:
+
+| interval | fraction of columns forming stars | $\Sigma_{\rm SFR,40}$ in those columns | yield ratio, all columns | yield ratio, star-forming columns only |
+|---|---|---|---|---|
+| discs, 40 to 100 Myr | 0.63 | 1.1e-3 | 1.5 | 1.4 |
+| 2nd passage, 107 to 125 | 0.56 | 5.3e-4 | 13 | 13 |
+| 130 to 165 Myr | 0.67 | 2.1e-3 | 2.1 | 1.8 |
+| 167 to 195 Myr | 0.43 | 9.8e-5 | 171 | 165 |
+| after 200 Myr | 0.75 | 5.9e-3 | 1.9 | 1.9 |
+
+The star-forming area falls only by a third, from 0.63 to 0.43 of the columns, while the rate inside the columns that
+are still forming stars falls by a factor 12. Restricting the yield to those columns alone changes it from 171 to 165.
+The columns that form stars in that interval are themselves at 165 times the OK22 yield, and their median pressure,
+$1.1\times10^4$ $\rm K\ cm^{-3}$, is higher than in the discs. The suppression is in the rate per star-forming column,
+not in the area over which star formation occurs.
+
 **What supplies it instead.** x: time. y, as $\Sigma_{\rm gas}$-weighted medians over the clean layer columns: the
 measured $P_{\rm tot}$ and $\mathcal W$; the pressure that PRFM feedback supports at the measured 40 Myr star formation
 rate, i.e. the $P$ for which OK22 eq. 28a returns that rate, $P_{\rm fb} = 10^{(\log_{10}\Sigma_{\rm SFR,40} + 7.43)/1.18}$;
