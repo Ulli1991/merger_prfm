@@ -34,22 +34,23 @@ Durations, counting after 25 Myr. The layer $P_{\rm tot}/\mathcal W$ leaves 0.7 
 123 to 132, 135 to 147 and 211 to 221 Myr) and 0.5 to 2 for 3 %; its per-snapshot median stays between 0.41 and 1.56.
 With the 40 Myr rate the yield ratio exceeds 3 for 36 % of the run and 30 for 15 %, the latter all in 167 to 195 Myr.
 
-Reading. Vertical balance holds throughout. The feedback yield does not, and the size of the failure depends on how the
-star formation rate is measured. With the 10 Myr rate the excess reaches 43 between the second and third passage; the
-40 Myr rate that OK22 use removes most of that, because those stars formed in the 125 to 135 Myr burst and their
-supernovae kept the layer pressurised for 40 Myr afterwards. What survives is 167 to 195 Myr, where the ratio is above
-30 with either rate and the supernova rate per unit 40 Myr star formation is at its disc value.
+Reading.
 
-In that interval the weight triples at the third passage and the pressure follows within a few Myr, turbulent and
-magnetic; the layer dispersion goes from 9.9 to 17.9 $\rm km\ s^{-1}$ and the clumps' median $\alpha_{\rm tot}$ from 6
-to 49, three quarters of that from their own dispersion doubling with it; the dense gas is not removed but unbound, 2.6 times more mass above 100 $\rm cm^{-3}$ than in the discs and 21
-times less of it below the virial threshold; and the star formation rate falls by the same factor as the bound mass.
-Pressure up 3, star formation down 15.
-
-The delay is the whole of it. Pairing the pressure at $t$ with the star formation in the 40 Myr after $t$ instead of
-before it puts the trough at 2.2, the disc value. PRFM's instantaneous balance between pressure and star formation is
-what fails, over the 20 to 30 Myr the compressed gas needs to become bound again, and it fails between the bursts
-rather than in them.
+- Vertical balance holds throughout, at every column size above 1 kpc depth and every orientation within 30 degrees of
+  the disc normal.
+- The feedback yield fails, and by how much depends on the window. With the 10 Myr rate the excess reaches 43 between
+  the second and third passage; the 40 Myr rate OK22 use removes most of it, because those stars formed in the 125 to
+  135 Myr burst and their supernovae kept the layer pressurised afterwards.
+- What survives is 167 to 195 Myr: ratio above 30 with either rate, supernova rate per unit 40 Myr star formation at
+  its disc value.
+- There the weight triples at the third passage and the pressure follows within a few Myr, turbulent and magnetic; the
+  layer dispersion goes from 9.9 to 17.9 $\rm km\ s^{-1}$ and the clumps' median $\alpha_{\rm tot}$ from 6 to 49; the
+  dense gas is unbound rather than removed, 2.6 times more mass above 100 $\rm cm^{-3}$ than in the discs and 21 times
+  less of it below the virial threshold; star formation falls by the same factor as the bound mass. Pressure up 3,
+  star formation down 15.
+- Pairing the pressure at $t$ with the star formation in the 40 Myr *after* $t$ puts the trough at 2.2, the disc value.
+  What fails is the instantaneous balance, over the 20 to 30 Myr the compressed gas needs to become bound again, and it
+  fails between the bursts rather than in them.
 
 # Part A. What the simulation shows
 
@@ -202,8 +203,6 @@ $\sum_{c:\ r_c\le r}\Sigma_{{\rm gas},c} = \tfrac12\sum_c \Sigma_{{\rm gas},c}$.
 110, 169 Myr; the final coalescence is at 217 Myr. The first 25 Myr are excluded (isothermal initial state relaxing).
 
 ## 1. The merger
-The orbit that drives everything else.
-
 x: time since the start of the run. y: $d(t) = |\mathbf c_A - \mathbf c_B|$, with $\mathbf c_X$ the median position of the initial
 stellar disc particles of galaxy X (galaxy A: particle IDs $\le 26\ 000\ 000$). Dotted lines: pericentres at 40, 110, 169 Myr; solid: final
 coalescence at 217 Myr.
@@ -211,8 +210,6 @@ coalescence at 217 Myr.
 ![separation](figs/story_0_sep.png)
 
 ## 2. What the gas layer does
-Pressure, density and star formation rate through the whole run, before asking whether they are related.
-
 In the next three figures each galaxy is shown separately before the second passage (its own grid, intruder cut
 applied) and the single merged grid from 106 Myr on.
 
@@ -239,8 +236,6 @@ particle masses, 3.98 $\rm M_\odot$; each curve starts at $t = \Delta t$).
 ![sfr history](figs/sfr_history.png)
 
 ## 3. Does the layer stay in vertical balance?
-The first PRFM statement: the midplane pressure equals the weight of the gas above it. It survives the merger.
-
 x: time. y, per snapshot: the $\Sigma_{\rm gas}$-weighted median over the clean columns $c$ of $r_c = P_{{\rm tot},c}/\mathcal W_c$. Light: full columns (|z| < 1.5 kpc about the grid plane); dark:
 layer columns (|z − z_mid| < 0.5 kpc), with P_tot and W as defined above in both cases. Result: layer 1.05, 0.94, 0.73, 0.96
 in the four phases, never outside 0.5 to 2; the full column drops to 0.4 between the second and third passage because it
@@ -280,8 +275,6 @@ depth only; L from 0.5 to 0.125 kpc at fixed depth changes nothing, depths of 0.
 ![column depth](figs/scale_depth.png)
 
 ## 4. What holds the layer up
-If the pressure matches the weight, which term provides it. The field grows from nothing to a fifth of the support.
-
 x: time. y, per snapshot with $c$ over the clean layer columns: $\sum_c P_{{\rm th},c}/\sum_c P_{{\rm tot},c}$,
 $\sum_c P_{{\rm turb},c}/\sum_c P_{{\rm tot},c}$ and $\sum_c \Pi_{{\rm mag},c}/\sum_c P_{{\rm tot},c}$, which sum to one;
 dashed: $\sum_c P_{{\rm mag},c}/\sum_c P_{{\rm tot},c}$, the magnetic pressure $B^2/8\pi$ relative to the total support.
@@ -304,8 +297,6 @@ microgauss after the third.
 ![dynamo](figs/story_4_dynamo.png)
 
 ## 5. Does star formation supply that pressure?
-The second PRFM statement, and the one that breaks. Read with the 40 Myr rate, most of the apparent failure is the delay of supernovae behind their stars.
-
 x: time. y, per snapshot, with $c$ running over the clean layer columns of that snapshot:
 
 $$y = \frac{\sum_c P_{{\rm tot},c}}{\sum_c \Sigma_{{\rm SFR,10},c}}\ \Big/\ 4.81\times10^{3}\quad[{\rm km\ s^{-1}}],$$
@@ -335,15 +326,9 @@ with the 10 Myr and the 40 Myr rate, the supernova rate of the clean columns per
 | 190 to 200 | 9 | 30 | 0.1 | 0.62 | 0.29 |
 | 200 to 210 | 1.0 | 3.1 | 0.2 | 0.53 | 0.37 |
 
-Two intervals of different kind make up the excess. From 140 to 170 Myr the 10 Myr ratio is 50 to 170 but the 40 Myr
-ratio is 1.5 to 7, and the supernova rate per unit current star formation is 10 to 50 times its disc value: the
-pressure is supplied by the supernovae of the 125 to 135 Myr burst, which arrive up to 40 Myr after the stars formed.
-This is feedback with the delay OK22 average over by using the 40 Myr rate, not a failure of the yield relation. It
-shows in the two-phase gas because what the supernovae leave in the layer is momentum, not hot gas: the hot volume
-fraction of the slab stays below 0.06 throughout (the hot gas leaves the thin layer), while the turbulent pressure of
-the two-phase gas per unit supernova rate in 140 to 160 Myr is 0.7 to 1.5 times its disc value, i.e. the same momentum
-per supernova that regulates the discs. From 170 to 195 Myr that ratio is 80 to 90: the turbulence there is not from
-supernovae.
+Result: from 140 to 170 Myr the 10 Myr ratio is 50 to 170 while the 40 Myr ratio is 1.5 to 7 and the supernova rate
+per unit current star formation is 10 to 50 times its disc value, so the layer is held by the supernovae of the 125 to
+135 Myr burst. From 170 to 195 Myr both ratios are 100 to 200 and the supernova rate is at its disc value.
 
 ### Delayed supernovae, seen directly
 **The same in one figure.** Top: x: time; y: the ratio of $\sum_c P_{{\rm tot},c}/\sum_c\Sigma_{{\rm SFR},c}$ over the clean layer
@@ -386,10 +371,6 @@ turbulence is not measured here beyond the shear-term description of Part B; the
 passage is interpretation.
 
 ## 6. Is the excess a timing effect?
-Yes, once the accounting window is wide enough. Star formation follows the pressure by about 10 Myr in the fluctuations and
-by 20 to 30 Myr from a pericentre to the burst it produces. A 10 Myr window shifted by 12 Myr is too narrow to see
-that; a 40 Myr window taken forward from the pressure removes the excess entirely.
-
 Test of whether the yield excess is a causal delay: the pressure responds to the weight at once, star formation only
 after the gas has collapsed. Series per snapshot: $\log P_{\rm tot}$ and $\log\mathcal W$, the $\Sigma_{\rm gas}$-weighted
 medians over the clean layer columns; $\log{\rm SFR}$, the star formation rate of the whole run in 2 Myr bins from the
@@ -438,8 +419,6 @@ response time varies between passages.
 ![yield with a forward window](figs/yield_forward.png)
 
 ## 7. Is it one component, or one region?
-Neither. All three pressure terms are too high for the star formation rate, the star-forming columns alone give the same answer, and the supply is the flow, not feedback.
-
 **Which component carries the excess.** x: time. y: $\sum_c P_{X,c}/\sum_c \Sigma_{{\rm SFR,40},c}/4.81\times10^3$ in
 $\rm km\ s^{-1}$ over the clean layer columns, for $X$ = thermal, turbulent and Maxwell stress, against the OK22
 thermal and turbulent yields (eqs. 26a and 26b) at the $\Sigma_{\rm gas,2p}$-weighted mean pressure of the same
@@ -467,10 +446,8 @@ $P_{\rm tot}$ is right to within a factor 1.7.
 
 ![yield components](figs/yield_components.png)
 
-**It is not an area effect.** A natural reading of the collapse in $\Sigma_{\rm SFR}$ is that star formation switches
-off over most of the galaxy while the surviving patches keep forming stars normally, so that the pressure averaged over
-a largely quenched area is compared with a rate that only a few columns produce. The columns say otherwise. Splitting
-the clean layer columns of each snapshot into those with $\Sigma_{\rm SFR,40} > 0$ and the rest:
+**It is not an area effect.** The clean layer columns of each snapshot split into those with
+$\Sigma_{\rm SFR,40} > 0$ and the rest:
 
 | interval | fraction of columns forming stars | $\Sigma_{\rm SFR,40}$ in those columns | yield ratio, all columns | yield ratio, star-forming columns only |
 |---|---|---|---|---|
@@ -480,42 +457,32 @@ the clean layer columns of each snapshot into those with $\Sigma_{\rm SFR,40} > 
 | 167 to 195 Myr | 0.43 | 9.8e-5 | 171 | 165 |
 | after 200 Myr | 0.75 | 5.9e-3 | 1.9 | 1.9 |
 
-The star-forming area falls only by a third, from 0.63 to 0.43 of the columns, while the rate inside the columns that
-are still forming stars falls by a factor 12. Restricting the yield to those columns alone changes it from 171 to 165.
-The columns that form stars in that interval are themselves at 165 times the OK22 yield, and their median pressure,
-$1.1\times10^4$ $\rm K\ cm^{-3}$, is higher than in the discs. The suppression is in the rate per star-forming column,
-not in the area over which star formation occurs.
+Result: the star-forming area falls only from 0.63 to 0.43 of the columns while the rate inside the star-forming
+columns falls by 12, and restricting the yield to those columns changes it from 171 to 165. Their median pressure,
+$1.1\times10^4$ $\rm K\ cm^{-3}$, is higher than in the discs.
 
 ### What supplies the pressure instead
-**What supplies it instead.** x: time. y, as $\Sigma_{\rm gas}$-weighted medians over the clean layer columns: the
+x: time. y, as $\Sigma_{\rm gas}$-weighted medians over the clean layer columns: the
 measured $P_{\rm tot}$ and $\mathcal W$; the pressure that PRFM feedback supports at the measured 40 Myr star formation
 rate, i.e. the $P$ for which OK22 eq. 28a returns that rate, $P_{\rm fb} = 10^{(\log_{10}\Sigma_{\rm SFR,40} + 7.43)/1.18}$;
 and the shear term $0.02\ \Sigma_{\rm gas} H S^2$ of Part B with $S$ the mass-weighted shear rate of the slab from the
-velocity-gradient tensor. Result: in the discs feedback supports 0.45 of the measured pressure and the shear term is 3
-times it; from 167 to 195 Myr feedback supports 0.013 of it and the shear term is 7 times it. The ordered flow carries
-far more energy than the layer's turbulence needs, in the discs as in the merger, so the shear term is a statement
-about availability, not a measured transfer rate. The mass-weighted shear rate itself rises from 550 to 1030
-$\rm km\ s^{-1}\ kpc^{-1}$ between the discs and that interval, the vertical dispersion from 9.9 to 17.9
-$\rm km\ s^{-1}$, and the magnetic share of the support from 0.03 to 0.22.
+velocity-gradient tensor. Result: in the discs feedback supports 0.45 of the measured pressure and the shear term is 3 times it; from 167 to
+195 Myr feedback supports 0.013 and the shear term is 7 times it. The shear rate rises from 550 to 1030
+$\rm km\ s^{-1}\ kpc^{-1}$ over the same intervals. The shear term measures available energy, not a transfer rate.
 
 ![pressure budget](figs/pressure_budget.png)
 
 ### Where PRFM holds and where it fails
-The same question without the star formation rate on both axes. x: the rate the OK22 relation for the weight
+x: the rate the OK22 relation for the weight
 (eq. 28b) returns for the mean $\mathcal W$ of the clean layer columns of a snapshot. y: the rate measured in the same
 columns over 40 Myr. One point per snapshot after 40 Myr, coloured by phase; solid line 1:1, dotted lines a factor 10
-and 100 below it. Result: the discs and both bursts sit a factor 1.8 to 2.5 below the prediction, a constant offset of
-the kind the calibration allows; the trough from 169 to 195 Myr drops to a factor 110 below it. Median measured over
-predicted: 0.55 in the discs, 0.40 at the second burst, 0.46 at the third, 0.009 in the trough. With the pressure
-relation (eq. 28a) instead of the weight the numbers are 0.73, 0.66, 0.66 and 0.009. PRFM predicts the star formation
-rate of this merger to within a factor of 2 whenever the layer is forming stars, and fails by two orders of magnitude
-in the trough.
+and 100 below it. Result: median measured over predicted is 0.55 in the discs, 0.40 at the second burst, 0.46 at the third and 0.009 in
+the trough; with the pressure relation (eq. 28a) 0.73, 0.66, 0.66 and 0.009. Within a factor of 2.5 whenever the layer
+forms stars, two orders of magnitude off in the trough.
 
 ![yield regime](figs/yield_regime.png)
 
 ## 8. What changes when star formation stops
-The other half of the ratio. The gas is still there and denser than in the discs; it has stopped being bound.
-
 **The gas is not gone; it is unbound.** x: time. y, in solar masses: the gas mass of the clean layer columns
 ($\sum_c \Sigma_{{\rm gas},c} A$); the mass in dense clumps, the friends-of-friends groups above 100 $\rm cm^{-3}$ of
 Part A; the part of that clump mass with $\alpha_{\rm tot} < 4$, the threshold of the efficiency step; and the stellar
@@ -528,11 +495,8 @@ mass formed in the preceding 10 Myr. Comparing the discs with the trough from 16
 | of those, $\alpha_{\rm tot} < 4$ | 4.9e5 | 2.4e4 | 0.05 |
 | stars formed per 10 Myr | 8.3e4 | 4.9e3 | 0.06 |
 
-There is more gas in the layer than in the discs, and 2.6 times more of it above 100 $\rm cm^{-3}$. What collapses is
-the bound part: the mass of dense gas below the virial threshold falls by a factor 21, and the stellar mass formed
-follows it by the same factor. The star formation rate is not suppressed by a lack of gas, by its removal, or by a
-smaller star-forming area, but because the dense gas that is present is unbound, with a median $\alpha_{\rm tot}$ of
-49 against 6 in the discs.
+Result: more gas than in the discs and 2.6 times more of it above 100 $\rm cm^{-3}$, while the mass below the virial
+threshold falls by 21 and the stars formed follow it by the same factor. Median $\alpha_{\rm tot}$ 49 against 6.
 
 ![gas against bound gas](figs/gas_vs_bound.png)
 
@@ -549,11 +513,9 @@ $n_{\rm H} > 100$ clumps changes between the discs and the trough as follows:
 | $1 + v_A^2/\sigma_{\rm 3d}^2$ | 1.92 | 2.96 | 1.54 | +0.19 dex |
 | $\alpha_{\rm tot}$ | 5.97 | 48.7 | 8.17 | +0.91 dex |
 
-Three quarters of the rise is the clump velocity dispersion, which doubles; the magnetic factor adds a fifth of it, and
-the changes in size and mass almost cancel. The clump dispersion doubles because the layer dispersion does: the
-$\Sigma_{\rm gas}$-weighted median $\sigma_{\rm eff}$ goes from 9.9 to 17.9 $\rm km\ s^{-1}$ over the same interval, and
-link 4 shows the clump dispersions following it at their own size. The mean clump density is unchanged, 163 against
-150 $\rm cm^{-3}$, so this is not a density effect.
+Three quarters of the rise is the clump velocity dispersion, a fifth the magnetic factor; size and mass nearly cancel.
+The layer dispersion doubles over the same interval, 9.9 to 17.9 $\rm km\ s^{-1}$, and link 4 relates the two. The mean
+clump density is unchanged, 163 against 150 $\rm cm^{-3}$.
 
 x: time. Top: the $\Sigma_{\rm gas}$-weighted median $\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$ of the clean
 layer columns and the median $\sigma_{\rm 3d}$ of the dense clumps of the same snapshot. Bottom: the median
@@ -563,8 +525,6 @@ fraction of clump mass below it.
 ![alpha chain](figs/alpha_chain.png)
 
 ## 9. Clouds and clumps
-The population those statements are made of.
-
 *Clouds* and *clumps* are the friends-of-friends groups of cold gas defined above (l = 3 pc at n_H > 10 cm⁻³, l = 1.5 pc
 at n_H > 100 cm⁻³, N ≥ 25), on every tenth snapshot, over the whole box.
 Stars carry the ID of the gas particle they formed from, so the stars formed from a cloud's members are counted exactly.
@@ -595,8 +555,6 @@ across the run.
 ![cloud efficiency](figs/clouds_eff.png)
 
 ## 10. The stars that form
-What the run can say about the stellar side, and what it cannot.
-
 The stars formed in the run are grouped with the friends-of-friends and energy criteria above. Every bound group, from
 100 $\rm M_\odot$ to $4\times10^5$ $\rm M_\odot$, has a half-mass radius of 0.2 to 0.4 pc, which is the 0.4 pc softening, and
 an age spread of 0.6 to 0.8 Myr; the clumps that produce them form stars for about 1 Myr. The stars therefore appear
