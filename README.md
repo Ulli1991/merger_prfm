@@ -18,64 +18,39 @@ It does not exist; Part C states what it would have to contain.
 
 ## Status of the PRFM comparison
 
-Reference: the Ostriker & Kim (2022) calibration. The run's own undisturbed disc lasts only from 25 to 40 Myr, since the
-first 25 Myr are the isothermal initial state relaxing and the discs are tidally disturbed from the first passage on.
+Reference: the Ostriker & Kim (2022) calibration. The run's own undisturbed disc lasts only from 25 to 40 Myr, since
+the first 25 Myr are the isothermal initial state relaxing and the discs are tidally disturbed from the first passage
+on. Phase medians:
 
 | | before 1st passage | 1st to 2nd | 2nd to 3rd | 3rd to coalescence |
 |---|---|---|---|---|
-| P over W, layer 1 kpc deep | 1.03 | 0.94 | 0.71 | 0.85 |
-| pressure per unit SFR over the yield, 10 Myr SFR | 1.9 | 1.7 | 43 | 2.8 |
-| same, 40 Myr SFR as in OK22 | 0.6 | 1.6 | 2.6 | 10.5 |
-| SFR at fixed weight vs OK22, 0.5 kpc columns (dex) | -0.5 | -0.6 | -1.8 | -2.2 |
-| same, 0.25 kpc columns (dex) | -0.2 | -0.5 | -1.6 | -2.1 |
+| $P_{\rm tot}/\mathcal W$, layer 1 kpc deep | 1.03 | 0.94 | 0.71 | 0.85 |
+| pressure per unit SFR over the yield, 10 Myr rate | 1.9 | 1.7 | 43 | 2.8 |
+| same, 40 Myr rate as in OK22 | 0.6 | 1.6 | 2.6 | 10.5 |
+| $\log_{10}$ (measured / predicted $\Sigma_{\rm SFR}$), from $\mathcal W$ | | −0.30 | −0.41 | −0.88 |
+| same, from $P_{\rm tot}$ | | −0.15 | −0.32 | −0.84 |
 
-Durations. Pressure over weight leaves 0.7 to 1.4 for 24 % of the run (97 to 141 Myr and short episodes at the later
-pericentres) and never leaves 0.5 to 2. The pressure per unit star formation exceeds 3 times the yield for 36 % of the run
-with the 40 Myr rate (107 to 125 and 157 to 207 Myr) and 10 times for 23 % (108 to 120 and 166 to 198 Myr); its
-time-median over the whole run is 2.1.
+Durations, counting after 25 Myr. The layer $P_{\rm tot}/\mathcal W$ leaves 0.7 to 1.4 for 29 % of the run (97 to 102,
+123 to 132, 135 to 147 and 211 to 221 Myr) and 0.5 to 2 for 3 %; its per-snapshot median stays between 0.41 and 1.56.
+With the 40 Myr rate the yield ratio exceeds 3 for 36 % of the run and 30 for 15 %, the latter all in 167 to 195 Myr.
 
-Reading. Vertical balance survives the merger, with one interval of moderate shortfall around the second passage during
-which the gas is not a layer in any orientation. The supply of that pressure by star formation does not survive, and the
-averaging window decides how much of the discrepancy is a delay and how much is a failure. Counting the time after
-40 Myr for which the ratio to the yield exceeds a factor:
+Reading. Vertical balance holds throughout. The feedback yield does not, and the size of the failure depends on how the
+star formation rate is measured. With the 10 Myr rate the excess reaches 43 between the second and third passage; the
+40 Myr rate that OK22 use removes most of that, because those stars formed in the 125 to 135 Myr burst and their
+supernovae kept the layer pressurised for 40 Myr afterwards. What survives is 167 to 195 Myr, where the ratio is above
+30 with either rate and the supernova rate per unit 40 Myr star formation is at its disc value.
 
-| ratio above | with the 10 Myr rate | with the 40 Myr rate |
-|---|---|---|
-| 3 | 48 % of the run (95 to 124, 138 to 197 Myr) | 39 % (107 to 125, 157 to 204 Myr) |
-| 10 | 37 % (107 to 120, 142 to 195 Myr) | 25 % (108 to 120, 166 to 198 Myr) |
-| 30 | | 15 % (167 to 195 Myr) |
+In that interval the weight triples at the third passage and the pressure follows within a few Myr, turbulent and
+magnetic; the layer dispersion goes from 9.9 to 17.9 $\rm km\ s^{-1}$ and the clumps' median $\alpha_{\rm tot}$ from 6
+to 49, three quarters of that from their own dispersion doubling with it; the dense gas is not removed but unbound, 2.6 times more mass above 100 $\rm cm^{-3}$ than in the discs and 21
+times less of it below the virial threshold; and the star formation rate falls by the same factor as the bound mass.
+Pressure up 3, star formation down 15.
 
-The 40 Myr rate that OK22 use removes most of the excess between the second and third passage (phase median 43 with the
-10 Myr rate, 2.6 with the 40 Myr rate): those stars formed at the 125 to 135 Myr burst and their supernovae kept the
-layer pressurised for 40 Myr afterwards, which is what the longer window is for. It does not remove the excess after the
-third passage (phase median 2.8 with the 10 Myr rate, 10.5 with the 40 Myr rate). The hard core of the failure is
-167 to 195 Myr, 28 Myr in which the ratio is above 30 with either rate and the supernova rate of the columns is at its
-disc value: the weight jumped by 3 at the third passage, the pressure followed at once, turbulent and magnetic, and no
-star formation is behind it. A still longer window would only average in the earlier burst, whose supernovae had ended
-by 165 Myr, and would hide that interval rather than explain it.
+The delay is the whole of it. Pairing the pressure at $t$ with the star formation in the 40 Myr after $t$ instead of
+before it puts the trough at 2.2, the disc value. PRFM's instantaneous balance between pressure and star formation is
+what fails, over the 20 to 30 Myr the compressed gas needs to become bound again, and it fails between the bursts
+rather than in them.
 
-What happens in that interval, with every step measured (figures under "Delay between pressure and star formation"):
-the third passage raises the weight by 3 and the layer follows it within a few Myr, so vertical balance holds and the
-pressure is turbulent and magnetic; the supernova rate per unit 40 Myr star formation is normal, so feedback did not
-supply that pressure; the same compression raises the effective dispersion of the layer from 9.9 to 17.9
-$\rm km\ s^{-1}$, and the cascade hands it to the clumps, whose median $\alpha_{\rm tot}$ rises from 6 to 49, three
-quarters of that from their own dispersion doubling; the dense gas is not removed but unbound, with 2.6 times more mass
-above 100 $\rm cm^{-3}$ than in the discs and 21 times less of it below the virial threshold; and the star formation
-rate falls by the same factor as the bound mass. Pressure up 3, star formation down 15, and both from the same event.
-PRFM's vertical balance survives all of it; what breaks is the assumption that feedback supplies the pressure, and it
-breaks in the trough between bursts, not in the bursts themselves. The excess is not a
-pressure problem: the pressure stays within a factor of 2 of the weight while the star formation rate collapses by 2.5 dex
-between bursts, so the ratio runs away on its denominator. At the peak of the 125 to 135 Myr burst the layer holds only 0.2 to 0.5 of the yield,
-i.e. less pressure per unit star formation than the TIGRESS calibration. Star formation lags the pressure by 8 to 12
-Myr at the passages, which times the bursts but does not account for the excess: shifting the star formation rate by
-the lag leaves the phase median at 30 to 60, since the pressure stays at the weight for 50 Myr while the cold gas,
-present at a depletion time of 48 Gyr, does not form stars. The star formation rate
-at fixed weight falls below the OK22 relation by 0.5 dex in the discs and 2 dex after the second passage, at every column
-size. The balance test itself is meaningful only for columns at least 1 kpc deep and within about 30 degrees of the disc
-normal; the yield and rate comparisons depend on neither.
-
----
----
 # Part A. What the simulation shows
 
 ## Definitions used by every figure
@@ -280,8 +255,8 @@ $P_{\rm tot}$ is repeated as a dotted line. Result: the weight of this layer is 
 0.87 of it in the discs, 0.82 in the trough and 0.60 at the final burst, with the gas rising from 0.12 to 0.33 as it
 concentrates and the stars never above 0.05. It jumps by a factor 3 to 8 within a few Myr of each pericentre, from
 $7\times10^3$ in the discs to $5\times10^4$ after the second passage, $9\times10^4$ in the trough and $1.4\times10^5$ at
-the third burst, and the pressure follows it throughout. The weight is what the orbit changes first: the potential of
-the two haloes deepens as they pass, and the layer has to hold more.
+the third burst, and the pressure follows it throughout. Which of the two, a deeper potential or gas moved into a
+steeper part of it, is not separated here.
 
 ![weight by source](figs/weight_sources.png)
 
@@ -455,10 +430,10 @@ so that $\Delta = 40$ compares the pressure with the stars formed in
 the 40 Myr after it. Result: the trough falls from 172 at $\Delta = 0$ to 5.0 at 20 Myr and 2.2 at 30 Myr, where it sits
 on the disc value; the interval after the second passage falls from 13 to 3 at 20 Myr; the discs are flat at 1.6 to 2.6
 for any offset, as they must be in a steady state; and the burst and its decay, which are already matched at
-$\Delta = 0$, are spoiled by shifting. So the pressure of the trough is not unrelated to star formation: it is the
-pressure that makes the next burst, and the yield relation holds across the whole merger once star formation is allowed
-to lag it. No single offset works everywhere, because the lag is 20 Myr at the second passage and 30 at the third, set
-by how long the compressed gas takes to become bound again rather than by a universal constant.
+$\Delta = 0$, are spoiled by shifting. So the pressure of the trough is matched by the star formation that follows
+it, at the same yield as the discs. No single offset works everywhere: the trough wants 25 to 30 Myr, the second
+passage 20, and the burst is already matched at zero, so this is not one relation with a delay but a system whose
+response time varies between passages.
 
 ![yield with a forward window](figs/yield_forward.png)
 
@@ -538,7 +513,7 @@ in the trough.
 
 ![yield regime](figs/yield_regime.png)
 
-## 8. Why star formation stops
+## 8. What changes when star formation stops
 The other half of the ratio. The gas is still there and denser than in the discs; it has stopped being bound.
 
 **The gas is not gone; it is unbound.** x: time. y, in solar masses: the gas mass of the clean layer columns
@@ -577,7 +552,7 @@ $n_{\rm H} > 100$ clumps changes between the discs and the trough as follows:
 Three quarters of the rise is the clump velocity dispersion, which doubles; the magnetic factor adds a fifth of it, and
 the changes in size and mass almost cancel. The clump dispersion doubles because the layer dispersion does: the
 $\Sigma_{\rm gas}$-weighted median $\sigma_{\rm eff}$ goes from 9.9 to 17.9 $\rm km\ s^{-1}$ over the same interval, and
-the cascade of link 4 hands that to the clumps at their own size. The mean clump density is unchanged, 163 against
+link 4 shows the clump dispersions following it at their own size. The mean clump density is unchanged, 163 against
 150 $\rm cm^{-3}$, so this is not a density effect.
 
 x: time. Top: the $\Sigma_{\rm gas}$-weighted median $\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$ of the clean
