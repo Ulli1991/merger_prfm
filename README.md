@@ -52,7 +52,18 @@ third passage (phase median 2.8 with the 10 Myr rate, 10.5 with the 40 Myr rate)
 167 to 195 Myr, 28 Myr in which the ratio is above 30 with either rate and the supernova rate of the columns is at its
 disc value: the weight jumped by 3 at the third passage, the pressure followed at once, turbulent and magnetic, and no
 star formation is behind it. A still longer window would only average in the earlier burst, whose supernovae had ended
-by 165 Myr, and would hide that interval rather than explain it. The excess is not a
+by 165 Myr, and would hide that interval rather than explain it.
+
+What happens in that interval, with every step measured (figures under "Delay between pressure and star formation"):
+the third passage raises the weight by 3 and the layer follows it within a few Myr, so vertical balance holds and the
+pressure is turbulent and magnetic; the supernova rate per unit 40 Myr star formation is normal, so feedback did not
+supply that pressure; the same compression raises the effective dispersion of the layer from 9.9 to 17.9
+$\rm km\ s^{-1}$, and the cascade hands it to the clumps, whose median $\alpha_{\rm tot}$ rises from 6 to 49, three
+quarters of that from their own dispersion doubling; the dense gas is not removed but unbound, with 2.6 times more mass
+above 100 $\rm cm^{-3}$ than in the discs and 21 times less of it below the virial threshold; and the star formation
+rate falls by the same factor as the bound mass. Pressure up 3, star formation down 15, and both from the same event.
+PRFM's vertical balance survives all of it; what breaks is the assumption that feedback supplies the pressure, and it
+breaks in the trough between bursts, not in the bursts themselves. The excess is not a
 pressure problem: the pressure stays within a factor of 2 of the weight while the star formation rate collapses by 2.5 dex
 between bursts, so the ratio runs away on its denominator. At the peak of the 125 to 135 Myr burst the layer holds only 0.2 to 0.5 of the yield,
 i.e. less pressure per unit star formation than the TIGRESS calibration. Star formation lags the pressure by 8 to 12
