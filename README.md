@@ -313,7 +313,7 @@ the two-phase gas per unit supernova rate in 140 to 160 Myr is 0.7 to 1.5 times 
 per supernova that regulates the discs. From 170 to 195 Myr that ratio is 80 to 90: the turbulence there is not from
 supernovae.
 
-Top: x: time; y: $\sum_c P_{{\rm turb},c}/\sum_c {\rm SN}_c$ over the clean layer columns, with ${\rm SN}_c$ the number of
+Top: x: time; y: $\sum_c P_{{\rm turb},c}/\sum_c {\rm SN_c}$ over the clean layer columns, with $\rm SN_c$ the number of
 supernovae of the last 10 Myr in column $c$ from the stellar catalogue, divided by the median of the same ratio between
 40 and 100 Myr. Bottom: the $\Sigma_{\rm gas}$-weighted median over the clean layer columns of the volume fraction of the
 midplane slab occupied by gas above $2\times10^4$ K. Result: the two-phase turbulent pressure per supernova sits at its
