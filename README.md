@@ -273,6 +273,18 @@ then includes the dark-matter weight of gas streaming outside the layer.
 
 ![equilibrium](figs/story_1_equilibrium.png)
 
+**Where the weight comes from, and when.** x: time. y: the $\Sigma_{\rm gas}$-weighted median over the clean layer
+columns of the weight $\mathcal W$ carried by all matter and, separately, of the same sum with the acceleration of the
+gas, of the stars and of the dark matter alone, using the particle-mesh solve described above; the measured
+$P_{\rm tot}$ is repeated as a dotted line. Result: the weight of this layer is set by the dark matter, which carries
+0.87 of it in the discs, 0.82 in the trough and 0.60 at the final burst, with the gas rising from 0.12 to 0.33 as it
+concentrates and the stars never above 0.05. It jumps by a factor 3 to 8 within a few Myr of each pericentre, from
+$7\times10^3$ in the discs to $5\times10^4$ after the second passage, $9\times10^4$ in the trough and $1.4\times10^5$ at
+the third burst, and the pressure follows it throughout. The weight is what the orbit changes first: the potential of
+the two haloes deepens as they pass, and the layer has to hold more.
+
+![weight by source](figs/weight_sources.png)
+
 ### The same test against the line of sight
 As the vertical-equilibrium figure with the column normal replaced by $\hat n_\theta = \cos\theta\ \hat n + \sin\theta\ \hat e_2$,
 $\theta = 0, 30, 60, 90$ degrees, $\hat e_2$ the second in-plane axis of the grid. Each θ has its own full-column run and its own layer cut about the

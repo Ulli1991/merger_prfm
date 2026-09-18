@@ -826,6 +826,40 @@ def yield_forward():
     P.place_legend(ax)
     P.save(fig, 'yield_forward'); plt.close(fig)
 
+@figure
+def weight_sources():
+    """the weight of the layer and what provides the gravity: per snapshot the Sigma_gas-weighted median over the clean layer columns of
+    W = 1/2 (W_up + W_lo) for all matter and for the gas, the stars and the dark matter separately, and the measured P_tot for comparison"""
+    import glob as _g
+    rows = []
+    for fn in sorted(_g.glob(f'{C.PRFM_DIR}/patch_[0-9][0-9][0-9]_z05.h5')):
+        with h5py.File(fn, 'r') as f:
+            t = float(f.attrs['time_myr']); acc = {k: [] for k in ('S', 'W', 'P', 'g', 's', 'd')}
+            for g in f:
+                if not g.startswith('frame_'): continue
+                G = f[g]; sep = float(G.attrs['separation_kpc']); r = lambda k: G[k][:].ravel()
+                S = r('Sigma_gas'); W = r('W_2p'); fi = r('f_intruder'); ok = (S > 1) & (W > 0) & ((fi < 0.1) | C.is_merged(sep, t))
+                half = lambda a, b: 0.5 * (r(a)[ok] + r(b)[ok])
+                acc['S'].append(S[ok]); acc['W'].append(W[ok]); acc['P'].append(r('Ptot_2p')[ok])
+                acc['g'].append(half('W_gas_up', 'W_gas_lo')); acc['s'].append(half('W_star_up', 'W_star_lo')); acc['d'].append(half('W_dm_up', 'W_dm_lo'))
+            A = {k: np.concatenate(v) for k, v in acc.items()}; Sg = A['S']
+            def wm(x):
+                o = np.argsort(x); cw = np.cumsum(Sg[o]) / Sg.sum(); return x[o][np.searchsorted(cw, 0.5)]
+            rows.append((t, wm(A['W']), wm(A['P']), wm(A['g']), wm(A['s']), wm(A['d'])))
+    R = np.array(rows); T = R[:, 0]; o = T > 10
+    fig, ax = P.fig()
+    ax.plot(T[o], R[o, 1], color=P.ink, lw=1.7, label=r'$\mathcal{W}_{\rm 2p}$, all matter')
+    ax.plot(T[o], R[o, 2], color=P.grey, lw=1.0, ls=':', label=r'$P_{\rm tot,2p}$')
+    ax.plot(T[o], R[o, 4], color=P.orange, lw=1.4, label='from the stars')
+    ax.plot(T[o], R[o, 5], color=P.blue, lw=1.4, label='from the dark matter')
+    ax.plot(T[o], R[o, 3], color=P.light, lw=1.4, label='from the gas')
+    ax.set_yscale('log'); ax.set_xlim(10, 226); ax.set_ylim(3e1, 3e6)
+    ax.set_xlabel(r'$t$ [Myr]'); ax.set_ylabel(r'$\mathcal{W}/k_{\rm B}$ [K cm$^{-3}$]'); P.phases(ax, box=True); P.place_legend(ax, ncol=2)
+    for a, b, lab in ((40, 100, 'discs'), (110, 125, 'after 2nd'), (169, 195, 'trough'), (195, 226, '3rd burst')):
+        m = (T >= a) & (T < b); g = lambda i: np.median(R[m, i])
+        print(f'  {lab:10s} W {g(1):9.3g}  gas {g(3)/g(1):.2f}  stars {g(4)/g(1):.2f}  dark matter {g(5)/g(1):.2f}')
+    P.save(fig, 'weight_sources'); plt.close(fig)
+
 if __name__ == '__main__':
     names = sys.argv[1:] or ['all']
     for n in (FIGS if names == ['all'] else names): FIGS[n]()
