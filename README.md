@@ -430,8 +430,11 @@ the 50 Myr plateau between 140 and 195 Myr untouched.
 
 **The pressure is paid back later.** A shift of the 10 Myr rate does not work because a 10 Myr window is too narrow to
 hold the burst. The right test pairs the pressure at $t$ with the star formation that follows it: x: the forward offset
-$\Delta$; y: the phase median of $\big[\sum_c P_{{\rm tot},c}(t)/\sum_c\Sigma_{{\rm SFR,40},c}(t+\Delta)\big] /
-[4.81\times10^3\,\Upsilon_{\rm tot}(\bar P(t))]$, so that $\Delta = 40$ compares the pressure with the stars formed in
+$\Delta$; y: the phase median of
+
+$$\frac{\sum_c P_{{\rm tot},c}(t)}{\sum_c\Sigma_{{\rm SFR,40},c}(t+\Delta)}\ \Big/\ \big[4.81\times10^3\ \Upsilon_{\rm tot}(\bar P(t))\big],$$
+
+so that $\Delta = 40$ compares the pressure with the stars formed in
 the 40 Myr after it. Result: the trough falls from 172 at $\Delta = 0$ to 5.0 at 20 Myr and 2.2 at 30 Myr, where it sits
 on the disc value; the interval after the second passage falls from 13 to 3 at 20 Myr; the discs are flat at 1.6 to 2.6
 for any offset, as they must be in a steady state; and the burst and its decay, which are already matched at
