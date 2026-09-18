@@ -328,8 +328,14 @@ supernovae of the last 10 Myr in column $c$ from the stellar catalogue, divided 
 40 and 100 Myr. Bottom: the $\Sigma_{\rm gas}$-weighted median over the clean layer columns of the volume fraction of the
 midplane slab occupied by gas above $2\times10^4$ K. Result: the two-phase turbulent pressure per supernova sits at its
 disc value from 130 to 165 Myr, i.e. the pressure of that interval is the momentum of the burst's supernovae; it
-rises to 100 times the disc value from 170 to 195 Myr, and at the second passage to 20; the hot gas never fills more
-than 6 % of the slab.
+rises to 100 times the disc value from 170 to 195 Myr, and at the second passage to 20. The hot volume fraction of the
+slab shown here is the $\Sigma_{\rm gas}$-weighted median over the columns, i.e. the value in the columns that carry the
+mass, and it stays below 6 %. Measured instead over all gas within 2 kpc of the centre, without weighting by column
+mass, the fraction above $2\times10^4$ K within 50 pc of the midplane is 0.15 at 59 Myr, 0.05 at 147 Myr and 0.04 at
+176 Myr, and it rises with height to 0.34 at 0.8 to 1.6 kpc and 0.81 at 1.6 to 3.2 kpc at 147 Myr (0.15 and 0.59 at
+176 Myr): the hot gas is in the halo, not in the layer. At 176 Myr no gas within 2 kpc is above $10^6$ K at all, so in
+the interval where the pressure exceeds the yield by 100 the layer has no hot phase to speak of and its support is
+turbulent and magnetic in the warm and cold gas.
 
 ![turbulent pressure per supernova](figs/turb_per_sn.png)
  From
