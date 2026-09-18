@@ -361,6 +361,31 @@ and the yield ratio is 100 to 200 with either rate: the pressure of that interva
 
 ![yield sources](figs/yield_sources.png)
 
+**Which component carries the excess.** x: time. y: $\sum_c P_{X,c}/\sum_c \Sigma_{{\rm SFR,40},c}/4.81\times10^3$ in
+$\rm km\ s^{-1}$ over the clean layer columns, for $X$ = thermal, turbulent and Maxwell stress, against the OK22
+thermal and turbulent yields (eqs. 26a and 26b) at the $\Sigma_{\rm gas,2p}$-weighted mean pressure of the same
+snapshot. In units of the OK22 *total* yield the three components are 0.6, 0.9 and 0.1 in the discs, adding to 1.6, and
+15, 116 and 27 from 167 to 195 Myr, adding to 167. Result: the excess is carried by the turbulent term, which is 116
+times the whole OK22 yield on its own; setting the magnetic term to zero would leave a factor of 132 rather than 167,
+so it is not a magnetic effect. The thermal term is also 15 times the OK22 total yield, since the warm gas sits at
+$8\times10^3$ K and a few $\rm cm^{-3}$ while almost no stars form. All three components are too high at fixed star
+formation rate, in the proportion 9 : 70 : 16.
+
+![yield components](figs/yield_components.png)
+
+**What supplies it instead.** x: time. y, as $\Sigma_{\rm gas}$-weighted medians over the clean layer columns: the
+measured $P_{\rm tot}$ and $\mathcal W$; the pressure that PRFM feedback supports at the measured 40 Myr star formation
+rate, i.e. the $P$ for which OK22 eq. 28a returns that rate, $P_{\rm fb} = 10^{(\log_{10}\Sigma_{\rm SFR,40} + 7.43)/1.18}$;
+and the shear term $0.02\ \Sigma_{\rm gas} H S^2$ of Part B with $S$ the mass-weighted shear rate of the slab from the
+velocity-gradient tensor. Result: in the discs feedback supports 0.45 of the measured pressure and the shear term is 3
+times it; from 167 to 195 Myr feedback supports 0.013 of it and the shear term is 7 times it. The ordered flow carries
+far more energy than the layer's turbulence needs, in the discs as in the merger, so the shear term is a statement
+about availability, not a measured transfer rate. The mass-weighted shear rate itself rises from 550 to 1030
+$\rm km\ s^{-1}\ kpc^{-1}$ between the discs and that interval, the vertical dispersion from 9.9 to 17.9
+$\rm km\ s^{-1}$, and the magnetic share of the support from 0.03 to 0.22.
+
+![pressure budget](figs/pressure_budget.png)
+
 ## Magnetic field
 x: time. y: $B_c = (8\pi k_{\rm B} P_{{\rm mag},c})^{1/2}$ per layer column, in $\mu{\rm G}$. Dark:
 $\sum_c \Sigma_{{\rm gas},c} B_c / \sum_c \Sigma_{{\rm gas},c}$ over the clean columns; light: the median of $B_c$.
