@@ -365,11 +365,26 @@ and the yield ratio is 100 to 200 with either rate: the pressure of that interva
 $\rm km\ s^{-1}$ over the clean layer columns, for $X$ = thermal, turbulent and Maxwell stress, against the OK22
 thermal and turbulent yields (eqs. 26a and 26b) at the $\Sigma_{\rm gas,2p}$-weighted mean pressure of the same
 snapshot. In units of the OK22 *total* yield the three components are 0.6, 0.9 and 0.1 in the discs, adding to 1.6, and
-15, 116 and 27 from 167 to 195 Myr, adding to 167. Result: the excess is carried by the turbulent term, which is 116
-times the whole OK22 yield on its own; setting the magnetic term to zero would leave a factor of 132 rather than 167,
-so it is not a magnetic effect. The thermal term is also 15 times the OK22 total yield, since the warm gas sits at
-$8\times10^3$ K and a few $\rm cm^{-3}$ while almost no stars form. All three components are too high at fixed star
-formation rate, in the proportion 9 : 70 : 16.
+15, 116 and 27 from 167 to 195 Myr, adding to 167. Result: of the pressure that the layer holds per unit star
+formation, the turbulent term carries 70 %, the Maxwell stress 16 % and the thermal term 9 %.
+
+That is a statement about which component holds the pressure, not about what made the ratio rise, and the two should
+not be confused. Between the discs and 167 to 195 Myr the mean values per column change as follows:
+
+| | discs, 40 to 100 Myr | 167 to 195 Myr | factor |
+|---|---|---|---|
+| $P_{\rm th}$ [K cm$^{-3}$] | 2270 | 1830 | 0.8 |
+| $P_{\rm turb}$ | 3600 | 13600 | 3.8 |
+| $\Pi_{\rm mag}$ | 245 | 4120 | 16.8 |
+| $P_{\rm tot}$ | 6280 | 19500 | 3.1 |
+| $\Sigma_{\rm SFR,40}$ [M$_\odot$ yr$^{-1}$ kpc$^{-2}$] | 6.7e-4 | 4.6e-5 | 0.069 |
+
+The yield rises by a factor 45, which is 3.1 from the pressure and 15 from the star formation rate; with the weak
+pressure dependence of the OK22 yield the ratio to it rises by 57. So the dominant factor is that star formation
+stopped, not that the pressure rose, and the thermal pressure did not rise at all. Consistently, no choice of
+component rescues the OK22 star-formation relation there: fed the measured pressure, OK22 eq. 28a over-predicts the
+rate by 90; fed $P_{\rm th} + \Pi_{\rm mag}$, by 23; fed $P_{\rm th}$ alone, by 6. In the discs the same relation fed
+$P_{\rm tot}$ is right to within a factor 1.7.
 
 ![yield components](figs/yield_components.png)
 
