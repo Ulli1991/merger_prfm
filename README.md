@@ -399,7 +399,9 @@ turbulence is not measured here beyond the shear-term description of Part B; the
 passage is interpretation.
 
 ## 6. Is the excess a timing effect?
-Star formation follows the pressure by about 10 Myr at each passage. That sets the timing of the bursts and does not remove the excess.
+Yes, once the accounting window is wide enough. Star formation follows the pressure by about 10 Myr in the fluctuations and
+by 20 to 30 Myr from a pericentre to the burst it produces. A 10 Myr window shifted by 12 Myr is too narrow to see
+that; a 40 Myr window taken forward from the pressure removes the excess entirely.
 
 Test of whether the yield excess is a causal delay: the pressure responds to the weight at once, star formation only
 after the gas has collapsed. Series per snapshot: $\log P_{\rm tot}$ and $\log\mathcal W$, the $\Sigma_{\rm gas}$-weighted
@@ -408,10 +410,13 @@ formation times of all stars (frame-free). x: lag $\ell$. y: the correlation coe
 $\log{\rm SFR}(t+\ell)$ over the snapshots with $t > 25$ Myr, and the same per phase and for $\mathcal W$; positive lag
 means star formation later than the pressure. Result: star formation lags the pressure by 8 Myr between the first and
 second passage, 12 Myr between the second and third (correlation 0.89 at the lag against 0.39 at zero lag), and 2 Myr
-after the third; 12 Myr over the whole run. The delay is real and sets the timing of the bursts, but it does not remove
-the yield excess: with the star formation rate shifted by 10 to 20 Myr the phase-median pressure per unit star
-formation between the second and third passage stays at 30 to 60 times the yield, because the pressure remains at the
-weight for 50 Myr after the burst while the cold gas is present and not forming stars. The gas is not depleted: the
+after the third; 12 Myr over the whole run. This is the lag of the fluctuations, and it is not the same as the interval
+from a pericentre to the burst it produces, which is 20 Myr at the second passage and 33 at the third (the pressure
+doubles at 106.6 and 171.1 Myr, the star formation rate peaks at 126.1 and 204.4). Shifting the 10 Myr rate by this
+fluctuation lag therefore does not remove the excess: with the rate shifted by 10 to 20 Myr the phase median between
+the second and third passage stays at 30 to 60 times the yield, because a 10 Myr window moved by 12 Myr still lands
+inside the trough. The next figure but one does the accounting properly, with a window wide enough to hold the burst.
+The gas is not depleted meanwhile: the
 depletion time of the two-phase gas, $\Sigma_{\rm gas,2p}/\Sigma_{\rm SFR,10}$ over the clean columns, is 6 to 10 Gyr in
 the discs, 48 Gyr between the second and third passage, and 2.3 Gyr after the third. The excess is gas held at the
 weight with the clumps above the efficiency step, not a lag: the star formation rate predicted from the clump
@@ -424,7 +429,7 @@ against the star formation rate").
 over the clean layer columns, in $\rm km\ s^{-1}$, for $\ell = 0$ (light) and $\ell = 12$ Myr (dark), against the OK22 yield at
 $\bar P(t)$. Result: the lag moves the edges of the excursions earlier by 12 Myr and removes the spike at the second
 passage (phase medians of the ratio to the yield 1.0, 2.3, 65, 2.0 against 1.9, 1.7, 43, 2.8 without lag), and leaves
-the 50 Myr plateau between 140 and 195 Myr untouched.
+the 50 Myr plateau between 140 and 195 Myr untouched. That is the limit of what a narrow window can do.
 
 ![yield with lag](figs/yield_lag.png)
 
