@@ -440,6 +440,32 @@ smaller star-forming area, but because the dense gas that is present is unbound,
 
 ![gas against bound gas](figs/gas_vs_bound.png)
 
+**What raises $\alpha_{\rm tot}$: the clump turbulence, not the field.** With
+$\alpha_{\rm tot} = \frac{5\sigma_{\rm 3d}^2 r_h}{3GM}(1 + v_A^2/\sigma_{\rm 3d}^2)$, the median over the
+$n_{\rm H} > 100$ clumps changes between the discs and the trough as follows:
+
+| | discs | trough | factor | contribution to $\log\alpha_{\rm tot}$ |
+|---|---|---|---|---|
+| $\sigma_{\rm 3d}$ of the clump | 1.15 | 2.52 | 2.19 | +0.68 dex |
+| $r_h$ | 2.59 pc | 3.24 pc | 1.25 | +0.10 dex |
+| $M$ | 417 | 502 | 1.20 | −0.08 dex |
+| $\alpha_{\rm vir}$ | 3.07 | 14.2 | 4.61 | +0.66 dex |
+| $1 + v_A^2/\sigma_{\rm 3d}^2$ | 1.92 | 2.96 | 1.54 | +0.19 dex |
+| $\alpha_{\rm tot}$ | 5.97 | 48.7 | 8.17 | +0.91 dex |
+
+Three quarters of the rise is the clump velocity dispersion, which doubles; the magnetic factor adds a fifth of it, and
+the changes in size and mass almost cancel. The clump dispersion doubles because the layer dispersion does: the
+$\Sigma_{\rm gas}$-weighted median $\sigma_{\rm eff}$ goes from 9.9 to 17.9 $\rm km\ s^{-1}$ over the same interval, and
+the cascade of link 4 hands that to the clumps at their own size. The mean clump density is unchanged, 163 against
+150 $\rm cm^{-3}$, so this is not a density effect.
+
+x: time. Top: the $\Sigma_{\rm gas}$-weighted median $\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$ of the clean
+layer columns and the median $\sigma_{\rm 3d}$ of the dense clumps of the same snapshot. Bottom: the median
+$\alpha_{\rm tot}$ of those clumps, with the threshold of the efficiency step at 4 dashed, and on the right axis the
+fraction of clump mass below it.
+
+![alpha chain](figs/alpha_chain.png)
+
 ## Magnetic field
 x: time. y: $B_c = (8\pi k_{\rm B} P_{{\rm mag},c})^{1/2}$ per layer column, in $\mu{\rm G}$. Dark:
 $\sum_c \Sigma_{{\rm gas},c} B_c / \sum_c \Sigma_{{\rm gas},c}$ over the clean columns; light: the median of $B_c$.
