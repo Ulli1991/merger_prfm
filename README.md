@@ -306,7 +306,12 @@ with the 10 Myr and the 40 Myr rate, the supernova rate of the clean columns per
 Two intervals of different kind make up the excess. From 140 to 170 Myr the 10 Myr ratio is 50 to 170 but the 40 Myr
 ratio is 1.5 to 7, and the supernova rate per unit current star formation is 10 to 50 times its disc value: the
 pressure is supplied by the supernovae of the 125 to 135 Myr burst, which arrive up to 40 Myr after the stars formed.
-This is feedback with the delay OK22 average over by using the 40 Myr rate, not a failure of the yield relation. From
+This is feedback with the delay OK22 average over by using the 40 Myr rate, not a failure of the yield relation. It
+shows in the two-phase gas because what the supernovae leave in the layer is momentum, not hot gas: the hot volume
+fraction of the slab stays below 0.06 throughout (the hot gas leaves the thin layer), while the turbulent pressure of
+the two-phase gas per unit supernova rate in 140 to 160 Myr is 0.7 to 1.5 times its disc value, i.e. the same momentum
+per supernova that regulates the discs. From 170 to 195 Myr that ratio is 80 to 90: the turbulence there is not from
+supernovae. From
 170 to 195 Myr both ratios are 100 to 200 and the supernova rate is at or below its disc value: no feedback supplies the
 pressure. The weight has jumped by 3 at the third passage, $P_{\rm tot}/\mathcal W$ is 0.85 to 1, and the support is
 turbulent (0.7) and magnetic (0.2). This interval, 25 Myr, is the genuine departure: the layer is in vertical balance
