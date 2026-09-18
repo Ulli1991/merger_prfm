@@ -344,10 +344,14 @@ passage is interpretation.
 The same as a figure. Top: x: time; y: the ratio of $\sum_c P_{{\rm tot},c}/\sum_c\Sigma_{{\rm SFR},c}$ over the clean layer
 columns to $4.81\times10^3\ \Upsilon_{\rm tot}(\bar P)$, with the 10 Myr rate (light) and the 40 Myr rate (dark). Bottom:
 the supernova rate of the same columns (supernovae of the last 10 Myr from the stellar catalogue, per column) divided
-by their 10 Myr star formation rate, normalised to its median between 40 and 100 Myr. Result: from 140 to 170 Myr the
-10 Myr ratio is high, the 40 Myr ratio is 1.5 to 7, and the supernova rate per unit star formation is 10 to 70 times
-its disc value: delayed feedback. From 170 to 195 Myr both ratios are 100 to 200 and the supernova rate is at its disc
-value: pressure without feedback. The 40 Myr curve before 40 Myr includes the isothermal initial state and is not used.
+by their 10 Myr rate (light) and by their 40 Myr rate (dark), each normalised to its own median between 40 and 100 Myr.
+Result: the supernova rate per unit 40 Myr star formation rate is flat at 1 within a factor of 2 for the whole run, as
+it must be if the supernovae come from the stars of the last 40 Myr, which is what that window is for. Per unit 10 Myr
+rate it reaches 70 between 140 and 170 Myr, the interval in which the layer is pressurised by the supernovae of the
+125 to 135 Myr burst after its star formation has stopped; there the 40 Myr yield ratio is 1.5 to 7, i.e. ordinary
+feedback regulation seen through the right window. From 167 to 195 Myr the supernova budget is normal by both measures
+and the yield ratio is 100 to 200 with either rate: the pressure of that interval is not supernova-driven at all. The
+40 Myr curves before 40 Myr include the isothermal initial state and are not used.
 
 ![yield sources](figs/yield_sources.png)
 
