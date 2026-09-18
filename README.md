@@ -311,7 +311,18 @@ shows in the two-phase gas because what the supernovae leave in the layer is mom
 fraction of the slab stays below 0.06 throughout (the hot gas leaves the thin layer), while the turbulent pressure of
 the two-phase gas per unit supernova rate in 140 to 160 Myr is 0.7 to 1.5 times its disc value, i.e. the same momentum
 per supernova that regulates the discs. From 170 to 195 Myr that ratio is 80 to 90: the turbulence there is not from
-supernovae. From
+supernovae.
+
+Top: x: time; y: $\sum_c P_{{\rm turb},c}/\sum_c {\rm SN}_c$ over the clean layer columns, with ${\rm SN}_c$ the number of
+supernovae of the last 10 Myr in column $c$ from the stellar catalogue, divided by the median of the same ratio between
+40 and 100 Myr. Bottom: the $\Sigma_{\rm gas}$-weighted median over the clean layer columns of the volume fraction of the
+midplane slab occupied by gas above $2\times10^4$ K. Result: the two-phase turbulent pressure per supernova sits at its
+disc value from 130 to 165 Myr, i.e. the pressure of that interval is the momentum of the burst's supernovae; it
+rises to 100 times the disc value from 170 to 195 Myr, and at the second passage to 20; the hot gas never fills more
+than 6 % of the slab.
+
+![turbulent pressure per supernova](figs/turb_per_sn.png)
+ From
 170 to 195 Myr both ratios are 100 to 200 and the supernova rate is at or below its disc value: no feedback supplies the
 pressure. The weight has jumped by 3 at the third passage, $P_{\rm tot}/\mathcal W$ is 0.85 to 1, and the support is
 turbulent (0.7) and magnetic (0.2). This interval, 25 Myr, is the genuine departure: the layer is in vertical balance
