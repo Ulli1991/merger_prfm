@@ -236,6 +236,8 @@ particle masses, 3.98 $\rm M_\odot$; each curve starts at $t = \Delta t$).
 ![sfr history](figs/sfr_history.png)
 
 ## 3. Does the layer stay in vertical balance?
+> **Yes**, at every phase, column depth above 1 kpc and orientation within 30 degrees of the disc normal.
+
 x: time. y, per snapshot: the $\Sigma_{\rm gas}$-weighted median over the clean columns $c$ of $r_c = P_{{\rm tot},c}/\mathcal W_c$. Light: full columns (|z| < 1.5 kpc about the grid plane); dark:
 layer columns (|z − z_mid| < 0.5 kpc), with P_tot and W as defined above in both cases. Result: layer 1.05, 0.94, 0.73, 0.96
 in the four phases, never outside 0.5 to 2; the full column drops to 0.4 between the second and third passage because it
@@ -297,6 +299,9 @@ microgauss after the third.
 ![dynamo](figs/story_4_dynamo.png)
 
 ## 5. Does star formation supply that pressure?
+> **In the discs and the bursts yes, in the trough no.** With the 40 Myr rate the yield holds to a factor 3 for 64 %
+> of the run; for 167 to 195 Myr the layer holds 100 to 200 times the pressure its supernovae can account for.
+
 x: time. y, per snapshot, with $c$ running over the clean layer columns of that snapshot:
 
 $$y = \frac{\sum_c P_{{\rm tot},c}}{\sum_c \Sigma_{{\rm SFR,10},c}}\ \Big/\ 4.81\times10^{3}\quad[{\rm km\ s^{-1}}],$$
@@ -371,6 +376,9 @@ turbulence is not measured here beyond the shear-term description of Part B; the
 passage is interpretation.
 
 ## 6. Is the excess a timing effect?
+> **Yes, over 20 to 30 Myr.** Comparing the pressure with the star formation of the following 40 Myr instead of the
+> preceding one puts the trough at 2.2, the disc value. A 10 Myr window shifted by the 12 Myr fluctuation lag does not.
+
 Test of whether the yield excess is a causal delay: the pressure responds to the weight at once, star formation only
 after the gas has collapsed. Series per snapshot: $\log P_{\rm tot}$ and $\log\mathcal W$, the $\Sigma_{\rm gas}$-weighted
 medians over the clean layer columns; $\log{\rm SFR}$, the star formation rate of the whole run in 2 Myr bins from the
@@ -419,6 +427,9 @@ response time varies between passages.
 ![yield with a forward window](figs/yield_forward.png)
 
 ## 7. Is it one component, or one region?
+> **Neither.** All three pressure terms exceed the yield, the star-forming columns alone give the same ratio as all
+> columns, and what supplies the pressure is the flow, not feedback.
+
 **Which component carries the excess.** x: time. y: $\sum_c P_{X,c}/\sum_c \Sigma_{{\rm SFR,40},c}/4.81\times10^3$ in
 $\rm km\ s^{-1}$ over the clean layer columns, for $X$ = thermal, turbulent and Maxwell stress, against the OK22
 thermal and turbulent yields (eqs. 26a and 26b) at the $\Sigma_{\rm gas,2p}$-weighted mean pressure of the same
@@ -483,6 +494,9 @@ forms stars, two orders of magnitude off in the trough.
 ![yield regime](figs/yield_regime.png)
 
 ## 8. What changes when star formation stops
+> **The dense gas stops being bound.** It is not removed and not confined to a smaller area: there is 2.6 times more
+> mass above 100 cm⁻³ than in the discs and 21 times less of it below the virial threshold.
+
 **The gas is not gone; it is unbound.** x: time. y, in solar masses: the gas mass of the clean layer columns
 ($\sum_c \Sigma_{{\rm gas},c} A$); the mass in dense clumps, the friends-of-friends groups above 100 $\rm cm^{-3}$ of
 Part A; the part of that clump mass with $\alpha_{\rm tot} < 4$, the threshold of the efficiency step; and the stellar
@@ -555,6 +569,9 @@ across the run.
 ![cloud efficiency](figs/clouds_eff.png)
 
 ## 10. The stars that form
+> **Masses yes, boundness no.** The stellar mass each clump produces is a result; whether that mass ends up in a bound
+> cluster is set by the star formation criterion at the resolution limit and is not.
+
 The stars formed in the run are grouped with the friends-of-friends and energy criteria above. Every bound group, from
 100 $\rm M_\odot$ to $4\times10^5$ $\rm M_\odot$, has a half-mass radius of 0.2 to 0.4 pc, which is the 0.4 pc softening, and
 an age spread of 0.6 to 0.8 Myr; the clumps that produce them form stars for about 1 Myr. The stars therefore appear
