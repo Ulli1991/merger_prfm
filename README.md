@@ -492,13 +492,15 @@ $\rm km\ s^{-1}$, and the magnetic share of the support from 0.03 to 0.22.
 ![pressure budget](figs/pressure_budget.png)
 
 ### Where PRFM holds and where it fails
-x: the star formation rate summed over the clean layer columns of a snapshot, divided by their number. y: the ratio of
-the pressure per unit star formation to the OK22 yield, both computed with the 40 Myr rate. One point per snapshot
-after 40 Myr, coloured by phase; the solid line is the yield and the dotted line three times it. Result: the ratio is
-a decreasing function of the star formation rate, with rank correlation $-0.71$. Every snapshot with
-$\Sigma_{\rm SFR} > 2\times10^{-3}$ $\rm M_\odot\ yr^{-1}\ kpc^{-2}$ lies within a factor of 3 of the yield, bursts
-included; everything above 10 times the yield has a rate below $10^{-3}$. PRFM holds while the layer is forming stars,
-in the discs and in both bursts, and fails in the troughs between them.
+The same question without the star formation rate on both axes. x: the rate the OK22 relation for the weight
+(eq. 28b) returns for the mean $\mathcal W$ of the clean layer columns of a snapshot. y: the rate measured in the same
+columns over 40 Myr. One point per snapshot after 40 Myr, coloured by phase; solid line 1:1, dotted lines a factor 10
+and 100 below it. Result: the discs and both bursts sit a factor 1.8 to 2.5 below the prediction, a constant offset of
+the kind the calibration allows; the trough from 169 to 195 Myr drops to a factor 110 below it. Median measured over
+predicted: 0.55 in the discs, 0.40 at the second burst, 0.46 at the third, 0.009 in the trough. With the pressure
+relation (eq. 28a) instead of the weight the numbers are 0.73, 0.66, 0.66 and 0.009. PRFM predicts the star formation
+rate of this merger to within a factor of 2 whenever the layer is forming stars, and fails by two orders of magnitude
+in the trough.
 
 ![yield regime](figs/yield_regime.png)
 
