@@ -420,6 +420,26 @@ $\rm km\ s^{-1}$, and the magnetic share of the support from 0.03 to 0.22.
 
 ![pressure budget](figs/pressure_budget.png)
 
+**The gas is not gone; it is unbound.** x: time. y, in solar masses: the gas mass of the clean layer columns
+($\sum_c \Sigma_{{\rm gas},c} A$); the mass in dense clumps, the friends-of-friends groups above 100 $\rm cm^{-3}$ of
+Part A; the part of that clump mass with $\alpha_{\rm tot} < 4$, the threshold of the efficiency step; and the stellar
+mass formed in the preceding 10 Myr. Comparing the discs with the trough from 169 to 195 Myr:
+
+| | discs, 40 to 100 Myr | trough, 169 to 195 Myr | factor |
+|---|---|---|---|
+| gas in the layer columns | 4.8e7 | 5.9e7 | 1.2 |
+| mass in dense clumps | 8.5e5 | 2.2e6 | 2.6 |
+| of those, $\alpha_{\rm tot} < 4$ | 4.9e5 | 2.4e4 | 0.05 |
+| stars formed per 10 Myr | 8.3e4 | 4.9e3 | 0.06 |
+
+There is more gas in the layer than in the discs, and 2.6 times more of it above 100 $\rm cm^{-3}$. What collapses is
+the bound part: the mass of dense gas below the virial threshold falls by a factor 21, and the stellar mass formed
+follows it by the same factor. The star formation rate is not suppressed by a lack of gas, by its removal, or by a
+smaller star-forming area, but because the dense gas that is present is unbound, with a median $\alpha_{\rm tot}$ of
+49 against 6 in the discs.
+
+![gas against bound gas](figs/gas_vs_bound.png)
+
 ## Magnetic field
 x: time. y: $B_c = (8\pi k_{\rm B} P_{{\rm mag},c})^{1/2}$ per layer column, in $\mu{\rm G}$. Dark:
 $\sum_c \Sigma_{{\rm gas},c} B_c / \sum_c \Sigma_{{\rm gas},c}$ over the clean columns; light: the median of $B_c$.
