@@ -35,14 +35,24 @@ with the 40 Myr rate (107 to 125 and 157 to 207 Myr) and 10 times for 23 % (108 
 time-median over the whole run is 2.1.
 
 Reading. Vertical balance survives the merger, with one interval of moderate shortfall around the second passage during
-which the gas is not a layer in any orientation. With the 40 Myr star formation rate that OK22 use, the yield relation
-holds to within a factor of 3 for three of the four phases and for all but 25 Myr of the run: the apparent 10 to 100
-excess with the 10 Myr rate between the second and third passage is the supernovae of the burst arriving up to 40 Myr
-after its stars formed. The genuine failure is the 25 Myr after the third passage, 170 to 195 Myr, where the ratio is
-100 to 200 with either rate and the supernova rate is at its disc value: the weight has jumped by 3, the pressure
-follows it at once, turbulent and magnetic, and no star formation is behind it. A longer window would lower that ratio
-only by averaging in the earlier burst, whose supernovae have finished, so it would hide the interval rather than
-explain it. The excess is not a
+which the gas is not a layer in any orientation. The supply of that pressure by star formation does not survive, and the
+averaging window decides how much of the discrepancy is a delay and how much is a failure. Counting the time after
+40 Myr for which the ratio to the yield exceeds a factor:
+
+| ratio above | with the 10 Myr rate | with the 40 Myr rate |
+|---|---|---|
+| 3 | 48 % of the run (95 to 124, 138 to 197 Myr) | 39 % (107 to 125, 157 to 204 Myr) |
+| 10 | 37 % (107 to 120, 142 to 195 Myr) | 25 % (108 to 120, 166 to 198 Myr) |
+| 30 | | 15 % (167 to 195 Myr) |
+
+The 40 Myr rate that OK22 use removes most of the excess between the second and third passage (phase median 43 with the
+10 Myr rate, 2.6 with the 40 Myr rate): those stars formed at the 125 to 135 Myr burst and their supernovae kept the
+layer pressurised for 40 Myr afterwards, which is what the longer window is for. It does not remove the excess after the
+third passage (phase median 2.8 with the 10 Myr rate, 10.5 with the 40 Myr rate). The hard core of the failure is
+167 to 195 Myr, 28 Myr in which the ratio is above 30 with either rate and the supernova rate of the columns is at its
+disc value: the weight jumped by 3 at the third passage, the pressure followed at once, turbulent and magnetic, and no
+star formation is behind it. A still longer window would only average in the earlier burst, whose supernovae had ended
+by 165 Myr, and would hide that interval rather than explain it. The excess is not a
 pressure problem: the pressure stays within a factor of 2 of the weight while the star formation rate collapses by 2.5 dex
 between bursts, so the ratio runs away on its denominator. At the peak of the 125 to 135 Myr burst the layer holds only 0.2 to 0.5 of the yield,
 i.e. less pressure per unit star formation than the TIGRESS calibration. Star formation lags the pressure by 8 to 12
