@@ -373,11 +373,11 @@ not be confused. Between the discs and 167 to 195 Myr the mean values per column
 
 | | discs, 40 to 100 Myr | 167 to 195 Myr | factor |
 |---|---|---|---|
-| $P_{\rm th}$ [K cm$^{-3}$] | 2270 | 1830 | 0.8 |
+| $P_{\rm th}$ [$\rm K\ cm^{-3}$] | 2270 | 1830 | 0.8 |
 | $P_{\rm turb}$ | 3600 | 13600 | 3.8 |
 | $\Pi_{\rm mag}$ | 245 | 4120 | 16.8 |
 | $P_{\rm tot}$ | 6280 | 19500 | 3.1 |
-| $\Sigma_{\rm SFR,40}$ [M$_\odot$ yr$^{-1}$ kpc$^{-2}$] | 6.7e-4 | 4.6e-5 | 0.069 |
+| $\Sigma_{\rm SFR,40}$ [$\rm M_\odot\ yr^{-1}\ kpc^{-2}$] | 6.7e-4 | 4.6e-5 | 0.069 |
 
 The yield rises by a factor 45, which is 3.1 from the pressure and 15 from the star formation rate; with the weak
 pressure dependence of the OK22 yield the ratio to it rises by 57. So the dominant factor is that star formation
