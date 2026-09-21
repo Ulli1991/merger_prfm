@@ -46,7 +46,7 @@ def story_2_feedback():
         for k in T:
             m = base & (D['snap'] == k); sfr = D['SigSFR_10'][m]; Pk = PL[m]
             if sfr.sum() <= 0: continue
-            t.append(D['t'][m][0]); ups.append(Pk.sum() / sfr.sum() / 4.81e3); ok22y.append(ok22.ups_tot(np.average(D['P_DE'][m], weights=D['Sigma_gas_2p'][m])))
+            t.append(D['t'][m][0]); ups.append(Pk.sum() / sfr.sum() / 4.81e3); ok22y.append(ok22.ups_tot(np.average(Pk, weights=D['Sigma_gas_2p'][m])))
         return np.array(t), np.array(ups), np.array(ok22y)
     t, ups, ok22y = series(); o = t > 10
     fig, ax = P.fig()
@@ -571,7 +571,7 @@ def yield_sources():
                 if not g.startswith('frame_'): continue
                 G = f[g]; sep = float(G.attrs['separation_kpc']); r = lambda k: G[k][:].ravel()
                 Sig = r('Sigma_gas'); W = r('W_2p'); fi = r('f_intruder'); ok = (Sig > 1) & (W > 0) & ((fi < 0.1) | C.is_merged(sep, t))
-                acc += [r('Ptot_2p')[ok].sum(), r('SigSFR_10')[ok].sum(), r('SigSFR_40')[ok].sum(), r('SNrate')[ok].sum(), (r('Sigma_gas_2p') * r('P_DE'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
+                acc += [r('Ptot_2p')[ok].sum(), r('SigSFR_10')[ok].sum(), r('SigSFR_40')[ok].sum(), r('SNrate')[ok].sum(), (r('Sigma_gas_2p') * r('Ptot_2p'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
             rows.append((t, *acc))
     R = np.array(rows); T = R[:, 0]; Pb = R[:, 5] / R[:, 6]
     u10 = R[:, 1] / np.maximum(R[:, 2], 1e-30) / 4.81e3 / ok22.ups_tot(Pb); u40 = R[:, 1] / np.maximum(R[:, 3], 1e-30) / 4.81e3 / ok22.ups_tot(Pb)
@@ -661,7 +661,7 @@ def yield_components():
                 if not g.startswith('frame_'): continue
                 G = f[g]; sep = float(G.attrs['separation_kpc']); r = lambda k: G[k][:].ravel()
                 S = r('Sigma_gas'); W = r('W_2p'); fi = r('f_intruder'); ok = (S > 1) & (W > 0) & ((fi < 0.1) | C.is_merged(sep, t))
-                acc += [r('Pth_2p')[ok].sum(), r('Pturb_2p')[ok].sum(), r('Pmag_2p')[ok].sum(), r('Ptot_2p')[ok].sum(), r('SigSFR_40')[ok].sum(), (r('Sigma_gas_2p') * r('P_DE'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
+                acc += [r('Pth_2p')[ok].sum(), r('Pturb_2p')[ok].sum(), r('Pmag_2p')[ok].sum(), r('Ptot_2p')[ok].sum(), r('SigSFR_40')[ok].sum(), (r('Sigma_gas_2p') * r('Ptot_2p'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
             rows.append((t, *acc))
     R = np.array(rows); T = R[:, 0]; Pb = R[:, 6] / R[:, 7]; SF = np.maximum(R[:, 5], 1e-30); o = T > 40
     fig, ax = P.fig()
@@ -804,7 +804,7 @@ def yield_forward():
                 if not g.startswith('frame_'): continue
                 G = f[g]; sep = float(G.attrs['separation_kpc']); r = lambda k: G[k][:].ravel()
                 S = r('Sigma_gas'); W = r('W_2p'); fi = r('f_intruder'); ok = (S > 1) & (W > 0) & ((fi < 0.1) | C.is_merged(sep, t))
-                acc += [r('Ptot_2p')[ok].sum(), r('SigSFR_40')[ok].sum(), (r('Sigma_gas_2p') * r('P_DE'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
+                acc += [r('Ptot_2p')[ok].sum(), r('SigSFR_40')[ok].sum(), (r('Sigma_gas_2p') * r('Ptot_2p'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
             rows.append((t, *acc))
     R = np.array(rows); T = R[:, 0]; Pb = R[:, 3] / R[:, 4]
     D = np.arange(0, 56, 2.0)

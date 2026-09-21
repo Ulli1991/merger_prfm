@@ -3,7 +3,7 @@ no grid, single-column width 3.32 in (84 mm)."""
 import sys, os; sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-COL1 = 3.32; COL2 = 7.0            # inches
+COL1 = 4.15; COL2 = 7.0            # inches; COL1 is 25 % over the MNRAS column so the figures read at README size
 ink = '#1f2937'; blue = '#2f6fb2'; light = '#9dbfe3'; grey = '#6b7280'; orange = '#c2410c'; green = '#2e7d4f'
 import common as C
 PHASES = [(25, 40, 'before 1st\npassage'), (40, 110, '1st to 2nd\npassage'), (110, 169, '2nd to 3rd\npassage'), (169, 226, '3rd passage to\ncoalescence')]

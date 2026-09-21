@@ -25,8 +25,8 @@ on. Phase medians:
 | | before 1st passage | 1st to 2nd | 2nd to 3rd | 3rd to coalescence |
 |---|---|---|---|---|
 | $P_{\rm tot}/\mathcal W$, layer 1 kpc deep | 1.03 | 0.94 | 0.71 | 0.85 |
-| pressure per unit SFR over the yield, 10 Myr rate | 2.1 | 2.0 | 51 | 3.2 |
-| same, 40 Myr rate as in OK22 | 0.7 | 1.8 | 3.0 | 12 |
+| pressure per unit SFR over the yield, 10 Myr rate | 1.9 | 1.7 | 43 | 2.8 |
+| same, 40 Myr rate as in OK22 | 0.6 | 1.6 | 2.6 | 10.5 |
 | $\log_{10}$ (measured / predicted $\Sigma_{\rm SFR}$), from $\mathcal W$ | | −0.30 | −0.41 | −0.88 |
 | same, from $P_{\rm tot}$ | | −0.15 | −0.32 | −0.84 |
 
@@ -161,9 +161,12 @@ fits are functions of the *estimated* weight
 $$P_{\rm DE} = \frac{\pi G \Sigma_{\rm gas}^2}{2} + \Sigma_{\rm gas}\sqrt{2G\rho_{\rm sd}}\ \sigma_{\rm eff},\qquad
 \sigma_{\rm eff} = \left(\frac{P_{\rm tot}}{\rho_{\rm mid}}\right)^{1/2},$$
 
-not of $P_{\rm tot}$, and we evaluate them at $P_{\rm DE}$ accordingly; $\rho_{\rm sd}$ is the stellar plus dark-matter
-density at the column midplane from the same particle-mesh grids. Their $\Sigma_{\rm SFR}$ is a trailing 40 Myr
-average, which is why the 40 Myr rate is the one to compare. A pressure per unit
+not of $P_{\rm tot}$, with $\rho_{\rm sd}$ the stellar plus dark-matter density at the column midplane. We evaluate the
+yield at the measured $P_{\rm tot}$ instead: $P_{\rm DE}$ is an estimator of the weight for observations, and in this
+layer it is not a good one, overestimating the measured weight by 20 to 70 % per phase because the layer is dark-matter
+dominated and the estimator assumes a vertical structure that the merger does not keep (see "The analytic weight
+estimator" below). The exponent is $-0.212$, so the choice moves the yield by less than 15 %. Their $\Sigma_{\rm SFR}$
+is a trailing 40 Myr average, which is why the 40 Myr rate is the one to compare. A pressure per unit
 star formation rate in $\rm K\ cm^{-3}$ per ${\rm M_\odot\ yr^{-1}\ kpc^{-2}}$ is converted to $\rm km\ s^{-1}$ by dividing by
 $4.81\times10^3$.
 
@@ -283,6 +286,18 @@ fourth snapshot) of r(t), the per-snapshot Sigma_gas-weighted median of P_tot / 
 depth only; L from 0.5 to 0.125 kpc at fixed depth changes nothing, depths of 0.5 and 0.25 kpc give 1.5 and 2.7.
 
 ![column depth](figs/scale_depth.png)
+
+### The analytic weight estimator
+x: the weight $\mathcal W$ of a clean layer column from the particle-mesh solve. y: the estimator
+$P_{\rm DE} = \pi G\Sigma_{\rm gas}^2/2 + \Sigma_{\rm gas}\sqrt{2G\rho_{\rm sd}}\,\sigma_{\rm eff}$ of the same column,
+with $\rho_{\rm sd}$ the stellar plus dark-matter density at its midplane and $\sigma_{\rm eff} =
+(P_{\rm tot}/\rho_{\rm mid})^{1/2}$. Every fourth snapshot, coloured by phase; solid line 1:1, dotted a factor 2 either
+way. Result: $P_{\rm DE}/\mathcal W$ has a median of 1.49 over all columns and 1.71, 1.63, 1.37 and 1.21 by phase, with
+a 16th to 84th percentile range of 0.97 to 2.31. OK22 find it 30 % high in TIGRESS; here it is 20 to 70 % high, in a
+layer where the dark matter carries 0.6 to 0.87 of the weight. The estimator is therefore not used in place of the
+measured weight anywhere in this document.
+
+![analytic weight estimator](figs/pde_vs_weight.png)
 
 ## 4. What holds the layer up
 x: time. y, per snapshot with $c$ over the clean layer columns: $\sum_c P_{{\rm th},c}/\sum_c P_{{\rm tot},c}$,
