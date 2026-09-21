@@ -290,8 +290,8 @@ depth only; L from 0.5 to 0.125 kpc at fixed depth changes nothing, depths of 0.
 ### The analytic weight estimator
 x: the weight $\mathcal W$ of a clean layer column from the particle-mesh solve. y: the estimator
 $P_{\rm DE} = \pi G\Sigma_{\rm gas}^2/2 + \Sigma_{\rm gas}\sqrt{2G\rho_{\rm sd}}\,\sigma_{\rm eff}$ of the same column,
-with $\rho_{\rm sd}$ the stellar plus dark-matter density at its midplane and $\sigma_{\rm eff} =
-(P_{\rm tot}/\rho_{\rm mid})^{1/2}$. Every fourth snapshot, coloured by phase; solid line 1:1, dotted a factor 2 either
+with $\rho_{\rm sd}$ the stellar plus dark-matter density at its midplane and
+$\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$. Every fourth snapshot, coloured by phase; solid line 1:1, dotted a factor 2 either
 way. Result: $P_{\rm DE}/\mathcal W$ has a median of 1.49 over all columns and 1.71, 1.63, 1.37 and 1.21 by phase, with
 a 16th to 84th percentile range of 0.97 to 2.31. OK22 find it 30 % high in TIGRESS; here it is 20 to 70 % high, in a
 layer where the dark matter carries 0.6 to 0.87 of the weight. The estimator is therefore not used in place of the
