@@ -214,9 +214,10 @@ $\sum_{c:\ r_c\le r}\Sigma_{{\rm gas},c} = \tfrac12\sum_c \Sigma_{{\rm gas},c}$.
 110, 169 Myr; the final coalescence is at 217 Myr. The first 25 Myr are excluded (isothermal initial state relaxing).
 
 ## 1. The merger
-x: time since the start of the run. y: $d(t) = |\mathbf c_A - \mathbf c_B|$, with $\mathbf c_X$ the median position of the initial
-stellar disc particles of galaxy X (galaxy A: particle IDs $\le 26\ 000\ 000$). Dotted lines: pericentres at 40, 110, 169 Myr; solid: final
-coalescence at 217 Myr.
+Separation of the two nuclei as a function of time. We define the centre of each galaxy as the median position of its
+initial stellar disc particles, which we identify by particle ID (galaxy A has IDs $\le 26\,000\,000$), and plot
+$d(t) = |\mathbf c_A - \mathbf c_B|$. The dotted lines mark the three pericentre passages at 40, 110 and 169 Myr and the
+solid line the final coalescence at 217 Myr. We use these four intervals as the phases throughout this document.
 
 ![separation](figs/story_0_sep.png)
 
@@ -224,78 +225,95 @@ coalescence at 217 Myr.
 In the next three figures each galaxy is shown separately before the second passage (its own grid, intruder cut
 applied) and the single merged grid from 106 Myr on.
 
-**Midplane pressure.** x: time. y, per snapshot and grid: the $\Sigma_{\rm gas}$-weighted median over the clean layer
-columns of $P_{\rm tot} = P_{\rm th} + P_{\rm turb} + \Pi_{\rm mag}$ as defined above.
+**Midplane pressure.** Total midplane pressure of the two-phase gas, $P_{\rm tot} = P_{\rm th} + P_{\rm turb} + \Pi_{\rm mag}$
+as defined above, against time. For each snapshot and each grid we take the $\Sigma_{\rm gas}$-weighted
+median over the clean layer columns. We note that the pressure rises by two orders of magnitude over the merger and
+that most of the rise happens within a few Myr of the second and third pericentre.
 
 ![midplane pressure](figs/midplane_pressure.png)
 
-**Midplane density.** x: time. y, per snapshot and grid: the $\Sigma_{\rm gas}$-weighted median over the clean layer
-columns of $n_{\rm H,mid} = X_{\rm H}\ \rho_{\rm mid}/m_{\rm p}$ with $\rho_{\rm mid}$ the slab density of the 2p gas
-defined above and $X_{\rm H} = 0.76$.
+**Midplane density.** The same for the midplane density of the two-phase gas, converted to hydrogen nuclei per cubic
+centimetre as $n_{\rm H,mid} = X_{\rm H}\rho_{\rm mid}/m_{\rm p}$ with $X_{\rm H} = 0.76$, where $\rho_{\rm mid}$ is the
+slab density defined above.
 
 ![midplane density](figs/midplane_density.png)
 
-**Star formation rate surface density.** x: time. y, per snapshot and grid: the mean of $\Sigma_{\rm SFR,10}$ over the
-clean full columns, i.e. the mass of stars younger than 10 Myr in those columns divided by 10 Myr and by their total area.
+**Star formation rate surface density.** The star formation rate per unit area of the same columns, which we obtain by
+summing the mass of stars younger than 10 Myr in the clean full columns and dividing by 10 Myr and by their total area.
+We note that the two galaxies track each other closely once they are close enough to share a grid.
 
 ![sfr surface density](figs/sfr_surface_density.png)
 
-**Star formation rate of the whole run.** x: time. y: ${\rm SFR}(t;\Delta t) = \frac{1}{\Delta t}\sum m_\star$ over all
-stars in the last snapshot with formation time in $(t-\Delta t,\ t]$, for $\Delta t$ = 10, 20, 30, 40 Myr (present
-particle masses, 3.98 $\rm M_\odot$; each curve starts at $t = \Delta t$).
+**Star formation rate of the whole run.** Star formation rate of the entire system, which we obtain from the formation
+times of all stars present in the final snapshot rather than from any grid, so that this figure is independent of the
+column analysis. We show ${\rm SFR}(t;\Delta t) = \sum m_\star/\Delta t$ over the stars formed in $(t-\Delta t, t]$ for
+averaging windows of 10, 20, 30 and 40 Myr. Each curve starts at $t = \Delta t$, and the particle masses are the present
+ones, 3.98 $\rm M_\odot$. We note the two bursts at the second and third passage and the deep trough between them.
 
 ![sfr history](figs/sfr_history.png)
 
 ## 3. Does the layer stay in vertical balance?
 > **Yes**, at every phase, column depth above 1 kpc and orientation within 30 degrees of the disc normal.
 
-x: time. y, per snapshot: the $\Sigma_{\rm gas}$-weighted median over the clean columns $c$ of $r_c = P_{{\rm tot},c}/\mathcal W_c$. Light: full columns (|z| < 1.5 kpc about the grid plane); dark:
-layer columns (|z − z_mid| < 0.5 kpc), with P_tot and W as defined above in both cases. Result: layer 1.05, 0.94, 0.73, 0.96
-in the four phases, never outside 0.5 to 2; the full column drops to 0.4 between the second and third passage because it
-then includes the dark-matter weight of gas streaming outside the layer.
+Ratio of the midplane pressure to the weight against time. For every snapshot we take the $\Sigma_{\rm gas}$-weighted
+median of $P_{{\rm tot},c}/\mathcal W_c$ over the clean columns, in light blue for the full columns
+($|z| < 1.5$ kpc about the grid plane) and in dark blue for the layer columns ($|z - z_{\rm mid}| < 0.5$ kpc). The
+dotted grey line repeats the earlier result obtained when the two galaxies were still given separate grids after the
+second passage, which we no longer do. We find phase medians of 1.03, 0.94, 0.71 and 0.85 in the layer, and the
+per-snapshot median stays between 0.41 and 1.56 for the whole run. We note that the full column drops to 0.4 between
+the second and third passage, since it then also carries the dark-matter weight of gas streaming well outside the
+layer.
 
 ![equilibrium](figs/story_1_equilibrium.png)
 
-**Where the weight comes from, and when.** x: time. y: the $\Sigma_{\rm gas}$-weighted median over the clean layer
-columns of the weight $\mathcal W$ carried by all matter and, separately, of the same sum with the acceleration of the
-gas, of the stars and of the dark matter alone, using the particle-mesh solve described above; the measured
-$P_{\rm tot}$ is repeated as a dotted line. Result: the weight of this layer is set by the dark matter, which carries
-0.87 of it in the discs, 0.82 in the trough and 0.60 at the final burst, with the gas rising from 0.12 to 0.33 as it
-concentrates and the stars never above 0.05. It jumps by a factor 3 to 8 within a few Myr of each pericentre, from
-$7\times10^3$ in the discs to $5\times10^4$ after the second passage, $9\times10^4$ in the trough and $1.4\times10^5$ at
-the third burst, and the pressure follows it throughout. Which of the two, a deeper potential or gas moved into a
-steeper part of it, is not separated here.
+**Where the weight comes from, and when.** Weight of the layer against time, split by which component provides the
+gravity. We repeat the weight sum with the acceleration of the gas, of the stars and of the dark matter alone, taking
+each from the same particle-mesh solve, and show the measured $P_{\rm tot}$ as a dotted line for comparison. We find
+that the weight of this layer is set by the dark matter, which carries 0.87 of it in the discs, 0.82 in the trough and
+0.60 at the final burst; the gas contribution grows from 0.12 to 0.33 as the gas concentrates and the stars never
+exceed 0.05. The weight jumps by a factor 3 to 8 within a few Myr of each pericentre, from $7\times10^3$ in the discs
+to $5\times10^4$ after the second passage, $9\times10^4$ in the trough and $1.4\times10^5$ at the third burst, and the
+pressure follows it throughout. We note that we do not separate here whether the jump is a deeper potential or gas
+moving into a steeper part of it.
 
 ![weight by source](figs/weight_sources.png)
 
 ### The same test against the line of sight
-As the vertical-equilibrium figure with the column normal replaced by $\hat n_\theta = \cos\theta\ \hat n + \sin\theta\ \hat e_2$,
-$\theta = 0, 30, 60, 90$ degrees, $\hat e_2$ the second in-plane axis of the grid. Each θ has its own full-column run and its own layer cut about the
-midplane found along n̂_θ. y: the Sigma_gas-weighted median of layer P_tot / W over the columns, computed per grid and
-combined over the two grids with weights equal to their column counts. Every fourth snapshot. Result: before the second
-passage θ = 0 gives one and θ = 30 gives 0.4 to 0.7; between the second and third passage all θ give 0.6 to 1.2; after the
-third all θ give 0.9 to 1.3.
+Same as the previous figure, but with the column normal tilted away from the gas angular momentum,
+$\hat n_\theta = \cos\theta\,\hat n + \sin\theta\,\hat e_2$ for $\theta = 0$, 30, 60 and 90 degrees, where $\hat e_2$ is the
+second in-plane axis of the grid. Each angle gets its own full-column run and its own layer cut about the midplane found
+along that direction, and we use every fourth snapshot. We do this because the balance test is only meaningful if the
+gas is a layer, and we want to know how quickly the answer degrades if we get the orientation wrong. We find that before
+the second passage $\theta = 0$ gives unity while $\theta = 30$ already gives 0.4 to 0.7, so the orientation matters a
+great deal while the discs are thin. Between the second and third passage all angles give 0.6 to 1.2 and after the third
+all give 0.9 to 1.3, which tells us that by then the gas is no longer a layer in any particular direction.
 
 ![line of sight](figs/los_layer.png)
 
 ### and against the size of the column
-x: column depth $2z_{\rm col}$: 3 kpc (full column, about the grid plane) or 1, 0.5, 0.25 kpc ($z_{\rm col}$ = 0.5, 0.25,
-0.125 kpc about the midplane of the 0.5 kpc reference column the point falls in). Marker: footprint side $L$ = 0.5, 0.25,
-0.125 kpc (grids of $12^2$, $24^2$, $48^2$ columns over $\pm3$ kpc), $A = L^2$. y: for each configuration, the median over the snapshots of the phase (every
-fourth snapshot) of r(t), the per-snapshot Sigma_gas-weighted median of P_tot / W. Shaded: 2H. Result: r depends on the
-depth only; L from 0.5 to 0.125 kpc at fixed depth changes nothing, depths of 0.5 and 0.25 kpc give 1.5 and 2.7.
+The same ratio, now against the depth of the column over which we average. We rerun the whole column analysis on five
+configurations: the full column of 3 kpc depth about the grid plane, and depths of 1, 0.5 and 0.25 kpc taken about the
+midplane of the 0.5 kpc reference column that each point falls in, with footprints of 0.5, 0.25 and 0.125 kpc on a side,
+i.e. grids of $12^2$, $24^2$ and $48^2$ columns over $\pm3$ kpc. The marker shape gives the footprint and the colour the
+phase, and for each configuration we plot the median over the snapshots of the phase of the per-snapshot
+$\Sigma_{\rm gas}$-weighted median of $P_{\rm tot}/\mathcal W$. The shaded band marks twice the scale height. We find
+that the answer depends on the depth and not on the footprint: going from 0.5 to 0.125 kpc on a side changes nothing at
+fixed depth, while depths of 0.5 and 0.25 kpc give 1.5 and 2.7 instead of unity. We note that this is why we quote the
+balance for columns at least 1 kpc deep.
 
 ![column depth](figs/scale_depth.png)
 
 ### The analytic weight estimator
-x: the weight $\mathcal W$ of a clean layer column from the particle-mesh solve. y: the estimator
+Analytic weight estimator against the weight we measure. On the x-axis we put the weight $\mathcal W$ of a clean layer
+column from the particle-mesh solve, and on the y-axis the estimator
 $P_{\rm DE} = \pi G\Sigma_{\rm gas}^2/2 + \Sigma_{\rm gas}\sqrt{2G\rho_{\rm sd}}\,\sigma_{\rm eff}$ of the same column,
-with $\rho_{\rm sd}$ the stellar plus dark-matter density at its midplane and
-$\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$. Every fourth snapshot, coloured by phase; solid line 1:1, dotted a factor 2 either
-way. Result: $P_{\rm DE}/\mathcal W$ has a median of 1.49 over all columns and 1.71, 1.63, 1.37 and 1.21 by phase, with
-a 16th to 84th percentile range of 0.97 to 2.31. OK22 find it 30 % high in TIGRESS; here it is 20 to 70 % high, in a
-layer where the dark matter carries 0.6 to 0.87 of the weight. The estimator is therefore not used in place of the
-measured weight anywhere in this document.
+where $\rho_{\rm sd}$ is the stellar plus dark-matter density at its midplane and
+$\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$. We use every fourth snapshot, colour the points by phase, and
+draw the one-to-one line solid and a factor of two either way dotted. We find a median $P_{\rm DE}/\mathcal W$ of 1.49
+over all columns and of 1.71, 1.63, 1.37 and 1.21 by phase, with a 16th to 84th percentile range of 0.97 to 2.31. OK22
+find the estimator 30 % high in TIGRESS; here it is 20 to 70 % high, in a layer where the dark matter carries 0.6 to
+0.87 of the weight, so the assumptions behind it are not met. We therefore never use $P_{\rm DE}$ in place of the
+measured weight in this work, and we evaluate the OK22 yield at the measured $P_{\rm tot}$.
 
 ![analytic weight estimator](figs/pde_vs_weight.png)
 
