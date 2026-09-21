@@ -1,6 +1,6 @@
 """Paper-style versions of the key figures, one function each.  usage: python paper_figs.py NAME [NAME ...]  (or 'all')
 Outputs: /ptmp/uli/dwarf_merger/prfm/figs/paper/NAME.{png,pdf} and ~/merger_prfm/figs/NAME.{png,pdf}"""
-import sys, os, glob, numpy as np, h5py
+import os, sys, glob, numpy as np, h5py
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import common as C
 import ok22
@@ -46,7 +46,7 @@ def story_2_feedback():
         for k in T:
             m = base & (D['snap'] == k); sfr = D['SigSFR_10'][m]; Pk = PL[m]
             if sfr.sum() <= 0: continue
-            t.append(D['t'][m][0]); ups.append(Pk.sum() / sfr.sum() / 4.81e3); ok22y.append(ok22.ups_tot(np.average(Pk, weights=D['Sigma_gas_2p'][m])))
+            t.append(D['t'][m][0]); ups.append(Pk.sum() / sfr.sum() / 4.81e3); ok22y.append(ok22.ups_tot(np.average(D['P_DE'][m], weights=D['Sigma_gas_2p'][m])))
         return np.array(t), np.array(ups), np.array(ok22y)
     t, ups, ok22y = series(); o = t > 10
     fig, ax = P.fig()
@@ -571,7 +571,7 @@ def yield_sources():
                 if not g.startswith('frame_'): continue
                 G = f[g]; sep = float(G.attrs['separation_kpc']); r = lambda k: G[k][:].ravel()
                 Sig = r('Sigma_gas'); W = r('W_2p'); fi = r('f_intruder'); ok = (Sig > 1) & (W > 0) & ((fi < 0.1) | C.is_merged(sep, t))
-                acc += [r('Ptot_2p')[ok].sum(), r('SigSFR_10')[ok].sum(), r('SigSFR_40')[ok].sum(), r('SNrate')[ok].sum(), (r('Sigma_gas_2p') * r('Ptot_2p'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
+                acc += [r('Ptot_2p')[ok].sum(), r('SigSFR_10')[ok].sum(), r('SigSFR_40')[ok].sum(), r('SNrate')[ok].sum(), (r('Sigma_gas_2p') * r('P_DE'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
             rows.append((t, *acc))
     R = np.array(rows); T = R[:, 0]; Pb = R[:, 5] / R[:, 6]
     u10 = R[:, 1] / np.maximum(R[:, 2], 1e-30) / 4.81e3 / ok22.ups_tot(Pb); u40 = R[:, 1] / np.maximum(R[:, 3], 1e-30) / 4.81e3 / ok22.ups_tot(Pb)
@@ -661,7 +661,7 @@ def yield_components():
                 if not g.startswith('frame_'): continue
                 G = f[g]; sep = float(G.attrs['separation_kpc']); r = lambda k: G[k][:].ravel()
                 S = r('Sigma_gas'); W = r('W_2p'); fi = r('f_intruder'); ok = (S > 1) & (W > 0) & ((fi < 0.1) | C.is_merged(sep, t))
-                acc += [r('Pth_2p')[ok].sum(), r('Pturb_2p')[ok].sum(), r('Pmag_2p')[ok].sum(), r('Ptot_2p')[ok].sum(), r('SigSFR_40')[ok].sum(), (r('Sigma_gas_2p') * r('Ptot_2p'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
+                acc += [r('Pth_2p')[ok].sum(), r('Pturb_2p')[ok].sum(), r('Pmag_2p')[ok].sum(), r('Ptot_2p')[ok].sum(), r('SigSFR_40')[ok].sum(), (r('Sigma_gas_2p') * r('P_DE'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
             rows.append((t, *acc))
     R = np.array(rows); T = R[:, 0]; Pb = R[:, 6] / R[:, 7]; SF = np.maximum(R[:, 5], 1e-30); o = T > 40
     fig, ax = P.fig()
@@ -804,7 +804,7 @@ def yield_forward():
                 if not g.startswith('frame_'): continue
                 G = f[g]; sep = float(G.attrs['separation_kpc']); r = lambda k: G[k][:].ravel()
                 S = r('Sigma_gas'); W = r('W_2p'); fi = r('f_intruder'); ok = (S > 1) & (W > 0) & ((fi < 0.1) | C.is_merged(sep, t))
-                acc += [r('Ptot_2p')[ok].sum(), r('SigSFR_40')[ok].sum(), (r('Sigma_gas_2p') * r('Ptot_2p'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
+                acc += [r('Ptot_2p')[ok].sum(), r('SigSFR_40')[ok].sum(), (r('Sigma_gas_2p') * r('P_DE'))[ok].sum(), r('Sigma_gas_2p')[ok].sum()]
             rows.append((t, *acc))
     R = np.array(rows); T = R[:, 0]; Pb = R[:, 3] / R[:, 4]
     D = np.arange(0, 56, 2.0)
@@ -859,6 +859,106 @@ def weight_sources():
         m = (T >= a) & (T < b); g = lambda i: np.median(R[m, i])
         print(f'  {lab:10s} W {g(1):9.3g}  gas {g(3)/g(1):.2f}  stars {g(4)/g(1):.2f}  dark matter {g(5)/g(1):.2f}')
     P.save(fig, 'weight_sources'); plt.close(fig)
+
+def _cols(keys, step=4):
+    """every clean layer column of every step-th snapshot: dict of arrays plus the time"""
+    import glob as _g
+    out = {k: [] for k in list(keys) + ['t']}
+    for fn in sorted(_g.glob(f'{C.PRFM_DIR}/patch_[0-9][0-9][0-9]_z05.h5')):
+        k = int(os.path.basename(fn)[6:9])
+        if k % step: continue
+        with h5py.File(fn, 'r') as f:
+            t = float(f.attrs['time_myr'])
+            for g in f:
+                if not g.startswith('frame_'): continue
+                G = f[g]; sep = float(G.attrs['separation_kpc']); r = lambda kk: G[kk][:].ravel()
+                S = r('Sigma_gas'); W = r('W_2p'); fi = r('f_intruder'); ok = (S > 1) & (W > 0) & ((fi < 0.1) | C.is_merged(sep, t))
+                for kk in keys: out[kk].append(r(kk)[ok])
+                out['t'].append(np.full(ok.sum(), t))
+    return {k: np.concatenate(v) for k, v in out.items()}
+
+@figure
+def balance_scatter():
+    """the vertical balance column by column: P_tot against W for every clean layer column of every 4th snapshot, coloured by phase"""
+    d = _cols(['Ptot_2p', 'W_2p'])
+    fig, ax = P.fig()
+    for (t0, t1, lab), c in zip(C.PHASES, (P.light, P.blue, P.orange, P.ink)):
+        m = (d['t'] >= t0) & (d['t'] < t1)
+        ax.scatter(d['W_2p'][m], d['Ptot_2p'][m], s=3, color=c, alpha=0.45, lw=0, rasterized=True, label=lab.replace('\n', ' '))
+    g = np.logspace(1, 7, 10); ax.plot(g, g, color=P.ink, lw=0.9); ax.plot(g, 2 * g, color=P.grey, lw=0.6, ls=':'); ax.plot(g, g / 2, color=P.grey, lw=0.6, ls=':')
+    ax.set_xscale('log'); ax.set_yscale('log'); ax.set_xlim(1e2, 3e6); ax.set_ylim(1e2, 3e6)
+    ax.set_xlabel(r'$\mathcal{W}_{\rm 2p}$ [K cm$^{-3}$]'); ax.set_ylabel(r'$P_{\rm tot,2p}$ [K cm$^{-3}$]'); P.place_legend(ax)
+    r = d['Ptot_2p'] / d['W_2p']
+    print(f'  {len(r)} columns: median P/W {np.median(r):.2f}, 16-84 % {np.percentile(r,16):.2f}-{np.percentile(r,84):.2f}, within a factor 2: {np.mean((r>0.5)&(r<2)):.2f}')
+    P.save(fig, 'balance_scatter'); plt.close(fig)
+
+@figure
+def sfr_pressure_scatter():
+    """the PRFM star formation relation column by column: Sigma_SFR over 40 Myr against the layer P_tot, with the OK22 relation"""
+    d = _cols(['Ptot_2p', 'W_2p', 'SigSFR_40'])
+    ok = (d['SigSFR_40'] > 0) & (d['Ptot_2p'] > 0)   # P_tot can be negative where the Maxwell stress is
+    fig, ax = P.fig()
+    for (t0, t1, lab), c in zip(C.PHASES, (P.light, P.blue, P.orange, P.ink)):
+        m = ok & (d['t'] >= t0) & (d['t'] < t1)
+        ax.scatter(d['Ptot_2p'][m], d['SigSFR_40'][m], s=3, color=c, alpha=0.45, lw=0, rasterized=True, label=lab.replace('\n', ' '))
+    g = np.logspace(2, 7, 10); ax.plot(g, ok22.sfr_of_Ptot(g), color=P.ink, lw=1.1, label='OK22 eq. 28a')
+    ax.set_xscale('log'); ax.set_yscale('log'); ax.set_xlim(3e2, 3e6); ax.set_ylim(1e-5, 3e-1)
+    ax.set_xlabel(r'$P_{\rm tot,2p}$ [K cm$^{-3}$]'); ax.set_ylabel(r'$\Sigma_{\rm SFR,40}$ [M$_\odot$ yr$^{-1}$ kpc$^{-2}$]'); P.place_legend(ax)
+    for t0, t1, lab in C.PHASES:
+        m = ok & (d['t'] >= t0) & (d['t'] < t1)
+        if m.sum() > 20: print(f'  {lab.replace(chr(10)," "):28s} median log(measured/OK22) = {np.median(np.log10(d["SigSFR_40"][m] / ok22.sfr_of_Ptot(d["Ptot_2p"][m]))):+.2f} dex, scatter {np.std(np.log10(d["SigSFR_40"][m] / ok22.sfr_of_Ptot(d["Ptot_2p"][m]))):.2f}')
+    P.save(fig, 'sfr_pressure_scatter'); plt.close(fig)
+
+@figure
+def pde_vs_weight():
+    """the analytic estimate of the weight used by OK22 and by Kruijssen (2012), P_DE, against the weight measured from the
+    particle-mesh solve, column by column"""
+    d = _cols(['P_DE', 'W_2p'])
+    ok = (d['P_DE'] > 0) & (d['W_2p'] > 0)
+    fig, ax = P.fig()
+    for (t0, t1, lab), c in zip(C.PHASES, (P.light, P.blue, P.orange, P.ink)):
+        m = ok & (d['t'] >= t0) & (d['t'] < t1)
+        ax.scatter(d['W_2p'][m], d['P_DE'][m], s=3, color=c, alpha=0.45, lw=0, rasterized=True, label=lab.replace('\n', ' '))
+    g = np.logspace(1, 7, 10); ax.plot(g, g, color=P.ink, lw=0.9); ax.plot(g, 2 * g, color=P.grey, lw=0.6, ls=':'); ax.plot(g, g / 2, color=P.grey, lw=0.6, ls=':')
+    ax.set_xscale('log'); ax.set_yscale('log'); ax.set_xlim(1e2, 3e6); ax.set_ylim(1e2, 3e6)
+    ax.set_xlabel(r'$\mathcal{W}_{\rm 2p}$, particle-mesh [K cm$^{-3}$]'); ax.set_ylabel(r'$P_{\rm DE}$, analytic [K cm$^{-3}$]'); P.place_legend(ax)
+    r = d['P_DE'][ok] / d['W_2p'][ok]
+    print(f'  {ok.sum()} columns: median P_DE/W {np.median(r):.2f}, 16-84 % {np.percentile(r,16):.2f}-{np.percentile(r,84):.2f}')
+    for t0, t1, lab in C.PHASES:
+        m = ok & (d['t'] >= t0) & (d['t'] < t1)
+        if m.sum() > 20: print(f'  {lab.replace(chr(10)," "):28s} median {np.median(d["P_DE"][m]/d["W_2p"][m]):.2f}')
+    P.save(fig, 'pde_vs_weight'); plt.close(fig)
+
+@figure
+def tdyn_vs_delay():
+    """the vertical dynamical time of the layer, t_dyn = 2 H / sigma_eff (OK22 sec. 2), against the delay between a pericentre and the
+    burst it produces.  OK22 define their equilibrium as an average over a few t_dyn, so this is the timescale on which their
+    quasi-steady assumption is defined."""
+    import glob as _g
+    rows = []
+    for fn in sorted(_g.glob(f'{C.PRFM_DIR}/patch_[0-9][0-9][0-9]_z05.h5')):
+        with h5py.File(fn, 'r') as f:
+            t = float(f.attrs['time_myr']); H = []; SE = []; S = []
+            for g in f:
+                if not g.startswith('frame_'): continue
+                G = f[g]; sep = float(G.attrs['separation_kpc']); r = lambda k: G[k][:].ravel()
+                Sg = r('Sigma_gas'); W = r('W_2p'); fi = r('f_intruder'); ok = (Sg > 1) & (W > 0) & ((fi < 0.1) | C.is_merged(sep, t))
+                H.append(r('H')[ok]); SE.append(r('sigma_eff')[ok]); S.append(Sg[ok])
+            H = np.concatenate(H); SE = np.concatenate(SE); S = np.concatenate(S)
+            td = 2 * H / np.maximum(SE, 1e-30) * 977.8
+            o = np.argsort(td); cw = np.cumsum(S[o]) / S.sum()
+            rows.append((t, td[o][np.searchsorted(cw, 0.5)], td[o][np.searchsorted(cw, 0.16)], td[o][np.searchsorted(cw, 0.84)]))
+    R = np.array(rows); T = R[:, 0]; o = T > 25
+    fig, ax = P.fig()
+    ax.fill_between(T[o], R[o, 2], R[o, 3], color=P.light, alpha=0.5, lw=0, label='16 to 84 % of the columns')
+    ax.plot(T[o], R[o, 1], color=P.blue, lw=1.6, label=r'$t_{\rm dyn} = 2H/\sigma_{\rm eff}$')
+    for tp, pk, lab in ((109.5, 126.1, '2nd'), (169.2, 204.4, '3rd')):
+        ax.annotate('', xy=(pk, 42), xytext=(tp, 42), arrowprops=dict(arrowstyle='<->', color=P.orange, lw=1.2))
+        ax.text(0.5 * (tp + pk), 44, f'{pk-tp:.0f} Myr', ha='center', va='bottom', fontsize=6.5, color=P.orange)
+    ax.set_xlim(25, 226); ax.set_ylim(0, 58); ax.set_xlabel(r'$t$ [Myr]'); ax.set_ylabel(r'$t_{\rm dyn}$ [Myr]')
+    P.phases(ax, labels=False); P.place_legend(ax)
+    print(f'  t_dyn over t>40: median {np.median(R[T>40,1]):.1f} Myr, 16-84 % {np.percentile(R[T>40,1],16):.0f}-{np.percentile(R[T>40,1],84):.0f}')
+    P.save(fig, 'tdyn_vs_delay'); plt.close(fig)
 
 if __name__ == '__main__':
     names = sys.argv[1:] or ['all']

@@ -25,8 +25,8 @@ on. Phase medians:
 | | before 1st passage | 1st to 2nd | 2nd to 3rd | 3rd to coalescence |
 |---|---|---|---|---|
 | $P_{\rm tot}/\mathcal W$, layer 1 kpc deep | 1.03 | 0.94 | 0.71 | 0.85 |
-| pressure per unit SFR over the yield, 10 Myr rate | 1.9 | 1.7 | 43 | 2.8 |
-| same, 40 Myr rate as in OK22 | 0.6 | 1.6 | 2.6 | 10.5 |
+| pressure per unit SFR over the yield, 10 Myr rate | 2.1 | 2.0 | 51 | 3.2 |
+| same, 40 Myr rate as in OK22 | 0.7 | 1.8 | 3.0 | 12 |
 | $\log_{10}$ (measured / predicted $\Sigma_{\rm SFR}$), from $\mathcal W$ | | −0.30 | −0.41 | −0.88 |
 | same, from $P_{\rm tot}$ | | −0.15 | −0.32 | −0.84 |
 
@@ -151,11 +151,19 @@ the division.
 
 **Ostriker & Kim (2022) relations used.**
 
-$$\Upsilon_{\rm tot}(P) = 10^{-0.212\log_{10}P + 3.86}\ {\rm km\ s^{-1}}\ \ ({\rm eq.\ 26c}),\qquad
+$$\Upsilon_{\rm tot}(P_{\rm DE}) = 10^{-0.212\log_{10}P_{\rm DE} + 3.86}\ {\rm km\ s^{-1}}\ \ ({\rm eq.\ 26c}),\qquad
 \Sigma_{\rm SFR}(\mathcal W) = 10^{1.17\log_{10}\mathcal W - 7.32}\ \ ({\rm eq.\ 28b}),\qquad
 \Sigma_{\rm SFR}(P) = 10^{1.18\log_{10}P - 7.43}\ \ ({\rm eq.\ 28a}),$$
 
-with $P$, $\mathcal W$ in $\rm K\ cm^{-3}$ and $\Sigma_{\rm SFR}$ in ${\rm M_\odot\ yr^{-1}\ kpc^{-2}}$. A pressure per unit
+with $P$, $\mathcal W$ in $\rm K\ cm^{-3}$ and $\Sigma_{\rm SFR}$ in ${\rm M_\odot\ yr^{-1}\ kpc^{-2}}$. Their yield
+fits are functions of the *estimated* weight
+
+$$P_{\rm DE} = \frac{\pi G \Sigma_{\rm gas}^2}{2} + \Sigma_{\rm gas}\sqrt{2G\rho_{\rm sd}}\ \sigma_{\rm eff},\qquad
+\sigma_{\rm eff} = \left(\frac{P_{\rm tot}}{\rho_{\rm mid}}\right)^{1/2},$$
+
+not of $P_{\rm tot}$, and we evaluate them at $P_{\rm DE}$ accordingly; $\rho_{\rm sd}$ is the stellar plus dark-matter
+density at the column midplane from the same particle-mesh grids. Their $\Sigma_{\rm SFR}$ is a trailing 40 Myr
+average, which is why the 40 Myr rate is the one to compare. A pressure per unit
 star formation rate in $\rm K\ cm^{-3}$ per ${\rm M_\odot\ yr^{-1}\ kpc^{-2}}$ is converted to $\rm km\ s^{-1}$ by dividing by
 $4.81\times10^3$.
 
@@ -425,6 +433,19 @@ passage 20, and the burst is already matched at zero, so this is not one relatio
 response time varies between passages.
 
 ![yield with a forward window](figs/yield_forward.png)
+
+### The delay is the vertical dynamical time
+OK22 define their quasi-equilibrium as a state in which "an average over a few vertical dynamical times (typically a
+few tens of Myr) is well defined, evolving only over a longer timescale", with
+$t_{\rm dyn} \equiv 2 h_{\rm gas}/\sigma_{\rm eff}$. x: time. y: the $\Sigma_{\rm gas}$-weighted median over the clean
+layer columns of $2H/\sigma_{\rm eff}$, with $H$ the mass-weighted thickness and
+$\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$ defined above; band: the 16th to 84th percentile of the columns. Arrows: the interval
+from each pericentre to the star formation peak it produces. Result: $t_{\rm dyn}$ is 24 Myr over the run, 18 to 30 Myr
+between the 16th and 84th percentile, and 20 to 26 Myr in the two intervals that matter. The pericentre-to-burst delays
+are 17 and 35 Myr and the forward offset that removes the yield excess is 25 to 30 Myr. The delay we measure is one
+vertical dynamical time.
+
+![vertical dynamical time](figs/tdyn_vs_delay.png)
 
 ## 7. Is it one component, or one region?
 > **Neither.** All three pressure terms exceed the yield, the star-forming columns alone give the same ratio as all
