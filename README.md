@@ -729,7 +729,7 @@ side, so the overlap is partial and it is worth being explicit about it.
 | star formation criterion | Jeans, fires near 500 $\rm cm^{-3}$ | $n_{\rm H} > 3000$ $\rm cm^{-3}$ | $n_{\rm H} > 100$ $\rm cm^{-3}$, self-gravitating, $\epsilon_{\rm ff} = 0.5$ |
 | stellar softening | 0.1 pc | 0.05 pc | 0.4 pc |
 | gas / stellar / halo mass per galaxy | $4\times10^7$ / $2\times10^7$ / $2\times10^{10}$ $\rm M_\odot$ | same initial condition | $4.0\times10^7$ / $2.0\times10^7$ / $2.7\times10^{10}$ $\rm M_\odot$ |
-| star formation rate before the merger | a few $10^{-3}$ $\rm M_\odot\ yr^{-1}$ at the first passage; the isolated progenitor reaches $\sim10^{-3}$ in Hu et al. (2017) | $\approx2\times10^{-3}$ for the isolated pair, implied by their factor 130 | $1.4$ to $6\times10^{-3}$ before the first passage |
+| star formation rate before the merger | a few $10^{-3}$ $\rm M_\odot\ yr^{-1}$ at the first passage; the isolated progenitor sits near $10^{-4}$ in Hu et al. (2017) | $\approx2\times10^{-3}$ for the isolated pair, implied by their factor 130 | $1.4$ to $6\times10^{-3}$ before the first passage |
 | gas metallicity | 0.1 $Z_\odot$ | 0.1 $Z_\odot$ | 0.1 $Z_\odot$ |
 | peak star formation rate | 0.2 to 0.3 $\rm M_\odot\ yr^{-1}$ | a few $0.1$ $\rm M_\odot\ yr^{-1}$ | 0.19 in a 1 Myr window, 0.094 over 10 Myr |
 | growth of dense gas | not reported | $\times56$ | $\times35$ |
@@ -756,14 +756,17 @@ galaxy in a $2\times10^{10}$ $\rm M_\odot$ halo, and Deng et al. ran the Lahén 
 start from essentially the same galaxies. The rates also agree at both ends once the same averaging is used. Before the
 first passage we form stars at 1.4 to $6\times10^{-3}$ $\rm M_\odot\ yr^{-1}$ in 10 Myr windows, against a few
 $10^{-3}$ quoted by Lahén et al. at their first passage and about $2\times10^{-3}$ for the isolated pair implied by the
-factor 130 that Deng et al. report. The quiescent end is where we differ. Hu et al. (2017) ran the isolated
-progenitor of this galaxy family and find a rate peaking near $10^{-3}$ $\rm M_\odot\ yr^{-1}$ and falling by a factor
-of two afterwards, so our pre-merger rate is two to six times higher for the same masses and the same metallicity of
-0.1 $Z_\odot$. That difference is in the star formation and feedback model, not in the galaxy: we form stars above
-100 $\rm cm^{-3}$ at $\epsilon_{\rm ff} = 0.5$ where they use a Jeans criterion, and we have magnetic fields and
-resolved supernovae where they have individual massive stars with photoelectric heating and photoionisation. We do not
-have an isolated run of our own, so we cannot close this properly, and it should be kept in mind whenever the maximum
-cluster mass is compared: our slightly larger value than Lahén et al. comes with a somewhat busier galaxy. For
+factor 130 that Deng et al. report. The quiescent end is where we differ, and by more than the peak suggests. Hu
+et al. (2017) ran this galaxy in isolation with two gas discs, a fiducial one with a 1.46 kpc scale length and a
+compact one at 0.73 kpc, binned over 10 Myr as we do. The merger progenitor of Lahén et al. is the fiducial disc, which
+sits near $10^{-4}$ $\rm M_\odot\ yr^{-1}$ with the full feedback and reaches $10^{-3}$ only in their run with
+supernovae alone; the compact disc is an order of magnitude busier. Our pre-merger rate of 1.4 to
+$6\times10^{-3}$ $\rm M_\odot\ yr^{-1}$ is therefore several times their supernova-only value and one to two orders of
+magnitude above their full-feedback value, at the same component masses and the same 0.1 $Z_\odot$. Hu et al. show that
+in this galaxy the rate is set by which feedback channels are included, within a factor of two in the fiducial disc and
+by more than an order of magnitude in the compact one, so that is where we would look. We do not have an isolated run
+of our own and cannot close it here. It matters for the cluster comparison: our largest group is slightly more massive
+than that of Lahén et al., but it forms in a galaxy that was already forming stars faster before the merger began. For
 completeness, the isolated dwarfs of Lahén et al. (2023) form stars at a few $10^{-4}$ $\rm M_\odot\ yr^{-1}$ in the
 compact case and ten times less in the extended one, but those are different galaxies and not the merger progenitors. At the peak Lahén et al. quote 0.2 to 0.3 $\rm M_\odot\ yr^{-1}$ and we reach 0.19
 in a 1 Myr window, which is 0.094 when averaged over 10 Myr. The largest young group is $7\times10^5$ $\rm M_\odot$ for Lahén et al., $8.5\times10^5$ here and
