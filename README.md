@@ -729,7 +729,8 @@ side, so the overlap is partial and it is worth being explicit about it.
 | star formation criterion | Jeans, fires near 500 $\rm cm^{-3}$ | $n_{\rm H} > 3000$ $\rm cm^{-3}$ | $n_{\rm H} > 100$ $\rm cm^{-3}$, self-gravitating, $\epsilon_{\rm ff} = 0.5$ |
 | stellar softening | 0.1 pc | 0.05 pc | 0.4 pc |
 | gas / stellar / halo mass per galaxy | $4\times10^7$ / $2\times10^7$ / $2\times10^{10}$ $\rm M_\odot$ | same initial condition | $4.0\times10^7$ / $2.0\times10^7$ / $2.7\times10^{10}$ $\rm M_\odot$ |
-| peak star formation rate | 0.2 to 0.3 $\rm M_\odot\ yr^{-1}$ | a few $0.1$ $\rm M_\odot\ yr^{-1}$ | 0.19 (1 Myr window), 0.094 (10 Myr) $\rm M_\odot\ yr^{-1}$ |
+| star formation rate before the merger | a few $10^{-3}$ $\rm M_\odot\ yr^{-1}$ at the first passage | $\approx2\times10^{-3}$ for the isolated pair | $1.4$ to $6\times10^{-3}$ before the first passage |
+| peak star formation rate | 0.2 to 0.3 $\rm M_\odot\ yr^{-1}$ | a few $0.1$ $\rm M_\odot\ yr^{-1}$ | 0.19 in a 1 Myr window, 0.094 over 10 Myr |
 | growth of dense gas | not reported | $\times56$ | $\times35$ |
 | cloud-scale efficiency | not reported | unchanged, 0.17 to 0.33 dex lower at the peak | unchanged at fixed $\alpha_{\rm tot}$, residuals $+0.29$ to $-0.18$ dex |
 | most massive young group | $7\times10^5$ $\rm M_\odot$ | $3\times10^4$ $\rm M_\odot$ | $8.5\times10^5$ $\rm M_\odot$ |
@@ -751,9 +752,11 @@ work has no counterpart in either paper.
 **On the maximum cluster mass.** This comparison is closer to a controlled experiment than we first thought. Our
 initial condition has the same masses as Lahén et al., $4\times10^7$ $\rm M_\odot$ of gas and $2\times10^7$ of stars per
 galaxy in a $2\times10^{10}$ $\rm M_\odot$ halo, and Deng et al. ran the Lahén initial condition directly, so all three
-start from essentially the same galaxies. The peak star formation rates also agree once the same averaging is used:
-Lahén et al. quote 0.2 to 0.3 $\rm M_\odot\ yr^{-1}$ and we reach 0.19 in a 1 Myr window, which is 0.094 when averaged
-over 10 Myr. The largest young group is $7\times10^5$ $\rm M_\odot$ for Lahén et al., $8.5\times10^5$ here and
+start from essentially the same galaxies. The rates also agree at both ends once the same averaging is used. Before the
+first passage we form stars at 1.4 to $6\times10^{-3}$ $\rm M_\odot\ yr^{-1}$ in 10 Myr windows, against a few
+$10^{-3}$ quoted by Lahén et al. at their first passage and about $2\times10^{-3}$ for the isolated pair implied by the
+factor 130 that Deng et al. report. At the peak Lahén et al. quote 0.2 to 0.3 $\rm M_\odot\ yr^{-1}$ and we reach 0.19
+in a 1 Myr window, which is 0.094 when averaged over 10 Myr. The largest young group is $7\times10^5$ $\rm M_\odot$ for Lahén et al., $8.5\times10^5$ here and
 $3\times10^4$ for Deng et al., so at the same galaxies and the same rate the number moves by a factor 28 between the
 three star formation models. Deng et al. attribute this to their density criterion of 3000 $\rm cm^{-3}$ and their
 0.05 pc softening, and this is a cleaner demonstration of the caveat in section 10 than anything in our own run. We
