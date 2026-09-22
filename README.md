@@ -714,6 +714,43 @@ after the second passage the bound-only index collapses because only a third of 
 ![low-mass convergence](figs/lowmass_convergence.png)
 
 ---
+## 11. Comparison with other simulations of the same system
+
+Two other groups have run gas-rich dwarf mergers set up like this one, and it is worth saying where we agree and where
+we do not.
+
+Lahén et al. (2020) used GRIFFIN with individual massive stars, and Deng et al. (2025)
+ran the same initial condition as Lahén with the RIGEL radiation-hydrodynamic model in AREPO at 2 $\rm M_\odot$ and
+0.2 Myr cadence. We note that Deng et al. resolve the cloud population far better than we do, at five times our
+temporal resolution, while we have magnetic fields and they do not.
+
+**Where we agree.** They find the dense gas above 100 $\rm cm^{-3}$ grows by a factor 56 over their merger; we find 35
+between the quietest and the busiest snapshot. They find the cloud-scale integrated efficiency essentially unchanged,
+lower by only 0.17 to 0.33 dex at the peak of the starburst than in isolated galaxies, and conclude that the star
+formation is regulated by local stellar feedback rather than by galactic dynamics. Our efficiency step gives the same
+answer at fixed virial parameter: the median residual of $\epsilon_{\rm int}$ about the fitted step is $+0.29$,
+$+0.05$, $-0.18$ and $-0.04$ dex in the four phases, so a clump of given $\alpha_{\rm tot}$ converts the same fraction
+of itself whatever the merger is doing. They also find that the merger boosts the star formation rate by accumulating
+and compressing dense gas rather than by raising the efficiency, which is what we see as well.
+
+**Where we add something.** Deng et al. select clouds with $n_{\rm H} > 100$ $\rm cm^{-3}$ *and* $\alpha < 10$, so their
+sample is the quasi-bound population by construction and cannot show a change in what fraction of the dense gas is
+bound. That fraction is exactly what moves in our run: the mass of dense gas below $\alpha_{\rm tot} = 4$ falls by a
+factor 21 in the trough while the total dense mass rises. The two results are compatible and, taken together, say that
+the merger does not change what a bound clump does, it changes how much of the dense gas is bound.
+
+**Where they support a caveat of ours.** Deng et al. ran the same initial condition as Lahén et al. with a different
+star formation criterion, 3000 $\rm cm^{-3}$ against a Jeans criterion that fires near 500 $\rm cm^{-3}$, and a stellar
+softening of 0.05 pc against 0.1 pc. Their most massive cluster reaches $3\times10^4$ $\rm M_\odot$ against
+$7\times10^5$ $\rm M_\odot$ in Lahén et al., a factor of 23 for the same galaxies, and they attribute the sizes and the
+boundness of their clusters to the density criterion and the softening. This is an independent and quantitative version
+of the caveat we make in section 10, and our own $8.5\times10^5$ $\rm M_\odot$ sits at the Lahén end of that range.
+
+**One difference we cannot settle.** They find the tidal field sets the masses of clouds but not their lifetimes or
+their efficiency, while we find that the virial parameter, which carries the turbulence the layer hands down, sets the
+efficiency. These are not the same quantity, and neither paper measures the other's, so we leave it open.
+
+---
 # Part B. The chain from the weight of the layer to the stellar mass of a clump
 
 This part orders the measurements of Part A as a chain of six links, from the weight of the layer to the stars a clump
