@@ -716,11 +716,11 @@ after the second passage the bound-only index collapses because only a third of 
 ---
 ## 11. Comparison with the other dwarf-merger simulations
 
-Two other groups have run gas-rich dwarf mergers of this kind. Lahén et al. (2020, ApJ 891, 2) used GRIFFIN with
-individual massive stars, and Deng et al. (2025, A&A) ran the same initial condition as Lahén with the RIGEL
-radiation-hydrodynamic model in AREPO. Our initial condition has the same component masses as theirs, so the three runs
-are close to a controlled comparison of the star formation and feedback models. We come at the problem from the feedback and ISM side rather than the cluster
-side, so the overlap is partial and it is worth being explicit about it.
+Two other groups have run this merger. Lahén et al. (2020, ApJ 891, 2) used GRIFFIN with individual massive stars, and
+Deng et al. (2025, A&A) ran the Lahén initial condition with the RIGEL radiation-hydrodynamic model in AREPO. Our
+initial condition has the same component masses and the same metallicity, so the three runs come close to a controlled
+comparison of the star formation and feedback models. We come at the problem from the ISM and feedback side rather than
+the cluster side, so the overlap is partial.
 
 | | Lahén et al. 2020 | Deng et al. 2025 | this run |
 |---|---|---|---|
@@ -728,8 +728,7 @@ side, so the overlap is partial and it is worth being explicit about it.
 | gas mass resolution | 4 $\rm M_\odot$ | 2 $\rm M_\odot$ | 4 $\rm M_\odot$ |
 | star formation criterion | Jeans, fires near 500 $\rm cm^{-3}$ | $n_{\rm H} > 3000$ $\rm cm^{-3}$ | $n_{\rm H} > 100$ $\rm cm^{-3}$, self-gravitating, $\epsilon_{\rm ff} = 0.5$ |
 | stellar softening | 0.1 pc | 0.05 pc | 0.4 pc |
-| gas / stellar / halo mass per galaxy | $4\times10^7$ / $2\times10^7$ / $2\times10^{10}$ $\rm M_\odot$ | same initial condition | $4.0\times10^7$ / $2.0\times10^7$ / $2.7\times10^{10}$ $\rm M_\odot$ |
-| star formation rate before the merger | a few $10^{-3}$ $\rm M_\odot\ yr^{-1}$ at the first passage; the isolated progenitor sits near $10^{-4}$ in Hu et al. (2017) | $\approx2\times10^{-3}$ for the isolated pair | $1.4$ to $6\times10^{-3}$, but the galaxies are already 4.2 to 1.3 kpc apart, so there is no isolated phase |
+| gas / stars / halo per galaxy | $4\times10^7$ / $2\times10^7$ / $2\times10^{10}$ $\rm M_\odot$ | same initial condition | $4.0\times10^7$ / $2.0\times10^7$ / $2.7\times10^{10}$ $\rm M_\odot$ |
 | gas metallicity | 0.1 $Z_\odot$ | 0.1 $Z_\odot$ | 0.1 $Z_\odot$ |
 | peak star formation rate | 0.2 to 0.3 $\rm M_\odot\ yr^{-1}$ | a few $0.1$ $\rm M_\odot\ yr^{-1}$ | 0.19 in a 1 Myr window, 0.094 over 10 Myr |
 | growth of dense gas | not reported | $\times56$ | $\times35$ |
@@ -738,39 +737,43 @@ side, so the overlap is partial and it is worth being explicit about it.
 | mass function slope | $-1.67$ to $-2$ | $-2.23$ to $-2.03$ | $-1.92$ to $-1.47$ |
 | ISM analysis | none | clouds and tides | PRFM, weight, pressure budget, magnetic support |
 
-**Where we agree.** Deng et al. find the dense gas above 100 $\rm cm^{-3}$ grows by a factor 56 and the cloud-scale
-integrated efficiency stays put, only 0.17 to 0.33 dex lower at the peak of the starburst, and they conclude that local
-stellar feedback rather than galactic dynamics regulates the star formation. We find the same at fixed virial
-parameter: the median residual of $\epsilon_{\rm int}$ about our fitted step is $+0.29$, $+0.05$, $-0.18$ and $-0.04$
-dex in the four phases. Both runs make the burst by accumulating dense gas, not by making gas convert more efficiently.
+**Similarities.**
 
-**Where we add something.** Deng et al. select clouds with $n_{\rm H} > 100$ $\rm cm^{-3}$ *and* $\alpha < 10$, so their
-sample is the quasi-bound population by construction. What moves in our run is how much of the dense gas is in that
-population at all: the mass below $\alpha_{\rm tot} = 4$ falls by a factor 21 in the trough while the total dense mass
-rises. Neither group measures the pressure, the weight or the magnetic support of the layer, so the PRFM part of this
-work has no counterpart in either paper.
+- The peak star formation rate is the same in all three once the same averaging window is used, 0.2 to 0.3 against our
+  0.19 in a 1 Myr window. The same gas mass ends up compressed on a timescale short compared with anything the initial
+  disc structure does, so this is what one would expect.
+- The burst is made by accumulating dense gas, not by converting it more efficiently. Deng et al. find the dense gas
+  above 100 $\rm cm^{-3}$ growing by 56 and we find 35.
+- The cloud-scale efficiency does not change through the merger. Deng et al. find it 0.17 to 0.33 dex lower at the peak
+  of the starburst; our fitted step has median residuals of $+0.29$, $+0.05$, $-0.18$ and $-0.04$ dex in the four
+  phases, so a clump of given $\alpha_{\rm tot}$ converts the same fraction of itself whatever the merger is doing.
+- The mass function of the young stellar groups is a power law with an index between about 1.5 and 2 in all three,
+  and its top rises with the star formation rate.
 
-**On the maximum cluster mass.** This comparison is closer to a controlled experiment than we first thought. Our
-initial condition has the same masses as Lahén et al., $4\times10^7$ $\rm M_\odot$ of gas and $2\times10^7$ of stars per
-galaxy in a $2\times10^{10}$ $\rm M_\odot$ halo, and Deng et al. ran the Lahén initial condition directly, so all three
-start from essentially the same galaxies. The peak rates agree once the same averaging is used, and the approach rates
-are comparable as well: we form stars at 1.4 to $6\times10^{-3}$ $\rm M_\odot\ yr^{-1}$ in 10 Myr windows while the
-galaxies close from 4.2 to 1.3 kpc, against a few $10^{-3}$ quoted by Lahén et al. at their first passage. At the quiescent end we cannot make the comparison at all. Our run starts
-with the two galaxies 4.2 kpc apart and they are already at 2.2 kpc by 25 Myr and 1.3 kpc at the first pericentre, so
-what we called the pre-merger rate is a rate measured while the galaxies are interacting, and the 1.4 to
-$6\times10^{-3}$ $\rm M_\odot\ yr^{-1}$ should not be set against an isolated dwarf. For reference, Hu et al. (2017)
-ran this galaxy in isolation with two gas discs, a fiducial one with a 1.46 kpc scale length, which is the progenitor
-Lahén et al. use, and a compact one at 0.73 kpc; the fiducial disc sits near $10^{-4}$ $\rm M_\odot\ yr^{-1}$ with the
-full feedback and reaches $10^{-3}$ with supernovae alone. Settling whether our star formation model is more permissive
-than theirs needs one of our progenitors run in isolation, which we have not done. For
-completeness, the isolated dwarfs of Lahén et al. (2023) form stars at a few $10^{-4}$ $\rm M_\odot\ yr^{-1}$ in the
-compact case and ten times less in the extended one, but those are different galaxies and not the merger progenitors. At the peak Lahén et al. quote 0.2 to 0.3 $\rm M_\odot\ yr^{-1}$ and we reach 0.19
-in a 1 Myr window, which is 0.094 when averaged over 10 Myr. The largest young group is $7\times10^5$ $\rm M_\odot$ for Lahén et al., $8.5\times10^5$ here and
-$3\times10^4$ for Deng et al., so at the same galaxies and the same rate the number moves by a factor 28 between the
-three star formation models. Deng et al. attribute this to their density criterion of 3000 $\rm cm^{-3}$ and their
-0.05 pc softening, and this is a cleaner demonstration of the caveat in section 10 than anything in our own run. We
-note that the massive clusters of the GRIFFIN merger come from the 2019 and 2020 papers; the later GRIFFIN work with
-collisional dynamics is on isolated dwarfs, so it does not continue the same measurement.
+**Differences.**
+
+- The most massive young group is $7\times10^5$, $3\times10^4$ and $8.5\times10^5$ $\rm M_\odot$ for Lahén et al., Deng
+  et al. and this run. At the same galaxies and the same peak rate, that is a factor 28 from the star formation model
+  alone. Deng et al. attribute their low value to the 3000 $\rm cm^{-3}$ criterion and the 0.05 pc softening, which is
+  a cleaner demonstration of the caveat in section 10 than anything in our own run.
+- Deng et al. find the tidal field sets cloud masses but not their lifetimes or efficiency; we find the virial
+  parameter, which carries the turbulence handed down by the layer, sets the efficiency. These are different
+  quantities and neither paper measures the other's.
+- Their cloud selection requires $\alpha < 10$, so their sample is the quasi-bound population by construction and
+  cannot show the bound fraction changing. That fraction is what moves in our run: the dense mass below
+  $\alpha_{\rm tot} = 4$ falls by 21 in the trough while the total dense mass rises. The two results are compatible
+  and together say that the merger does not change what a bound clump does, it changes how much of the gas is bound.
+
+**Only in this run.** Magnetic fields, and any measurement of the layer itself. Neither group reports a pressure, a
+weight, a scale height or a magnetic support fraction, so the whole PRFM part of this document has no counterpart in
+either paper.
+
+**What cannot be compared.** The quiescent rate. Our galaxies start 4.2 kpc apart and are at 2.2 kpc by 25 Myr, so
+this run has no isolated phase and the 1.4 to $6\times10^{-3}$ $\rm M_\odot\ yr^{-1}$ we measure before the first
+passage is already an interacting rate. For reference, Hu et al. (2017) ran this galaxy in isolation and the fiducial
+disc that Lahén et al. use as the progenitor sits near $10^{-4}$ $\rm M_\odot\ yr^{-1}$ with full feedback, reaching
+$10^{-3}$ with supernovae alone. Whether our star formation model is more permissive than theirs needs one of our
+progenitors run in isolation, which would be cheap and which we have not done.
 
 ---
 # Part B. The chain from the weight of the layer to the stellar mass of a clump
