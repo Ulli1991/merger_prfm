@@ -718,7 +718,8 @@ after the second passage the bound-only index collapses because only a third of 
 
 Two other groups have run gas-rich dwarf mergers of this kind. Lahén et al. (2020, ApJ 891, 2) used GRIFFIN with
 individual massive stars, and Deng et al. (2025, A&A) ran the same initial condition as Lahén with the RIGEL
-radiation-hydrodynamic model in AREPO. We come at the problem from the feedback and ISM side rather than the cluster
+radiation-hydrodynamic model in AREPO. Our initial condition has the same component masses as theirs, so the three runs
+are close to a controlled comparison of the star formation and feedback models. We come at the problem from the feedback and ISM side rather than the cluster
 side, so the overlap is partial and it is worth being explicit about it.
 
 | | Lahén et al. 2020 | Deng et al. 2025 | this run |
@@ -727,7 +728,8 @@ side, so the overlap is partial and it is worth being explicit about it.
 | gas mass resolution | 4 $\rm M_\odot$ | 2 $\rm M_\odot$ | 4 $\rm M_\odot$ |
 | star formation criterion | Jeans, fires near 500 $\rm cm^{-3}$ | $n_{\rm H} > 3000$ $\rm cm^{-3}$ | $n_{\rm H} > 100$ $\rm cm^{-3}$, self-gravitating, $\epsilon_{\rm ff} = 0.5$ |
 | stellar softening | 0.1 pc | 0.05 pc | 0.4 pc |
-| peak star formation rate | $\sim0.2$ $\rm M_\odot\ yr^{-1}$ | a few $0.1$ $\rm M_\odot\ yr^{-1}$ | 0.094 $\rm M_\odot\ yr^{-1}$ |
+| gas / stellar / halo mass per galaxy | $4\times10^7$ / $2\times10^7$ / $2\times10^{10}$ $\rm M_\odot$ | same initial condition | $4.0\times10^7$ / $2.0\times10^7$ / $2.7\times10^{10}$ $\rm M_\odot$ |
+| peak star formation rate | 0.2 to 0.3 $\rm M_\odot\ yr^{-1}$ | a few $0.1$ $\rm M_\odot\ yr^{-1}$ | 0.19 (1 Myr window), 0.094 (10 Myr) $\rm M_\odot\ yr^{-1}$ |
 | growth of dense gas | not reported | $\times56$ | $\times35$ |
 | cloud-scale efficiency | not reported | unchanged, 0.17 to 0.33 dex lower at the peak | unchanged at fixed $\alpha_{\rm tot}$, residuals $+0.29$ to $-0.18$ dex |
 | most massive young group | $7\times10^5$ $\rm M_\odot$ | $3\times10^4$ $\rm M_\odot$ | $8.5\times10^5$ $\rm M_\odot$ |
@@ -746,15 +748,17 @@ population at all: the mass below $\alpha_{\rm tot} = 4$ falls by a factor 21 in
 rises. Neither group measures the pressure, the weight or the magnetic support of the layer, so the PRFM part of this
 work has no counterpart in either paper.
 
-**On the maximum cluster mass, we would be careful.** The three runs differ by a factor 28 in that number, but they do
-not have the same star formation rate, and the largest cluster is expected to scale with it. Our peak rate of 0.094
-$\rm M_\odot\ yr^{-1}$ is about half that of Lahén et al. while our largest group is slightly more massive, so on a
-maximum-mass against rate plane we sit above them, and Deng et al. sit well below both. Their own comparison attributes
-this to the star formation criterion and the softening, which we agree with, and it is a cleaner demonstration of the
-point we make in section 10 than anything in this run, since they changed only those ingredients on the same initial
-condition. We also note that the massive clusters of the GRIFFIN merger come from the 2019 and 2020 papers, and that
-the later GRIFFIN work with collisional dynamics is on isolated dwarfs, so those numbers are not a continuation of the
-same measurement.
+**On the maximum cluster mass.** This comparison is closer to a controlled experiment than we first thought. Our
+initial condition has the same masses as Lahén et al., $4\times10^7$ $\rm M_\odot$ of gas and $2\times10^7$ of stars per
+galaxy in a $2\times10^{10}$ $\rm M_\odot$ halo, and Deng et al. ran the Lahén initial condition directly, so all three
+start from essentially the same galaxies. The peak star formation rates also agree once the same averaging is used:
+Lahén et al. quote 0.2 to 0.3 $\rm M_\odot\ yr^{-1}$ and we reach 0.19 in a 1 Myr window, which is 0.094 when averaged
+over 10 Myr. The largest young group is $7\times10^5$ $\rm M_\odot$ for Lahén et al., $8.5\times10^5$ here and
+$3\times10^4$ for Deng et al., so at the same galaxies and the same rate the number moves by a factor 28 between the
+three star formation models. Deng et al. attribute this to their density criterion of 3000 $\rm cm^{-3}$ and their
+0.05 pc softening, and this is a cleaner demonstration of the caveat in section 10 than anything in our own run. We
+note that the massive clusters of the GRIFFIN merger come from the 2019 and 2020 papers; the later GRIFFIN work with
+collisional dynamics is on isolated dwarfs, so it does not continue the same measurement.
 
 ---
 # Part B. The chain from the weight of the layer to the stellar mass of a clump
