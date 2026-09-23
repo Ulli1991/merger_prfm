@@ -744,15 +744,20 @@ layer columns, against the three calibrations evaluated on the same columns.
 
 **What survives.** In the discs our layer is within a factor of 2 of every calibration, and closest to TIGRESS-NCR at
 solar metallicity. In the trough it is 40 times the appropriate low-metallicity calibration rather than the 100 to 200
-we quoted against OK22. The failure is smaller than we said, and still large.
+we quoted against OK22. The failure is smaller than we said and still large, and it does not depend on which
+calibration is chosen, which is the point: no plausible yield sits within an order of magnitude of what the layer holds
+after a pericentre. We also note that our own disc phase is not a clean calibration test, since the galaxies are
+already 4.2 to 2.2 kpc apart and interacting throughout it.
 
-**What we get wrong in a way that should be said out loud.** At $0.1\,Z_\odot$ TIGRESS-NCR expects a yield 1.9 times
-solar, driven by the thermal term rising as $Z'^{-0.53}$. We measure the opposite: our thermal share is 0.36 in the
-discs and 0.09 to 0.13 afterwards, and our total yield sits at the solar-metallicity value. The most likely reason is
-that this run, like TIGRESS-classic, has supernovae and an FUV field but no ionising radiation, and Hassan et al.
-(2024) flag exactly this when they note that the OK22 calibration "did not include early feedback, notably the ionising
-radiation". So our layer is under-pressurised in the thermal term relative to what a low-metallicity ISM with early
-feedback would produce, and part of what we have been calling a merger effect may be a missing feedback channel.
+**A discrepancy we cannot explain.** At $0.1\,Z_\odot$ TIGRESS-NCR expects a yield 1.9 times solar, driven by the
+thermal term rising as $Z'^{-0.53}$ as FUV attenuation weakens. We measure the solar value instead, with a thermal
+share of 0.36 in the discs falling to 0.09 to 0.13 afterwards. Missing early feedback is not the explanation: this run
+forms stars by sampling a Kroupa IMF, computes each star's ionising budget, and builds the HII region iteratively until
+the photon production balances the recombination rate in the ionised gas, heating it to $10^4$ K, alongside
+$10^{51}$ erg supernovae. What it does not have is stellar winds. Other candidates are that our $\Sigma_{\rm gas}$ sits
+below their grid, that the metallicity dependence was fit mostly at higher surface density, and that our star formation
+criterion differs; we have not separated them. It is a real difference between this run and TIGRESS-NCR at the same
+metallicity and it should be stated as such.
 
 **Star formation efficiency per dynamical time**, $\varepsilon_{\rm dyn} = \sigma_{\rm eff}/\Upsilon_{\rm tot}$, is the
 form used by Jeffreson et al. (2026), who calibrate $0.012\,P_4^{0.43}$ from TIGRESS-classic, against
