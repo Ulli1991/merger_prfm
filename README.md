@@ -269,8 +269,9 @@ layer.
 ![equilibrium](figs/story_1_equilibrium.png)
 
 **Where the weight comes from, and when.** Weight of the layer against time, split by which component provides the
-gravity. We repeat the weight sum with the acceleration of the gas, of the stars and of the dark matter alone, taking
-each from the same particle-mesh solve, and show the measured $P_{\rm tot}$ as a dotted line for comparison. We find
+gravity. For each snapshot we take the $\Sigma_{\rm gas}$-weighted median over the clean layer columns of $\mathcal W$
+as defined above, and repeat that sum with the acceleration of the gas, of the stars and of the dark matter alone,
+each taken from the same particle-mesh solve; the measured $P_{\rm tot}$ is shown as a dotted line for comparison. We find
 that the weight of this layer is set by the dark matter, which carries 0.87 of it in the discs, 0.82 in the trough and
 0.60 at the final burst; the gas contribution grows from 0.12 to 0.33 as the gas concentrates and the stars never
 exceed 0.05. The weight jumps by a factor 3 to 8 within a few Myr of each pericentre, from $7\times10^3$ in the discs
