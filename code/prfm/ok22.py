@@ -15,3 +15,14 @@ def ups_turb_sfr(S): return 330.0 * (S / 0.01) ** -0.05
 def ups_tot_sfr(S):  return 740.0 * (S / 0.01) ** -0.18
 # OK22 conventions: "2p" = warm+cold gas with T < 2e4 K; SFR from stars younger than 40 Myr;
 # midplane values averaged over |z| < ~ H/2 and over time; P_DE = pi G Sigma^2/2 + Sigma (2 G rho_sd)^1/2 sigma_eff
+
+# ---- TIGRESS-NCR, metallicity-dependent (Kim et al. 2024, eqs 14-18).  W4 = W / (1e4 k_B cm^-3 K), Zp = Z/Z_sun.
+# Calibrated over Zp 0.1-3, Sigma_gas 5-150, Sigma_star 1-50 Msun/pc^2, with ionising radiation ("early feedback")
+# that TIGRESS-classic (and this run) does not have.
+def ncr_ups_th(W4, Zp=0.1):    return 390.0 * W4 ** -0.46 * Zp ** -0.53
+def ncr_ups_turb(W4, Zp=0.1):  return 561.0 * W4 ** -0.21 * Zp ** -0.04
+def ncr_ups_mag(W4, Zp=0.1):   return 578.0 * W4 ** -0.40 * Zp ** -0.44
+def ncr_ups_nonth(W4, Zp=0.1): return 1.17e3 * W4 ** -0.22 * Zp ** -0.18
+def ncr_ups_tot(W4, Zp=0.1):   return 1.65e3 * W4 ** -0.29 * Zp ** -0.27
+def ncr_eps_dyn(W4, Zp=0.1):   return 0.0071 * W4 ** 0.41 * Zp ** 0.30
+def jeff_eps_dyn(P4):          return 0.012 * P4 ** 0.43      # Jeffreson et al. 2026, from TIGRESS-classic

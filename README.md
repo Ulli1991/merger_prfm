@@ -714,7 +714,67 @@ after the second passage the bound-only index collapses because only a third of 
 ![low-mass convergence](figs/lowmass_convergence.png)
 
 ---
-## 11. Comparison with the other dwarf-merger simulations
+## 11. How the comparison with PRFM actually stands
+
+A critical reading, with the calibration papers in hand rather than from memory.
+
+**We were comparing against the wrong calibration.** The OK22 fits come from TIGRESS-classic at solar metallicity.
+Kim et al. (2024) recalibrated PRFM on TIGRESS-NCR over $Z' = Z/Z_\odot = 0.1$ to 3, $\Sigma_{\rm gas} = 5$ to 150 and
+$\Sigma_\star = 1$ to 50 $\rm M_\odot\ pc^{-2}$, and find the yield depends on metallicity as
+
+$$\Upsilon_{\rm tot} = 1.65\times10^3\ {\rm km\ s^{-1}}\ \mathcal{W}_4^{-0.29} Z'^{-0.27},\qquad
+\Upsilon_{\rm th} = 390\ \mathcal{W}_4^{-0.46} Z'^{-0.53},\qquad
+\Upsilon_{\rm nonth} = 1.17\times10^3\ \mathcal{W}_4^{-0.22} Z'^{-0.18},$$
+
+with $\mathcal W_4 = \mathcal W/(10^4 k_{\rm B}\ \rm cm^{-3}\ K)$. Our run is at $Z' = 0.1$, the bottom of their grid,
+where the yield is $10^{0.27} = 1.9$ times the solar value because less FUV attenuation means more photoelectric
+heating per unit star formation. Judged against OK22 we therefore overstate the departure by about a factor of 2 to 3.
+
+x: time. y: the measured $\Upsilon_{\rm tot} = \sum_c P_{{\rm tot},c}/\sum_c\Sigma_{{\rm SFR,40},c}$ over the clean
+layer columns, against the three calibrations evaluated on the same columns.
+
+![calibration comparison](figs/calibration_compare.png)
+
+| | discs, 40 to 100 Myr | trough, 169 to 195 Myr |
+|---|---|---|
+| measured $\Upsilon_{\rm tot}$ | 1650 $\rm km\ s^{-1}$ | $1.0\times10^5$ |
+| OK22, TIGRESS-classic | 1135 | 889 |
+| TIGRESS-NCR at $Z_\odot$ | 1986 | 1409 |
+| TIGRESS-NCR at $0.1\,Z_\odot$ | 3697 | 2624 |
+
+**What survives.** In the discs our layer is within a factor of 2 of every calibration, and closest to TIGRESS-NCR at
+solar metallicity. In the trough it is 40 times the appropriate low-metallicity calibration rather than the 100 to 200
+we quoted against OK22. The failure is smaller than we said, and still large.
+
+**What we get wrong in a way that should be said out loud.** At $0.1\,Z_\odot$ TIGRESS-NCR expects a yield 1.9 times
+solar, driven by the thermal term rising as $Z'^{-0.53}$. We measure the opposite: our thermal share is 0.36 in the
+discs and 0.09 to 0.13 afterwards, and our total yield sits at the solar-metallicity value. The most likely reason is
+that this run, like TIGRESS-classic, has supernovae and an FUV field but no ionising radiation, and Hassan et al.
+(2024) flag exactly this when they note that the OK22 calibration "did not include early feedback, notably the ionising
+radiation". So our layer is under-pressurised in the thermal term relative to what a low-metallicity ISM with early
+feedback would produce, and part of what we have been calling a merger effect may be a missing feedback channel.
+
+**Star formation efficiency per dynamical time**, $\varepsilon_{\rm dyn} = \sigma_{\rm eff}/\Upsilon_{\rm tot}$, is the
+form used by Jeffreson et al. (2026), who calibrate $0.012\,P_4^{0.43}$ from TIGRESS-classic, against
+$0.0071\,\mathcal W_4^{0.41} Z'^{0.30}$ from TIGRESS-NCR. We measure 0.0052 in the discs against 0.0098 and 0.0027, so
+again between the two, and 0.0001 in the trough against 0.016 and 0.0044.
+
+**Where we sit relative to their parameter space.** Our $\Sigma_{\rm gas}$ is 4.4 to 7.8 $\rm M_\odot\ pc^{-2}$ and our
+$\Sigma_\star$ is 2.2 to 3.1, so we are at or just below the bottom corner of the TIGRESS-NCR grid in gas and inside it
+in stars, at the very bottom in metallicity. No calibration exists for a merger.
+
+**This test is one the PRFM authors ask for.** Hassan et al. (2024) write that "it is important to test whether models
+based on quasi-equilibrium assumptions may still be applied in situations such as tidal encounters and mergers where
+the galaxies [are] strongly disturbed", and Jeffreson et al. (2026) that "the prevalence of mergers and highly
+disturbed systems alters the overall geometry, and energy inputs from sources other than feedback may make a larger
+contribution to maintaining the total pressure ... It will be important to test, via direct simulations in disturbed
+galactic systems, the limits of current parameterizations". Our answer to both: vertical balance survives, the
+feedback yield holds within a factor of 2 to 3 whenever the layer is forming stars, and the quasi-equilibrium closure
+fails for one vertical dynamical time after each compression, which is the timescale over which OK22 define the
+equilibrium in the first place.
+
+---
+## 12. Comparison with the other dwarf-merger simulations
 
 Two other groups have run this merger. Lahén et al. (2020, ApJ 891, 2) used GRIFFIN with individual massive stars, and
 Deng et al. (2025, A&A) ran the Lahén initial condition with the RIGEL radiation-hydrodynamic model in AREPO. Our

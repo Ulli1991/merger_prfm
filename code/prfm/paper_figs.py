@@ -960,6 +960,38 @@ def tdyn_vs_delay():
     print(f'  t_dyn over t>40: median {np.median(R[T>40,1]):.1f} Myr, 16-84 % {np.percentile(R[T>40,1],16):.0f}-{np.percentile(R[T>40,1],84):.0f}')
     P.save(fig, 'tdyn_vs_delay'); plt.close(fig)
 
+@figure
+def calibration_compare():
+    """the measured yield against three calibrations: OK22 (TIGRESS-classic, solar metallicity, supernovae and FUV only),
+    TIGRESS-NCR at solar metallicity, and TIGRESS-NCR at the 0.1 solar metallicity of this run (Kim et al. 2024)"""
+    import glob as _g
+    rows = []
+    for fn in sorted(_g.glob(f'{C.PRFM_DIR}/patch_[0-9][0-9][0-9]_z05.h5')):
+        with h5py.File(fn, 'r') as f:
+            t = float(f.attrs['time_myr']); acc = np.zeros(5)
+            for g in f:
+                if not g.startswith('frame_'): continue
+                G = f[g]; sep = float(G.attrs['separation_kpc']); r = lambda k: G[k][:].ravel()
+                S = r('Sigma_gas'); W = r('W_2p'); fi = r('f_intruder'); ok = (S > 1) & (W > 0) & ((fi < 0.1) | C.is_merged(sep, t))
+                acc += [r('Ptot_2p')[ok].sum(), r('SigSFR_40')[ok].sum(), r('W_2p')[ok].sum(), ok.sum(), (r('Sigma_gas_2p') * r('Ptot_2p'))[ok].sum()]
+            rows.append((t, *acc))
+    R = np.array(rows); T = R[:, 0]; n = R[:, 4]
+    ups = R[:, 1] / np.maximum(R[:, 2], 1e-30) / 4.81e3          # measured, ratio of sums
+    W4 = (R[:, 3] / n) / 1e4; Pm = R[:, 1] / n
+    o = T > 40
+    fig, ax = P.fig()
+    ax.plot(T[o], ups[o], color=P.ink, lw=1.7, label='measured')
+    ax.plot(T[o], ok22.ncr_ups_tot(W4[o], 0.1), color=P.orange, lw=1.4, label=r'TIGRESS-NCR, $Z = 0.1\,Z_\odot$')
+    ax.plot(T[o], ok22.ncr_ups_tot(W4[o], 1.0), color=P.blue, lw=1.4, ls='--', label=r'TIGRESS-NCR, $Z = Z_\odot$')
+    ax.plot(T[o], ok22.ups_tot(Pm[o]), color=P.grey, lw=1.2, ls=':', label='OK22 (TIGRESS-classic)')
+    ax.set_yscale('log'); ax.set_xlim(40, 226); ax.set_ylim(3e2, 3e5)
+    ax.set_xlabel(r'$t$ [Myr]'); ax.set_ylabel(r'$\Upsilon_{\rm tot} = P_{\rm tot,2p}/\Sigma_{\rm SFR,40}$ [km s$^{-1}$]')
+    P.phases(ax, box=True); P.place_legend(ax)
+    for a, b, lab in ((40, 100, 'discs'), (169, 195, 'trough')):
+        m = (T >= a) & (T < b)
+        print(f'  {lab:8s} measured {np.median(ups[m]):8.0f}  NCR(0.1) {np.median(ok22.ncr_ups_tot(W4[m],0.1)):8.0f}  NCR(1) {np.median(ok22.ncr_ups_tot(W4[m],1.0)):8.0f}  OK22 {np.median(ok22.ups_tot(Pm[m])):8.0f}')
+    P.save(fig, 'calibration_compare'); plt.close(fig)
+
 if __name__ == '__main__':
     names = sys.argv[1:] or ['all']
     for n in (FIGS if names == ['all'] else names): FIGS[n]()
