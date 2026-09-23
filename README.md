@@ -232,21 +232,23 @@ that most of the rise happens within a few Myr of the second and third pericentr
 
 ![midplane pressure](figs/midplane_pressure.png)
 
-**Midplane density.** The same for the midplane density of the two-phase gas, converted to hydrogen nuclei per cubic
-centimetre as $n_{\rm H,mid} = X_{\rm H}\rho_{\rm mid}/m_{\rm p}$ with $X_{\rm H} = 0.76$, where $\rho_{\rm mid}$ is the
-slab density defined above.
+**Midplane density.** Midplane density of the two-phase gas against time, taken the same way: for each snapshot and
+each grid we take the $\Sigma_{\rm gas}$-weighted median over the clean layer columns of $\rho_{\rm mid}$, the slab
+density defined above, and convert it to hydrogen nuclei per cubic centimetre as
+$n_{\rm H,mid} = X_{\rm H}\rho_{\rm mid}/m_{\rm p}$ with $X_{\rm H} = 0.76$.
 
 ![midplane density](figs/midplane_density.png)
 
-**Star formation rate surface density.** The star formation rate per unit area of the same columns, which we obtain by
-summing the mass of stars younger than 10 Myr in the clean full columns and dividing by 10 Myr and by their total area.
+**Star formation rate surface density.** Star formation rate per unit area against time. For each snapshot and each
+grid we sum the mass of stars younger than 10 Myr that formed during the run and lie in the clean full columns, and
+divide by 10 Myr and by the total area of those columns, $\Sigma_{\rm SFR,10} = \sum m_\star/(N_{\rm col} A\,10\ {\rm Myr})$.
 We note that the two galaxies track each other closely once they are close enough to share a grid.
 
 ![sfr surface density](figs/sfr_surface_density.png)
 
-**Star formation rate of the whole run.** Star formation rate of the entire system, which we obtain from the formation
-times of all stars present in the final snapshot rather than from any grid, so that this figure is independent of the
-column analysis. We show ${\rm SFR}(t;\Delta t) = \sum m_\star/\Delta t$ over the stars formed in $(t-\Delta t, t]$ for
+**Star formation rate of the whole run.** Star formation rate of the entire system against time, obtained from the
+formation times of all stars present in the final snapshot rather than from any grid, so that this figure is
+independent of the column analysis. We show ${\rm SFR}(t;\Delta t) = \sum m_\star/\Delta t$ over the stars formed in $(t-\Delta t, t]$ for
 averaging windows of 10, 20, 30 and 40 Myr. Each curve starts at $t = \Delta t$, and the particle masses are the present
 ones, 3.98 $\rm M_\odot$. We note the two bursts at the second and third passage and the deep trough between them.
 
@@ -891,8 +893,12 @@ break and does not.
 
 ![cascade](figs/link4_cascade.png)
 
-The same content in the older form, $\alpha_{\rm vir}$ of the clump against $\sigma_{\rm eff}$ of its column (left),
-one relation for all phases with 0.2 dex offsets:
+The same content in the older form. On the horizontal axis we put the effective dispersion
+$\sigma_{\rm eff} = (P_{\rm tot}/\rho_{\rm mid})^{1/2}$ of the full column the clump sits in at its pre-onset snapshot,
+in $\rm km\ s^{-1}$, and on the vertical axis the clump's own $\alpha_{\rm vir} = 5(\sigma_{\rm 3d}^2/3)r_h/(GM)$ at that
+snapshot, with $M$, $r_h$ and $\sigma_{\rm 3d}$ as defined under Clouds. Points are the star-forming lineages, lines the
+median per bin of $\sigma_{\rm eff}$ per phase, and the dashed line $\alpha \propto \sigma_{\rm eff}^2$. We find one
+relation for all phases with 0.2 dex offsets between them:
 
 ![clump virial parameter](figs/partC_alpha.png)
 
@@ -991,8 +997,9 @@ quiescent interval 100 times below. This relation is not one to build on.
 
 ![ceiling](figs/story_7_ceiling.png)
 
-**Burst-mass distribution.** Phase 40 to 110 Myr. Black: $N_k/\Delta M_k$ over the bursting columns ($M_{\rm young} > 500$
-$\rm M_\odot$) of the phase, all snapshots, error $\sqrt{N_k}/\Delta M_k$. Blue: 25 realisations of a null model:
+**Burst-mass distribution.** Phase 40 to 110 Myr. On the horizontal axis is $M_{\rm young}$, the mass of stars younger
+than 10 Myr in a full column, and on the vertical axis the number of columns per unit mass. Black: $N_k/\Delta M_k$ over
+the bursting columns ($M_{\rm young} > 500$ $\rm M_\odot$) of the phase, all snapshots, error $\sqrt{N_k}/\Delta M_k$. Blue: 25 realisations of a null model:
 every clean column of the phase bursts with probability $P(\mathcal W_c)$ from the logistic above; a bursting column gets
 $M = 10^{\ a + b\log_{10}\mathcal W_c + s\ \xi}$, $\xi\sim N(0,1)$, with $b$ from a least-squares fit of $\log M_{\rm young}$
 on $\log\mathcal W$ over the phase's bursts and $(a, s)$ from a lognormal likelihood truncated at 500 $\rm M_\odot$; masses
